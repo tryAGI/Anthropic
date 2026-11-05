@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaApiKeyUpdateParamsStatus?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0202.Create_NullableBetaApiKeyUpdateParamsStatus2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0201.Create_NullableBetaApiKeyUpdateParamsStatus2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

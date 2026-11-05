@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Delta))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0184.Create_Delta2_3(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0183.Create_Delta2_3(options);
                 }
                 if (type == typeof(global::Anthropic.Delta?))
                 {

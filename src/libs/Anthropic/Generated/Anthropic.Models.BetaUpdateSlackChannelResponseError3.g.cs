@@ -26,7 +26,7 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails? Details { get; set; }
+        public global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails? Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,7 +45,7 @@ namespace Anthropic
 #endif
         public BetaUpdateSlackChannelResponseError3(
             string message,
-            global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails? details,
+            global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails? details,
             string type = "conflict_error")
         {
             this.Type = type;

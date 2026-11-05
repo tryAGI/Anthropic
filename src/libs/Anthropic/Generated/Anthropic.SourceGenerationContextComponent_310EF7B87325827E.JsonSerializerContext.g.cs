@@ -3,13 +3,13 @@
 namespace Anthropic
 {
     /// <summary>Source-generated JSON metadata for this scope.</summary>
-    internal static partial class SourceGenerationContextComponent_2E4992A3872B11C1
+    internal static partial class SourceGenerationContextComponent_310EF7B87325827E
     {
 
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_3707076CB83CA09E.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_9B31974D713DAE34.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_0DB77DB230B6213B.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_578B6737A26F3F10.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_CD99D8D62BA0B4A9.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_E875E82F7D64330B.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -20,7 +20,7 @@ namespace Anthropic
         #pragma warning disable CS0612, CS0618 // Generated converters may target deprecated API models.
         private static void ContributeConverters(global::Anthropic.SourceGenerationContextMetadataScope.ConverterCollector collector)
         {
-            collector.AddEager<global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaClaudeTagEnvironmentNotFoundErrorDetails, global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails>>(static () => new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaClaudeTagEnvironmentNotFoundErrorDetails, global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails>());
+            collector.AddEager<global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaOrganizationLevelScopedApiKeyRequiredErrorDetails>>(static () => new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaOrganizationLevelScopedApiKeyRequiredErrorDetails>());
             collector.AddEager<global::Anthropic.JsonConverters.UnixTimestampJsonConverter>(static () => new global::Anthropic.JsonConverters.UnixTimestampJsonConverter());
         }
         #pragma warning restore CS0612, CS0618
@@ -30,13 +30,13 @@ namespace Anthropic
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type, global::System.Text.Json.JsonSerializerOptions options)
             {
-                if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeTagEnvironmentNotFoundErrorDetails, global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails>))
+                if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaOrganizationLevelScopedApiKeyRequiredErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0279.Create_SourceGenerationContextMetadataType_2E4992A3872B11C1(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0279.Create_SourceGenerationContextMetadataType_310EF7B87325827E(options);
                 }
-                if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeTagEnvironmentNotFoundErrorDetails, global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails>?))
+                if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaOrganizationLevelScopedApiKeyRequiredErrorDetails>?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0303.Create_SourceGenerationContextMetadataType_B62B115ECC2D5CB9(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0274.Create_SourceGenerationContextMetadataType_0D75CA0496486782(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

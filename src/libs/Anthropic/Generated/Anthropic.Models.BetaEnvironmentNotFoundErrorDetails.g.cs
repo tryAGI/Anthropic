@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The API key lacks the scope the request needs: `read:claude_tag` for a read, `write:claude_tag` for a change.
+    /// `settings.environment_id` names no Environment within the organization's reach.
     /// </summary>
-    public sealed partial class BetaClaudeTagApiKeyScopeMissingErrorDetails
+    public sealed partial class BetaEnvironmentNotFoundErrorDetails
     {
         /// <summary>
         ///
         /// </summary>
-        /// <default>"api_key_scope_missing"</default>
+        /// <default>"environment_not_found"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
-        public string ErrorCode { get; set; } = "api_key_scope_missing";
+        public string ErrorCode { get; set; } = "environment_not_found";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -22,22 +22,22 @@ namespace Anthropic
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaClaudeTagApiKeyScopeMissingErrorDetails" /> class.
+        /// Initializes a new instance of the <see cref="BetaEnvironmentNotFoundErrorDetails" /> class.
         /// </summary>
         /// <param name="errorCode"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BetaClaudeTagApiKeyScopeMissingErrorDetails(
-            string errorCode = "api_key_scope_missing")
+        public BetaEnvironmentNotFoundErrorDetails(
+            string errorCode = "environment_not_found")
         {
             this.ErrorCode = errorCode;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaClaudeTagApiKeyScopeMissingErrorDetails" /> class.
+        /// Initializes a new instance of the <see cref="BetaEnvironmentNotFoundErrorDetails" /> class.
         /// </summary>
-        public BetaClaudeTagApiKeyScopeMissingErrorDetails()
+        public BetaEnvironmentNotFoundErrorDetails()
         {
         }
 

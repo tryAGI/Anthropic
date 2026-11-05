@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaMessagesUsageReportTimeBucketWidth))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0106.Create_BetaMessagesUsageReportTimeBucketWidth2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0105.Create_BetaMessagesUsageReportTimeBucketWidth2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaMessagesUsageReportTimeBucketWidth?))
                 {

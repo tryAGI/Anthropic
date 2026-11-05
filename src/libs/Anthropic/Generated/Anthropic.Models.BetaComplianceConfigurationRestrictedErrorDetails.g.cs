@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The credential is not a scoped API key that is bound at the organization level.
+    /// The organization's compliance configuration does not let Claude Tag store anything new.
     /// </summary>
-    public sealed partial class BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails
+    public sealed partial class BetaComplianceConfigurationRestrictedErrorDetails
     {
         /// <summary>
         ///
         /// </summary>
-        /// <default>"organization_level_scoped_api_key_required"</default>
+        /// <default>"compliance_configuration_restricted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
-        public string ErrorCode { get; set; } = "organization_level_scoped_api_key_required";
+        public string ErrorCode { get; set; } = "compliance_configuration_restricted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -22,22 +22,22 @@ namespace Anthropic
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails" /> class.
+        /// Initializes a new instance of the <see cref="BetaComplianceConfigurationRestrictedErrorDetails" /> class.
         /// </summary>
         /// <param name="errorCode"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails(
-            string errorCode = "organization_level_scoped_api_key_required")
+        public BetaComplianceConfigurationRestrictedErrorDetails(
+            string errorCode = "compliance_configuration_restricted")
         {
             this.ErrorCode = errorCode;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails" /> class.
+        /// Initializes a new instance of the <see cref="BetaComplianceConfigurationRestrictedErrorDetails" /> class.
         /// </summary>
-        public BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails()
+        public BetaComplianceConfigurationRestrictedErrorDetails()
         {
         }
 

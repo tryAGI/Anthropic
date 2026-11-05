@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaOrganizationWebhookEndpointEnabledEvent))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0108.Create_BetaOrganizationWebhookEndpointEnabledEvent2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0107.Create_BetaOrganizationWebhookEndpointEnabledEvent2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaOrganizationWebhookEndpointEnabledEvent?))
                 {

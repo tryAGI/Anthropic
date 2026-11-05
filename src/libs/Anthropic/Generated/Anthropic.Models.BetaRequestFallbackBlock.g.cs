@@ -7,14 +7,18 @@ namespace Anthropic
     /// A `fallback` block echoed back from a prior response.<br/>
     /// Accepted in `messages[].content` and not rendered into the prompt; not<br/>
     /// validated against the request's `fallbacks` chain or top-level `model`.<br/>
-    /// Echo the assistant turn back verbatim, including this block in its<br/>
+    /// When you send the assistant turn back, keep this block in its<br/>
     /// original position. The block marks the boundary between content produced<br/>
     /// before and after a fallback hop, and the server relies on that boundary<br/>
     /// to validate the turn: when thinking runs flank the boundary, omitting<br/>
     /// the block merges them into one span the server cannot validate (the<br/>
     /// request is rejected), and moving it into the middle of a single run is<br/>
     /// likewise rejected; between non-thinking blocks the block's placement has<br/>
-    /// no validation effect.
+    /// no effect on thinking validation.<br/>
+    /// Some blocks from before the turn's final `fallback` block must be left<br/>
+    /// out when you send the turn back, and no `tool_result` is sent for a<br/>
+    /// `tool_use` block you left out.<br/>
+    /// See the [refusals and fallback guide](https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback#continuing-the-conversation) to learn which blocks to keep.
     /// </summary>
     public sealed partial class BetaRequestFallbackBlock
     {

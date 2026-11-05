@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.ClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.CmekKeyDisabledErrorDetails, global::Anthropic.CmekKeyNetworkBlockedErrorDetails, global::Anthropic.OrganizationOnHoldErrorDetails, global::Anthropic.StorageQuotaExceededErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0315.Create_SourceGenerationContextMetadataType_EA7FFB2F36A09513(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0314.Create_SourceGenerationContextMetadataType_EA7FFB2F36A09513(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.ClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.CmekKeyDisabledErrorDetails, global::Anthropic.CmekKeyNetworkBlockedErrorDetails, global::Anthropic.OrganizationOnHoldErrorDetails, global::Anthropic.StorageQuotaExceededErrorDetails>?))
                 {

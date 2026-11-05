@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0063.Create_BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0062.Create_BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorType?))
                 {

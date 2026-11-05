@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UserProfileListOrderBy))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0329.Create_UserProfileListOrderBy2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0328.Create_UserProfileListOrderBy2(options);
                 }
                 if (type == typeof(global::Anthropic.UserProfileListOrderBy?))
                 {

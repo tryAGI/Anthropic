@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.RbacRolePermissionResourceDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0255.Create_RbacRolePermissionResourceDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0254.Create_RbacRolePermissionResourceDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.RbacRolePermissionResourceDiscriminatorType?))
                 {

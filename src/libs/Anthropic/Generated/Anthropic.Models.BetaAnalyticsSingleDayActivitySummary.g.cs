@@ -15,19 +15,19 @@ namespace Anthropic
         public int? AssignedSeatCount { get; set; }
 
         /// <summary>
-        /// Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response where Chat and Cowork unified is not available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_daily_active_user_count")]
         public int? ChatCoworkUnifiedDailyActiveUserCount { get; set; }
 
         /// <summary>
-        /// Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response where Chat and Cowork unified is not available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_monthly_active_user_count")]
         public int? ChatCoworkUnifiedMonthlyActiveUserCount { get; set; }
 
         /// <summary>
-        /// Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response where Chat and Cowork unified is not available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_weekly_active_user_count")]
         public int? ChatCoworkUnifiedWeeklyActiveUserCount { get; set; }
@@ -245,13 +245,13 @@ namespace Anthropic
         /// Number of seats currently assigned to members. Null when the response is scoped to an RBAC group — seat assignment is org-wide and has no per-group analogue.
         /// </param>
         /// <param name="chatCoworkUnifiedDailyActiveUserCount">
-        /// Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response where Chat and Cowork unified is not available.
         /// </param>
         /// <param name="chatCoworkUnifiedMonthlyActiveUserCount">
-        /// Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response where Chat and Cowork unified is not available.
         /// </param>
         /// <param name="chatCoworkUnifiedWeeklyActiveUserCount">
-        /// Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response where Chat and Cowork unified is not available.
         /// </param>
         /// <param name="chatDailyActiveUserCount">
         /// Number of users with claude.ai (chat) activity on the requested day. Omitted from the response while the per-product breakdown is not enabled for this organization.

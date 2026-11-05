@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaPluginInstallationSettingTargetDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0110.Create_BetaPluginInstallationSettingTargetDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0109.Create_BetaPluginInstallationSettingTargetDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaPluginInstallationSettingTargetDiscriminatorType?))
                 {

@@ -12,8 +12,7 @@ namespace Anthropic
         /// Number of output tokens the model generated as internal reasoning, including<br/>
         /// the thinking-block delimiter tokens.<br/>
         /// Reflects the raw reasoning the model produced, not the (possibly shorter)<br/>
-        /// summarized thinking text returned in the response body. Computed by<br/>
-        /// re-tokenizing the raw reasoning text, so it may differ from the model's exact<br/>
+        /// summarized thinking text returned in the response body. It may differ from the model's exact<br/>
         /// generation count by a small number of tokens. Always ≤ `output_tokens`;<br/>
         /// `output_tokens - thinking_tokens` approximates the non-reasoning output.<br/>
         /// Default Value: 0
@@ -35,8 +34,7 @@ namespace Anthropic
         /// Number of output tokens the model generated as internal reasoning, including<br/>
         /// the thinking-block delimiter tokens.<br/>
         /// Reflects the raw reasoning the model produced, not the (possibly shorter)<br/>
-        /// summarized thinking text returned in the response body. Computed by<br/>
-        /// re-tokenizing the raw reasoning text, so it may differ from the model's exact<br/>
+        /// summarized thinking text returned in the response body. It may differ from the model's exact<br/>
         /// generation count by a small number of tokens. Always ≤ `output_tokens`;<br/>
         /// `output_tokens - thinking_tokens` approximates the non-reasoning output.<br/>
         /// Default Value: 0

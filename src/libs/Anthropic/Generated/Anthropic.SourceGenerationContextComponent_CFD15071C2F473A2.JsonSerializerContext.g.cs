@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.Caller13?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0235.Create_NullableCaller132(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0234.Create_NullableCaller132(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

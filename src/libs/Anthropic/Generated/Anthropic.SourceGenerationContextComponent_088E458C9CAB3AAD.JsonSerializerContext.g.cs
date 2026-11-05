@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.WorkspaceApiKeyLimitExceededErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0332.Create_WorkspaceApiKeyLimitExceededErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0331.Create_WorkspaceApiKeyLimitExceededErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

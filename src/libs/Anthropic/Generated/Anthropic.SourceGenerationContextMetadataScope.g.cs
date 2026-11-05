@@ -53,7 +53,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::System.Text.Json.JsonElement))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0190.Create_JsonElement(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0189.Create_JsonElement(options);
                 }
                 if (type == typeof(global::System.Text.Json.JsonElement?))
                 {

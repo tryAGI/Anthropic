@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.SkillParamsType?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0246.Create_NullableSkillParamsType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0245.Create_NullableSkillParamsType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaSkillSourceType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0136.Create_BetaSkillSourceType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0135.Create_BetaSkillSourceType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaSkillSourceType?))
                 {

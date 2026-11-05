@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::Anthropic.AllowedInferenceGeo>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0290.Create_SourceGenerationContextMetadataType_659B07DB46538E38(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0289.Create_SourceGenerationContextMetadataType_659B07DB46538E38(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::Anthropic.AllowedInferenceGeo>))
                 {

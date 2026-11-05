@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class AnalyticsConnectorActivity
     {
         /// <summary>
-        /// Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response where Chat and Cowork unified is not available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_metrics")]
         public global::Anthropic.AnalyticsConnectorChatCoworkUnifiedMetrics? ChatCoworkUnifiedMetrics { get; set; }
@@ -144,7 +144,7 @@ namespace Anthropic
         /// Office Agent activity metrics for a single connector on a given day, broken out by Office product.
         /// </param>
         /// <param name="chatCoworkUnifiedMetrics">
-        /// Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response where Chat and Cowork unified is not available.
         /// </param>
         /// <param name="connectorDisplayName">
         /// Human-readable display name for rows whose `connector_name` is an opaque connector id rather than a readable name, resolved at request time from the organization's connectors (including connectors that have since been removed). `connector_name` remains the row's stable key for sorting and pagination, and `filter[]=connector_name:{value}` also matches these rows by display name. Display names are not unique, and the same connector's claude.ai usage can appear under a separate row with a readable `connector_name`. Null when `connector_name` is already a readable name, when the id cannot be resolved to one of the organization's connectors, or when display-name resolution is not enabled for this organization.

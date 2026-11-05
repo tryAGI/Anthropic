@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0082.Create_BetaManagedAgentsMultiagentRosterEntryParams2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0081.Create_BetaManagedAgentsMultiagentRosterEntryParams2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams?))
                 {

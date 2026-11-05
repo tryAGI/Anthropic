@@ -26,8 +26,8 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaClaudeTagEnvironmentNotFoundErrorDetails, global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails>))]
-        public global::Anthropic.AnyOf<global::Anthropic.BetaClaudeTagEnvironmentNotFoundErrorDetails, global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails>? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaEnvironmentNotFoundErrorDetails, global::Anthropic.BetaSlackChannelSetUpEnvironmentNotFoundErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.BetaEnvironmentNotFoundErrorDetails, global::Anthropic.BetaSlackChannelSetUpEnvironmentNotFoundErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,7 +46,7 @@ namespace Anthropic
 #endif
         public BetaUpdateSlackWorkspaceResponseError2(
             string message,
-            global::Anthropic.AnyOf<global::Anthropic.BetaClaudeTagEnvironmentNotFoundErrorDetails, global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails>? details,
+            global::Anthropic.AnyOf<global::Anthropic.BetaEnvironmentNotFoundErrorDetails, global::Anthropic.BetaSlackChannelSetUpEnvironmentNotFoundErrorDetails>? details,
             string type = "not_found_error")
         {
             this.Type = type;
