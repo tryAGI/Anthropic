@@ -8,13 +8,13 @@ namespace Anthropic
         partial void PrepareBetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string marketplaceId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequest request);
         partial void PrepareBetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string marketplaceId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequest request);
         partial void ProcessBetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,17 +47,17 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginMarketplace> BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostAsync(
             string marketplaceId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostAsResponseAsync(
                 marketplaceId: marketplaceId,
+                anthropicBeta: anthropicBeta,
 
                 request: request,
-                anthropicBeta: anthropicBeta,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -86,9 +86,9 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginMarketplace>> BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostAsResponseAsync(
             string marketplaceId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -137,10 +137,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -1052,8 +1049,8 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginMarketplace> BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostAsync(
             string marketplaceId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequestDefaultInstallationPreference defaultInstallationPreference,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

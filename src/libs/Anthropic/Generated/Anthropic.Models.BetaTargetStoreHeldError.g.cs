@@ -17,7 +17,7 @@ namespace Anthropic
         public string Type { get; set; } = "conflict_error";
 
         /// <summary>
-        /// A human-readable explanation of why the memory store can't be used yet, with the ID of the dream that is using it when the server can identify it.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
@@ -31,9 +31,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaTargetStoreHeldError" /> class.
         /// </summary>
-        /// <param name="message">
-        /// A human-readable explanation of why the memory store can't be used yet, with the ID of the dream that is using it when the server can identify it.
-        /// </param>
+        /// <param name="message"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

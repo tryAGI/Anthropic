@@ -25,9 +25,9 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaNewOrganizationWebhookEndpoint> BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -52,9 +52,9 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaNewOrganizationWebhookEndpoint>> BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostAsResponseAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -90,9 +90,9 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaNewOrganizationWebhookEndpoint> BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent> enabledEvents,
             string url,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? description = default,
             string? name = default,

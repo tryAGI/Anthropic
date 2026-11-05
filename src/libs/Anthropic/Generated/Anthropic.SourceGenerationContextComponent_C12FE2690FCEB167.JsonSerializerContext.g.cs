@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.SpendSummarySourceDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0319.Create_SpendSummarySourceDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0321.Create_SpendSummarySourceDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        AdminUserSignOut20261008,
+        /// <summary>
+        ///
+        /// </summary>
         AdvisorTool20260301,
         /// <summary>
         ///
@@ -242,6 +246,7 @@ namespace Anthropic
         {
             return value switch
             {
+                AnthropicBetaEnum.AdminUserSignOut20261008 => "admin-user-sign-out-2026-10-08",
                 AnthropicBetaEnum.AdvisorTool20260301 => "advisor-tool-2026-03-01",
                 AnthropicBetaEnum.AgentMemory20260722 => "agent-memory-2026-07-22",
                 AnthropicBetaEnum.AnalyticsUsageCost20260824 => "analytics-usage-cost-2026-08-24",
@@ -307,6 +312,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "admin-user-sign-out-2026-10-08" => AnthropicBetaEnum.AdminUserSignOut20261008,
                 "advisor-tool-2026-03-01" => AnthropicBetaEnum.AdvisorTool20260301,
                 "agent-memory-2026-07-22" => AnthropicBetaEnum.AgentMemory20260722,
                 "analytics-usage-cost-2026-08-24" => AnthropicBetaEnum.AnalyticsUsageCost20260824,

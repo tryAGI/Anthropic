@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaFallbackCreditTokenParamMode?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0207.Create_NullableBetaFallbackCreditTokenParamMode2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0208.Create_NullableBetaFallbackCreditTokenParamMode2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

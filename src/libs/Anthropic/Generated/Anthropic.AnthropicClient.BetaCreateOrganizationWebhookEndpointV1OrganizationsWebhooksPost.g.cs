@@ -7,13 +7,13 @@ namespace Anthropic
     {
         partial void PrepareBetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             ref string? anthropicVersion,
             global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequest request);
         partial void PrepareBetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? anthropicVersion,
             global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequest request);
         partial void ProcessBetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostResponse(
@@ -46,17 +46,17 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaNewOrganizationWebhookEndpoint> BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostAsResponseAsync(
+                anthropicBeta: anthropicBeta,
 
                 request: request,
-                anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -85,9 +85,9 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaNewOrganizationWebhookEndpoint>> BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostAsResponseAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -137,10 +137,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -1064,9 +1061,9 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaNewOrganizationWebhookEndpoint> BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent> enabledEvents,
             string url,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? description = default,
             string? name = default,

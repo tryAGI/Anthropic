@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UserProfileEnforcementActionRestriction))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0328.Create_UserProfileEnforcementActionRestriction(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0329.Create_UserProfileEnforcementActionRestriction(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -38,9 +38,9 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginVersion> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -77,9 +77,9 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginVersion>> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsResponseAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginVersion> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IList<byte[]> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? releaseNotes = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -169,8 +169,8 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginVersion> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
             string? releaseNotes = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -217,8 +217,8 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginVersion>> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsResponseAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
             string? releaseNotes = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

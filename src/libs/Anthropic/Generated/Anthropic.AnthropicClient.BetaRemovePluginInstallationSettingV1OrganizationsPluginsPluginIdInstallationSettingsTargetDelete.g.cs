@@ -9,13 +9,13 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string pluginId,
             ref string target,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void PrepareBetaRemovePluginInstallationSettingV1OrganizationsPluginsPluginIdInstallationSettingsTargetDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string pluginId,
             string target,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void ProcessBetaRemovePluginInstallationSettingV1OrganizationsPluginsPluginIdInstallationSettingsTargetDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,7 +59,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginInstallationSettingDeleted> BetaRemovePluginInstallationSettingV1OrganizationsPluginsPluginIdInstallationSettingsTargetDeleteAsync(
             string pluginId,
             string target,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -107,7 +107,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginInstallationSettingDeleted>> BetaRemovePluginInstallationSettingV1OrganizationsPluginsPluginIdInstallationSettingsTargetDeleteAsResponseAsync(
             string pluginId,
             string target,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -154,10 +154,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

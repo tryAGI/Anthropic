@@ -7,12 +7,12 @@ namespace Anthropic
     {
         partial void PrepareBetaCreatePluginV1OrganizationsPluginsPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.BetaCreatePluginV1OrganizationsPluginsPostRequest request);
         partial void PrepareBetaCreatePluginV1OrganizationsPluginsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.BetaCreatePluginV1OrganizationsPluginsPostRequest request);
         partial void ProcessBetaCreatePluginV1OrganizationsPluginsPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -59,16 +59,16 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPlugin> BetaCreatePluginV1OrganizationsPluginsPostAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreatePluginV1OrganizationsPluginsPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaCreatePluginV1OrganizationsPluginsPostAsResponseAsync(
+                anthropicBeta: anthropicBeta,
 
                 request: request,
-                anthropicBeta: anthropicBeta,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -111,9 +111,9 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPlugin>> BetaCreatePluginV1OrganizationsPluginsPostAsResponseAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreatePluginV1OrganizationsPluginsPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -161,10 +161,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
@@ -1124,8 +1121,8 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPlugin> BetaCreatePluginV1OrganizationsPluginsPostAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IList<byte[]> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? marketplaceId = default,
             string? releaseNotes = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -1192,8 +1189,8 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPlugin> BetaCreatePluginV1OrganizationsPluginsPostAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
             string? marketplaceId = default,
             string? releaseNotes = default,
@@ -1250,10 +1247,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
@@ -2240,8 +2234,8 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPlugin>> BetaCreatePluginV1OrganizationsPluginsPostAsResponseAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
             string? marketplaceId = default,
             string? releaseNotes = default,
@@ -2298,10 +2292,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();

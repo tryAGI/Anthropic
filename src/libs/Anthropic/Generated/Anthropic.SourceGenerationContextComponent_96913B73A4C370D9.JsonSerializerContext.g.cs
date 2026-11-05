@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaOrganizationWebhookEndpointState?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0222.Create_NullableBetaOrganizationWebhookEndpointState2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0223.Create_NullableBetaOrganizationWebhookEndpointState2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.WorkspaceTags))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0333.Create_WorkspaceTags(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0334.Create_WorkspaceTags(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

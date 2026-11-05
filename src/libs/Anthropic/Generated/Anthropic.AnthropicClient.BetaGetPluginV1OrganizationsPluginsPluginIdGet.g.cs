@@ -9,13 +9,13 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string pluginId,
             ref string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void PrepareBetaGetPluginV1OrganizationsPluginsPluginIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string pluginId,
             string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void ProcessBetaGetPluginV1OrganizationsPluginsPluginIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,15 +45,15 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPlugin> BetaGetPluginV1OrganizationsPluginsPluginIdGetAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaGetPluginV1OrganizationsPluginsPluginIdGetAsResponseAsync(
                 pluginId: pluginId,
-                organizationId: organizationId,
                 anthropicBeta: anthropicBeta,
+                organizationId: organizationId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -80,8 +80,8 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPlugin>> BetaGetPluginV1OrganizationsPluginsPluginIdGetAsResponseAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -131,10 +131,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

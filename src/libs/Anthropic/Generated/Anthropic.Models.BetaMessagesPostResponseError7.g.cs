@@ -15,6 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaCompactionUnavailableErrorDetails? Details { get; set; }
 
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Overloaded
         /// </summary>
         /// <default>"Overloaded"</default>
@@ -23,6 +24,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Overloaded";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: overloaded_error
         /// </summary>
         /// <default>"overloaded_error"</default>
@@ -39,12 +41,14 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaMessagesPostResponseError7" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Overloaded
         /// </param>
         /// <param name="details">
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: overloaded_error
         /// </param>
 #if NET7_0_OR_GREATER

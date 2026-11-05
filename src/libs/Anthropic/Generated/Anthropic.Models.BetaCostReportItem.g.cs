@@ -47,7 +47,7 @@ namespace Anthropic
         public global::Anthropic.BetaMessagesUsageReportContextWindow? ContextWindow { get; set; }
 
         /// <summary>
-        /// Model name used. `null` if not grouping by description or for non-token costs.
+        /// Model name used. `null` if not grouping by description, for non-token costs, or for token costs with no model ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
@@ -105,7 +105,7 @@ namespace Anthropic
         /// Input context window used. `null` if not grouping by description or for non-token costs.
         /// </param>
         /// <param name="model">
-        /// Model name used. `null` if not grouping by description or for non-token costs.
+        /// Model name used. `null` if not grouping by description, for non-token costs, or for token costs with no model ID.
         /// </param>
         /// <param name="serviceTier">
         /// Service tier used. `null` if not grouping by description or for non-token costs.

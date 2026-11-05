@@ -9,6 +9,7 @@ namespace Anthropic
     public sealed partial class NotFoundError
     {
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Not found
         /// </summary>
         /// <default>"Not found"</default>
@@ -17,6 +18,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Not found";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: not_found_error
         /// </summary>
         /// <default>"not_found_error"</default>
@@ -33,9 +35,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="NotFoundError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Not found
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: not_found_error
         /// </param>
 #if NET7_0_OR_GREATER

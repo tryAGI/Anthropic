@@ -11,7 +11,7 @@ namespace Anthropic
             ref int? limit,
             ref string? page,
             ref string? workspaceId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             ref string? anthropicVersion);
         partial void PrepareBetaListSpendLimitsV1OrganizationsSpendLimitsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,7 +20,7 @@ namespace Anthropic
             int? limit,
             string? page,
             string? workspaceId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? anthropicVersion);
         partial void ProcessBetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -65,21 +65,21 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaListSpendLimitsResponse> BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
             int? limit = default,
             string? page = default,
             string? workspaceId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsResponseAsync(
+                anthropicBeta: anthropicBeta,
                 scopeType: scopeType,
                 limit: limit,
                 page: page,
                 workspaceId: workspaceId,
-                anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -121,11 +121,11 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListSpendLimitsResponse>> BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsResponseAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
             int? limit = default,
             string? page = default,
             string? workspaceId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -182,10 +182,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -1098,10 +1095,9 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSpendLimit> BetaListSpendLimitsV1OrganizationsSpendLimitsGetAutoPagingAsync(
-              global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,             global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
             int? limit = default,
             string? workspaceId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)

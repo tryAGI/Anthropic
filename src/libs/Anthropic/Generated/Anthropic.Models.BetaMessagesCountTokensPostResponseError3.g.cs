@@ -15,6 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaEnforcedSpendLimitReachedErrorDetails? Details { get; set; }
 
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Rate limited
         /// </summary>
         /// <default>"Rate limited"</default>
@@ -23,6 +24,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Rate limited";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: rate_limit_error
         /// </summary>
         /// <default>"rate_limit_error"</default>
@@ -39,12 +41,14 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaMessagesCountTokensPostResponseError3" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Rate limited
         /// </param>
         /// <param name="details">
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: rate_limit_error
         /// </param>
 #if NET7_0_OR_GREATER

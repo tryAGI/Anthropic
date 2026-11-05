@@ -17,7 +17,7 @@ namespace Anthropic
             global::System.DateTime? createdAtLte,
             global::System.DateTime? createdAtLt,
             ref string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void PrepareBetaListPluginsV1OrganizationsPluginsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -31,7 +31,7 @@ namespace Anthropic
             global::System.DateTime? createdAtLte,
             global::System.DateTime? createdAtLt,
             string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void ProcessBetaListPluginsV1OrganizationsPluginsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -91,6 +91,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginList> BetaListPluginsV1OrganizationsPluginsGetAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaListPluginsV1OrganizationsPluginsGetOwnerType? ownerType = default,
@@ -101,11 +102,11 @@ namespace Anthropic
             global::System.DateTime? createdAtLte = default,
             global::System.DateTime? createdAtLt = default,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaListPluginsV1OrganizationsPluginsGetAsResponseAsync(
+                anthropicBeta: anthropicBeta,
                 limit: limit,
                 page: page,
                 ownerType: ownerType,
@@ -116,7 +117,6 @@ namespace Anthropic
                 createdAtLte: createdAtLte,
                 createdAtLt: createdAtLt,
                 organizationId: organizationId,
-                anthropicBeta: anthropicBeta,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -173,6 +173,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginList>> BetaListPluginsV1OrganizationsPluginsGetAsResponseAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaListPluginsV1OrganizationsPluginsGetOwnerType? ownerType = default,
@@ -183,7 +184,6 @@ namespace Anthropic
             global::System.DateTime? createdAtLte = default,
             global::System.DateTime? createdAtLt = default,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -250,10 +250,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -1182,7 +1179,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaPlugin> BetaListPluginsV1OrganizationsPluginsGetAutoPagingAsync(
-              int? limit = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,             int? limit = default,
             global::Anthropic.BetaListPluginsV1OrganizationsPluginsGetOwnerType? ownerType = default,
             string? ownerUserId = default,
             string? marketplaceId = default,
@@ -1191,7 +1188,6 @@ namespace Anthropic
             global::System.DateTime? createdAtLte = default,
             global::System.DateTime? createdAtLt = default,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

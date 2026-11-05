@@ -42,8 +42,8 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<byte[]> BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync(
             string pluginId,
             string version,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::System.IO.Stream> BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsStreamAsync(
             string pluginId,
             string version,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -127,8 +127,8 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::System.IO.Stream>> BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsStreamAsResponseAsync(
             string pluginId,
             string version,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -169,8 +169,8 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<byte[]>> BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsResponseAsync(
             string pluginId,
             string version,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -36,7 +36,7 @@ namespace Anthropic
             ref global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy,
             ref string? anthropicVersion,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void PrepareBetaGetCostV1OrganizationsAnalyticsCostGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -69,7 +69,7 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy,
             string? anthropicVersion,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta);
         partial void ProcessBetaGetCostV1OrganizationsAnalyticsCostGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -190,6 +190,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaAnalyticsFlatCostResponse> BetaGetCostV1OrganizationsAnalyticsCostGetAsync(
             global::System.DateTime startingAt,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsUsageCostProductFilter>? products = default,
             global::System.Collections.Generic.IList<string>? models = default,
@@ -218,12 +219,12 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy = default,
             string? anthropicVersion = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaGetCostV1OrganizationsAnalyticsCostGetAsResponseAsync(
                 startingAt: startingAt,
+                anthropicBeta: anthropicBeta,
                 endingAt: endingAt,
                 products: products,
                 models: models,
@@ -252,7 +253,6 @@ namespace Anthropic
                 orderBy: orderBy,
                 groupBy: groupBy,
                 anthropicVersion: anthropicVersion,
-                anthropicBeta: anthropicBeta,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -370,6 +370,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaAnalyticsFlatCostResponse>> BetaGetCostV1OrganizationsAnalyticsCostGetAsResponseAsync(
             global::System.DateTime startingAt,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsUsageCostProductFilter>? products = default,
             global::System.Collections.Generic.IList<string>? models = default,
@@ -398,7 +399,6 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy = default,
             string? anthropicVersion = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -502,13 +502,10 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
-            }
-            if (anthropicBeta != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
@@ -1517,7 +1514,8 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaAnalyticsFlatCostItem> BetaGetCostV1OrganizationsAnalyticsCostGetAutoPagingAsync(
-            global::System.DateTime startingAt,             global::System.DateTime? endingAt = default,
+            global::System.DateTime startingAt,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsUsageCostProductFilter>? products = default,
             global::System.Collections.Generic.IList<string>? models = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessagesUsageReportContextWindow>? contextWindows = default,
@@ -1544,7 +1542,6 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy = default,
             string? anthropicVersion = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

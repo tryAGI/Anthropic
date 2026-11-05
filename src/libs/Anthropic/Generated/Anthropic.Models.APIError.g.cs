@@ -9,6 +9,7 @@ namespace Anthropic
     public sealed partial class APIError
     {
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Internal server error
         /// </summary>
         /// <default>"Internal server error"</default>
@@ -17,6 +18,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Internal server error";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: api_error
         /// </summary>
         /// <default>"api_error"</default>
@@ -33,9 +35,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="APIError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Internal server error
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: api_error
         /// </param>
 #if NET7_0_OR_GREATER
