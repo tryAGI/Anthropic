@@ -67,6 +67,14 @@ yq -o=json '.' openapi.yaml | jq '
         else . end)
     | from_entries
   ) |
+  # The API omits `caller` on response tool-use blocks, while the spec marks it required in 52
+  # schemas, so any response that uses a server tool fails to deserialize. It is a response-only
+  # field: making it optional cannot affect requests.
+  .components.schemas |= with_entries(
+    if (.value | type) == "object" and (.value.required | type) == "array"
+    then .value.required |= map(select(. != "caller"))
+    else . end
+  ) |
   .components.schemas.Ping = {
     "type": "object",
     "properties": {

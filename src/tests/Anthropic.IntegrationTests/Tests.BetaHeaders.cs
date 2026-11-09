@@ -48,20 +48,39 @@ public partial class Tests
         string.Join(",", values!).Should().Be("fast-mode-2026-02-01,task-budgets-2026-03-13");
     }
 
-    private sealed class CapturingHandler(string responseJson) : HttpMessageHandler
+    internal sealed class CapturingHandler(string responseJson) : HttpMessageHandler
     {
         public HttpRequestMessage? Request { get; private set; }
 
-        protected override Task<HttpResponseMessage> SendAsync(
+        public string? RequestBody { get; private set; }
+
+        protected override async Task<HttpResponseMessage> SendAsync(
             HttpRequestMessage request,
             CancellationToken cancellationToken)
         {
             Request = request;
+            if (request.Content is not null)
+            {
+                RequestBody = await request.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            }
 
-            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+            return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(responseJson, System.Text.Encoding.UTF8, "application/json"),
-            });
+            };
         }
     }
+
+    internal const string StubMessageJson =
+        """
+        {
+          "id": "msg_01",
+          "type": "message",
+          "role": "assistant",
+          "model": "claude-haiku-5-5",
+          "content": [{ "type": "text", "text": "ok" }],
+          "stop_reason": "end_turn",
+          "usage": { "input_tokens": 1, "output_tokens": 1 }
+        }
+        """;
 }

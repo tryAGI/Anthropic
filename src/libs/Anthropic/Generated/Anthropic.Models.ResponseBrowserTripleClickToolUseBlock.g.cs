@@ -14,8 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolUseCallerJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ToolUseCaller Caller { get; set; }
+        public global::Anthropic.ToolUseCaller? Caller { get; set; }
 
         /// <summary>
         ///
@@ -62,14 +61,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseBrowserTripleClickToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller">
-        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
-        /// Default Value: {"type":"direct"}
-        /// </param>
         /// <param name="id"></param>
         /// <param name="input">
         /// Triple left-click at a viewport coordinate or on an element by reference<br/>
         /// (typically selects a line or paragraph).
+        /// </param>
+        /// <param name="caller">
+        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
+        /// Default Value: {"type":"direct"}
         /// </param>
         /// <param name="name"></param>
         /// <param name="toolsetName"></param>
@@ -80,9 +79,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseBrowserTripleClickToolUseBlock(
-            global::Anthropic.ToolUseCaller caller,
             string id,
             global::Anthropic.BrowserTripleClickInput input,
+            global::Anthropic.ToolUseCaller? caller,
             string name = "triple_click",
             string toolsetName = "browser",
             string type = "tool_use")

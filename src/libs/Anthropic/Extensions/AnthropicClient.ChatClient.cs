@@ -373,7 +373,9 @@ public partial class AnthropicClient : IChatClient
 
         request.ToolChoice ??=
             options?.Tools is not { Count: > 0 } ? null :
-            options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto
+            // `auto` is the API's own default, but it has to be sent explicitly to carry the
+            // parallel-tool-use opt-out - which is why a null ToolMode lands here too.
+            options?.ToolMode is null or AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto
             {
                 DisableParallelToolUse = disableParallelToolUse,
             }) :

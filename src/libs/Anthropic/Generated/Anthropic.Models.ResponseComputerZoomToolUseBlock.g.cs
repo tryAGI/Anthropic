@@ -14,8 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolUseCallerJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ToolUseCaller Caller { get; set; }
+        public global::Anthropic.ToolUseCaller? Caller { get; set; }
 
         /// <summary>
         ///
@@ -63,15 +62,15 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseComputerZoomToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller">
-        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
-        /// Default Value: {"type":"direct"}
-        /// </param>
         /// <param name="id"></param>
         /// <param name="input">
         /// Take a screenshot of a rectangular region. Region coordinates are in the<br/>
         /// full-screenshot space (not physical display pixels). The crop is scaled up to<br/>
         /// fill the image budget so fine details become legible.
+        /// </param>
+        /// <param name="caller">
+        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
+        /// Default Value: {"type":"direct"}
         /// </param>
         /// <param name="name"></param>
         /// <param name="toolsetName"></param>
@@ -82,9 +81,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseComputerZoomToolUseBlock(
-            global::Anthropic.ToolUseCaller caller,
             string id,
             global::Anthropic.ComputerZoomInput input,
+            global::Anthropic.ToolUseCaller? caller,
             string name = "zoom",
             string toolsetName = "computer",
             string type = "tool_use")

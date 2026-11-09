@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller16JsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Caller16 Caller { get; set; }
+        public global::Anthropic.Caller16? Caller { get; set; }
 
         /// <summary>
         ///
@@ -47,11 +46,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseWebSearchToolResultBlock" /> class.
         /// </summary>
+        /// <param name="content"></param>
+        /// <param name="toolUseId"></param>
         /// <param name="caller">
         /// Default Value: {"type":"direct"}
         /// </param>
-        /// <param name="content"></param>
-        /// <param name="toolUseId"></param>
         /// <param name="type">
         /// Default Value: web_search_tool_result
         /// </param>
@@ -59,9 +58,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseWebSearchToolResultBlock(
-            global::Anthropic.Caller16 caller,
             global::Anthropic.AnyOf<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>> content,
             string toolUseId,
+            global::Anthropic.Caller16? caller,
             string type = "web_search_tool_result")
         {
             this.Caller = caller;

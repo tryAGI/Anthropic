@@ -14,8 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolUseCallerJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ToolUseCaller Caller { get; set; }
+        public global::Anthropic.ToolUseCaller? Caller { get; set; }
 
         /// <summary>
         ///
@@ -64,16 +63,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseBrowserReadPageToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller">
-        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
-        /// Default Value: {"type":"direct"}
-        /// </param>
         /// <param name="id"></param>
         /// <param name="input">
         /// Return a structured accessibility tree of the page (or the subtree rooted at<br/>
         /// `ref`), with element references like [ref_7] that can be used as targets on later<br/>
         /// actions. Output is capped at 50,000 characters — narrow with `ref` or a smaller<br/>
         /// `depth` when exceeded.
+        /// </param>
+        /// <param name="caller">
+        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
+        /// Default Value: {"type":"direct"}
         /// </param>
         /// <param name="name"></param>
         /// <param name="toolsetName"></param>
@@ -84,9 +83,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseBrowserReadPageToolUseBlock(
-            global::Anthropic.ToolUseCaller caller,
             string id,
             global::Anthropic.BrowserReadPageInput input,
+            global::Anthropic.ToolUseCaller? caller,
             string name = "read_page",
             string toolsetName = "browser",
             string type = "tool_use")

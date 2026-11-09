@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller13JsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Caller13 Caller { get; set; }
+        public global::Anthropic.Caller13? Caller { get; set; }
 
         /// <summary>
         ///
@@ -54,12 +53,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseServerToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller">
-        /// Default Value: {"type":"direct"}
-        /// </param>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
+        /// <param name="caller">
+        /// Default Value: {"type":"direct"}
+        /// </param>
         /// <param name="type">
         /// Default Value: server_tool_use
         /// </param>
@@ -67,10 +66,10 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseServerToolUseBlock(
-            global::Anthropic.Caller13 caller,
             string id,
             object input,
             global::Anthropic.ResponseServerToolUseBlockName name,
+            global::Anthropic.Caller13? caller,
             string type = "server_tool_use")
         {
             this.Caller = caller;

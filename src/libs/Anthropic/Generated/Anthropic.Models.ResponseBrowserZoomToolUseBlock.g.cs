@@ -14,8 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolUseCallerJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ToolUseCaller Caller { get; set; }
+        public global::Anthropic.ToolUseCaller? Caller { get; set; }
 
         /// <summary>
         ///
@@ -63,15 +62,15 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseBrowserZoomToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller">
-        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
-        /// Default Value: {"type":"direct"}
-        /// </param>
         /// <param name="id"></param>
         /// <param name="input">
         /// Return a cropped screenshot of the given viewport region, scaled up for closer<br/>
         /// inspection — useful for small icons, buttons, or text. Coordinates are in the<br/>
         /// same viewport-pixel space as a full screenshot.
+        /// </param>
+        /// <param name="caller">
+        /// Which party invoked the tool call: the model directly, or a server tool on its behalf.<br/>
+        /// Default Value: {"type":"direct"}
         /// </param>
         /// <param name="name"></param>
         /// <param name="toolsetName"></param>
@@ -82,9 +81,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseBrowserZoomToolUseBlock(
-            global::Anthropic.ToolUseCaller caller,
             string id,
             global::Anthropic.BrowserZoomInput input,
+            global::Anthropic.ToolUseCaller? caller,
             string name = "zoom",
             string toolsetName = "browser",
             string type = "tool_use")

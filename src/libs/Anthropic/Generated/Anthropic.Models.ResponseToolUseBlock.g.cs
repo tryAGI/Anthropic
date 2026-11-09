@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller14JsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Caller14 Caller { get; set; }
+        public global::Anthropic.Caller14? Caller { get; set; }
 
         /// <summary>
         ///
@@ -60,12 +59,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller">
-        /// Default Value: {"type":"direct"}
-        /// </param>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
+        /// <param name="caller">
+        /// Default Value: {"type":"direct"}
+        /// </param>
         /// <param name="toolsetName">
         /// For a toolset member tool_use, the toolset family.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -77,10 +76,10 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseToolUseBlock(
-            global::Anthropic.Caller14 caller,
             string id,
             object input,
             string name,
+            global::Anthropic.Caller14? caller,
             string? toolsetName,
             string type = "tool_use")
         {
