@@ -55,7 +55,10 @@ This SDK has significant hand-written code alongside the generated code:
 | File | Purpose |
 |------|---------|
 | `AnthropicClient.AdditionalConstructors.cs` | Extra constructor overloads |
-| `AnthropicClient.Streaming.cs` | Server-sent events streaming support |
+| `AnthropicClient.Streaming.cs` | Server-sent events streaming for `POST /v1/messages` |
+| `AnthropicClient.ServerSentEvents.cs` | Shared SSE transport used by every streaming overload |
+| `AnthropicClient.BetaStreaming.cs` | Streaming for the beta messages endpoint and for Managed Agents session/thread event streams |
+| `AnthropicWebhooks.cs` / `AnthropicWebhookEvent.cs` | Webhook signature verification (`Unwrap`) and the delivery envelope |
 | `InputMessage.cs` | Input message helper type |
 | `Message.cs` | Message extension methods |
 | `JsonSerializerContextTypes.AdditionalTypes.cs` | Additional types for System.Text.Json source gen |

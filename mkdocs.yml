@@ -8,6 +8,7 @@ nav:
 - Overview: index.md
 - Guides:
   - Microsoft.Extensions.AI: guides/meai.md
+  - Beta, streaming and webhooks: guides/beta-and-streaming.md
 # EXAMPLES:START
 - Examples:
   - Chat Client Five Random Lines: examples/chat-client-five-random-lines.md

@@ -28,3 +28,15 @@ public readonly partial struct InputMessageUnion
         return string.Empty;
     }
 }
+
+public readonly partial struct BetaInputMessageUnion
+{
+    /// <summary>Creates a user message from text.</summary>
+    public static implicit operator BetaInputMessageUnion(string content) => FromString(content);
+
+    /// <summary>Creates a user message from text.</summary>
+    public static BetaInputMessageUnion FromString(string content) => ToInputMessage(content);
+
+    /// <summary>Creates a user message from text.</summary>
+    public static BetaInputMessageUnion ToInputMessage(string content) => new BetaUserInputMessage { Content = content };
+}

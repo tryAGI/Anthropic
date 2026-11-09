@@ -368,17 +368,37 @@ public partial class AnthropicClient : IChatClient
             request.System ??= new(systemMessage);
         }
 
+        // Anthropic exposes parallel tool use as an opt-out on the `auto` and `any` choices.
+        var disableParallelToolUse = options?.AllowMultipleToolCalls == false ? true : (bool?)null;
+
         request.ToolChoice ??=
             options?.Tools is not { Count: > 0 } ? null :
-            options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto()) :
+            options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto
+            {
+                DisableParallelToolUse = disableParallelToolUse,
+            }) :
             options?.ToolMode is RequiredChatToolMode r
                 ? r.RequiredFunctionName is not null
                     ? new ToolChoice(new ToolChoiceTool
                     {
                         Name = r.RequiredFunctionName,
+                        DisableParallelToolUse = disableParallelToolUse,
                     })
-                    : new ToolChoice(new ToolChoiceAny())
+                    : new ToolChoice(new ToolChoiceAny
+                    {
+                        DisableParallelToolUse = disableParallelToolUse,
+                    })
                 : (ToolChoice?)null;
+
+        if (options?.ResponseFormat is ChatResponseFormatJson { Schema: { } schema })
+        {
+            // Structured outputs: `output_config.format` replaces the deprecated `output_format`.
+            request.OutputConfig ??= new OutputConfig();
+            request.OutputConfig.Format ??= new JsonOutputFormat
+            {
+                Schema = schema.Clone(),
+            };
+        }
 
         if (options?.Tools is { Count: > 0 } aitools)
         {
@@ -398,8 +418,24 @@ public partial class AnthropicClient : IChatClient
                         });
                         break;
 
-                    case HostedWebSearchTool ws:
-                        tools.Add(new WebSearchTool20250305());
+                    // The dated variants below are the newest ones supported by the current model
+                    // family; older models need the earlier types, which callers can supply through
+                    // ChatOptions.RawRepresentationFactory.
+                    case HostedWebSearchTool:
+                        tools.Add(new WebSearchTool20260209());
+                        break;
+
+                    case HostedCodeInterpreterTool:
+                        tools.Add(new CodeExecutionTool20260521());
+                        break;
+
+#pragma warning disable MEAI001 // HostedToolSearchTool is still an evaluation-only abstraction.
+                    case HostedToolSearchTool:
+#pragma warning restore MEAI001
+                        tools.Add(new ToolSearchToolRegex20251119
+                        {
+                            Type = ToolSearchToolRegex20251119Type.ToolSearchToolRegex20251119,
+                        });
                         break;
                 }
             }

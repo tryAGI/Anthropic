@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-using System.Net.ServerSentEvents;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 // ReSharper disable RedundantNameQualifier
 // ReSharper disable InconsistentNaming
@@ -29,130 +27,24 @@ public partial class AnthropicClient
         request = request ?? throw new global::System.ArgumentNullException(nameof(request));
         request.Stream = true;
 
-        PrepareArguments(
-            client: HttpClient);
-
-        var __pathBuilder = new PathBuilder(
-            path: "/v1/messages",
-            baseUri: HttpClient.BaseAddress); 
-        var __path = __pathBuilder.ToString();
-        using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-            method: global::System.Net.Http.HttpMethod.Post,
-            requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-        __httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/event-stream"));
-#if NET6_0_OR_GREATER
-        __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-        __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
-#endif
-
-        foreach (var __authorization in Authorizations)
-        {
-            if (__authorization.Type == "Http" ||
-                __authorization.Type == "OAuth2")
-            {
-                __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                    scheme: __authorization.Name,
-                    parameter: __authorization.Value);
-            }
-            else if (__authorization.Type == "ApiKey" &&
-                     __authorization.Location == "Header")
-            {
-                __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-            }
-        }
-
-        if (anthropicVersion != default)
-        {
-            __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
-        }
-
         var serializerContext = JsonSerializerContextProvider?.Value;
-        var __httpRequestContentBody = serializerContext is null
+        var body = serializerContext is null
             ? request.ToJson()
             : request.ToJson(serializerContext);
-        var __httpRequestContent = new global::System.Net.Http.StringContent(
-            content: __httpRequestContentBody,
-            encoding: global::System.Text.Encoding.UTF8,
-            mediaType: "application/json");
-        __httpRequest.Content = __httpRequestContent;
 
-        PrepareRequest(
-            client: HttpClient,
-            request: __httpRequest);
+        var events = SendServerSentEventsAsync(
+            method: global::System.Net.Http.HttpMethod.Post,
+            path: "/v1/messages",
+            jsonBody: body,
+            anthropicVersion: anthropicVersion,
+            cancellationToken: cancellationToken);
 
-        using var __response = await HttpClient.SendAsync(
-            request: __httpRequest,
-            completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
-            cancellationToken: cancellationToken).ConfigureAwait(false);
-
-        ProcessResponse(
-            client: HttpClient,
-            response: __response);
-        // Error response.  See our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details.
-        if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
-        {
-            string? __content_4XX = null;
-            global::Anthropic.ErrorResponse? __value_4XX = null;
-            if (ReadResponseAsString)
-            {
-                __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                __value_4XX = serializerContext is null
-                    ? global::Anthropic.ErrorResponse.FromJson(__content_4XX)
-                    : global::Anthropic.ErrorResponse.FromJson(__content_4XX, serializerContext);
-            }
-            else
-            {
-                var __contentStream_4XX = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                __value_4XX = serializerContext is null
-                    ? await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX).ConfigureAwait(false)
-                    : await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX, serializerContext).ConfigureAwait(false);
-            }
-        
-            throw new global::Anthropic.ApiException<global::Anthropic.ErrorResponse>(
-                message: __response.ReasonPhrase ?? string.Empty,
-                statusCode: __response.StatusCode)
-            {
-                ResponseBody = __content_4XX,
-                ResponseObject = __value_4XX,
-                ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                    __response.Headers,
-                    h => h.Key,
-                    h => h.Value),
-            };
-        }
-        
-        try
-        {
-            __response.EnsureSuccessStatusCode();
-        }
-        catch (global::System.Net.Http.HttpRequestException __ex)
-        {
-            throw new global::Anthropic.ApiException(
-                message: __response.ReasonPhrase ?? string.Empty,
-                innerException: __ex,
-                statusCode: __response.StatusCode)
-            {
-                ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                    __response.Headers,
-                    h => h.Key,
-                    h => h.Value),
-            };
-        }
-        
-#if NET6_0_OR_GREATER
-        using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-#else
-        using var __content = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-#endif
-
-        await foreach (SseItem<string> sseEvent in SseParser.Create(__content)
-                           .EnumerateAsync(cancellationToken)
-                           .ConfigureAwait(false))
+        await foreach (var data in events.ConfigureAwait(false))
         {
             // When the response is good, each SSE line contains a serialized MessageStreamEvent
             var block = serializerContext is null
-                ? MessageStreamEvent.FromJson(sseEvent.Data)
-                : MessageStreamEvent.FromJson(sseEvent.Data, serializerContext);
+                ? MessageStreamEvent.FromJson(data)
+                : MessageStreamEvent.FromJson(data, serializerContext);
             if (block == null)
             {
                 yield break;
