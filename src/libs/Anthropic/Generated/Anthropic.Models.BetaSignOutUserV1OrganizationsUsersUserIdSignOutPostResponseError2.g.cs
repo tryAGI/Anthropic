@@ -12,8 +12,8 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails>))]
-        public global::Anthropic.AnyOf<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails>? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails, global::Anthropic.BetaSandboxEgressRestrictedErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails, global::Anthropic.BetaSandboxEgressRestrictedErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
@@ -57,7 +57,7 @@ namespace Anthropic
 #endif
         public BetaSignOutUserV1OrganizationsUsersUserIdSignOutPostResponseError2(
             string message,
-            global::Anthropic.AnyOf<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails>? details,
+            global::Anthropic.AnyOf<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails, global::Anthropic.BetaSandboxEgressRestrictedErrorDetails>? details,
             string type = "permission_error")
         {
             this.Details = details;

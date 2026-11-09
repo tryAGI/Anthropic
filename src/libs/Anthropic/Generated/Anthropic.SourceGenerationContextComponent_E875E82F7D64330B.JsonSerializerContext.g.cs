@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaApiKeyScopeMissingErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0014.Create_BetaApiKeyScopeMissingErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0016.Create_BetaApiKeyScopeMissingErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

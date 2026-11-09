@@ -129,7 +129,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true",
+                                path: $"/v1/organizations/rbac_roles/{rbacRoleId}/permissions",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -186,7 +186,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -220,7 +220,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -261,7 +261,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -309,7 +309,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -331,7 +331,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

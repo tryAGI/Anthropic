@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.WebFetchUrlSourceOnly))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0332.Create_WebFetchUrlSourceOnly(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0343.Create_WebFetchUrlSourceOnly(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

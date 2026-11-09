@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaWebhookAgentUpdatedEventData))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0155.Create_BetaWebhookAgentUpdatedEventData(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0162.Create_BetaWebhookAgentUpdatedEventData(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

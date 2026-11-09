@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaSlackChannelSetUpEnvironmentNotFoundErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0136.Create_BetaSlackChannelSetUpEnvironmentNotFoundErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0142.Create_BetaSlackChannelSetUpEnvironmentNotFoundErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

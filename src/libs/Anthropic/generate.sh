@@ -50,8 +50,23 @@ if ! command -v yq >/dev/null 2>&1 || ! command -v jq >/dev/null 2>&1; then
   exit 1
 fi
 
+# The bundled spec keys every beta endpoint by appending `?beta=true` to the path, because OpenAPI
+# cannot declare two operations on one path and method. x-autosdk-path tells AutoSDK the real
+# request path so the disambiguator is not sent to the API as a query parameter.
 tmp_openapi="$(mktemp)"
 yq -o=json '.' openapi.yaml | jq '
+  .paths |= (
+    to_entries
+    | map(
+        if (.key | test("\\?")) then
+          (.key | split("?")[0]) as $real
+          | .value |= with_entries(
+              if (.key | test("^(get|put|post|delete|options|head|patch|trace)$"))
+              then .value += { "x-autosdk-path": $real }
+              else . end)
+        else . end)
+    | from_entries
+  ) |
   .components.schemas.Ping = {
     "type": "object",
     "properties": {
@@ -64,7 +79,9 @@ yq -o=json '.' openapi.yaml | jq '
     "required": ["type"]
   } |
   .components.schemas.MessageStreamEvent.oneOf |= (map(select(."$ref" != "#/components/schemas/Ping")) + [{"$ref": "#/components/schemas/Ping"}]) |
-  .components.schemas.MessageStreamEvent.discriminator.mapping.ping = "#/components/schemas/Ping"
+  .components.schemas.MessageStreamEvent.discriminator.mapping.ping = "#/components/schemas/Ping" |
+  .components.schemas.BetaMessageStreamEvent.oneOf |= (map(select(."$ref" != "#/components/schemas/Ping")) + [{"$ref": "#/components/schemas/Ping"}]) |
+  .components.schemas.BetaMessageStreamEvent.discriminator.mapping.ping = "#/components/schemas/Ping"
 ' > "$tmp_openapi" && mv "$tmp_openapi" openapi.yaml
 
 autosdk generate openapi.yaml \
@@ -78,5 +95,7 @@ autosdk generate openapi.yaml \
   --generate-retry-handler \
   --generate-pageable-helpers \
   --generate-multipart-upload-helpers \
+  --generate-webhook-verifier \
+  --webhook-verifier-class-name AnthropicWebhookVerifier \
   --openapi-override '#/components/schemas/Tool/properties/input_schema=object' \
   --openapi-override '#/components/schemas/BetaTool/properties/input_schema=object'

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Efficient model for coding and agents
+    /// Frontier intelligence for cybersecurity and life sciences research, available through verification programs
     /// </summary>
     public sealed partial class ModelVariant2
     {

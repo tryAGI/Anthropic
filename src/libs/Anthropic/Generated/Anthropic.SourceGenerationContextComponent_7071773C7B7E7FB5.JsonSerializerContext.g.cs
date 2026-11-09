@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Source2))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0272.Create_Source22(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0282.Create_Source22(options);
                 }
                 if (type == typeof(global::Anthropic.Source2?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0246.Create_NullableSource22(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0255.Create_NullableSource22(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

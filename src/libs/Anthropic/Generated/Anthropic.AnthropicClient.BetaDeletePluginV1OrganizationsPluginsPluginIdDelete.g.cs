@@ -119,7 +119,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/plugins/{pluginId}?beta=true",
+                                path: $"/v1/organizations/plugins/{pluginId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -134,7 +134,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -167,7 +167,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeletePluginV1OrganizationsPluginsPluginIdDelete",
                                 methodName: "BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -201,7 +201,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeletePluginV1OrganizationsPluginsPluginIdDelete",
                                 methodName: "BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -242,7 +242,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeletePluginV1OrganizationsPluginsPluginIdDelete",
                                 methodName: "BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -290,7 +290,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeletePluginV1OrganizationsPluginsPluginIdDelete",
                                 methodName: "BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -312,7 +312,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeletePluginV1OrganizationsPluginsPluginIdDelete",
                                 methodName: "BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

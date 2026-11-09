@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaGetEnvironmentStatsV1EnvironmentsEnvironmentIdWorkStatsGetResponseError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0050.Create_BetaGetEnvironmentStatsV1EnvironmentsEnvironmentIdWorkStatsGetResponseError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0055.Create_BetaGetEnvironmentStatsV1EnvironmentsEnvironmentIdWorkStatsGetResponseError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

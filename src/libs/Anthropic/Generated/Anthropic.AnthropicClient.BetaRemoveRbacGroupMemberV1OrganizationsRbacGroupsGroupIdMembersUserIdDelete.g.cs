@@ -113,7 +113,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true",
+                                path: $"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -165,7 +165,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -199,7 +199,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -240,7 +240,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -288,7 +288,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -310,7 +310,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -404,19 +404,19 @@ namespace Anthropic
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Anthropic.BetaErrorResponse? __value_403 = null;
+                                global::Anthropic.BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteResponse2? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteResponse2.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteResponse2.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -425,7 +425,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,

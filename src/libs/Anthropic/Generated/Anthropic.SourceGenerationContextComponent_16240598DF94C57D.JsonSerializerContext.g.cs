@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ComputerMouseMoveConfig))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0177.Create_ComputerMouseMoveConfig(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0184.Create_ComputerMouseMoveConfig(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -235,6 +235,43 @@ namespace Anthropic
         public global::Anthropic.BetaContentBlockStopEvent PickContentBlockStop() => ContentBlockStop is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStop' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.Ping? Ping { get; init; }
+#else
+        public global::Anthropic.Ping? Ping { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ping))]
+#endif
+        public bool IsPing => Ping != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickPing(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.Ping? value)
+        {
+            value = Ping;
+            return IsPing;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.Ping PickPing() => Ping is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ping' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -376,6 +413,29 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaMessageStreamEvent(global::Anthropic.Ping value) => new BetaMessageStreamEvent((global::Anthropic.Ping?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.Ping?(BetaMessageStreamEvent @this) => @this.Ping;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaMessageStreamEvent(global::Anthropic.Ping? value)
+        {
+            Ping = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaMessageStreamEvent FromPing(global::Anthropic.Ping? value) => new BetaMessageStreamEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public BetaMessageStreamEvent(
             global::Anthropic.BetaMessageStreamEventDiscriminatorType? type,
             global::Anthropic.BetaMessageStartEvent? messageStart,
@@ -383,7 +443,8 @@ namespace Anthropic
             global::Anthropic.BetaMessageStopEvent? messageStop,
             global::Anthropic.BetaContentBlockStartEvent? contentBlockStart,
             global::Anthropic.BetaContentBlockDeltaEvent? contentBlockDelta,
-            global::Anthropic.BetaContentBlockStopEvent? contentBlockStop
+            global::Anthropic.BetaContentBlockStopEvent? contentBlockStop,
+            global::Anthropic.Ping? ping
             )
         {
             Type = type;
@@ -394,12 +455,14 @@ namespace Anthropic
             ContentBlockStart = contentBlockStart;
             ContentBlockDelta = contentBlockDelta;
             ContentBlockStop = contentBlockStop;
+            Ping = ping;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Ping as object ??
             ContentBlockStop as object ??
             ContentBlockDelta as object ??
             ContentBlockStart as object ??
@@ -417,7 +480,8 @@ namespace Anthropic
             MessageStop?.ToString() ??
             ContentBlockStart?.ToString() ??
             ContentBlockDelta?.ToString() ??
-            ContentBlockStop?.ToString()
+            ContentBlockStop?.ToString() ??
+            Ping?.ToString()
             ;
 
         /// <summary>
@@ -425,7 +489,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && !IsMessageStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop;
+            return IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsMessageStart && IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsMessageStart && !IsMessageDelta && IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsMessageStart && !IsMessageDelta && !IsMessageStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing;
         }
 
         /// <summary>
@@ -438,6 +502,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaContentBlockStartEvent, TResult>? contentBlockStart = null,
             global::System.Func<global::Anthropic.BetaContentBlockDeltaEvent, TResult>? contentBlockDelta = null,
             global::System.Func<global::Anthropic.BetaContentBlockStopEvent, TResult>? contentBlockStop = null,
+            global::System.Func<global::Anthropic.Ping, TResult>? ping = null,
             bool validate = true)
         {
             if (validate)
@@ -469,6 +534,10 @@ namespace Anthropic
             {
                 return contentBlockStop(__value5);
             }
+            else if (Ping is { } __value6 && ping != null)
+            {
+                return ping(__value6);
+            }
 
             return default(TResult);
         }
@@ -488,6 +557,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaContentBlockDeltaEvent>? contentBlockDelta = null,
 
             global::System.Action<global::Anthropic.BetaContentBlockStopEvent>? contentBlockStop = null,
+
+            global::System.Action<global::Anthropic.Ping>? ping = null,
             bool validate = true)
         {
             if (validate)
@@ -518,6 +589,10 @@ namespace Anthropic
             else if (ContentBlockStop is { } __value5)
             {
                 contentBlockStop?.Invoke(__value5);
+            }
+            else if (Ping is { } __value6)
+            {
+                ping?.Invoke(__value6);
             }
         }
 
@@ -531,6 +606,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaContentBlockStartEvent>? contentBlockStart = null,
             global::System.Action<global::Anthropic.BetaContentBlockDeltaEvent>? contentBlockDelta = null,
             global::System.Action<global::Anthropic.BetaContentBlockStopEvent>? contentBlockStop = null,
+            global::System.Action<global::Anthropic.Ping>? ping = null,
             bool validate = true)
         {
             if (validate)
@@ -561,6 +637,10 @@ namespace Anthropic
             else if (ContentBlockStop is { } __value5)
             {
                 contentBlockStop?.Invoke(__value5);
+            }
+            else if (Ping is { } __value6)
+            {
+                ping?.Invoke(__value6);
             }
         }
 
@@ -583,6 +663,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaContentBlockDeltaEvent),
                 ContentBlockStop,
                 typeof(global::Anthropic.BetaContentBlockStopEvent),
+                Ping,
+                typeof(global::Anthropic.Ping),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -604,7 +686,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMessageStopEvent?>.Default.Equals(MessageStop, other.MessageStop) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockStartEvent?>.Default.Equals(ContentBlockStart, other.ContentBlockStart) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockDeltaEvent?>.Default.Equals(ContentBlockDelta, other.ContentBlockDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.Ping?>.Default.Equals(Ping, other.Ping)
                 ;
         }
 

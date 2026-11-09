@@ -103,7 +103,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}?beta=true",
+                                path: $"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -154,7 +154,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGet",
                                 methodName: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -188,7 +188,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGet",
                                 methodName: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -229,7 +229,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGet",
                                 methodName: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -277,7 +277,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGet",
                                 methodName: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -299,7 +299,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGet",
                                 methodName: "BetaGetSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limit_increase_requests/{spendLimitIncreaseRequestId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

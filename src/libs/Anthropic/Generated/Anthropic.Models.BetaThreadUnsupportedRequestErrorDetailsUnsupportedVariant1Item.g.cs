@@ -32,10 +32,6 @@ namespace Anthropic
         ///
         /// </summary>
         Thinking,
-        /// <summary>
-        ///
-        /// </summary>
-        Zdr,
     }
 
     /// <summary>
@@ -56,7 +52,6 @@ namespace Anthropic
                 BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.Hipaa => "hipaa",
                 BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.InferenceHooks => "inference_hooks",
                 BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.Thinking => "thinking",
-                BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.Zdr => "zdr",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,7 +68,6 @@ namespace Anthropic
                 "hipaa" => BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.Hipaa,
                 "inference_hooks" => BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.InferenceHooks,
                 "thinking" => BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.Thinking,
-                "zdr" => BetaThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item.Zdr,
                 _ => null,
             };
         }

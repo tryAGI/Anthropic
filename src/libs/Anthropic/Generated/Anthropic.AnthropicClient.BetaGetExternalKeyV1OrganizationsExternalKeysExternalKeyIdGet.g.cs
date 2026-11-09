@@ -99,7 +99,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/external_keys/{externalKeyId}?beta=true",
+                                path: $"/v1/organizations/external_keys/{externalKeyId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -150,7 +150,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGet",
                                 methodName: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -184,7 +184,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGet",
                                 methodName: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -225,7 +225,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGet",
                                 methodName: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -273,7 +273,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGet",
                                 methodName: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -295,7 +295,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGet",
                                 methodName: "BetaGetExternalKeyV1OrganizationsExternalKeysExternalKeyIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/external_keys/{externalKeyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

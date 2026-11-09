@@ -205,7 +205,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/analytics/apps/chat/projects?beta=true",
+                                path: "/v1/organizations/analytics/apps/chat/projects",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("date", date?.ToString())
@@ -275,7 +275,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGet",
                                 methodName: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -309,7 +309,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGet",
                                 methodName: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -350,7 +350,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGet",
                                 methodName: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -398,7 +398,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGet",
                                 methodName: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -420,7 +420,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGet",
                                 methodName: "BetaGetProjectsV1OrganizationsAnalyticsAppsChatProjectsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/apps/chat/projects\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

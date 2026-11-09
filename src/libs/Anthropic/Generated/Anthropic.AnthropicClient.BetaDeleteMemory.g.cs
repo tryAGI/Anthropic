@@ -129,7 +129,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}?beta=true",
+                                path: $"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("expected_content_sha256", expectedContentSha256)
@@ -153,7 +153,7 @@ namespace Anthropic
             }
             if (anthropicBeta != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
             }
             if (anthropicWorkspaceId != default)
             {
@@ -195,7 +195,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteMemory",
                                 methodName: "BetaDeleteMemoryAsync",
-                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}?beta=true\"",
+                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -229,7 +229,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteMemory",
                                 methodName: "BetaDeleteMemoryAsync",
-                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}?beta=true\"",
+                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -270,7 +270,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteMemory",
                                 methodName: "BetaDeleteMemoryAsync",
-                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}?beta=true\"",
+                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -318,7 +318,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteMemory",
                                 methodName: "BetaDeleteMemoryAsync",
-                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}?beta=true\"",
+                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -340,7 +340,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteMemory",
                                 methodName: "BetaDeleteMemoryAsync",
-                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}?beta=true\"",
+                                pathTemplate: "$\"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

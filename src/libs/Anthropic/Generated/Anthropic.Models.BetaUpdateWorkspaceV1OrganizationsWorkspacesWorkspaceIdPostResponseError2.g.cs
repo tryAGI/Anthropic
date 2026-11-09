@@ -12,24 +12,24 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.BetaExternalKeyChangedErrorDetails? Details { get; set; }
+        public global::Anthropic.BetaSandboxEgressRestrictedErrorDetails? Details { get; set; }
 
         /// <summary>
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
-        /// Default Value: Invalid request
+        /// Default Value: Permission denied
         /// </summary>
-        /// <default>"Invalid request"</default>
+        /// <default>"Permission denied"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; } = "Invalid request";
+        public required string Message { get; set; } = "Permission denied";
 
         /// <summary>
         /// The broad category of the error.<br/>
-        /// Default Value: invalid_request_error
+        /// Default Value: permission_error
         /// </summary>
-        /// <default>"invalid_request_error"</default>
+        /// <default>"permission_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = "invalid_request_error";
+        public string Type { get; set; } = "permission_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,22 +42,22 @@ namespace Anthropic
         /// </summary>
         /// <param name="message">
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
-        /// Default Value: Invalid request
+        /// Default Value: Permission denied
         /// </param>
         /// <param name="details">
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </param>
         /// <param name="type">
         /// The broad category of the error.<br/>
-        /// Default Value: invalid_request_error
+        /// Default Value: permission_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUpdateWorkspaceV1OrganizationsWorkspacesWorkspaceIdPostResponseError2(
             string message,
-            global::Anthropic.BetaExternalKeyChangedErrorDetails? details,
-            string type = "invalid_request_error")
+            global::Anthropic.BetaSandboxEgressRestrictedErrorDetails? details,
+            string type = "permission_error")
         {
             this.Details = details;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

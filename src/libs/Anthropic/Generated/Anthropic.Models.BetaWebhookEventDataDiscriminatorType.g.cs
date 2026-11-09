@@ -167,6 +167,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        UserProfileProgramStatusUpdated,
+        /// <summary>
+        ///
+        /// </summary>
         VaultArchived,
         /// <summary>
         ///
@@ -245,6 +249,7 @@ namespace Anthropic
                 BetaWebhookEventDataDiscriminatorType.SessionUpdated => "session.updated",
                 BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
                 BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
+                BetaWebhookEventDataDiscriminatorType.UserProfileProgramStatusUpdated => "user_profile.program_status_updated",
                 BetaWebhookEventDataDiscriminatorType.VaultArchived => "vault.archived",
                 BetaWebhookEventDataDiscriminatorType.VaultCreated => "vault.created",
                 BetaWebhookEventDataDiscriminatorType.VaultDeleted => "vault.deleted",
@@ -301,6 +306,7 @@ namespace Anthropic
                 "session.updated" => BetaWebhookEventDataDiscriminatorType.SessionUpdated,
                 "user_profile.enforcement_action_opened" => BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionOpened,
                 "user_profile.enforcement_action_resolved" => BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionResolved,
+                "user_profile.program_status_updated" => BetaWebhookEventDataDiscriminatorType.UserProfileProgramStatusUpdated,
                 "vault.archived" => BetaWebhookEventDataDiscriminatorType.VaultArchived,
                 "vault.created" => BetaWebhookEventDataDiscriminatorType.VaultCreated,
                 "vault.deleted" => BetaWebhookEventDataDiscriminatorType.VaultDeleted,

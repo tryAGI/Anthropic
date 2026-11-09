@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// On a public-sector deployment, only an API key or token that belongs to a person with owner permissions can sign out a member with the `managed` role.
+    /// The member has the `managed` role, and this API key or token cannot sign them out. The error message says which keys and tokens can.
     /// </summary>
     public sealed partial class BetaCannotSignOutManagedMemberErrorDetails
     {

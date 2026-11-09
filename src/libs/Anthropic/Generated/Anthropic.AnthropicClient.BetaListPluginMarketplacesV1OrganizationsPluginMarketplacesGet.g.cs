@@ -163,7 +163,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/plugin_marketplaces?beta=true",
+                                path: "/v1/organizations/plugin_marketplaces",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -185,7 +185,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -222,7 +222,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGet",
                                 methodName: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/plugin_marketplaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/plugin_marketplaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -256,7 +256,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGet",
                                 methodName: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/plugin_marketplaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/plugin_marketplaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -297,7 +297,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGet",
                                 methodName: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/plugin_marketplaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/plugin_marketplaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -345,7 +345,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGet",
                                 methodName: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/plugin_marketplaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/plugin_marketplaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -367,7 +367,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGet",
                                 methodName: "BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/plugin_marketplaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/plugin_marketplaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

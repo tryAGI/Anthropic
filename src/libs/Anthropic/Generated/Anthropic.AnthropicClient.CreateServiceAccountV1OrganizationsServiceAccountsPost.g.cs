@@ -412,19 +412,19 @@ namespace Anthropic
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Anthropic.ErrorResponse? __value_403 = null;
+                                global::Anthropic.CreateServiceAccountV1OrganizationsServiceAccountsPostResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Anthropic.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.CreateServiceAccountV1OrganizationsServiceAccountsPostResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Anthropic.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.CreateServiceAccountV1OrganizationsServiceAccountsPostResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -433,7 +433,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.ErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.CreateServiceAccountV1OrganizationsServiceAccountsPostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.MessagesCountTokensPostResponseError2))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0195.Create_MessagesCountTokensPostResponseError2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0204.Create_MessagesCountTokensPostResponseError2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

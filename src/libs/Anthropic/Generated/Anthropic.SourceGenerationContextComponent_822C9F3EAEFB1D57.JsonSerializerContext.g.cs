@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaListTelemetryDestinationsResponse))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0057.Create_BetaListTelemetryDestinationsResponse(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0062.Create_BetaListTelemetryDestinationsResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

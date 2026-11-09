@@ -111,7 +111,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/spend_limits/{spendLimitId}?beta=true",
+                                path: $"/v1/organizations/spend_limits/{spendLimitId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -162,7 +162,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDelete",
                                 methodName: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -196,7 +196,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDelete",
                                 methodName: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -237,7 +237,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDelete",
                                 methodName: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -285,7 +285,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDelete",
                                 methodName: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -307,7 +307,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDelete",
                                 methodName: "BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/spend_limits/{spendLimitId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

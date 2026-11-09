@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// Best combination of speed and intelligence
     /// </summary>
     public sealed partial class ModelVariant16
     {

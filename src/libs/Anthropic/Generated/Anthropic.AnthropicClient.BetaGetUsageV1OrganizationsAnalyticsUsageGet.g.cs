@@ -28,6 +28,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes,
             global::System.Collections.Generic.IList<string>? apiKeyIds,
+            global::System.Collections.Generic.IList<string>? organizationIds,
             ref global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth,
             ref global::Anthropic.BetaAnalyticsUsageCostSortOrder? order,
             ref bool? excludeDeletedUsers,
@@ -61,6 +62,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes,
             global::System.Collections.Generic.IList<string>? apiKeyIds,
+            global::System.Collections.Generic.IList<string>? organizationIds,
             global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth,
             global::Anthropic.BetaAnalyticsUsageCostSortOrder? order,
             bool? excludeDeletedUsers,
@@ -153,6 +155,9 @@ namespace Anthropic
         /// <param name="apiKeyIds">
         /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
         /// </param>
+        /// <param name="organizationIds">
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
         /// </param>
@@ -211,6 +216,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes = default,
             global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? organizationIds = default,
             global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth = default,
             global::Anthropic.BetaAnalyticsUsageCostSortOrder? order = default,
             bool? excludeDeletedUsers = default,
@@ -245,6 +251,7 @@ namespace Anthropic
                 actorIds: actorIds,
                 actorTypes: actorTypes,
                 apiKeyIds: apiKeyIds,
+                organizationIds: organizationIds,
                 timeBucketWidth: timeBucketWidth,
                 order: order,
                 excludeDeletedUsers: excludeDeletedUsers,
@@ -333,6 +340,9 @@ namespace Anthropic
         /// <param name="apiKeyIds">
         /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
         /// </param>
+        /// <param name="organizationIds">
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
         /// </param>
@@ -391,6 +401,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes = default,
             global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? organizationIds = default,
             global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth = default,
             global::Anthropic.BetaAnalyticsUsageCostSortOrder? order = default,
             bool? excludeDeletedUsers = default,
@@ -429,6 +440,7 @@ namespace Anthropic
                 actorIds: actorIds,
                 actorTypes: actorTypes,
                 apiKeyIds: apiKeyIds,
+                organizationIds: organizationIds,
                 timeBucketWidth: ref timeBucketWidth,
                 order: ref order,
                 excludeDeletedUsers: ref excludeDeletedUsers,
@@ -457,7 +469,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/analytics/usage?beta=true",
+                                path: "/v1/organizations/analytics/usage",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("starting_at", startingAt.ToString("yyyy-MM-ddTHH:mm:ssZ"))
@@ -481,6 +493,7 @@ namespace Anthropic
                                 .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("actor_types[]", actorTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("api_key_ids[]", apiKeyIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("organization_ids[]", organizationIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("time_bucket_width", timeBucketWidth?.ToValueString())
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("exclude_deleted_users", excludeDeletedUsers?.ToString().ToLowerInvariant())
@@ -502,7 +515,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -540,6 +553,7 @@ namespace Anthropic
                     actorIds: actorIds,
                     actorTypes: actorTypes,
                     apiKeyIds: apiKeyIds,
+                    organizationIds: organizationIds,
                     timeBucketWidth: timeBucketWidth,
                     order: order,
                     excludeDeletedUsers: excludeDeletedUsers,
@@ -567,7 +581,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUsageV1OrganizationsAnalyticsUsageGet",
                                 methodName: "BetaGetUsageV1OrganizationsAnalyticsUsageGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/usage?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -601,7 +615,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUsageV1OrganizationsAnalyticsUsageGet",
                                 methodName: "BetaGetUsageV1OrganizationsAnalyticsUsageGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/usage?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -642,7 +656,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUsageV1OrganizationsAnalyticsUsageGet",
                                 methodName: "BetaGetUsageV1OrganizationsAnalyticsUsageGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/usage?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -690,7 +704,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUsageV1OrganizationsAnalyticsUsageGet",
                                 methodName: "BetaGetUsageV1OrganizationsAnalyticsUsageGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/usage?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -712,7 +726,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUsageV1OrganizationsAnalyticsUsageGet",
                                 methodName: "BetaGetUsageV1OrganizationsAnalyticsUsageGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/usage?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -1482,6 +1496,9 @@ namespace Anthropic
         /// <param name="apiKeyIds">
         /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
         /// </param>
+        /// <param name="organizationIds">
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
         /// </param>
@@ -1535,6 +1552,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes = default,
             global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? organizationIds = default,
             global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth = default,
             global::Anthropic.BetaAnalyticsUsageCostSortOrder? order = default,
             bool? excludeDeletedUsers = default,
@@ -1568,6 +1586,7 @@ namespace Anthropic
                     actorIds: actorIds,
                     actorTypes: actorTypes,
                     apiKeyIds: apiKeyIds,
+                    organizationIds: organizationIds,
                     timeBucketWidth: timeBucketWidth,
                     order: order,
                     excludeDeletedUsers: excludeDeletedUsers,

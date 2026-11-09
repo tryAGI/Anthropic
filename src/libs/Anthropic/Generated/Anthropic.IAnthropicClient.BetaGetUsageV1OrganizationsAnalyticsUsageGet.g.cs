@@ -78,6 +78,9 @@ namespace Anthropic
         /// <param name="apiKeyIds">
         /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
         /// </param>
+        /// <param name="organizationIds">
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
         /// </param>
@@ -136,6 +139,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes = default,
             global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? organizationIds = default,
             global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth = default,
             global::Anthropic.BetaAnalyticsUsageCostSortOrder? order = default,
             bool? excludeDeletedUsers = default,
@@ -220,6 +224,9 @@ namespace Anthropic
         /// <param name="apiKeyIds">
         /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
         /// </param>
+        /// <param name="organizationIds">
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
         /// </param>
@@ -278,6 +285,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes = default,
             global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? organizationIds = default,
             global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth = default,
             global::Anthropic.BetaAnalyticsUsageCostSortOrder? order = default,
             bool? excludeDeletedUsers = default,
@@ -355,6 +363,9 @@ namespace Anthropic
         /// <param name="apiKeyIds">
         /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
         /// </param>
+        /// <param name="organizationIds">
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
         /// </param>
@@ -408,6 +419,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsActorType>? actorTypes = default,
             global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? organizationIds = default,
             global::Anthropic.BetaAnalyticsTimeBucketWidth? timeBucketWidth = default,
             global::Anthropic.BetaAnalyticsUsageCostSortOrder? order = default,
             bool? excludeDeletedUsers = default,

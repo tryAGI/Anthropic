@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnalyticsPluginCoworkMetrics))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0002.Create_AnalyticsPluginCoworkMetrics(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0003.Create_AnalyticsPluginCoworkMetrics(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

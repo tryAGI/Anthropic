@@ -44,7 +44,7 @@ namespace Anthropic
         /// Desired TTL in seconds
         /// </param>
         /// <param name="expectedLastHeartbeat">
-        /// Expected last_heartbeat for conditional update (optimistic concurrency). Use literal 'NO_HEARTBEAT' to claim an unclaimed lease (first heartbeat). For subsequent heartbeats, echo the server's previous last_heartbeat value exactly. Returns 412 Precondition Failed if the actual value doesn't match.
+        /// Expected last_heartbeat for conditional update (optimistic concurrency). Use literal 'NO_HEARTBEAT' to claim an unclaimed lease (first heartbeat). For subsequent heartbeats, echo the server's previous last_heartbeat value exactly. Returns 412 Precondition Failed if the actual value doesn't match. The server does not compare the value when the work item is 'stopping' or 'stopped'.
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
@@ -93,7 +93,7 @@ namespace Anthropic
         /// Desired TTL in seconds
         /// </param>
         /// <param name="expectedLastHeartbeat">
-        /// Expected last_heartbeat for conditional update (optimistic concurrency). Use literal 'NO_HEARTBEAT' to claim an unclaimed lease (first heartbeat). For subsequent heartbeats, echo the server's previous last_heartbeat value exactly. Returns 412 Precondition Failed if the actual value doesn't match.
+        /// Expected last_heartbeat for conditional update (optimistic concurrency). Use literal 'NO_HEARTBEAT' to claim an unclaimed lease (first heartbeat). For subsequent heartbeats, echo the server's previous last_heartbeat value exactly. Returns 412 Precondition Failed if the actual value doesn't match. The server does not compare the value when the work item is 'stopping' or 'stopped'.
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
@@ -149,7 +149,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/environments/{environmentId}/work/{workId}/heartbeat?beta=true",
+                                path: $"/v1/environments/{environmentId}/work/{workId}/heartbeat",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("desired_ttl_seconds", desiredTtlSeconds?.ToString())
@@ -170,7 +170,7 @@ namespace Anthropic
 
             if (anthropicBeta != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
             }
             if (anthropicVersion != default)
             {
@@ -217,7 +217,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPost",
                                 methodName: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostAsync",
-                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat?beta=true\"",
+                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -251,7 +251,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPost",
                                 methodName: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostAsync",
-                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat?beta=true\"",
+                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -292,7 +292,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPost",
                                 methodName: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostAsync",
-                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat?beta=true\"",
+                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -340,7 +340,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPost",
                                 methodName: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostAsync",
-                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat?beta=true\"",
+                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -362,7 +362,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPost",
                                 methodName: "BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostAsync",
-                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat?beta=true\"",
+                                pathTemplate: "$\"/v1/environments/{environmentId}/work/{workId}/heartbeat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

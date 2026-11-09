@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaDreamModelConfigParams))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0044.Create_BetaDreamModelConfigParams(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0048.Create_BetaDreamModelConfigParams(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

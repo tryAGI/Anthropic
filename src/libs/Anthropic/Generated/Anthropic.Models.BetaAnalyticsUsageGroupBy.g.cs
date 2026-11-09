@@ -55,6 +55,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        OrganizationId,
+        /// <summary>
+        ///
+        /// </summary>
         Product,
         /// <summary>
         ///
@@ -109,6 +113,7 @@ namespace Anthropic
                 BetaAnalyticsUsageGroupBy.EnvironmentId => "environment_id",
                 BetaAnalyticsUsageGroupBy.InferenceGeo => "inference_geo",
                 BetaAnalyticsUsageGroupBy.Model => "model",
+                BetaAnalyticsUsageGroupBy.OrganizationId => "organization_id",
                 BetaAnalyticsUsageGroupBy.Product => "product",
                 BetaAnalyticsUsageGroupBy.RbacGroupId => "rbac_group_id",
                 BetaAnalyticsUsageGroupBy.ServiceTier => "service_tier",
@@ -138,6 +143,7 @@ namespace Anthropic
                 "environment_id" => BetaAnalyticsUsageGroupBy.EnvironmentId,
                 "inference_geo" => BetaAnalyticsUsageGroupBy.InferenceGeo,
                 "model" => BetaAnalyticsUsageGroupBy.Model,
+                "organization_id" => BetaAnalyticsUsageGroupBy.OrganizationId,
                 "product" => BetaAnalyticsUsageGroupBy.Product,
                 "rbac_group_id" => BetaAnalyticsUsageGroupBy.RbacGroupId,
                 "service_tier" => BetaAnalyticsUsageGroupBy.ServiceTier,

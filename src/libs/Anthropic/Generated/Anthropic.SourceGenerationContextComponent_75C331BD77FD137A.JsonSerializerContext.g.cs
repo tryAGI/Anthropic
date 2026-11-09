@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ExternalKeyInWorkspacePolicyErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0186.Create_ExternalKeyInWorkspacePolicyErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0195.Create_ExternalKeyInWorkspacePolicyErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

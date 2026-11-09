@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.FederationRuleUpdateParamsAttributes))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0188.Create_FederationRuleUpdateParamsAttributes(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0196.Create_FederationRuleUpdateParamsAttributes(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -344,6 +344,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebhookUserProfileEnforcementActionResolvedEventData)}");
                 userProfileEnforcementActionResolved = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData? userProfileProgramStatusUpdated = default;
+            if (discriminator?.Type == global::Anthropic.BetaWebhookEventDataDiscriminatorType.UserProfileProgramStatusUpdated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData)}");
+                userProfileProgramStatusUpdated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaWebhookEventData(
                 discriminator?.Type,
@@ -437,7 +444,9 @@ namespace Anthropic.JsonConverters
 
                 userProfileEnforcementActionOpened,
 
-                userProfileEnforcementActionResolved
+                userProfileEnforcementActionResolved,
+
+                userProfileProgramStatusUpdated
                 );
 
             return __value;
@@ -728,6 +737,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookUserProfileEnforcementActionResolvedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookUserProfileEnforcementActionResolvedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookUserProfileEnforcementActionResolvedEventData).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserProfileEnforcementActionResolved(), typeInfo);
+            }
+            else if (value.IsUserProfileProgramStatusUpdated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserProfileProgramStatusUpdated(), typeInfo);
             }
         }
     }

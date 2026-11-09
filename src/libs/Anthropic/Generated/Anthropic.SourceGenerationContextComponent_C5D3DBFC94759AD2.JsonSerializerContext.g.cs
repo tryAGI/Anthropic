@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(byte[]))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0165.Create_ByteArray(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0172.Create_ByteArray(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

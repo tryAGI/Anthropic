@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Our most capable model for cybersecurity and biology research, available through trusted access programs
+    /// Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
     /// </summary>
     public sealed partial class ModelVariant5
     {

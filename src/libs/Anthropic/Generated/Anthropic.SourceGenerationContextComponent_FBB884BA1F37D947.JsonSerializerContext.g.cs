@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UploadFileV1FilesPostRequest))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0327.Create_UploadFileV1FilesPostRequest(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0338.Create_UploadFileV1FilesPostRequest(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

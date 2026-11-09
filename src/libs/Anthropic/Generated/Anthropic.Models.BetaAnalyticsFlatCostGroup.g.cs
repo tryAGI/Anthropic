@@ -82,6 +82,12 @@ namespace Anthropic
         public string? Model { get; set; }
 
         /// <summary>
+        /// UUID of the child organization the usage belongs to, on a parent organization's report across its children. Null unless `organization_id` is in `group_by[]`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
+        public string? OrganizationId { get; set; }
+
+        /// <summary>
         /// Product surface that produced the usage or cost. Null unless product is in `group_by[]`; it can also be null on grouped rows whose usage cannot be attributed to a known surface. Values include `chat`, `claude_code`, `cowork`, `office_agent`, `claude_in_chrome`, `claude_design`, `claude_tag`, and `chat_cowork_unified`. `claude_tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only where Chat and Cowork unified is available. Some unattributed usage is reported as "other".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product")]
@@ -180,6 +186,9 @@ namespace Anthropic
         /// <param name="model">
         /// Model that produced the usage or cost, as a model name in the form the `models[]` filter accepts (for example, `claude-opus-5-5`). Null unless `model` is in `group_by[]`; it can also be null on grouped rows whose usage or cost is not attributed to a specific model, such as code execution.
         /// </param>
+        /// <param name="organizationId">
+        /// UUID of the child organization the usage belongs to, on a parent organization's report across its children. Null unless `organization_id` is in `group_by[]`.
+        /// </param>
         /// <param name="product">
         /// Product surface that produced the usage or cost. Null unless product is in `group_by[]`; it can also be null on grouped rows whose usage cannot be attributed to a known surface. Values include `chat`, `claude_code`, `cowork`, `office_agent`, `claude_in_chrome`, `claude_design`, `claude_tag`, and `chat_cowork_unified`. `claude_tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only where Chat and Cowork unified is available. Some unattributed usage is reported as "other".
         /// </param>
@@ -223,6 +232,7 @@ namespace Anthropic
             string? environmentId,
             global::Anthropic.BetaAnalyticsUsageCostInferenceGeo? inferenceGeo,
             string? model,
+            string? organizationId,
             string? product,
             string? rbacGroupId,
             global::Anthropic.BetaUsageReportServiceTier? serviceTier,
@@ -245,6 +255,7 @@ namespace Anthropic
             this.EnvironmentId = environmentId;
             this.InferenceGeo = inferenceGeo;
             this.Model = model;
+            this.OrganizationId = organizationId;
             this.Product = product;
             this.RbacGroupId = rbacGroupId;
             this.ServiceTier = serviceTier;

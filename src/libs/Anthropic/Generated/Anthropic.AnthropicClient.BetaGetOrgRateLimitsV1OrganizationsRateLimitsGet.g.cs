@@ -149,7 +149,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/rate_limits?beta=true",
+                                path: "/v1/organizations/rate_limits",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("model", model)
@@ -209,7 +209,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGet",
                                 methodName: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAsync",
-                                pathTemplate: "\"/v1/organizations/rate_limits?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/rate_limits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -243,7 +243,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGet",
                                 methodName: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAsync",
-                                pathTemplate: "\"/v1/organizations/rate_limits?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/rate_limits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -284,7 +284,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGet",
                                 methodName: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAsync",
-                                pathTemplate: "\"/v1/organizations/rate_limits?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/rate_limits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -332,7 +332,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGet",
                                 methodName: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAsync",
-                                pathTemplate: "\"/v1/organizations/rate_limits?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/rate_limits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -354,7 +354,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGet",
                                 methodName: "BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAsync",
-                                pathTemplate: "\"/v1/organizations/rate_limits?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/rate_limits\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

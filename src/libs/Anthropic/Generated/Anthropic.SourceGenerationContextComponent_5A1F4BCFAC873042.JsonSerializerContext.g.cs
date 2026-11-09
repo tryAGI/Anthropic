@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaFileExpiredErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0049.Create_BetaFileExpiredErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0053.Create_BetaFileExpiredErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

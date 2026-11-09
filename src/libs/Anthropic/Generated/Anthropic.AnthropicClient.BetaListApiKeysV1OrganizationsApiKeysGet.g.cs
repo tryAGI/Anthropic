@@ -161,7 +161,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/api_keys?beta=true",
+                                path: "/v1/organizations/api_keys",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("before_id", beforeId)
@@ -225,7 +225,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListApiKeysV1OrganizationsApiKeysGet",
                                 methodName: "BetaListApiKeysV1OrganizationsApiKeysGetAsync",
-                                pathTemplate: "\"/v1/organizations/api_keys?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/api_keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -259,7 +259,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListApiKeysV1OrganizationsApiKeysGet",
                                 methodName: "BetaListApiKeysV1OrganizationsApiKeysGetAsync",
-                                pathTemplate: "\"/v1/organizations/api_keys?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/api_keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -300,7 +300,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListApiKeysV1OrganizationsApiKeysGet",
                                 methodName: "BetaListApiKeysV1OrganizationsApiKeysGetAsync",
-                                pathTemplate: "\"/v1/organizations/api_keys?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/api_keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -348,7 +348,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListApiKeysV1OrganizationsApiKeysGet",
                                 methodName: "BetaListApiKeysV1OrganizationsApiKeysGetAsync",
-                                pathTemplate: "\"/v1/organizations/api_keys?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/api_keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -370,7 +370,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListApiKeysV1OrganizationsApiKeysGet",
                                 methodName: "BetaListApiKeysV1OrganizationsApiKeysGetAsync",
-                                pathTemplate: "\"/v1/organizations/api_keys?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/api_keys\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

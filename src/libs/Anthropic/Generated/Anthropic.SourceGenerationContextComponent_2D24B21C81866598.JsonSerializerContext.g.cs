@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaSystemInputMessageContentBlockDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0139.Create_BetaSystemInputMessageContentBlockDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0144.Create_BetaSystemInputMessageContentBlockDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

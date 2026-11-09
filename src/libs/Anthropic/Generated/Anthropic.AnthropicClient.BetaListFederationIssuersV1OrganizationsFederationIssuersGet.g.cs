@@ -143,7 +143,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/federation_issuers?beta=true",
+                                path: "/v1/organizations/federation_issuers",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -165,7 +165,7 @@ namespace Anthropic
 
             if (anthropicBeta != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
             }
             if (anthropicVersion != default)
             {
@@ -206,7 +206,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListFederationIssuersV1OrganizationsFederationIssuersGet",
                                 methodName: "BetaListFederationIssuersV1OrganizationsFederationIssuersGetAsync",
-                                pathTemplate: "\"/v1/organizations/federation_issuers?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/federation_issuers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -240,7 +240,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListFederationIssuersV1OrganizationsFederationIssuersGet",
                                 methodName: "BetaListFederationIssuersV1OrganizationsFederationIssuersGetAsync",
-                                pathTemplate: "\"/v1/organizations/federation_issuers?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/federation_issuers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -281,7 +281,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListFederationIssuersV1OrganizationsFederationIssuersGet",
                                 methodName: "BetaListFederationIssuersV1OrganizationsFederationIssuersGetAsync",
-                                pathTemplate: "\"/v1/organizations/federation_issuers?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/federation_issuers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -329,7 +329,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListFederationIssuersV1OrganizationsFederationIssuersGet",
                                 methodName: "BetaListFederationIssuersV1OrganizationsFederationIssuersGetAsync",
-                                pathTemplate: "\"/v1/organizations/federation_issuers?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/federation_issuers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -351,7 +351,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListFederationIssuersV1OrganizationsFederationIssuersGet",
                                 methodName: "BetaListFederationIssuersV1OrganizationsFederationIssuersGetAsync",
-                                pathTemplate: "\"/v1/organizations/federation_issuers?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/federation_issuers\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

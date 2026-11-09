@@ -153,7 +153,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true",
+                                path: $"/v1/organizations/plugins/{pluginId}/versions/{version}/content",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("organization_id", organizationId)
@@ -171,7 +171,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -206,7 +206,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -240,7 +240,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -281,7 +281,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -329,7 +329,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -351,7 +351,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -1086,7 +1086,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true",
+                                path: $"/v1/organizations/plugins/{pluginId}/versions/{version}/content",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("organization_id", organizationId)
@@ -1104,7 +1104,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -1139,7 +1139,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -1173,7 +1173,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -1214,7 +1214,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -1262,7 +1262,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -1284,7 +1284,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -2022,7 +2022,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true",
+                                path: $"/v1/organizations/plugins/{pluginId}/versions/{version}/content",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("organization_id", organizationId)
@@ -2040,7 +2040,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -2075,7 +2075,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -2109,7 +2109,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -2150,7 +2150,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -2198,7 +2198,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -2220,7 +2220,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGet",
                                 methodName: "BetaGetPluginVersionContentV1OrganizationsPluginsPluginIdVersionsVersionContentGetAsync",
-                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/plugins/{pluginId}/versions/{version}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

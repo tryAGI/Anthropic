@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0092.Create_BetaManagedAgentsSessionThreadStatusRunningEvent(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0096.Create_BetaManagedAgentsSessionThreadStatusRunningEvent(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

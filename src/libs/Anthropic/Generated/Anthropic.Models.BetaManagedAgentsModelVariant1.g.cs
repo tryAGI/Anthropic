@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Fastest model for high-volume, real-time tasks
+    /// Frontier intelligence for ambitious work in coding, enterprise workflows, and the sciences
     /// </summary>
     public sealed partial class BetaManagedAgentsModelVariant1
     {

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.SkillReadBlockedUndecryptableErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0272.Create_SkillReadBlockedUndecryptableErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0281.Create_SkillReadBlockedUndecryptableErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CacheMissMessagesChanged))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0171.Create_CacheMissMessagesChanged(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0178.Create_CacheMissMessagesChanged(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

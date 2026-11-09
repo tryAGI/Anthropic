@@ -327,7 +327,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/analytics/user_usage_report?beta=true",
+                                path: "/v1/organizations/analytics/user_usage_report",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("starting_at", startingAt.ToString("yyyy-MM-ddTHH:mm:ssZ"))
@@ -417,7 +417,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGet",
                                 methodName: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -451,7 +451,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGet",
                                 methodName: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -492,7 +492,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGet",
                                 methodName: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -540,7 +540,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGet",
                                 methodName: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -562,7 +562,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGet",
                                 methodName: "BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/user_usage_report\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ExternalKeyCreateParamsProviderConfigDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0186.Create_ExternalKeyCreateParamsProviderConfigDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0195.Create_ExternalKeyCreateParamsProviderConfigDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CreateUserProfileActionUrlRequestBody))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0182.Create_CreateUserProfileActionUrlRequestBody(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0190.Create_CreateUserProfileActionUrlRequestBody(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

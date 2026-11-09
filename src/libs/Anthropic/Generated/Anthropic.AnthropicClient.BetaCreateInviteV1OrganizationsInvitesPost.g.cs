@@ -102,7 +102,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/invites?beta=true",
+                                path: "/v1/organizations/invites",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -159,7 +159,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaCreateInviteV1OrganizationsInvitesPost",
                                 methodName: "BetaCreateInviteV1OrganizationsInvitesPostAsync",
-                                pathTemplate: "\"/v1/organizations/invites?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/invites\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -193,7 +193,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaCreateInviteV1OrganizationsInvitesPost",
                                 methodName: "BetaCreateInviteV1OrganizationsInvitesPostAsync",
-                                pathTemplate: "\"/v1/organizations/invites?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/invites\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -234,7 +234,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaCreateInviteV1OrganizationsInvitesPost",
                                 methodName: "BetaCreateInviteV1OrganizationsInvitesPostAsync",
-                                pathTemplate: "\"/v1/organizations/invites?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/invites\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -282,7 +282,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaCreateInviteV1OrganizationsInvitesPost",
                                 methodName: "BetaCreateInviteV1OrganizationsInvitesPostAsync",
-                                pathTemplate: "\"/v1/organizations/invites?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/invites\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -304,7 +304,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaCreateInviteV1OrganizationsInvitesPost",
                                 methodName: "BetaCreateInviteV1OrganizationsInvitesPostAsync",
-                                pathTemplate: "\"/v1/organizations/invites?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/invites\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -398,19 +398,19 @@ namespace Anthropic
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Anthropic.BetaErrorResponse? __value_403 = null;
+                                global::Anthropic.BetaCreateInviteV1OrganizationsInvitesPostResponse2? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaCreateInviteV1OrganizationsInvitesPostResponse2.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaCreateInviteV1OrganizationsInvitesPostResponse2.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -419,7 +419,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaCreateInviteV1OrganizationsInvitesPostResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,

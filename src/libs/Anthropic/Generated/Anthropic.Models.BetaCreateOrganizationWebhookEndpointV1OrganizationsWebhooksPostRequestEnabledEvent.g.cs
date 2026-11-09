@@ -16,6 +16,10 @@ namespace Anthropic
         ///
         /// </summary>
         UserProfileEnforcementActionResolved,
+        /// <summary>
+        ///
+        /// </summary>
+        UserProfileProgramStatusUpdated,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Anthropic
             {
                 BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
                 BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
+                BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileProgramStatusUpdated => "user_profile.program_status_updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Anthropic
             {
                 "user_profile.enforcement_action_opened" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionOpened,
                 "user_profile.enforcement_action_resolved" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionResolved,
+                "user_profile.program_status_updated" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileProgramStatusUpdated,
                 _ => null,
             };
         }

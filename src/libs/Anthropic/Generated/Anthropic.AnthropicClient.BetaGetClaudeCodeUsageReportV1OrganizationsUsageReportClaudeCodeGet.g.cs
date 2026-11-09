@@ -127,7 +127,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/usage_report/claude_code?beta=true",
+                                path: "/v1/organizations/usage_report/claude_code",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("starting_at", startingAt.ToString("yyyy-MM-dd"))
@@ -185,7 +185,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGet",
                                 methodName: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGetAsync",
-                                pathTemplate: "\"/v1/organizations/usage_report/claude_code?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/usage_report/claude_code\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -219,7 +219,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGet",
                                 methodName: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGetAsync",
-                                pathTemplate: "\"/v1/organizations/usage_report/claude_code?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/usage_report/claude_code\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -260,7 +260,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGet",
                                 methodName: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGetAsync",
-                                pathTemplate: "\"/v1/organizations/usage_report/claude_code?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/usage_report/claude_code\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -308,7 +308,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGet",
                                 methodName: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGetAsync",
-                                pathTemplate: "\"/v1/organizations/usage_report/claude_code?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/usage_report/claude_code\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -330,7 +330,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGet",
                                 methodName: "BetaGetClaudeCodeUsageReportV1OrganizationsUsageReportClaudeCodeGetAsync",
-                                pathTemplate: "\"/v1/organizations/usage_report/claude_code?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/usage_report/claude_code\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

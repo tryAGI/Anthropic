@@ -165,7 +165,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/workspaces?beta=true",
+                                path: "/v1/organizations/workspaces",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("include_archived", includeArchived?.ToString().ToLowerInvariant())
@@ -229,7 +229,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListWorkspacesV1OrganizationsWorkspacesGet",
                                 methodName: "BetaListWorkspacesV1OrganizationsWorkspacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/workspaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/workspaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -263,7 +263,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListWorkspacesV1OrganizationsWorkspacesGet",
                                 methodName: "BetaListWorkspacesV1OrganizationsWorkspacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/workspaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/workspaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -304,7 +304,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListWorkspacesV1OrganizationsWorkspacesGet",
                                 methodName: "BetaListWorkspacesV1OrganizationsWorkspacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/workspaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/workspaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -352,7 +352,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListWorkspacesV1OrganizationsWorkspacesGet",
                                 methodName: "BetaListWorkspacesV1OrganizationsWorkspacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/workspaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/workspaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -374,7 +374,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListWorkspacesV1OrganizationsWorkspacesGet",
                                 methodName: "BetaListWorkspacesV1OrganizationsWorkspacesGetAsync",
-                                pathTemplate: "\"/v1/organizations/workspaces?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/workspaces\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

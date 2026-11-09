@@ -217,7 +217,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/analytics/plugins?beta=true",
+                                path: "/v1/organizations/analytics/plugins",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("date", date?.ToString())
@@ -287,7 +287,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGet",
                                 methodName: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/plugins?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/plugins\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -321,7 +321,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGet",
                                 methodName: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/plugins?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/plugins\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -362,7 +362,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGet",
                                 methodName: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/plugins?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/plugins\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -410,7 +410,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGet",
                                 methodName: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/plugins?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/plugins\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -432,7 +432,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGet",
                                 methodName: "BetaGetPluginsV1OrganizationsAnalyticsPluginsGetAsync",
-                                pathTemplate: "\"/v1/organizations/analytics/plugins?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/analytics/plugins\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

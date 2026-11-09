@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Efficient model for coding and agents
+    /// Powerful intelligence for coding, knowledge work, and long-running agents
     /// </summary>
     public sealed partial class ModelVariant6
     {

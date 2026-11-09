@@ -32,6 +32,10 @@ namespace Anthropic
         ///
         /// </summary>
         MessageStop,
+        /// <summary>
+        ///
+        /// </summary>
+        Ping,
     }
 
     /// <summary>
@@ -52,6 +56,7 @@ namespace Anthropic
                 BetaMessageStreamEventDiscriminatorType.MessageDelta => "message_delta",
                 BetaMessageStreamEventDiscriminatorType.MessageStart => "message_start",
                 BetaMessageStreamEventDiscriminatorType.MessageStop => "message_stop",
+                BetaMessageStreamEventDiscriminatorType.Ping => "ping",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,6 +73,7 @@ namespace Anthropic
                 "message_delta" => BetaMessageStreamEventDiscriminatorType.MessageDelta,
                 "message_start" => BetaMessageStreamEventDiscriminatorType.MessageStart,
                 "message_stop" => BetaMessageStreamEventDiscriminatorType.MessageStop,
+                "ping" => BetaMessageStreamEventDiscriminatorType.Ping,
                 _ => null,
             };
         }

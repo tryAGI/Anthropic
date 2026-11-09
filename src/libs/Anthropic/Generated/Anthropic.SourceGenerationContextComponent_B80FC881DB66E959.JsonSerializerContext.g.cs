@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaCreatePluginV1OrganizationsPluginsPostRequest))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0037.Create_BetaCreatePluginV1OrganizationsPluginsPostRequest(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0040.Create_BetaCreatePluginV1OrganizationsPluginsPostRequest(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

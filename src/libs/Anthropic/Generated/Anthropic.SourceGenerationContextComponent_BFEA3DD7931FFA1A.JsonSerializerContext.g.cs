@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0094.Create_BetaManagedAgentsTokenEndpointAuthBasicParam(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0099.Create_BetaManagedAgentsTokenEndpointAuthBasicParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

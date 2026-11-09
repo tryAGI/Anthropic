@@ -139,7 +139,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: "/v1/organizations/claude_tag/slack_channels?beta=true",
+                                path: "/v1/organizations/claude_tag/slack_channels",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("slack_workspace_id", slackWorkspaceId)
@@ -167,7 +167,7 @@ namespace Anthropic
             }
             if (anthropicBeta != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", string.Join(",", global::System.Linq.Enumerable.Select(anthropicBeta, static __headerItem => __headerItem.ToString() ?? string.Empty)));
             }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
@@ -206,7 +206,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListSlackChannels",
                                 methodName: "BetaListSlackChannelsAsync",
-                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -240,7 +240,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListSlackChannels",
                                 methodName: "BetaListSlackChannelsAsync",
-                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -281,7 +281,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListSlackChannels",
                                 methodName: "BetaListSlackChannelsAsync",
-                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -329,7 +329,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListSlackChannels",
                                 methodName: "BetaListSlackChannelsAsync",
-                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -351,7 +351,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListSlackChannels",
                                 methodName: "BetaListSlackChannelsAsync",
-                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels?beta=true\"",
+                                pathTemplate: "\"/v1/organizations/claude_tag/slack_channels\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CompactionUnavailableErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0175.Create_CompactionUnavailableErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0182.Create_CompactionUnavailableErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);
