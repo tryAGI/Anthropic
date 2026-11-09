@@ -173,6 +173,63 @@ public partial class AnthropicClient : IChatClient
         }
     }
 
+    /// <summary>
+    /// Anthropic rejects a structured-output schema whose object nodes do not set
+    /// `additionalProperties` to false, and the JSON schema exporters MEAI callers use do not emit
+    /// it. Adds it wherever it is absent, leaving a node that states its own value alone.
+    /// </summary>
+    private JsonElement CloseObjectSchemas(JsonElement schema)
+    {
+        var node = System.Text.Json.Nodes.JsonNode.Parse(schema.GetRawText());
+        if (node is null)
+        {
+            return schema.Clone();
+        }
+
+        Close(node);
+
+        return JsonSerializer.Deserialize(
+            node.ToJsonString(),
+            (JsonSerializerContextProvider?.Value ?? ChatClientJsonSerializerContext.Default)
+                .Options.GetTypeInfo(typeof(JsonElement))) is JsonElement closed
+            ? closed
+            : schema.Clone();
+
+        static void Close(System.Text.Json.Nodes.JsonNode current)
+        {
+            switch (current)
+            {
+                case System.Text.Json.Nodes.JsonObject obj:
+                    var isObjectSchema =
+                        obj.TryGetPropertyValue("type", out var type) &&
+                        type?.GetValueKind() == JsonValueKind.String &&
+                        type.GetValue<string>() == "object";
+                    if (isObjectSchema && !obj.ContainsKey("additionalProperties"))
+                    {
+                        obj["additionalProperties"] = false;
+                    }
+                    foreach (var property in obj.ToList())
+                    {
+                        if (property.Value is { } value)
+                        {
+                            Close(value);
+                        }
+                    }
+                    break;
+
+                case System.Text.Json.Nodes.JsonArray array:
+                    foreach (var item in array)
+                    {
+                        if (item is { } value)
+                        {
+                            Close(value);
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+
     private static ChatFinishReason ToFinishReason(StopReason? reason) => reason switch
     {
         StopReason.EndTurn or StopReason.StopSequence => ChatFinishReason.Stop,
@@ -398,7 +455,7 @@ public partial class AnthropicClient : IChatClient
             request.OutputConfig ??= new OutputConfig();
             request.OutputConfig.Format ??= new JsonOutputFormat
             {
-                Schema = schema.Clone(),
+                Schema = CloseObjectSchemas(schema),
             };
         }
 

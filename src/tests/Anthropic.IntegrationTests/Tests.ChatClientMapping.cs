@@ -62,6 +62,50 @@ public partial class Tests
             .Should().BeTrue();
     }
 
+    /// <summary>
+    /// Anthropic rejects an object schema that does not close itself, and the schema exporters MEAI
+    /// callers use do not emit `additionalProperties` at all - including for nested objects.
+    /// </summary>
+    [TestMethod]
+    public async Task ObjectSchemasAreClosedBeforeTheyAreSent()
+    {
+        var body = await CaptureRequestBodyAsync(new ChatOptions
+        {
+            ModelId = "claude-haiku-5-5",
+            MaxOutputTokens = 16,
+            ResponseFormat = ChatResponseFormat.ForJsonSchema(JsonSerializer.Deserialize<JsonElement>(
+                """
+                {
+                  "type": "object",
+                  "properties": {
+                    "city": { "type": "string" },
+                    "address": {
+                      "type": "object",
+                      "properties": { "street": { "type": "string" } }
+                    },
+                    "stops": {
+                      "type": "array",
+                      "items": { "type": "object", "properties": { "name": { "type": "string" } } }
+                    },
+                    "open": { "type": "object", "additionalProperties": true }
+                  }
+                }
+                """)),
+        });
+
+        using var document = JsonDocument.Parse(body);
+        var schema = document.RootElement.GetProperty("output_config").GetProperty("format").GetProperty("schema");
+
+        schema.GetProperty("additionalProperties").GetBoolean().Should().BeFalse();
+        schema.GetProperty("properties").GetProperty("address")
+            .GetProperty("additionalProperties").GetBoolean().Should().BeFalse();
+        schema.GetProperty("properties").GetProperty("stops").GetProperty("items")
+            .GetProperty("additionalProperties").GetBoolean().Should().BeFalse();
+        // A node that states its own value is left alone.
+        schema.GetProperty("properties").GetProperty("open")
+            .GetProperty("additionalProperties").GetBoolean().Should().BeTrue();
+    }
+
     private static async Task<string> CaptureRequestBodyAsync(ChatOptions options)
     {
         var handler = new CapturingHandler(StubMessageJson);
