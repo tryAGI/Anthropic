@@ -130,32 +130,42 @@ public partial class AnthropicClient
             var serializerContext = JsonSerializerContextProvider?.Value;
             string? __content = null;
             global::Anthropic.ErrorResponse? __value = null;
-            if (ReadResponseAsString)
+            global::System.Exception? __parseFailure = null;
+
+            // An error body is not always JSON: a gateway in front of the API answers with its own
+            // page. The caller still has to get the typed exception with that body attached, so a
+            // parse failure becomes the inner exception rather than reaching them raw - which is
+            // what the generated operations do.
+            try
             {
                 __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
                 __value = serializerContext is null
                     ? global::Anthropic.ErrorResponse.FromJson(__content)
                     : global::Anthropic.ErrorResponse.FromJson(__content, serializerContext);
             }
-            else
+            catch (global::System.Text.Json.JsonException __ex)
             {
-                var __contentStream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                __value = serializerContext is null
-                    ? await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream).ConfigureAwait(false)
-                    : await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream, serializerContext).ConfigureAwait(false);
+                __parseFailure = __ex;
+            }
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {
+                __parseFailure = __ex;
+            }
+            catch (global::System.IO.IOException __ex)
+            {
+                __parseFailure = __ex;
             }
 
-            throw new global::Anthropic.ApiException<global::Anthropic.ErrorResponse>(
-                message: response.ReasonPhrase ?? string.Empty,
-                statusCode: response.StatusCode)
-            {
-                ResponseBody = __content,
-                ResponseObject = __value,
-                ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+            throw global::Anthropic.ApiException<global::Anthropic.ErrorResponse>.Create(
+                statusCode: response.StatusCode,
+                message: __content ?? response.ReasonPhrase ?? string.Empty,
+                innerException: __parseFailure,
+                responseBody: __content,
+                responseObject: __value,
+                responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                     response.Headers,
                     h => h.Key,
-                    h => h.Value),
-            };
+                    h => h.Value));
         }
 
         try
