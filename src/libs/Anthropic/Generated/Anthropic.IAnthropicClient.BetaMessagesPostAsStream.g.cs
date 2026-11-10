@@ -1,0 +1,267 @@
+#nullable enable
+
+#pragma warning disable CS0618 // Type or member is obsolete
+
+namespace Anthropic
+{
+    public partial interface IAnthropicClient
+    {
+        /// <summary>
+        /// Create a Message<br/>
+        /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
+        /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
+        /// Learn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)
+        /// </summary>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
+        /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaMessageStreamEvent> BetaMessagesPostAsStreamAsync(
+
+            global::Anthropic.BetaCreateMessageParams request,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
+            string? anthropicVersion = default,
+            string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Message<br/>
+        /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
+        /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
+        /// Learn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)
+        /// </summary>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
+        /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
+        /// <param name="model">
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// </param>
+        /// <param name="messages">
+        /// Input messages.<br/>
+        /// Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.<br/>
+        /// Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.<br/>
+        /// If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response. This is called prefill. On models that don't support prefill, creating a message that ends with a partial `assistant` response returns a 400 error. See [Prefill not supported](https://platform.claude.com/docs/en/api/errors#prefill-not-supported).<br/>
+        /// Example with a single `user` message:<br/>
+        /// ```json<br/>
+        /// [{"role": "user", "content": "Hello, Claude"}]<br/>
+        /// ```<br/>
+        /// Example with multiple conversational turns:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///   {"role": "user", "content": "Hello there."},<br/>
+        ///   {"role": "assistant", "content": "Hi, I'm Claude. How can I help you?"},<br/>
+        ///   {"role": "user", "content": "Can you explain LLMs in plain English?"},<br/>
+        /// ]<br/>
+        /// ```<br/>
+        /// Example with a partially-filled response from Claude, for models that support prefill:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///   {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},<br/>
+        ///   {"role": "assistant", "content": "The best answer is ("},<br/>
+        /// ]<br/>
+        /// ```<br/>
+        /// Each input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `"text"`. The following input messages are equivalent:<br/>
+        /// ```json<br/>
+        /// {"role": "user", "content": "Hello, Claude"}<br/>
+        /// ```<br/>
+        /// ```json<br/>
+        /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
+        /// ```<br/>
+        /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter.<br/>
+        /// There is a limit of 100,000 messages in a single request.
+        /// </param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </param>
+        /// <param name="compaction">
+        /// Compaction configuration.<br/>
+        /// When set on `POST /v1/messages`, the request is a compaction request: the conversation in `messages` is summarized and the response holds only the resulting `compaction` block (`stop_reason` `"compaction"`), which later requests send first in `messages` in place of the messages it summarizes. `POST /v1/messages/count_tokens` accepts this parameter and ignores it: the count it returns is for the conversation in `messages` as sent. Cannot be combined with `context_management`.
+        /// </param>
+        /// <param name="container">
+        /// Container identifier for reuse across requests.
+        /// </param>
+        /// <param name="contextManagement">
+        /// Context management configuration.<br/>
+        /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
+        /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </param>
+        /// <param name="fallbackCreditToken">
+        /// The `fallback_credit_token` from a prior refusal's `stop_details`.<br/>
+        /// When a preceding request was refused and returned a `fallback_credit_token`,<br/>
+        /// pass that code here on the retry to have the retry's cache-creation tokens<br/>
+        /// for the prefix that was warm on the refused model billed at the cache-read<br/>
+        /// rate. Must be redeemed by the same organization and workspace, with the same<br/>
+        /// request body (optionally extended by one appended `assistant` message whose<br/>
+        /// content is the partial text — with any trailing whitespace stripped from<br/>
+        /// the final text block — and paired server-tool blocks streamed before the<br/>
+        /// refusal; the appended-assistant form is not available for requests with<br/>
+        /// `output_format` set or forced `tool_choice`), on an eligible fallback<br/>
+        /// model, on the same platform,<br/>
+        /// and within 5 minutes of the refusal; a mismatch is a 400. A token minted<br/>
+        /// mid-server-tool-loop whose partial content was continuable may only be<br/>
+        /// redeemed with the appended-assistant form — if an exact-body retry is<br/>
+        /// rejected with a 400 saying the token must be redeemed by continuing the<br/>
+        /// partial response, retry with the appended-assistant form instead.<br/>
+        /// When the appended-assistant form is used on a model that otherwise disallows<br/>
+        /// assistant-turn prefill, this token also authorizes that one prefill.
+        /// </param>
+        /// <param name="fallbacks">
+        /// Opt-in server-side retry on one or more substitute models when the requested model declines for policy reasons. Tried in order: if the first entry also declines, the second is tried, and so on. Some models don't support fallbacks; on those models, a list of fallback models returns a 400 error. See [Server-side fallback](https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback#server-side-fallback). The string "default" requests the requested model's server-defined default fallback configuration. On a model that doesn't support fallbacks, the request runs on the requested model alone, so a declined request stays declined.
+        /// </param>
+        /// <param name="inferenceGeo">
+        /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
+        /// </param>
+        /// <param name="maxTokens">
+        /// The maximum number of tokens to generate before stopping.<br/>
+        /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
+        /// Set to `0` to populate the [prompt cache](https://platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache) without generating a response.<br/>
+        /// Different models have different maximum values for this parameter.  See [models](https://platform.claude.com/docs/en/about-claude/models/overview) for details.
+        /// </param>
+        /// <param name="mcpServers">
+        /// MCP servers to be utilized in this request
+        /// </param>
+        /// <param name="metadata">
+        /// An object describing metadata about the request.
+        /// </param>
+        /// <param name="outputConfig">
+        /// Configuration options for the model's output, such as the output format.
+        /// </param>
+        /// <param name="serviceTier">
+        /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
+        /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
+        /// </param>
+        /// <param name="stopSequences">
+        /// Custom text sequences that will cause the model to stop generating.<br/>
+        /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
+        /// If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
+        /// </param>
+        /// <param name="system">
+        /// System prompt.<br/>
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
+        /// </param>
+        /// <param name="thinking">
+        /// Configuration for Claude's thinking.<br/>
+        /// With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.<br/>
+        /// Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](https://platform.claude.com/docs/en/build-with-claude/thinking#configuring-thinking) for each model's behavior.
+        /// </param>
+        /// <param name="thread">
+        /// Server-held conversation state (a Thread). `{"type": "create"}` asks the server to hold this conversation's state under the response's `id`; `{"type": "continue", "previous_message_id": ...}` resumes from a previous response so only the new turn's messages are sent. The response shape is unchanged.
+        /// </param>
+        /// <param name="toolChoice">
+        /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
+        /// </param>
+        /// <param name="tools">
+        /// Definitions of tools that the model may use.<br/>
+        /// If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.<br/>
+        /// There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)).<br/>
+        /// Each tool definition includes:<br/>
+        /// * `name`: Name of the tool.<br/>
+        /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// For example, if you defined `tools` as:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///   {<br/>
+        ///     "name": "get_stock_price",<br/>
+        ///     "description": "Get the current stock price for a given ticker symbol.",<br/>
+        ///     "input_schema": {<br/>
+        ///       "type": "object",<br/>
+        ///       "properties": {<br/>
+        ///         "ticker": {<br/>
+        ///           "type": "string",<br/>
+        ///           "description": "The stock ticker symbol, e.g. AAPL for Apple Inc."<br/>
+        ///         }<br/>
+        ///       },<br/>
+        ///       "required": ["ticker"]<br/>
+        ///     }<br/>
+        ///   }<br/>
+        /// ]<br/>
+        /// ```<br/>
+        /// And then asked the model "What's the S&amp;P 500 at today?", the model might produce `tool_use` content blocks in the response like this:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///   {<br/>
+        ///     "type": "tool_use",<br/>
+        ///     "id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",<br/>
+        ///     "name": "get_stock_price",<br/>
+        ///     "input": { "ticker": "^GSPC" }<br/>
+        ///   }<br/>
+        /// ]<br/>
+        /// ```<br/>
+        /// You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an input, and return the following back to the model in a subsequent `user` message:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///   {<br/>
+        ///     "type": "tool_result",<br/>
+        ///     "tool_use_id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",<br/>
+        ///     "content": "259.75 USD"<br/>
+        ///   }<br/>
+        /// ]<br/>
+        /// ```<br/>
+        /// Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.<br/>
+        /// See our [guide](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) for more details.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaMessageStreamEvent> BetaMessagesPostAsStreamAsync(
+#pragma warning disable CS0618 // Type or member is obsolete
+            global::Anthropic.Model model,
+#pragma warning disable CS0618 // Type or member is obsolete
+            global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessageUnion> messages,
+            int maxTokens,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
+            string? anthropicVersion = default,
+            string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
+            global::Anthropic.CacheControlVariant115? cacheControl = default,
+            global::Anthropic.BetaCompactionConfig? compaction = default,
+            global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string>? container = default,
+            global::Anthropic.BetaContextManagementConfig? contextManagement = default,
+            global::Anthropic.BetaDiagnosticsParam? diagnostics = default,
+            global::Anthropic.AnyOf<string, global::Anthropic.BetaFallbackCreditTokenParam>? fallbackCreditToken = default,
+            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string>? fallbacks = default,
+            string? inferenceGeo = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
+            global::Anthropic.BetaMetadata? metadata = default,
+            global::Anthropic.BetaOutputConfig? outputConfig = default,
+            global::Anthropic.BetaCreateMessageParamsServiceTier? serviceTier = default,
+            global::Anthropic.BetaSpeed? speed = default,
+            global::System.Collections.Generic.IList<string>? stopSequences = default,
+            global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
+            global::Anthropic.BetaThinkingConfigParam? thinking = default,
+            global::Anthropic.ThreadVariant1? thread = default,
+            global::Anthropic.BetaToolChoice? toolChoice = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaToolUnion>? tools = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

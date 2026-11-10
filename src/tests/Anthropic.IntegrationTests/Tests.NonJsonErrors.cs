@@ -54,10 +54,7 @@ public partial class Tests
         {
             BaseAddress = new Uri("https://api.anthropic.com"),
         };
-        using var client = new AnthropicClient(httpClient, authorizations: null, options: null)
-        {
-            ReadResponseAsString = true,
-        };
+        using var client = new AnthropicClient(httpClient, authorizations: null, options: null);
 
         var enumerable = client.CreateMessageAsStreamAsync(new CreateMessageParams
         {
@@ -75,11 +72,13 @@ public partial class Tests
 
             Assert.Fail("expected the stream to throw");
         }
-        catch (ApiException<ErrorResponse> ex)
+        catch (ApiException ex)
         {
+            // A stream throws the non-generic exception with the body attached: the specification
+            // declares no error schema on the streaming responses, so there is no type to parse the
+            // body into. The body itself is what a caller needs, and it is here.
             ex.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
             ex.ResponseBody.Should().Contain("HTTP Status 401");
-            ex.ResponseObject.Should().BeNull();
         }
     }
 

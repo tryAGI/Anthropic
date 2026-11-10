@@ -75,6 +75,18 @@ yq -o=json '.' openapi.yaml | jq '
     then .value.required |= map(select(. != "caller"))
     else . end
   ) |
+  # The bundled spec describes every streaming response as plain JSON, which is why AutoSDK could
+  # not generate a stream for them and this SDK hand-wrote the transport. Declaring the
+  # `text/event-stream` variant - the same shape the OpenAI spec uses - makes the generator emit
+  # the `*AsStream` methods, so the hand-written path can go.
+  .paths["/v1/messages"].post.responses["200"].content["text/event-stream"] =
+    { "schema": { "$ref": "#/components/schemas/MessageStreamEvent" } } |
+  .paths["/v1/messages?beta=true"].post.responses["200"].content["text/event-stream"] =
+    { "schema": { "$ref": "#/components/schemas/BetaMessageStreamEvent" } } |
+  .paths["/v1/sessions/{session_id}/events/stream?beta=true"].get.responses["200"].content["text/event-stream"] =
+    { "schema": { "$ref": "#/components/schemas/BetaManagedAgentsStreamSessionEvents" } } |
+  .paths["/v1/sessions/{session_id}/threads/{thread_id}/stream?beta=true"].get.responses["200"].content["text/event-stream"] =
+    { "schema": { "$ref": "#/components/schemas/BetaManagedAgentsStreamSessionThreadEvents" } } |
   .components.schemas.Ping = {
     "type": "object",
     "properties": {

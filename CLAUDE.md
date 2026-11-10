@@ -55,9 +55,8 @@ This SDK has significant hand-written code alongside the generated code:
 | File | Purpose |
 |------|---------|
 | `AnthropicClient.AdditionalConstructors.cs` | Extra constructor overloads |
-| `AnthropicClient.Streaming.cs` | Server-sent events streaming for `POST /v1/messages` |
-| `AnthropicClient.ServerSentEvents.cs` | Shared SSE transport used by every streaming overload |
-| `AnthropicClient.BetaStreaming.cs` | Streaming for the beta messages endpoint and for Managed Agents session/thread event streams |
+| `AnthropicClient.Streaming.cs` | Thin wrapper keeping the `CreateMessageAsStreamAsync` name over the generated `MessagesPostAsStreamAsync` |
+| `AnthropicClient.BetaStreaming.cs` | Same for the beta messages endpoint and the Managed Agents session/thread streams, plus the default `managed-agents-2026-04-01` beta flag |
 | `AnthropicWebhooks.cs` / `AnthropicWebhookEvent.cs` | Webhook signature verification (`Unwrap`) and the delivery envelope |
 | `InputMessage.cs` | Input message helper type |
 | `Message.cs` | Message extension methods |
@@ -82,7 +81,11 @@ This SDK has significant hand-written code alongside the generated code:
 - The namespace is `Anthropic`
 - Tools are defined via C# interfaces decorated with `[GenerateJsonSchema]` from the CSharpToJsonSchema package
 - Supports Microsoft.Extensions.AI `IChatClient` abstraction
-- Streaming uses `System.Net.ServerSentEvents` (in-box in net10.0)
+- Streaming is **generated**, not hand-written: `generate.sh` declares `text/event-stream` on the 200
+  response of the four streaming operations, which is what makes AutoSDK emit `*AsStreamAsync`
+  methods with the usual retry, timeout, request-option and hook behaviour. The bundled upstream
+  spec declares only `application/json` there, so without that patch the transport has to be
+  hand-written - which is what it was until 2026-11-10
 
 ### CI/CD
 

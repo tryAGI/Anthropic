@@ -110,6 +110,32 @@ namespace Anthropic
                 global::Anthropic.SourceGenerationContextOperation_2A7F00B8669E60F0.Default;
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            request = new global::Anthropic.BetaCreateMessageParams
+            {
+                Model = request.Model,
+                Messages = request.Messages,
+                CacheControl = request.CacheControl,
+                Compaction = request.Compaction,
+                Container = request.Container,
+                ContextManagement = request.ContextManagement,
+                Diagnostics = request.Diagnostics,
+                FallbackCreditToken = request.FallbackCreditToken,
+                Fallbacks = request.Fallbacks,
+                InferenceGeo = request.InferenceGeo,
+                MaxTokens = request.MaxTokens,
+                McpServers = request.McpServers,
+                Metadata = request.Metadata,
+                OutputConfig = request.OutputConfig,
+                ServiceTier = request.ServiceTier,
+                Speed = request.Speed,
+                StopSequences = request.StopSequences,
+                Stream = false,
+                System = request.System,
+                Thinking = request.Thinking,
+                Thread = request.Thread,
+                ToolChoice = request.ToolChoice,
+                Tools = request.Tools,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareBetaMessagesPostArguments(
@@ -152,6 +178,10 @@ namespace Anthropic
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
 
             if (anthropicBeta != default)
             {
@@ -1185,11 +1215,6 @@ namespace Anthropic
         /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
         /// If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
         /// </param>
-        /// <param name="stream">
-        /// Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.<br/>
-        /// In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](https://platform.claude.com/docs/en/build-with-claude/streaming#streaming-with-sdks) for an example in each language.<br/>
-        /// Example: false
-        /// </param>
         /// <param name="system">
         /// System prompt.<br/>
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
@@ -1283,7 +1308,6 @@ namespace Anthropic
             global::Anthropic.BetaCreateMessageParamsServiceTier? serviceTier = default,
             global::Anthropic.BetaSpeed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            bool? stream = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
             global::Anthropic.ThreadVariant1? thread = default,
@@ -1311,7 +1335,7 @@ namespace Anthropic
                 ServiceTier = serviceTier,
                 Speed = speed,
                 StopSequences = stopSequences,
-                Stream = stream,
+                Stream = false,
                 System = system,
                 Thinking = thinking,
                 Thread = thread,

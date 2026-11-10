@@ -53,6 +53,11 @@
                 "schema": {
                   "$ref": "#/components/schemas/Message"
                 }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageStreamEvent"
+                }
               }
             }
           },
@@ -7603,6 +7608,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BetaMessage"
+                }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaMessageStreamEvent"
                 }
               }
             }
@@ -23148,6 +23158,11 @@
                 "schema": {
                   "$ref": "#/components/schemas/BetaManagedAgentsStreamSessionEvents"
                 }
+              },
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaManagedAgentsStreamSessionEvents"
+                }
               }
             }
           },
@@ -24331,6 +24346,11 @@
             "description": "Successful response (OK)",
             "content": {
               "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaManagedAgentsStreamSessionThreadEvents"
+                }
+              },
+              "text/event-stream": {
                 "schema": {
                   "$ref": "#/components/schemas/BetaManagedAgentsStreamSessionThreadEvents"
                 }

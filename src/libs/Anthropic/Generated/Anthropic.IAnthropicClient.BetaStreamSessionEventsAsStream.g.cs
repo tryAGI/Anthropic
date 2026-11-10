@@ -1,0 +1,32 @@
+#nullable enable
+
+namespace Anthropic
+{
+    public partial interface IAnthropicClient
+    {
+        /// <summary>
+        /// Stream Events
+        /// </summary>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
+        /// </param>
+        /// <param name="sessionId"></param>
+        /// <param name="eventDeltas"></param>
+        /// <param name="anthropicWorkspaceId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsStreamSessionEvents> BetaStreamSessionEventsAsStreamAsync(
+            string sessionId,
+            string? anthropicVersion = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas = default,
+            string? anthropicWorkspaceId = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}
