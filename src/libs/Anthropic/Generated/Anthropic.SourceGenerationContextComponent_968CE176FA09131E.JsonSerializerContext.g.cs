@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaRequestImageTransformationsOversizedImage))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0123.Create_BetaRequestImageTransformationsOversizedImage2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0124.Create_BetaRequestImageTransformationsOversizedImage2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaRequestImageTransformationsOversizedImage?))
                 {

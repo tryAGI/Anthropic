@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaPluginReach?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0233.Create_NullableBetaPluginReach2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0234.Create_NullableBetaPluginReach2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

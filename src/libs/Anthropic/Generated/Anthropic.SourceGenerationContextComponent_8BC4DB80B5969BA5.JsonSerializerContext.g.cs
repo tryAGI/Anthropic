@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UserLocation))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0339.Create_UserLocation(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0340.Create_UserLocation(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

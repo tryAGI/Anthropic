@@ -31,7 +31,7 @@ namespace Anthropic
                 #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::Anthropic.ModelVariant22))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0206.Create_ModelVariant22(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0207.Create_ModelVariant22(options);
                 }
                 #pragma warning restore CS0618
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;

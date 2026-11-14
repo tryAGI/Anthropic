@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsWorkflowRunError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0104.Create_BetaManagedAgentsWorkflowRunError2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0105.Create_BetaManagedAgentsWorkflowRunError2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaManagedAgentsWorkflowRunError?))
                 {

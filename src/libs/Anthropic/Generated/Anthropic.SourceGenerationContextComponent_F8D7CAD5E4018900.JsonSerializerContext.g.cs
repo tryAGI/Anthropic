@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0197.Create_GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0198.Create_GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType2(options);
                 }
                 if (type == typeof(global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType?))
                 {

@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UpdateUserParamsRole))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0337.Create_UpdateUserParamsRole2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0338.Create_UpdateUserParamsRole2(options);
                 }
                 if (type == typeof(global::Anthropic.UpdateUserParamsRole?))
                 {

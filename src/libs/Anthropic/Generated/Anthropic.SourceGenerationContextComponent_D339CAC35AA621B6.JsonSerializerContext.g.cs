@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ListSkillVersionsResponse))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0201.Create_ListSkillVersionsResponse(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0202.Create_ListSkillVersionsResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

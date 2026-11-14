@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.CacheControlEphemeralTtl?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0244.Create_NullableCacheControlEphemeralTtl2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0245.Create_NullableCacheControlEphemeralTtl2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

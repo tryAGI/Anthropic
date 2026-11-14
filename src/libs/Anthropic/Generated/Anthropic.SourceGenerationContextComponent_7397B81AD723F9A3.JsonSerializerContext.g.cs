@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaRequestImageBlockSourceDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0123.Create_BetaRequestImageBlockSourceDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0124.Create_BetaRequestImageBlockSourceDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaRequestImageBlockSourceDiscriminatorType?))
                 {

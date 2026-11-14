@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.WebSearchTool20250305CacheControlVariant1DiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0343.Create_WebSearchTool20250305CacheControlVariant1DiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0344.Create_WebSearchTool20250305CacheControlVariant1DiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.WebSearchTool20250305CacheControlVariant1DiscriminatorType?))
                 {

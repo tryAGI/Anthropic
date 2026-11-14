@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BrowserGetPageTextConfig))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0167.Create_BrowserGetPageTextConfig(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0168.Create_BrowserGetPageTextConfig(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

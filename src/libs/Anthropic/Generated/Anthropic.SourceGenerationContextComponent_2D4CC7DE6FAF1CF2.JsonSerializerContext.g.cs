@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Base64ImageSourceMediaType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0006.Create_Base64ImageSourceMediaType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0007.Create_Base64ImageSourceMediaType2(options);
                 }
                 if (type == typeof(global::Anthropic.Base64ImageSourceMediaType?))
                 {

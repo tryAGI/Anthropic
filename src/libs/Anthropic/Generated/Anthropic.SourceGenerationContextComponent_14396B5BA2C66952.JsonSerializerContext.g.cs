@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ContentBlockDeltaEventDeltaDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0186.Create_ContentBlockDeltaEventDeltaDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0187.Create_ContentBlockDeltaEventDeltaDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

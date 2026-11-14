@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaRateLimitGroupDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0117.Create_BetaRateLimitGroupDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0118.Create_BetaRateLimitGroupDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaRateLimitGroupDiscriminatorType?))
                 {

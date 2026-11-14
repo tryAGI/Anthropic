@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails, global::Anthropic.BetaSandboxEgressRestrictedErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0303.Create_SourceGenerationContextMetadataType_74004295CDD19EF1(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0304.Create_SourceGenerationContextMetadataType_74004295CDD19EF1(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaCannotSignOutManagedMemberErrorDetails, global::Anthropic.BetaCannotSignOutMembershipAdminErrorDetails, global::Anthropic.BetaCannotSignOutOwnerErrorDetails, global::Anthropic.BetaCannotSignOutPrivilegedMemberErrorDetails, global::Anthropic.BetaSandboxEgressRestrictedErrorDetails>?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0323.Create_SourceGenerationContextMetadataType_DF9568918AA784AD(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0324.Create_SourceGenerationContextMetadataType_DF9568918AA784AD(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -42,10 +42,9 @@ namespace Anthropic
         /// cannot be read at that moment, the request fails with a retryable 503 instead.<br/>
         /// When the Plugin is in the organization's<br/>
         /// library marketplace, a version other than the one served is also refused with a 409<br/>
-        /// when one of its skills has a name that an organization skill (one an administrator<br/>
-        /// uploaded for the whole organization in claude.ai) has since taken: `error_code`<br/>
-        /// `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin<br/>
-        /// cannot be updated here (403).<br/>
+        /// when an organization skill that this API does not list has since taken the name of<br/>
+        /// one of its skills: `error_code` `skill_name_taken`, with that name in<br/>
+        /// `details.skill_name`. A member-owned Plugin cannot be updated here (403).<br/>
         /// This endpoint does not write installation settings; they are written at<br/>
         /// `/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.<br/>
         /// **Accepted credentials:** an Admin API key with the `write:plugins` scope.<br/>
@@ -97,10 +96,9 @@ namespace Anthropic
         /// cannot be read at that moment, the request fails with a retryable 503 instead.<br/>
         /// When the Plugin is in the organization's<br/>
         /// library marketplace, a version other than the one served is also refused with a 409<br/>
-        /// when one of its skills has a name that an organization skill (one an administrator<br/>
-        /// uploaded for the whole organization in claude.ai) has since taken: `error_code`<br/>
-        /// `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin<br/>
-        /// cannot be updated here (403).<br/>
+        /// when an organization skill that this API does not list has since taken the name of<br/>
+        /// one of its skills: `error_code` `skill_name_taken`, with that name in<br/>
+        /// `details.skill_name`. A member-owned Plugin cannot be updated here (403).<br/>
         /// This endpoint does not write installation settings; they are written at<br/>
         /// `/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.<br/>
         /// **Accepted credentials:** an Admin API key with the `write:plugins` scope.<br/>
@@ -1074,10 +1072,9 @@ namespace Anthropic
         /// cannot be read at that moment, the request fails with a retryable 503 instead.<br/>
         /// When the Plugin is in the organization's<br/>
         /// library marketplace, a version other than the one served is also refused with a 409<br/>
-        /// when one of its skills has a name that an organization skill (one an administrator<br/>
-        /// uploaded for the whole organization in claude.ai) has since taken: `error_code`<br/>
-        /// `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin<br/>
-        /// cannot be updated here (403).<br/>
+        /// when an organization skill that this API does not list has since taken the name of<br/>
+        /// one of its skills: `error_code` `skill_name_taken`, with that name in<br/>
+        /// `details.skill_name`. A member-owned Plugin cannot be updated here (403).<br/>
         /// This endpoint does not write installation settings; they are written at<br/>
         /// `/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.<br/>
         /// **Accepted credentials:** an Admin API key with the `write:plugins` scope.<br/>

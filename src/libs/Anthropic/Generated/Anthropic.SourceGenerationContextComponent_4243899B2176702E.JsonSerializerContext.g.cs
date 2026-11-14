@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaCreateSlackChannelResponseError4))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0042.Create_BetaCreateSlackChannelResponseError4(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0043.Create_BetaCreateSlackChannelResponseError4(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

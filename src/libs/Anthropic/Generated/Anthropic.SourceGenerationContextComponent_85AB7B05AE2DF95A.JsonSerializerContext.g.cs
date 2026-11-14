@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ExternalKeyUpdateParamsProviderConfigVariant1DiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0195.Create_ExternalKeyUpdateParamsProviderConfigVariant1DiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0196.Create_ExternalKeyUpdateParamsProviderConfigVariant1DiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.ExternalKeyUpdateParamsProviderConfigVariant1DiscriminatorType?))
                 {

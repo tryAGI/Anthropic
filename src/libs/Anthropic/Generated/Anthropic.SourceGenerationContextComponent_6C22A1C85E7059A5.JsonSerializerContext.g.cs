@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.InputMessageUnion))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0198.Create_InputMessageUnion2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0199.Create_InputMessageUnion2(options);
                 }
                 if (type == typeof(global::Anthropic.InputMessageUnion?))
                 {

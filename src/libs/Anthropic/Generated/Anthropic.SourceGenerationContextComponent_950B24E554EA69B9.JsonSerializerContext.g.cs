@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.RequestToolUseBlockInput))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0271.Create_RequestToolUseBlockInput(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0272.Create_RequestToolUseBlockInput(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

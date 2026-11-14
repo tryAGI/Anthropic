@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaRotateTunnelTokenV1OrganizationsTunnelsTunnelIdRotateTokenPostResponseError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0138.Create_BetaRotateTunnelTokenV1OrganizationsTunnelsTunnelIdRotateTokenPostResponseError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0139.Create_BetaRotateTunnelTokenV1OrganizationsTunnelsTunnelIdRotateTokenPostResponseError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

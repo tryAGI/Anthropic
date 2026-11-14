@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.RbacRoleList))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0264.Create_RbacRoleList(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0265.Create_RbacRoleList(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

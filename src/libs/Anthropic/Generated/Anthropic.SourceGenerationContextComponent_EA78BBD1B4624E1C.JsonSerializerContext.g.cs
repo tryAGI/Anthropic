@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsVaultNotFoundRunError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0103.Create_BetaManagedAgentsVaultNotFoundRunError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0104.Create_BetaManagedAgentsVaultNotFoundRunError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

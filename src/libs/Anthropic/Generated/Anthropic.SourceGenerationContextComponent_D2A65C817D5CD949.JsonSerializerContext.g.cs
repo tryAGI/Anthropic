@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0320.Create_SourceGenerationContextMetadataType_D2A65C817D5CD949(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0321.Create_SourceGenerationContextMetadataType_D2A65C817D5CD949(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>?))
                 {

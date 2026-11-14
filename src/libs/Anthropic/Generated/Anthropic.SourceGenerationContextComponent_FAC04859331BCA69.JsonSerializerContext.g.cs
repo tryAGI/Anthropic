@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BrowserFormInputValue))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0167.Create_BrowserFormInputValue2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0168.Create_BrowserFormInputValue2(options);
                 }
                 if (type == typeof(global::Anthropic.BrowserFormInputValue?))
                 {

@@ -27,7 +27,7 @@ namespace Anthropic
         public string? Model { get; set; }
 
         /// <summary>
-        /// The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`. Null clears it.
+        /// The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`, or of a self-hosted runner pool of the organization that every member may use, starting with `ccpool_`. Null clears it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_id")]
         public string? EnvironmentId { get; set; }
@@ -37,6 +37,12 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("guest_policy")]
         public global::Anthropic.BetaClaudeTagGuestPolicy? GuestPolicy { get; set; }
+
+        /// <summary>
+        /// How Claude takes part in the channel: `automatic`, `mention_only`, `always_awake` or `thread`. Only a channel takes one: an update of a workspace that sends a value is refused, and one that sends null changes nothing. Null never clears it: sent to a channel that stores none it changes nothing, and sent to a channel that stores one it is refused, because a stored reply mode can be changed but never cleared; a caller that wants Claude's default behavior sends `automatic`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reply_mode")]
+        public global::Anthropic.BetaClaudeTagReplyMode? ReplyMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,10 +63,13 @@ namespace Anthropic
         /// The model Claude uses: the identifier of a model, or the name of a model line, that the organization is entitled to for Claude Tag. Null clears it.
         /// </param>
         /// <param name="environmentId">
-        /// The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`. Null clears it.
+        /// The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`, or of a self-hosted runner pool of the organization that every member may use, starting with `ccpool_`. Null clears it.
         /// </param>
         /// <param name="guestPolicy">
         /// What Claude does in a channel while a Slack guest is in it. Null clears it.
+        /// </param>
+        /// <param name="replyMode">
+        /// How Claude takes part in the channel: `automatic`, `mention_only`, `always_awake` or `thread`. Only a channel takes one: an update of a workspace that sends a value is refused, and one that sends null changes nothing. Null never clears it: sent to a channel that stores none it changes nothing, and sent to a channel that stores one it is refused, because a stored reply mode can be changed but never cleared; a caller that wants Claude's default behavior sends `automatic`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -70,13 +79,15 @@ namespace Anthropic
             string? instructions,
             string? model,
             string? environmentId,
-            global::Anthropic.BetaClaudeTagGuestPolicy? guestPolicy)
+            global::Anthropic.BetaClaudeTagGuestPolicy? guestPolicy,
+            global::Anthropic.BetaClaudeTagReplyMode? replyMode)
         {
             this.Enabled = enabled;
             this.Instructions = instructions;
             this.Model = model;
             this.EnvironmentId = environmentId;
             this.GuestPolicy = guestPolicy;
+            this.ReplyMode = replyMode;
         }
 
         /// <summary>

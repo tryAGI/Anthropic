@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UserProfileProgramStatus))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0341.Create_UserProfileProgramStatus2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0342.Create_UserProfileProgramStatus2(options);
                 }
                 if (type == typeof(global::Anthropic.UserProfileProgramStatus?))
                 {

@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetSource))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0060.Create_BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetSource2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0061.Create_BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetSource2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaListPluginMarketplacesV1OrganizationsPluginMarketplacesGetSource?))
                 {
