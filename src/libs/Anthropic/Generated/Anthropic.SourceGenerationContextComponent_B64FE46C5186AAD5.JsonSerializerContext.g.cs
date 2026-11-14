@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UpdateApiKeyV1OrganizationsApiKeysApiKeyIdPostResponse2))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0336.Create_UpdateApiKeyV1OrganizationsApiKeysApiKeyIdPostResponse2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0337.Create_UpdateApiKeyV1OrganizationsApiKeysApiKeyIdPostResponse2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

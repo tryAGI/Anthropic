@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.GetSkillV1SkillsSkillIdGetResponseError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0197.Create_GetSkillV1SkillsSkillIdGetResponseError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0198.Create_GetSkillV1SkillsSkillIdGetResponseError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

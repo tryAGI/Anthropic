@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CreateInviteParamsRole))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0188.Create_CreateInviteParamsRole2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0189.Create_CreateInviteParamsRole2(options);
                 }
                 if (type == typeof(global::Anthropic.CreateInviteParamsRole?))
                 {

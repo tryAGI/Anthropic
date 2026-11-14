@@ -13,15 +13,15 @@ namespace Anthropic
             {
                 if (type == typeof(string))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0331.Create_String(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0332.Create_String(options);
                 }
                 if (type == typeof(object))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0261.Create_Object(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0262.Create_Object(options);
                 }
                 if (type == typeof(bool))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0166.Create_Boolean(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0167.Create_Boolean(options);
                 }
                 if (type == typeof(byte))
                 {
@@ -37,7 +37,7 @@ namespace Anthropic
                 }
                 if (type == typeof(double))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0193.Create_Double(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0194.Create_Double(options);
                 }
                 if (type == typeof(byte[]))
                 {
@@ -49,11 +49,11 @@ namespace Anthropic
                 }
                 if (type == typeof(global::System.Guid))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0198.Create_Guid(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0199.Create_Guid(options);
                 }
                 if (type == typeof(global::System.Text.Json.JsonElement))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0199.Create_JsonElement(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0200.Create_JsonElement(options);
                 }
                 if (type == typeof(global::System.Text.Json.JsonElement?))
                 {
@@ -65,11 +65,11 @@ namespace Anthropic
                 }
                 if (type == typeof(global::System.Collections.Generic.Dictionary<string, object>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0305.Create_SourceGenerationContextMetadataType_8219E7AD6AEFA4B4(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0306.Create_SourceGenerationContextMetadataType_8219E7AD6AEFA4B4(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.IDictionary<string, object>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0302.Create_SourceGenerationContextMetadataType_7024F6984ED20EB8(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0303.Create_SourceGenerationContextMetadataType_7024F6984ED20EB8(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<object>))
                 {

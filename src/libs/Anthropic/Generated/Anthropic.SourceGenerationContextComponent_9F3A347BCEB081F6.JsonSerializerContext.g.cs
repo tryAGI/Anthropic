@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.NoBillingWorkspaceRoleSchema))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0207.Create_NoBillingWorkspaceRoleSchema2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0208.Create_NoBillingWorkspaceRoleSchema2(options);
                 }
                 if (type == typeof(global::Anthropic.NoBillingWorkspaceRoleSchema?))
                 {

@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaCostReportGroupBy))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0037.Create_BetaCostReportGroupBy2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0038.Create_BetaCostReportGroupBy2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaCostReportGroupBy?))
                 {

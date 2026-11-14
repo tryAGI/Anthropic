@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaUserProfileExternalUserEntityType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0158.Create_BetaUserProfileExternalUserEntityType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0159.Create_BetaUserProfileExternalUserEntityType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaUserProfileExternalUserEntityType?))
                 {

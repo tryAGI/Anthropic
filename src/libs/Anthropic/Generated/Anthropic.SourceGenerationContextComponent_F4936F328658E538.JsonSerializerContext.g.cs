@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails, global::Anthropic.RbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.RbacGroupOwnerAccessUnconfirmedErrorDetails>?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0288.Create_SourceGenerationContextMetadataType_23EAAADB4CF71F99(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0289.Create_SourceGenerationContextMetadataType_23EAAADB4CF71F99(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

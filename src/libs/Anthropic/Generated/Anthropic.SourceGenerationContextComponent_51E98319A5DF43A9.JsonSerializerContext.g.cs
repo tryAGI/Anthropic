@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ModelInfoLifecycle))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0205.Create_ModelInfoLifecycle2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0206.Create_ModelInfoLifecycle2(options);
                 }
                 if (type == typeof(global::Anthropic.ModelInfoLifecycle?))
                 {

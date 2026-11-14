@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ConnectorScopePermissionResource))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0185.Create_ConnectorScopePermissionResource(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0186.Create_ConnectorScopePermissionResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

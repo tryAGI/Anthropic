@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(string))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0331.Create_String(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0332.Create_String(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -87,6 +87,24 @@ namespace Anthropic
         public int? ClaudeDesignWeeklyActiveUserCount { get; set; }
 
         /// <summary>
+        /// Number of Slack users active in Claude Tag on the requested day. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("claude_tag_daily_active_user_count")]
+        public int? ClaudeTagDailyActiveUserCount { get; set; }
+
+        /// <summary>
+        /// Number of Slack users active in Claude Tag in the 28-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("claude_tag_monthly_active_user_count")]
+        public int? ClaudeTagMonthlyActiveUserCount { get; set; }
+
+        /// <summary>
+        /// Number of Slack users active in Claude Tag in the 7-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("claude_tag_weekly_active_user_count")]
+        public int? ClaudeTagWeeklyActiveUserCount { get; set; }
+
+        /// <summary>
         /// Number of users with Cowork activity on the requested day
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cowork_daily_active_user_count")]
@@ -280,6 +298,15 @@ namespace Anthropic
         /// <param name="claudeDesignWeeklyActiveUserCount">
         /// Number of users with Claude Design activity in the 7-day rolling window. Omitted from the response while the per-product breakdown is not enabled for this organization.
         /// </param>
+        /// <param name="claudeTagDailyActiveUserCount">
+        /// Number of Slack users active in Claude Tag on the requested day. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </param>
+        /// <param name="claudeTagMonthlyActiveUserCount">
+        /// Number of Slack users active in Claude Tag in the 28-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </param>
+        /// <param name="claudeTagWeeklyActiveUserCount">
+        /// Number of Slack users active in Claude Tag in the 7-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </param>
         /// <param name="dailyAdoptionRate">
         /// Percentage of assigned seats with activity on the requested day (`DAU / assigned_seat_count * 100`). Null when the response is scoped to an RBAC group.
         /// </param>
@@ -338,6 +365,9 @@ namespace Anthropic
             int? claudeDesignDailyActiveUserCount,
             int? claudeDesignMonthlyActiveUserCount,
             int? claudeDesignWeeklyActiveUserCount,
+            int? claudeTagDailyActiveUserCount,
+            int? claudeTagMonthlyActiveUserCount,
+            int? claudeTagWeeklyActiveUserCount,
             double? dailyAdoptionRate,
             double? monthlyAdoptionRate,
             int? officeAgentDailyActiveUserCount,
@@ -363,6 +393,9 @@ namespace Anthropic
             this.ClaudeDesignDailyActiveUserCount = claudeDesignDailyActiveUserCount;
             this.ClaudeDesignMonthlyActiveUserCount = claudeDesignMonthlyActiveUserCount;
             this.ClaudeDesignWeeklyActiveUserCount = claudeDesignWeeklyActiveUserCount;
+            this.ClaudeTagDailyActiveUserCount = claudeTagDailyActiveUserCount;
+            this.ClaudeTagMonthlyActiveUserCount = claudeTagMonthlyActiveUserCount;
+            this.ClaudeTagWeeklyActiveUserCount = claudeTagWeeklyActiveUserCount;
             this.CoworkDailyActiveUserCount = coworkDailyActiveUserCount;
             this.CoworkMonthlyActiveUserCount = coworkMonthlyActiveUserCount;
             this.CoworkWeeklyActiveUserCount = coworkWeeklyActiveUserCount;

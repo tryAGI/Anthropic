@@ -53735,14 +53735,14 @@
                   "type": "null"
                 }
               ],
-              "description": "Restrict usage returned to the specified context window(s).",
+              "description": "Restrict usage returned to the specified context window(s). See the `context_window` response field for how a request is classified.",
               "examples": [
                 "0-200k",
                 "200k-1M"
               ],
               "title": "Context Window[]"
             },
-            "description": "Restrict usage returned to the specified context window(s)."
+            "description": "Restrict usage returned to the specified context window(s). See the `context_window` response field for how a request is classified."
           },
           {
             "name": "inference_geos[]",
@@ -72963,7 +72963,7 @@
       },
       "post": {
         "summary": "Create Plugin",
-        "description": "Create an organization-owned Plugin and its first version by uploading the\nversion's files.\n\nThe upload is `multipart/form-data`: the version's files (`files`, each part sent\nas `files[]`), with an optional `marketplace_id` and `release_notes`. The manifest's `name` becomes the\nPlugin's `name`, and `display_name`, `description` and `manifest_version` come\nfrom the manifest too.\n\n`name` may contain lowercase letters (from any alphabet), digits, and hyphens, up\nto 64 characters. Uppercase letters, spaces, underscores, and other punctuation are\nrejected.\n\nThe `name` must be unique within the marketplace: a name already taken\nreturns a 409 with `error_code` `plugin_name_taken` and, when a Plugin holds it,\nthat Plugin's ID in `details.plugin_id`. A Plugin going into the organization's\nlibrary marketplace is also refused with a 409 when one of its skills has the name of\nan organization skill (a skill an administrator uploaded for the whole organization\nin claude.ai): `error_code` `skill_name_taken`, with that name in\n`details.skill_name`; rename the skill, or remove the organization skill in\nclaude.ai. A 503 with `error_code`\n`registration_pending` means the Plugin and its version were stored (their IDs are\nin `details`) but are not yet usable in claude.ai: do not retry the create (the\nretry would return `plugin_name_taken`); create a version on the stored Plugin\ninstead, which completes it.\n\nFor a worked example, see [Create a plugin](/docs/en/manage-claude/plugins-api#create-a-plugin)\nin the Plugins API guide.\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
+        "description": "Create an organization-owned Plugin and its first version by uploading the\nversion's files.\n\nThe upload is `multipart/form-data`: the version's files (`files`, each part sent\nas `files[]`), with an optional `marketplace_id` and `release_notes`. The manifest's `name` becomes the\nPlugin's `name`, and `display_name`, `description` and `manifest_version` come\nfrom the manifest too.\n\n`name` may contain lowercase letters (from any alphabet), digits, and hyphens, up\nto 64 characters. Uppercase letters, spaces, underscores, and other punctuation are\nrejected.\n\nThe `name` must be unique within the marketplace: a name already taken\nreturns a 409 with `error_code` `plugin_name_taken` and, when a Plugin holds it,\nthat Plugin's ID in `details.plugin_id`. A Plugin going into the organization's\nlibrary marketplace is also refused with a 409 when one of its skills has the name of\nan organization skill that this API does not list: `error_code`\n`skill_name_taken`, with that name in `details.skill_name`; rename the skill, or\nremove the organization skill in claude.ai. A 503 with `error_code`\n`registration_pending` means the Plugin and its version were stored (their IDs are\nin `details`) but are not yet usable in claude.ai: do not retry the create (the\nretry would return `plugin_name_taken`); create a version on the stored Plugin\ninstead, which completes it.\n\nFor a worked example, see [Create a plugin](/docs/en/manage-claude/plugins-api#create-a-plugin)\nin the Plugins API guide.\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
         "operationId": "beta_create_plugin_v1_organizations_plugins_post",
         "parameters": [
           {
@@ -73612,7 +73612,7 @@
       },
       "post": {
         "summary": "Update Plugin",
-        "description": "Change which stored version of an organization-owned Plugin is served to members,\nfor example to roll back to an earlier one. This pins the served version: later\nuploads are stored but no longer change what is served, and pinning cannot currently\nbe undone, here or in claude.ai.\n\nPass the version as `served_version_id`: an earlier one to roll back, a later one to\nstart serving a version that was stored without being served, or the one already\nserved to pin it without changing what is served. No new version is created.\n\nWhen the organization has content scanning enabled, a version whose\n`content_scan.status` is `processing` is refused with a 409 (`error_code`\n`scan_pending`; retry once the scan finishes). A version whose `content_scan.status`\nis `errored`, or whose `content_scan.assessment` is `fail` or `unknown`, is refused\nwith a 400 (`error_code` `scan_failed`); a `warn` is accepted. If the scan outcome\ncannot be read at that moment, the request fails with a retryable 503 instead.\nWhen the Plugin is in the organization's\nlibrary marketplace, a version other than the one served is also refused with a 409\nwhen one of its skills has a name that an organization skill (one an administrator\nuploaded for the whole organization in claude.ai) has since taken: `error_code`\n`skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin\ncannot be updated here (403).\n\nThis endpoint does not write installation settings; they are written at\n`/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
+        "description": "Change which stored version of an organization-owned Plugin is served to members,\nfor example to roll back to an earlier one. This pins the served version: later\nuploads are stored but no longer change what is served, and pinning cannot currently\nbe undone, here or in claude.ai.\n\nPass the version as `served_version_id`: an earlier one to roll back, a later one to\nstart serving a version that was stored without being served, or the one already\nserved to pin it without changing what is served. No new version is created.\n\nWhen the organization has content scanning enabled, a version whose\n`content_scan.status` is `processing` is refused with a 409 (`error_code`\n`scan_pending`; retry once the scan finishes). A version whose `content_scan.status`\nis `errored`, or whose `content_scan.assessment` is `fail` or `unknown`, is refused\nwith a 400 (`error_code` `scan_failed`); a `warn` is accepted. If the scan outcome\ncannot be read at that moment, the request fails with a retryable 503 instead.\nWhen the Plugin is in the organization's\nlibrary marketplace, a version other than the one served is also refused with a 409\nwhen an organization skill that this API does not list has since taken the name of\none of its skills: `error_code` `skill_name_taken`, with that name in\n`details.skill_name`. A member-owned Plugin cannot be updated here (403).\n\nThis endpoint does not write installation settings; they are written at\n`/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
         "operationId": "beta_update_plugin_v1_organizations_plugins__plugin_id__post",
         "parameters": [
           {
@@ -73975,7 +73975,7 @@
       },
       "delete": {
         "summary": "Delete Plugin",
-        "description": "Permanently delete a Plugin and every version it holds, exactly as when an\nadministrator deletes it in claude.ai. The Plugin may belong to the organization or\nto a member, including a member who has since left the organization.\n\nAn organization-owned Plugin's installation settings go with it; a member-owned\nPlugin's shares are withdrawn and its owner no longer has it.\n\nTo take an organization-owned Plugin out of use reversibly, set its\norganization-wide installation setting to `not_available` instead (and\nremove or change any group settings, which override it for their members). Only a\nPlugin in a `manual` marketplace can be deleted here; one synchronized from a\nrepository is removed by removing it from the repository (400).\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
+        "description": "Permanently delete a Plugin and every version it holds, exactly as when an\nadministrator deletes it in claude.ai. The Plugin may belong to the organization or\nto a member, including a member who has since left the organization. Do not delete a\nPlugin only because your pipeline did not create it: a member or an administrator\nmight have added it in claude.ai.\n\nAn organization-owned Plugin's installation settings go with it; a member-owned\nPlugin's shares are withdrawn and its owner no longer has it.\n\nTo take an organization-owned Plugin out of use reversibly, set its\norganization-wide installation setting to `not_available` instead (and\nremove or change any group settings, which override it for their members). Only a\nPlugin in a `manual` marketplace can be deleted here; one synchronized from a\nrepository is removed by removing it from the repository (400).\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
         "operationId": "beta_delete_plugin_v1_organizations_plugins__plugin_id__delete",
         "parameters": [
           {
@@ -75078,7 +75078,7 @@
       },
       "post": {
         "summary": "Create Plugin Version",
-        "description": "Add a version to an organization-owned Plugin by uploading the new version's\nfiles; it becomes the version served to members unless the Plugin's served version\nhas been pinned.\n\nThe upload is the same `multipart/form-data` as creating a Plugin: the version's\nfiles (`files`, each part sent as `files[]`) and optional `release_notes`. The uploaded manifest's `name`\nmust equal the Plugin's `name`. Returns the stored version; read the Plugin back to\nsee which version it serves.\n\nOnly a Plugin in a `manual` marketplace takes uploads; a Plugin synchronized from\na repository gets its versions from the repository. When the Plugin is in the\norganization's library marketplace, a version that adds a skill with the name of an\norganization skill (a skill an administrator uploaded for the whole organization in\nclaude.ai) is refused with a 409: `error_code` `skill_name_taken`, with that name in\n`details.skill_name`. A 503 with `error_code`\n`registration_pending` means the version was stored but is not yet usable; a later\nversion create on the Plugin completes it.\n\nFor a worked example, see [Create a version](/docs/en/manage-claude/plugins-api#create-a-version)\nin the Plugins API guide.\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
+        "description": "Add a version to an organization-owned Plugin by uploading the new version's\nfiles; it becomes the version served to members unless the Plugin's served version\nhas been pinned.\n\nThe upload is the same `multipart/form-data` as creating a Plugin: the version's\nfiles (`files`, each part sent as `files[]`) and optional `release_notes`. The uploaded manifest's `name`\nmust equal the Plugin's `name`. Returns the stored version; read the Plugin back to\nsee which version it serves.\n\nOnly a Plugin in a `manual` marketplace takes uploads; a Plugin synchronized from\na repository gets its versions from the repository. When the Plugin is in the\norganization's library marketplace, a version that adds a skill with the name of an\norganization skill that this API does not list is refused with a 409: `error_code`\n`skill_name_taken`, with that name in `details.skill_name`. A 503 with `error_code`\n`registration_pending` means the version was stored but is not yet usable; a later\nversion create on the Plugin completes it.\n\nFor a worked example, see [Create a version](/docs/en/manage-claude/plugins-api#create-a-version)\nin the Plugins API guide.\n\n**Accepted credentials:** an Admin API key with the `write:plugins` scope.\n\nEvery request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.",
         "operationId": "beta_create_plugin_version_v1_organizations_plugins__plugin_id__versions_post",
         "parameters": [
           {
@@ -112426,6 +112426,88 @@
           }
         }
       },
+      "BetaClaudeTagReplyMode": {
+        "description": "How Claude takes part in a Slack channel. A channel alone stores one. More types can be added.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "automatic": "#/components/schemas/BetaClaudeTagReplyModeAutomatic",
+            "mention_only": "#/components/schemas/BetaClaudeTagReplyModeMentionOnly",
+            "always_awake": "#/components/schemas/BetaClaudeTagReplyModeAlwaysAwake",
+            "thread": "#/components/schemas/BetaClaudeTagReplyModeThread"
+          }
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaClaudeTagReplyModeAutomatic"
+          },
+          {
+            "$ref": "#/components/schemas/BetaClaudeTagReplyModeMentionOnly"
+          },
+          {
+            "$ref": "#/components/schemas/BetaClaudeTagReplyModeAlwaysAwake"
+          },
+          {
+            "$ref": "#/components/schemas/BetaClaudeTagReplyModeThread"
+          }
+        ]
+      },
+      "BetaClaudeTagReplyModeAlwaysAwake": {
+        "description": "Like `automatic`, but Claude never pauses on its own. Available where it is enabled for the channel.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "always_awake"
+          }
+        }
+      },
+      "BetaClaudeTagReplyModeAutomatic": {
+        "description": "Claude reads along and joins in when it can help, and pauses on its own in quiet or busy channels.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "automatic"
+          }
+        }
+      },
+      "BetaClaudeTagReplyModeMentionOnly": {
+        "description": "Claude replies only when it is @-mentioned.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "mention_only"
+          }
+        }
+      },
+      "BetaClaudeTagReplyModeThread": {
+        "description": "Every new top-level message in the channel gets its own reply from Claude, in a thread under it. Available where it is enabled for the channel, and only once Claude has been used in the channel.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "thread"
+          }
+        }
+      },
       "BetaClaudeTagSettingSource": {
         "description": "The settings level a value comes from. More types can be added.",
         "discriminator": {
@@ -112469,7 +112551,8 @@
           "instructions",
           "model",
           "environment_id",
-          "guest_policy"
+          "guest_policy",
+          "reply_mode"
         ],
         "properties": {
           "enabled": {
@@ -112522,11 +112605,22 @@
                 "type": "null"
               }
             ]
+          },
+          "reply_mode": {
+            "description": "The settings level `reply_mode` comes from: the channel when it stores one. With `include_inherited=true` and no stored mode it is `default`.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaClaudeTagSettingSource"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         }
       },
       "BetaClaudeTagSettings": {
-        "description": "Claude Tag settings. Without `include_inherited`, a setting that is null is not set on the settings level and is inherited. With it, `enabled` and `guest_policy` are never null, and `instructions`, `model` and `environment_id` are null when no settings level sets them.",
+        "description": "Claude Tag settings. Without `include_inherited`, a setting that is null is not set on the settings level and is inherited. With it, `enabled` and `guest_policy` are never null, `instructions`, `model` and `environment_id` are null when no settings level sets them, and `reply_mode` is null unless the channel itself stores one.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -112534,7 +112628,8 @@
           "instructions",
           "model",
           "environment_id",
-          "guest_policy"
+          "guest_policy",
+          "reply_mode"
         ],
         "properties": {
           "enabled": {
@@ -112591,6 +112686,17 @@
                 "type": "null"
               }
             ]
+          },
+          "reply_mode": {
+            "description": "How Claude takes part in the channel. Only a channel stores one, and no settings level passes one on, so it is always null on a workspace. Null on a channel means the channel stores none yet: Claude then follows the reply mode chosen in Slack, if one was, else `automatic`. A stored reply mode can be changed but never cleared.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaClaudeTagReplyMode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         }
       },
@@ -112635,7 +112741,7 @@
             ]
           },
           "environment_id": {
-            "description": "The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`. Null clears it.",
+            "description": "The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`, or of a self-hosted runner pool of the organization that every member may use, starting with `ccpool_`. Null clears it.",
             "anyOf": [
               {
                 "type": "string",
@@ -112652,6 +112758,17 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/BetaClaudeTagGuestPolicy"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reply_mode": {
+            "description": "How Claude takes part in the channel: `automatic`, `mention_only`, `always_awake` or `thread`. Only a channel takes one: an update of a workspace that sends a value is refused, and one that sends null changes nothing. Null never clears it: sent to a channel that stores none it changes nothing, and sent to a channel that stores one it is refused, because a stored reply mode can be changed but never cleared; a caller that wants Claude's default behavior sends `automatic`.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaClaudeTagReplyMode"
               },
               {
                 "type": "null"
@@ -112701,7 +112818,7 @@
             ]
           },
           "environment_id": {
-            "description": "The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`. Null clears it.",
+            "description": "The environment Claude's sessions run in: the identifier of an active environment of the organization, starting with `env_`, or of a self-hosted runner pool of the organization that every member may use, starting with `ccpool_`. Null clears it.",
             "anyOf": [
               {
                 "type": "string",
@@ -112718,6 +112835,17 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/BetaClaudeTagGuestPolicy"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reply_mode": {
+            "description": "How Claude takes part in the channel: `automatic`, `mention_only`, `always_awake` or `thread`. Only a channel takes one: an update of a workspace that sends a value is refused, and one that sends null changes nothing. Null never clears it: sent to a channel that stores none it changes nothing, and sent to a channel that stores one it is refused, because a stored reply mode can be changed but never cleared; a caller that wants Claude's default behavior sends `automatic`.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaClaudeTagReplyMode"
               },
               {
                 "type": "null"
@@ -119300,10 +119428,10 @@
           }
         ],
         "title": "InputMessage",
-        "x-stainless-go-variant-constructor": "skip",
         "x-stainless-go-union": {
           "suffix": false
-        }
+        },
+        "x-stainless-go-variant-constructor": "skip"
       },
       "BetaInputSchema": {
         "additionalProperties": true,
@@ -119495,10 +119623,10 @@
                 }
               ],
               "x-stainless-naming": {
-                "java": {
+                "csharp": {
                   "type_name": "BetaIterationsUsageItems"
                 },
-                "csharp": {
+                "java": {
                   "type_name": "BetaIterationsUsageItems"
                 }
               }
@@ -122457,6 +122585,14 @@
             ],
             "x-anthropic-beta-required": [
               "managed-agents-2026-04-01"
+            ],
+            "examples": [
+              {
+                "type": "multiagent_20261001",
+                "workflows": {
+                  "type": "enabled"
+                }
+              }
             ]
           },
           "execution_identity": {
@@ -122484,6 +122620,12 @@
               "type": "agent_toolset_20260401"
             }
           ],
+          "multiagent": {
+            "type": "multiagent_20261001",
+            "workflows": {
+              "type": "enabled"
+            }
+          },
           "metadata": {
             "foo": "bar"
           }
@@ -138629,10 +138771,7 @@
           "container"
         ],
         "title": "Message",
-        "type": "object",
-        "x-stainless-python-custom-imports": [
-          "from .beta_content_block import BetaContentBlock as BetaContentBlock"
-        ]
+        "type": "object"
       },
       "BetaMessageBatch": {
         "properties": {
@@ -142667,13 +142806,13 @@
                 },
                 "type": "array",
                 "x-stainless-naming": {
+                  "php": {
+                    "type_name": "Content"
+                  },
                   "python": {
                     "type_name": "Content"
                   },
                   "ruby": {
-                    "type_name": "Content"
-                  },
-                  "php": {
                     "type_name": "Content"
                   }
                 }
@@ -153854,6 +153993,20 @@
             ]
           }
         },
+        "x-stainless-naming": {
+          "csharp": {
+            "model_name": "UnwrapWebhookEvent"
+          },
+          "go": {
+            "model_name": "UnwrapWebhookEvent"
+          },
+          "java": {
+            "model_name": "UnwrapWebhookEvent"
+          },
+          "kotlin": {
+            "model_name": "UnwrapWebhookEvent"
+          }
+        },
         "example": {
           "type": "event",
           "id": "whe_0f1e2d3c4b5a69788796a5b4c3d2e1f0",
@@ -153863,20 +154016,6 @@
             "id": "sesn_011CZkZAtmR3yMPDzynEDxu7",
             "organization_id": "org_011CZkZZAe0sMna4vkBdtrfx",
             "workspace_id": "wrkspc_011CZkZaBF1tNoB5wlCeusgy"
-          }
-        },
-        "x-stainless-naming": {
-          "java": {
-            "model_name": "UnwrapWebhookEvent"
-          },
-          "kotlin": {
-            "model_name": "UnwrapWebhookEvent"
-          },
-          "csharp": {
-            "model_name": "UnwrapWebhookEvent"
-          },
-          "go": {
-            "model_name": "UnwrapWebhookEvent"
           }
         }
       },
@@ -161532,15 +161671,15 @@
             "$ref": "#/components/schemas/RequestContainerUploadBlock"
           }
         ],
+        "x-stainless-go-variant-constructor": {
+          "naming": "new_{variant}_block"
+        },
         "x-stainless-python-extend-union": [
           "ContentBlock"
         ],
         "x-stainless-python-extend-union-imports": [
           "from .content_block import ContentBlock"
-        ],
-        "x-stainless-go-variant-constructor": {
-          "naming": "new_{variant}_block"
-        }
+        ]
       },
       "InputJsonContentBlockDelta": {
         "properties": {
@@ -161607,10 +161746,10 @@
           }
         ],
         "title": "InputMessage",
-        "x-stainless-go-variant-constructor": "skip",
         "x-stainless-go-union": {
           "suffix": false
-        }
+        },
+        "x-stainless-go-variant-constructor": "skip"
       },
       "InputSchema": {
         "additionalProperties": true,
@@ -162178,10 +162317,7 @@
           "container"
         ],
         "title": "Message",
-        "type": "object",
-        "x-stainless-python-custom-imports": [
-          "from .content_block import ContentBlock as ContentBlock"
-        ]
+        "type": "object"
       },
       "MessageBatch": {
         "properties": {
@@ -162693,12 +162829,12 @@
         "anyOf": [
           {
             "const": "claude-fable-5-2",
-            "description": "Frontier intelligence for ambitious work in coding, enterprise workflows, and the sciences",
+            "description": "Built for the most ambitious work in coding, enterprise workflows, and the sciences",
             "x-stainless-nominal": false
           },
           {
             "const": "claude-mythos-5-2",
-            "description": "Frontier intelligence for cybersecurity and life sciences research, available through verification programs",
+            "description": "Built for the most demanding cybersecurity and life sciences research, available through verification programs",
             "x-stainless-nominal": false
           },
           {
@@ -164908,13 +165044,13 @@
                 },
                 "type": "array",
                 "x-stainless-naming": {
+                  "php": {
+                    "type_name": "Content"
+                  },
                   "python": {
                     "type_name": "Content"
                   },
                   "ruby": {
-                    "type_name": "Content"
-                  },
-                  "php": {
                     "type_name": "Content"
                   }
                 }
@@ -173329,7 +173465,7 @@
         "anyOf": [
           {
             "const": "claude-fable-5-2",
-            "description": "Frontier intelligence for ambitious work in coding, enterprise workflows, and the sciences",
+            "description": "Built for the most ambitious work in coding, enterprise workflows, and the sciences",
             "x-stainless-nominal": false
           },
           {
@@ -174168,6 +174304,41 @@
           "scheduled"
         ],
         "title": "AnalyticsClaudeTagCategory"
+      },
+      "BetaAnalyticsClaudeTagMetrics": {
+        "properties": {
+          "active_day_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Day Count",
+            "description": "1 on a day the user was active in Claude Tag in Slack, otherwise 0. Summed over the window in date-range mode, so it is the number of active days; on grouped rows, the total of each member's active days. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured."
+          },
+          "active_message_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Message Count",
+            "description": "Number of the user's Slack messages that made them active: @-mentions, direct messages, group direct message asks, and thread posts Claude answered. Other messages are not counted. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured."
+          }
+        },
+        "type": "object",
+        "required": [
+          "active_day_count",
+          "active_message_count"
+        ],
+        "title": "AnalyticsClaudeTagMetrics",
+        "description": "Claude Tag activity metrics for a single linked user on a given day."
       },
       "BetaAnalyticsConnectorActivity": {
         "properties": {
@@ -177606,6 +177777,42 @@
             "title": "Claude Design Weekly Active User Count",
             "description": "Number of users with Claude Design activity in the 7-day rolling window. Omitted from the response while the per-product breakdown is not enabled for this organization."
           },
+          "claude_tag_daily_active_user_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Claude Tag Daily Active User Count",
+            "description": "Number of Slack users active in Claude Tag on the requested day. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting."
+          },
+          "claude_tag_monthly_active_user_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Claude Tag Monthly Active User Count",
+            "description": "Number of Slack users active in Claude Tag in the 28-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting."
+          },
+          "claude_tag_weekly_active_user_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Claude Tag Weekly Active User Count",
+            "description": "Number of Slack users active in Claude Tag in the 7-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting."
+          },
           "cowork_daily_active_user_count": {
             "type": "integer",
             "title": "Cowork Daily Active User Count",
@@ -179042,6 +179249,17 @@
           },
           "claude_code_metrics": {
             "$ref": "#/components/schemas/BetaAnalyticsClaudeCodeMetrics"
+          },
+          "claude_tag_metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaAnalyticsClaudeTagMetrics"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Claude Tag activity in Slack by a user who has linked a Claude account. Activity by Slack users who have not linked an account appears only in the `/summaries` Claude Tag counts, so these rows do not add up to those counts. Omitted from the response on deployments that do not offer Claude Tag reporting."
           },
           "cowork_metrics": {
             "$ref": "#/components/schemas/BetaAnalyticsCoworkMetrics"
@@ -181494,7 +181712,7 @@
               }
             ],
             "title": "User Profile Id",
-            "description": "ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.",
+            "description": "ID of a user profile to bind the key to. A user profile represents one of your customers: bind a customer's key to that customer's user profile. A key bound to a user profile can only be attached to a Workspace that has the same user profile, and the binding cannot be changed later. Omit this field only for your organization's own key, because a key created without a user profile ID can be attached to any Workspace, including another customer's.",
             "examples": [
               "uprof_01SDCCSbTxrXDpWc1phhtcfK"
             ]
@@ -183499,7 +183717,7 @@
                 "type": "null"
               }
             ],
-            "description": "Context window used. `null` if not grouping by context window.",
+            "description": "Context window used. `null` if not grouping by context window.\n\nA request is classified by comparing its prompt size with its model's own long-context boundary, the same boundary that billing uses. The two values are labels for the two classes, not literal ranges: where a model's boundary is below 200k, a request whose prompt exceeds that boundary is reported under `200k-1M`, and a `0-200k` filter does not return it. Where the report cannot determine a model's boundary, it uses 200k instead. Usage stored before this classification took effect may still be reported under its earlier value, at any `bucket_width`, until it expires. Billed amounts are not affected.",
             "examples": [
               "0-200k",
               "200k-1M"
@@ -185190,7 +185408,7 @@
               }
             ],
             "title": "Next Page",
-            "description": "Token to provide in as `page` in the subsequent request to retrieve the next page of data.",
+            "description": "Token to provide in as `page` in the subsequent request to retrieve the next page of data. A page may hold fewer than `limit` shares, even none, while this is set; keep following it until it is null.",
             "examples": [
               "page_MjAyNi0wOS0xNlQxNDowNTowOVo"
             ]
@@ -186079,7 +186297,7 @@
           "display_name": {
             "type": "string",
             "title": "Display Name",
-            "description": "Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.",
+            "description": "Name of the RBAC Role. For a role created by Anthropic, this is Anthropic's name for the access that the role grants. Anthropic may change this name, so to keep a lasting reference to a role, store its `id`.",
             "examples": [
               "Project Editor"
             ]
@@ -189549,6 +189767,41 @@
         "title": "AnalyticsClaudeCodeMetrics",
         "description": "Claude Code activity metrics for a single user on a given day."
       },
+      "AnalyticsClaudeTagMetrics": {
+        "properties": {
+          "active_day_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Day Count",
+            "description": "1 on a day the user was active in Claude Tag in Slack, otherwise 0. Summed over the window in date-range mode, so it is the number of active days; on grouped rows, the total of each member's active days. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured."
+          },
+          "active_message_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Message Count",
+            "description": "Number of the user's Slack messages that made them active: @-mentions, direct messages, group direct message asks, and thread posts Claude answered. Other messages are not counted. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured."
+          }
+        },
+        "type": "object",
+        "required": [
+          "active_day_count",
+          "active_message_count"
+        ],
+        "title": "AnalyticsClaudeTagMetrics",
+        "description": "Claude Tag activity metrics for a single linked user on a given day."
+      },
       "AnalyticsConnectorActivity": {
         "properties": {
           "chat_cowork_unified_metrics": {
@@ -190910,6 +191163,42 @@
             "title": "Claude Design Weekly Active User Count",
             "description": "Number of users with Claude Design activity in the 7-day rolling window. Omitted from the response while the per-product breakdown is not enabled for this organization."
           },
+          "claude_tag_daily_active_user_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Claude Tag Daily Active User Count",
+            "description": "Number of Slack users active in Claude Tag on the requested day. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting."
+          },
+          "claude_tag_monthly_active_user_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Claude Tag Monthly Active User Count",
+            "description": "Number of Slack users active in Claude Tag in the 28-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting."
+          },
+          "claude_tag_weekly_active_user_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Claude Tag Weekly Active User Count",
+            "description": "Number of Slack users active in Claude Tag in the 7-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting."
+          },
           "cowork_daily_active_user_count": {
             "type": "integer",
             "title": "Cowork Daily Active User Count",
@@ -191602,6 +191891,17 @@
           },
           "claude_code_metrics": {
             "$ref": "#/components/schemas/AnalyticsClaudeCodeMetrics"
+          },
+          "claude_tag_metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnalyticsClaudeTagMetrics"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Claude Tag activity in Slack by a user who has linked a Claude account. Activity by Slack users who have not linked an account appears only in the `/summaries` Claude Tag counts, so these rows do not add up to those counts. Omitted from the response on deployments that do not offer Claude Tag reporting."
           },
           "cowork_metrics": {
             "$ref": "#/components/schemas/AnalyticsCoworkMetrics"
@@ -193253,7 +193553,7 @@
               }
             ],
             "title": "User Profile Id",
-            "description": "ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.",
+            "description": "ID of a user profile to bind the key to. A user profile represents one of your customers: bind a customer's key to that customer's user profile. A key bound to a user profile can only be attached to a Workspace that has the same user profile, and the binding cannot be changed later. Omit this field only for your organization's own key, because a key created without a user profile ID can be attached to any Workspace, including another customer's.",
             "examples": [
               "uprof_01SDCCSbTxrXDpWc1phhtcfK"
             ]
@@ -195653,7 +195953,7 @@
           "display_name": {
             "type": "string",
             "title": "Display Name",
-            "description": "Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.",
+            "description": "Name of the RBAC Role. For a role created by Anthropic, this is Anthropic's name for the access that the role grants. Anthropic may change this name, so to keep a lasting reference to a role, store its `id`.",
             "examples": [
               "Project Editor"
             ]

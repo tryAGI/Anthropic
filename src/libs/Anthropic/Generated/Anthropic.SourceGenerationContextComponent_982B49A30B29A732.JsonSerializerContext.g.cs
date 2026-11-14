@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaClaudeTagSettingSourceDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0027.Create_BetaClaudeTagSettingSourceDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0028.Create_BetaClaudeTagSettingSourceDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaClaudeTagSettingSourceDiscriminatorType?))
                 {

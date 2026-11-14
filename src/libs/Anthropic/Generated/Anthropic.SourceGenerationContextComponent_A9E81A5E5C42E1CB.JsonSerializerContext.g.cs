@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.StopReason))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0331.Create_StopReason2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0332.Create_StopReason2(options);
                 }
                 if (type == typeof(global::Anthropic.StopReason?))
                 {

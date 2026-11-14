@@ -16,7 +16,7 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.BetaPluginShare> Data { get; set; }
 
         /// <summary>
-        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data.
+        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data. A page may hold fewer than `limit` shares, even none, while this is set; keep following it until it is null.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         public string? NextPage { get; set; }
@@ -32,7 +32,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="data"></param>
         /// <param name="nextPage">
-        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data.
+        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data. A page may hold fewer than `limit` shares, even none, while this is set; keep following it until it is null.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

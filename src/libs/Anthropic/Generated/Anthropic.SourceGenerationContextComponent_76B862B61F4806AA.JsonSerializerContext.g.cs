@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaRbacGroupSourceType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0118.Create_BetaRbacGroupSourceType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0119.Create_BetaRbacGroupSourceType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaRbacGroupSourceType?))
                 {

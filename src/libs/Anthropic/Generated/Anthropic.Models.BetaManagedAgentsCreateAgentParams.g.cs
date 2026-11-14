@@ -7,7 +7,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Request parameters for creating an `agent`.<br/>
-    /// Example: {"name":"My First Agent","model":"claude-opus-5-5","description":"A general-purpose starter agent.","system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401"}],"metadata":{"foo":"bar"}}
+    /// Example: {"name":"My First Agent","model":"claude-opus-5-5","description":"A general-purpose starter agent.","system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401"}],"multiagent":{"type":"multiagent_20261001","workflows":{"type":"enabled"}},"metadata":{"foo":"bar"}}
     /// </summary>
     public sealed partial class BetaManagedAgentsCreateAgentParams
     {

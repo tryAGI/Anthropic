@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Claude Tag settings. Without `include_inherited`, a setting that is null is not set on the settings level and is inherited. With it, `enabled` and `guest_policy` are never null, and `instructions`, `model` and `environment_id` are null when no settings level sets them.
+    /// Claude Tag settings. Without `include_inherited`, a setting that is null is not set on the settings level and is inherited. With it, `enabled` and `guest_policy` are never null, `instructions`, `model` and `environment_id` are null when no settings level sets them, and `reply_mode` is null unless the channel itself stores one.
     /// </summary>
     public sealed partial class BetaClaudeTagSettings
     {
@@ -39,6 +39,12 @@ namespace Anthropic
         public global::Anthropic.BetaClaudeTagGuestPolicy? GuestPolicy { get; set; }
 
         /// <summary>
+        /// How Claude takes part in the channel. Only a channel stores one, and no settings level passes one on, so it is always null on a workspace. Null on a channel means the channel stores none yet: Claude then follows the reply mode chosen in Slack, if one was, else `automatic`. A stored reply mode can be changed but never cleared.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reply_mode")]
+        public global::Anthropic.BetaClaudeTagReplyMode? ReplyMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,6 +68,9 @@ namespace Anthropic
         /// <param name="guestPolicy">
         /// What Claude does in a channel while a Slack guest is in it. The nearest settings level that sets it decides.
         /// </param>
+        /// <param name="replyMode">
+        /// How Claude takes part in the channel. Only a channel stores one, and no settings level passes one on, so it is always null on a workspace. Null on a channel means the channel stores none yet: Claude then follows the reply mode chosen in Slack, if one was, else `automatic`. A stored reply mode can be changed but never cleared.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,13 +79,15 @@ namespace Anthropic
             string? instructions,
             string? model,
             string? environmentId,
-            global::Anthropic.BetaClaudeTagGuestPolicy? guestPolicy)
+            global::Anthropic.BetaClaudeTagGuestPolicy? guestPolicy,
+            global::Anthropic.BetaClaudeTagReplyMode? replyMode)
         {
             this.Enabled = enabled;
             this.Instructions = instructions;
             this.Model = model;
             this.EnvironmentId = environmentId;
             this.GuestPolicy = guestPolicy;
+            this.ReplyMode = replyMode;
         }
 
         /// <summary>

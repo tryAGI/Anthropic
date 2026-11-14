@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails, global::Anthropic.BetaRbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.BetaRbacGroupOwnerAccessUnconfirmedErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0304.Create_SourceGenerationContextMetadataType_793509CE0A5797EA(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0305.Create_SourceGenerationContextMetadataType_793509CE0A5797EA(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails, global::Anthropic.BetaRbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.BetaRbacGroupOwnerAccessUnconfirmedErrorDetails>?))
                 {

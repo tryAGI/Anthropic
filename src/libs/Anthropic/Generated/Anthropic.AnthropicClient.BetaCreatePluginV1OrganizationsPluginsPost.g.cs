@@ -38,10 +38,9 @@ namespace Anthropic
         /// returns a 409 with `error_code` `plugin_name_taken` and, when a Plugin holds it,<br/>
         /// that Plugin's ID in `details.plugin_id`. A Plugin going into the organization's<br/>
         /// library marketplace is also refused with a 409 when one of its skills has the name of<br/>
-        /// an organization skill (a skill an administrator uploaded for the whole organization<br/>
-        /// in claude.ai): `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`; rename the skill, or remove the organization skill in<br/>
-        /// claude.ai. A 503 with `error_code`<br/>
+        /// an organization skill that this API does not list: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`; rename the skill, or<br/>
+        /// remove the organization skill in claude.ai. A 503 with `error_code`<br/>
         /// `registration_pending` means the Plugin and its version were stored (their IDs are<br/>
         /// in `details`) but are not yet usable in claude.ai: do not retry the create (the<br/>
         /// retry would return `plugin_name_taken`); create a version on the stored Plugin<br/>
@@ -90,10 +89,9 @@ namespace Anthropic
         /// returns a 409 with `error_code` `plugin_name_taken` and, when a Plugin holds it,<br/>
         /// that Plugin's ID in `details.plugin_id`. A Plugin going into the organization's<br/>
         /// library marketplace is also refused with a 409 when one of its skills has the name of<br/>
-        /// an organization skill (a skill an administrator uploaded for the whole organization<br/>
-        /// in claude.ai): `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`; rename the skill, or remove the organization skill in<br/>
-        /// claude.ai. A 503 with `error_code`<br/>
+        /// an organization skill that this API does not list: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`; rename the skill, or<br/>
+        /// remove the organization skill in claude.ai. A 503 with `error_code`<br/>
         /// `registration_pending` means the Plugin and its version were stored (their IDs are<br/>
         /// in `details`) but are not yet usable in claude.ai: do not retry the create (the<br/>
         /// retry would return `plugin_name_taken`); create a version on the stored Plugin<br/>
@@ -1092,10 +1090,9 @@ namespace Anthropic
         /// returns a 409 with `error_code` `plugin_name_taken` and, when a Plugin holds it,<br/>
         /// that Plugin's ID in `details.plugin_id`. A Plugin going into the organization's<br/>
         /// library marketplace is also refused with a 409 when one of its skills has the name of<br/>
-        /// an organization skill (a skill an administrator uploaded for the whole organization<br/>
-        /// in claude.ai): `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`; rename the skill, or remove the organization skill in<br/>
-        /// claude.ai. A 503 with `error_code`<br/>
+        /// an organization skill that this API does not list: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`; rename the skill, or<br/>
+        /// remove the organization skill in claude.ai. A 503 with `error_code`<br/>
         /// `registration_pending` means the Plugin and its version were stored (their IDs are<br/>
         /// in `details`) but are not yet usable in claude.ai: do not retry the create (the<br/>
         /// retry would return `plugin_name_taken`); create a version on the stored Plugin<br/>
@@ -1157,10 +1154,9 @@ namespace Anthropic
         /// returns a 409 with `error_code` `plugin_name_taken` and, when a Plugin holds it,<br/>
         /// that Plugin's ID in `details.plugin_id`. A Plugin going into the organization's<br/>
         /// library marketplace is also refused with a 409 when one of its skills has the name of<br/>
-        /// an organization skill (a skill an administrator uploaded for the whole organization<br/>
-        /// in claude.ai): `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`; rename the skill, or remove the organization skill in<br/>
-        /// claude.ai. A 503 with `error_code`<br/>
+        /// an organization skill that this API does not list: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`; rename the skill, or<br/>
+        /// remove the organization skill in claude.ai. A 503 with `error_code`<br/>
         /// `registration_pending` means the Plugin and its version were stored (their IDs are<br/>
         /// in `details`) but are not yet usable in claude.ai: do not retry the create (the<br/>
         /// retry would return `plugin_name_taken`); create a version on the stored Plugin<br/>
@@ -2202,10 +2198,9 @@ namespace Anthropic
         /// returns a 409 with `error_code` `plugin_name_taken` and, when a Plugin holds it,<br/>
         /// that Plugin's ID in `details.plugin_id`. A Plugin going into the organization's<br/>
         /// library marketplace is also refused with a 409 when one of its skills has the name of<br/>
-        /// an organization skill (a skill an administrator uploaded for the whole organization<br/>
-        /// in claude.ai): `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`; rename the skill, or remove the organization skill in<br/>
-        /// claude.ai. A 503 with `error_code`<br/>
+        /// an organization skill that this API does not list: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`; rename the skill, or<br/>
+        /// remove the organization skill in claude.ai. A 503 with `error_code`<br/>
         /// `registration_pending` means the Plugin and its version were stored (their IDs are<br/>
         /// in `details`) but are not yet usable in claude.ai: do not retry the create (the<br/>
         /// retry would return `plugin_name_taken`); create a version on the stored Plugin<br/>

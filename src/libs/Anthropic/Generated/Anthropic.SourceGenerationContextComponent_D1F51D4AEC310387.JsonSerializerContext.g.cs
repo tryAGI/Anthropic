@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaSelfHostedWorkState))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0139.Create_BetaSelfHostedWorkState2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0140.Create_BetaSelfHostedWorkState2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaSelfHostedWorkState?))
                 {

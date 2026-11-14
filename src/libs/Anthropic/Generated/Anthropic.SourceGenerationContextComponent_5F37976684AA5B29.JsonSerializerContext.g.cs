@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.InviteStatusSchema))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0199.Create_InviteStatusSchema2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0200.Create_InviteStatusSchema2(options);
                 }
                 if (type == typeof(global::Anthropic.InviteStatusSchema?))
                 {

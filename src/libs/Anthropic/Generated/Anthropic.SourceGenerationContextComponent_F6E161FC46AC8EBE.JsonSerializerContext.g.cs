@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.WorkspaceCreateParamsTags))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0344.Create_WorkspaceCreateParamsTags(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0345.Create_WorkspaceCreateParamsTags(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

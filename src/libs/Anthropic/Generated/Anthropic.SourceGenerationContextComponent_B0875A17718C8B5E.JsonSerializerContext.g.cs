@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.MessageStreamEventDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0203.Create_MessageStreamEventDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0204.Create_MessageStreamEventDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.MessageStreamEventDiscriminatorType?))
                 {

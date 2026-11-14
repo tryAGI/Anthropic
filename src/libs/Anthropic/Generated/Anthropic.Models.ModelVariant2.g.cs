@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Frontier intelligence for cybersecurity and life sciences research, available through verification programs
+    /// Built for the most demanding cybersecurity and life sciences research, available through verification programs
     /// </summary>
     public sealed partial class ModelVariant2
     {
