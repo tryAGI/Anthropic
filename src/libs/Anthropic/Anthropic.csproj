@@ -20,7 +20,7 @@
   <ItemGroup>
     <PackageReference Include="AutoSDK.JsonMetadata" Version="$(AutoSDKJsonMetadataVersion)" PrivateAssets="all" />
     <PackageReference Include="CSharpToJsonSchema" Version="3.10.6" />
-    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.11.0" />
+    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="11.0.0" />
 </ItemGroup>
 
 </Project>
