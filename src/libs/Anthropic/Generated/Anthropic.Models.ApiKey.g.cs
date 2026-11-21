@@ -59,9 +59,9 @@ namespace Anthropic
         /// Where the API key belongs: its Workspace (`{"type": "workspace", "workspace_id": "wrkspc_..."}`, with the Workspace's real ID even when it is the organization's default Workspace), or the organization (`{"type": "organization"}`) for a principal-bound API key that has no Workspace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope5JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope7JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Scope5 Scope { get; set; }
+        public required global::Anthropic.Scope7 Scope { get; set; }
 
         /// <summary>
         /// Status of the API key.
@@ -130,7 +130,7 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string id,
             string name,
-            global::Anthropic.Scope5 scope,
+            global::Anthropic.Scope7 scope,
             global::Anthropic.ApiKeyStatus status,
             global::Anthropic.CreatedBy? createdBy,
             global::System.DateTime? expiresAt,

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.DeleteInviteV1OrganizationsInvitesInviteIdDeleteResponseError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0192.Create_DeleteInviteV1OrganizationsInvitesInviteIdDeleteResponseError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0201.Create_DeleteInviteV1OrganizationsInvitesInviteIdDeleteResponseError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

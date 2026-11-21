@@ -12,22 +12,22 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant139? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant182? CacheControl { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller4JsonConverter))]
-        public global::Anthropic.Caller4? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller14JsonConverter))]
+        public global::Anthropic.Caller14? Caller { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaWebSearchToolRequestError>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError> Content { get; set; }
+        public required global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaWebSearchToolRequestError> Content { get; set; }
 
         /// <summary>
         ///
@@ -63,10 +63,10 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestWebSearchToolResultBlock(
-            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError> content,
+            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaWebSearchToolRequestError> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant139? cacheControl,
-            global::Anthropic.Caller4? caller,
+            global::Anthropic.CacheControlVariant182? cacheControl,
+            global::Anthropic.Caller14? caller,
             string type = "web_search_tool_result")
         {
             this.CacheControl = cacheControl;

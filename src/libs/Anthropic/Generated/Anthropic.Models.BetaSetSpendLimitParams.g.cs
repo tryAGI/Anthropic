@@ -25,9 +25,9 @@ namespace Anthropic
         /// What the limit applies to. Claude Enterprise organizations set `user` limits. Claude Console organizations set `organization` and `workspace` limits. Any other combination returns 400. Setting `organization` and `workspace` limits through the API is in an early access preview. To request access, contact your Anthropic account team.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope6JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Scope2 Scope { get; set; }
+        public required global::Anthropic.Scope6 Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,7 +49,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaSetSpendLimitParams(
-            global::Anthropic.Scope2 scope,
+            global::Anthropic.Scope6 scope,
             string? amount,
             global::Anthropic.BetaSpendLimitPeriod? period)
         {

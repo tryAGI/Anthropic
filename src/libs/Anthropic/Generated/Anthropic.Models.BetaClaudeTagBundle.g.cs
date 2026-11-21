@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// A named set of access that Claude can use in a Slack channel or a Slack workspace: connectors, repositories and credentials. Created and edited in claude.ai.
+    /// A named set of access that Claude can use in a Slack channel or a Slack workspace: connectors, repositories and credentials. Created and edited in claude.ai; Update Bundle also changes its instructions.
     /// </summary>
     public sealed partial class BetaClaudeTagBundle
     {
@@ -50,6 +50,12 @@ namespace Anthropic
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// Instructions for Claude, added to the instructions of every session that can use the Bundle. Null when it has none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        public string? Instructions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -73,6 +79,9 @@ namespace Anthropic
         /// <param name="description">
         /// What the Bundle is for. Null when it has none. Read-only.
         /// </param>
+        /// <param name="instructions">
+        /// Instructions for Claude, added to the instructions of every session that can use the Bundle. Null when it has none.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -83,6 +92,7 @@ namespace Anthropic
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string? description,
+            string? instructions,
             string type = "bundle")
         {
             this.Type = type;
@@ -91,6 +101,7 @@ namespace Anthropic
             this.Description = description;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Instructions = instructions;
         }
 
         /// <summary>

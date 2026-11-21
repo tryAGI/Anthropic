@@ -5,14 +5,14 @@
 namespace Anthropic
 {
     /// <summary>
-    /// How signing keys are obtained. Defaults to OIDC discovery.
+    /// How signing keys are obtained for signature verification.
     /// </summary>
     public readonly partial struct Jwks2 : global::System.IEquatable<Jwks2>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaFederationIssuerJwksDiscriminatorType? Type { get; }
 
         /// <summary>
         /// JWKS via the issuer's OIDC discovery document.
@@ -197,7 +197,7 @@ namespace Anthropic
         ///
         /// </summary>
         public Jwks2(
-            global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminatorType? type,
+            global::Anthropic.BetaFederationIssuerJwksDiscriminatorType? type,
             global::Anthropic.BetaJwksDiscovery? discovery,
             global::Anthropic.BetaJwksExplicitUrl? explicitUrl,
             global::Anthropic.BetaJwksInline? inline

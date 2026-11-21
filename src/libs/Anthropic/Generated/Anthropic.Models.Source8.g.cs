@@ -5,163 +5,355 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Where `value` comes from. `organization` values are listed only when `include_inherited` is `true`, and then `value` equals `org_limit`.
+    ///
     /// </summary>
     public readonly partial struct Source8 : global::System.IEquatable<Source8>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? Workspace { get; init; }
+        public global::Anthropic.BetaBase64PDFSource? Base64 { get; init; }
 #else
-        public global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? Workspace { get; }
+        public global::Anthropic.BetaBase64PDFSource? Base64 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Workspace))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base64))]
 #endif
-        public bool IsWorkspace => Workspace != null;
+        public bool IsBase64 => Base64 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickWorkspace(
+        public bool TryPickBase64(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? value)
+            out global::Anthropic.BetaBase64PDFSource? value)
         {
-            value = Workspace;
-            return IsWorkspace;
+            value = Base64;
+            return IsBase64;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource PickWorkspace() => Workspace is { } value
+        public global::Anthropic.BetaBase64PDFSource PickBase64() => Base64 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? Organization { get; init; }
+        public global::Anthropic.BetaPlainTextSource? Text { get; init; }
 #else
-        public global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? Organization { get; }
+        public global::Anthropic.BetaPlainTextSource? Text { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Organization))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsOrganization => Organization != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOrganization(
+        public bool TryPickText(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? value)
+            out global::Anthropic.BetaPlainTextSource? value)
         {
-            value = Organization;
-            return IsOrganization;
+            value = Text;
+            return IsText;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWorkspaceRateLimitOrganizationSource PickOrganization() => Organization is { } value
+        public global::Anthropic.BetaPlainTextSource PickText() => Text is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator Source8(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource value) => new Source8((global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?)value);
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?(Source8 @this) => @this.Workspace;
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaContentBlockSource? Content { get; init; }
+#else
+        public global::Anthropic.BetaContentBlockSource? Content { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public Source8(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? value)
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
+#endif
+        public bool IsContent => Content != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickContent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaContentBlockSource? value)
         {
-            Workspace = value;
+            value = Content;
+            return IsContent;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source8 FromWorkspace(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? value) => new Source8(value);
+        public global::Anthropic.BetaContentBlockSource PickContent() => Content is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Content' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source8(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource value) => new Source8((global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?)value);
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaURLPDFSource? Url { get; init; }
+#else
+        public global::Anthropic.BetaURLPDFSource? Url { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?(Source8 @this) => @this.Organization;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+#endif
+        public bool IsUrl => Url != null;
 
         /// <summary>
         ///
         /// </summary>
-        public Source8(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? value)
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaURLPDFSource? value)
         {
-            Organization = value;
+            value = Url;
+            return IsUrl;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source8 FromOrganization(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? value) => new Source8(value);
+        public global::Anthropic.BetaURLPDFSource PickUrl() => Url is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaFileDocumentSource? File { get; init; }
+#else
+        public global::Anthropic.BetaFileDocumentSource? File { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaFileDocumentSource? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaFileDocumentSource PickFile() => File is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source8(global::Anthropic.BetaBase64PDFSource value) => new Source8((global::Anthropic.BetaBase64PDFSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaBase64PDFSource?(Source8 @this) => @this.Base64;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source8(global::Anthropic.BetaBase64PDFSource? value)
+        {
+            Base64 = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source8 FromBase64(global::Anthropic.BetaBase64PDFSource? value) => new Source8(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source8(global::Anthropic.BetaPlainTextSource value) => new Source8((global::Anthropic.BetaPlainTextSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaPlainTextSource?(Source8 @this) => @this.Text;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source8(global::Anthropic.BetaPlainTextSource? value)
+        {
+            Text = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source8 FromText(global::Anthropic.BetaPlainTextSource? value) => new Source8(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source8(global::Anthropic.BetaContentBlockSource value) => new Source8((global::Anthropic.BetaContentBlockSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaContentBlockSource?(Source8 @this) => @this.Content;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source8(global::Anthropic.BetaContentBlockSource? value)
+        {
+            Content = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source8 FromContent(global::Anthropic.BetaContentBlockSource? value) => new Source8(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source8(global::Anthropic.BetaURLPDFSource value) => new Source8((global::Anthropic.BetaURLPDFSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaURLPDFSource?(Source8 @this) => @this.Url;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source8(global::Anthropic.BetaURLPDFSource? value)
+        {
+            Url = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source8 FromUrl(global::Anthropic.BetaURLPDFSource? value) => new Source8(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source8(global::Anthropic.BetaFileDocumentSource value) => new Source8((global::Anthropic.BetaFileDocumentSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaFileDocumentSource?(Source8 @this) => @this.File;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source8(global::Anthropic.BetaFileDocumentSource? value)
+        {
+            File = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source8 FromFile(global::Anthropic.BetaFileDocumentSource? value) => new Source8(value);
 
         /// <summary>
         ///
         /// </summary>
         public Source8(
-            global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType? type,
-            global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? workspace,
-            global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? organization
+            global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType? type,
+            global::Anthropic.BetaBase64PDFSource? base64,
+            global::Anthropic.BetaPlainTextSource? text,
+            global::Anthropic.BetaContentBlockSource? content,
+            global::Anthropic.BetaURLPDFSource? url,
+            global::Anthropic.BetaFileDocumentSource? file
             )
         {
             Type = type;
 
-            Workspace = workspace;
-            Organization = organization;
+            Base64 = base64;
+            Text = text;
+            Content = content;
+            Url = url;
+            File = file;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Organization as object ??
-            Workspace as object
+            File as object ??
+            Url as object ??
+            Content as object ??
+            Text as object ??
+            Base64 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Workspace?.ToString() ??
-            Organization?.ToString()
+            Base64?.ToString() ??
+            Text?.ToString() ??
+            Content?.ToString() ??
+            Url?.ToString() ??
+            File?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +361,18 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsWorkspace && !IsOrganization || !IsWorkspace && IsOrganization;
+            return IsBase64 && !IsText && !IsContent && !IsUrl && !IsFile || !IsBase64 && IsText && !IsContent && !IsUrl && !IsFile || !IsBase64 && !IsText && IsContent && !IsUrl && !IsFile || !IsBase64 && !IsText && !IsContent && IsUrl && !IsFile || !IsBase64 && !IsText && !IsContent && !IsUrl && IsFile;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource, TResult>? workspace = null,
-            global::System.Func<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource, TResult>? organization = null,
+            global::System.Func<global::Anthropic.BetaBase64PDFSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.BetaPlainTextSource, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaContentBlockSource, TResult>? content = null,
+            global::System.Func<global::Anthropic.BetaURLPDFSource, TResult>? url = null,
+            global::System.Func<global::Anthropic.BetaFileDocumentSource, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -185,13 +380,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Workspace is { } __value0 && workspace != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return workspace(__value0);
+                return base64(__value0);
             }
-            else if (Organization is { } __value1 && organization != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return organization(__value1);
+                return text(__value1);
+            }
+            else if (Content is { } __value2 && content != null)
+            {
+                return content(__value2);
+            }
+            else if (Url is { } __value3 && url != null)
+            {
+                return url(__value3);
+            }
+            else if (File is { } __value4 && file != null)
+            {
+                return file(__value4);
             }
 
             return default(TResult);
@@ -201,9 +408,15 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource>? workspace = null,
+            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
 
-            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource>? organization = null,
+            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+
+            global::System.Action<global::Anthropic.BetaContentBlockSource>? content = null,
+
+            global::System.Action<global::Anthropic.BetaURLPDFSource>? url = null,
+
+            global::System.Action<global::Anthropic.BetaFileDocumentSource>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -211,13 +424,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Workspace is { } __value0)
+            if (Base64 is { } __value0)
             {
-                workspace?.Invoke(__value0);
+                base64?.Invoke(__value0);
             }
-            else if (Organization is { } __value1)
+            else if (Text is { } __value1)
             {
-                organization?.Invoke(__value1);
+                text?.Invoke(__value1);
+            }
+            else if (Content is { } __value2)
+            {
+                content?.Invoke(__value2);
+            }
+            else if (Url is { } __value3)
+            {
+                url?.Invoke(__value3);
+            }
+            else if (File is { } __value4)
+            {
+                file?.Invoke(__value4);
             }
         }
 
@@ -225,8 +450,11 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource>? workspace = null,
-            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource>? organization = null,
+            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
+            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+            global::System.Action<global::Anthropic.BetaContentBlockSource>? content = null,
+            global::System.Action<global::Anthropic.BetaURLPDFSource>? url = null,
+            global::System.Action<global::Anthropic.BetaFileDocumentSource>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -234,13 +462,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Workspace is { } __value0)
+            if (Base64 is { } __value0)
             {
-                workspace?.Invoke(__value0);
+                base64?.Invoke(__value0);
             }
-            else if (Organization is { } __value1)
+            else if (Text is { } __value1)
             {
-                organization?.Invoke(__value1);
+                text?.Invoke(__value1);
+            }
+            else if (Content is { } __value2)
+            {
+                content?.Invoke(__value2);
+            }
+            else if (Url is { } __value3)
+            {
+                url?.Invoke(__value3);
+            }
+            else if (File is { } __value4)
+            {
+                file?.Invoke(__value4);
             }
         }
 
@@ -251,10 +491,16 @@ namespace Anthropic
         {
             var fields = new object?[]
             {
-                Workspace,
-                typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource),
-                Organization,
-                typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource),
+                Base64,
+                typeof(global::Anthropic.BetaBase64PDFSource),
+                Text,
+                typeof(global::Anthropic.BetaPlainTextSource),
+                Content,
+                typeof(global::Anthropic.BetaContentBlockSource),
+                Url,
+                typeof(global::Anthropic.BetaURLPDFSource),
+                File,
+                typeof(global::Anthropic.BetaFileDocumentSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +517,11 @@ namespace Anthropic
         public bool Equals(Source8 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?>.Default.Equals(Workspace, other.Workspace) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?>.Default.Equals(Organization, other.Organization)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBase64PDFSource?>.Default.Equals(Base64, other.Base64) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaPlainTextSource?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockSource?>.Default.Equals(Content, other.Content) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaURLPDFSource?>.Default.Equals(Url, other.Url) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFileDocumentSource?>.Default.Equals(File, other.File)
                 ;
         }
 

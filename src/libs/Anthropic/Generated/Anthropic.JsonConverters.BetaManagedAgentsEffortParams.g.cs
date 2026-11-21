@@ -41,7 +41,7 @@ namespace Anthropic.JsonConverters
             }
             var __score1 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffort), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -56,7 +56,7 @@ namespace Anthropic.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Anthropic.BetaManagedAgentsEffortLevel? level = default;
-            global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>? betaManagedAgentsEffortParamsVariant2 = default;
+            global::Anthropic.BetaManagedAgentsEffort? betaManagedAgentsEffort = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -85,9 +85,9 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>).Name}");
-                        betaManagedAgentsEffortParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffort> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffort).Name}");
+                        betaManagedAgentsEffort = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -102,7 +102,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (level == null && betaManagedAgentsEffortParamsVariant2 == null)
+            if (level == null && betaManagedAgentsEffort == null)
             {
                 try
                 {
@@ -123,14 +123,14 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (level == null && betaManagedAgentsEffortParamsVariant2 == null)
+            if (level == null && betaManagedAgentsEffort == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>).Name}");
-                    betaManagedAgentsEffortParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffort> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffort).Name}");
+                    betaManagedAgentsEffort = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -147,7 +147,7 @@ namespace Anthropic.JsonConverters
             var __value = new global::Anthropic.BetaManagedAgentsEffortParams(
                 level,
 
-                betaManagedAgentsEffortParamsVariant2
+                betaManagedAgentsEffort
                 );
 
             return __value;
@@ -169,11 +169,11 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffortLevel).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLevel(), typeInfo);
             }
-            else if (value.IsBetaManagedAgentsEffortParamsVariant2)
+            else if (value.IsBetaManagedAgentsEffort)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsEffortParamsVariant2(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffort> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffort).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsEffort(), typeInfo);
             }
         }
     }

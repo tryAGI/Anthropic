@@ -16,7 +16,7 @@ namespace Anthropic
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
+        /// Name of the RBAC Role. For a built-in role, this is Anthropic's name for the access that the role grants. Anthropic may change this name, so to keep a lasting reference to a role, store its `id`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,6 +28,14 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// Whether the RBAC Role is built-in or custom. More values of `type` may be added, so do not treat every role that is not `built_in` as `custom`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RbacRoleSourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.RbacRoleSource Source { get; set; }
 
         /// <summary>
         /// Object type.<br/>
@@ -58,10 +66,13 @@ namespace Anthropic
         /// RFC 3339 datetime string indicating when the RBAC Role was created.
         /// </param>
         /// <param name="displayName">
-        /// Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
+        /// Name of the RBAC Role. For a built-in role, this is Anthropic's name for the access that the role grants. Anthropic may change this name, so to keep a lasting reference to a role, store its `id`.
         /// </param>
         /// <param name="id">
         /// ID of the RBAC Role.
+        /// </param>
+        /// <param name="source">
+        /// Whether the RBAC Role is built-in or custom. More values of `type` may be added, so do not treat every role that is not `built_in` as `custom`.
         /// </param>
         /// <param name="updatedAt">
         /// RFC 3339 datetime string indicating when the RBAC Role was last updated.
@@ -78,12 +89,14 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string displayName,
             string id,
+            global::Anthropic.RbacRoleSource source,
             global::System.DateTime updatedAt,
             string type = "rbac_role")
         {
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Source = source;
             this.Type = type;
             this.UpdatedAt = updatedAt;
         }

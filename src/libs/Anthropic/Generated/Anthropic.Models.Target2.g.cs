@@ -5,14 +5,14 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Whose setting was removed.
+    /// Whose setting this is: `organization` (the Plugin's own organization-wide setting) or `rbac_group` (one RBAC Group's own setting); `organization_member` does not occur here.
     /// </summary>
     public readonly partial struct Target2 : global::System.IEquatable<Target2>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaPluginInstallationSettingTargetDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -197,7 +197,7 @@ namespace Anthropic
         ///
         /// </summary>
         public Target2(
-            global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminatorType? type,
+            global::Anthropic.BetaPluginInstallationSettingTargetDiscriminatorType? type,
             global::Anthropic.BetaPluginTargetOrganization? organization,
             global::Anthropic.BetaPluginTargetRbacGroup? rbacGroup,
             global::Anthropic.BetaPluginTargetOrganizationMember? organizationMember

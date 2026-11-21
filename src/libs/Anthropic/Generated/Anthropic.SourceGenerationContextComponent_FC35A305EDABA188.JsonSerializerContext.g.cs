@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_2958D416D08AA5A4.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_CCD22CB5992C979F.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_CFD15071C2F473A2.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_2958D416D08AA5A4.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_BC744279A8FDB5E4.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_CCD22CB5992C979F.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ResponseServerToolUseBlock))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0277.Create_ResponseServerToolUseBlock(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0289.Create_ResponseServerToolUseBlock(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

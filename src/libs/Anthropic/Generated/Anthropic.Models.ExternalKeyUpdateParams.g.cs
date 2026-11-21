@@ -6,7 +6,8 @@ namespace Anthropic
     /// <summary>
     /// Partial update — omitted fields are unchanged.<br/>
     /// `display_name` is always editable. `geo` and `provider_config`<br/>
-    /// cannot be changed once any workspace references this config.
+    /// cannot be changed once any workspace references this config, and a Google<br/>
+    /// Cloud key's provider and `key_name` cannot be changed at all.
     /// </summary>
     public sealed partial class ExternalKeyUpdateParams
     {
@@ -26,7 +27,7 @@ namespace Anthropic
         /// KMS provider identity and auth coordinates.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_config")]
-        public global::Anthropic.ProviderConfigVariant12? ProviderConfig { get; set; }
+        public global::Anthropic.ProviderConfigVariant1? ProviderConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,7 +53,7 @@ namespace Anthropic
         public ExternalKeyUpdateParams(
             string? displayName,
             string? geo,
-            global::Anthropic.ProviderConfigVariant12? providerConfig)
+            global::Anthropic.ProviderConfigVariant1? providerConfig)
         {
             this.DisplayName = displayName;
             this.Geo = geo;

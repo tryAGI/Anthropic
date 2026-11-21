@@ -6,7 +6,6 @@ namespace Anthropic
     {
         /// <summary>
         /// Stop Work<br/>
-        /// Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.<br/>
         /// Stop a work item, initiating graceful or forced shutdown.
         /// </summary>
         /// <param name="environmentId"></param>
@@ -37,7 +36,6 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stop Work<br/>
-        /// Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.<br/>
         /// Stop a work item, initiating graceful or forced shutdown.
         /// </summary>
         /// <param name="environmentId"></param>
@@ -68,7 +66,6 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stop Work<br/>
-        /// Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.<br/>
         /// Stop a work item, initiating graceful or forced shutdown.
         /// </summary>
         /// <param name="environmentId"></param>

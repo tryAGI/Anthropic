@@ -11,6 +11,14 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ExternalKeyFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalKeyRecovered,
+        /// <summary>
+        ///
+        /// </summary>
         UserProfileEnforcementActionOpened,
         /// <summary>
         ///
@@ -34,6 +42,8 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyFailed => "external_key.failed",
+                BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyRecovered => "external_key.recovered",
                 BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
                 BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
                 BetaOrganizationWebhookEndpointEnabledEvent.UserProfileProgramStatusUpdated => "user_profile.program_status_updated",
@@ -47,6 +57,8 @@ namespace Anthropic
         {
             return value switch
             {
+                "external_key.failed" => BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyFailed,
+                "external_key.recovered" => BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyRecovered,
                 "user_profile.enforcement_action_opened" => BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionOpened,
                 "user_profile.enforcement_action_resolved" => BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionResolved,
                 "user_profile.program_status_updated" => BetaOrganizationWebhookEndpointEnabledEvent.UserProfileProgramStatusUpdated,

@@ -40,6 +40,12 @@ namespace Anthropic
         public global::Anthropic.BetaClaudeTagSettingSource? GuestPolicy { get; set; }
 
         /// <summary>
+        /// The settings level `reply_mode` comes from: the channel when it stores one. With `include_inherited=true` and no stored mode it is `default`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reply_mode")]
+        public global::Anthropic.BetaClaudeTagSettingSource? ReplyMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,6 +69,9 @@ namespace Anthropic
         /// <param name="guestPolicy">
         /// The settings level `guest_policy` comes from.
         /// </param>
+        /// <param name="replyMode">
+        /// The settings level `reply_mode` comes from: the channel when it stores one. With `include_inherited=true` and no stored mode it is `default`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,13 +80,15 @@ namespace Anthropic
             global::Anthropic.BetaClaudeTagSettingSource? enabled,
             global::Anthropic.BetaClaudeTagSettingSource? model,
             global::Anthropic.BetaClaudeTagSettingSource? environmentId,
-            global::Anthropic.BetaClaudeTagSettingSource? guestPolicy)
+            global::Anthropic.BetaClaudeTagSettingSource? guestPolicy,
+            global::Anthropic.BetaClaudeTagSettingSource? replyMode)
         {
             this.Enabled = enabled;
             this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
             this.Model = model;
             this.EnvironmentId = environmentId;
             this.GuestPolicy = guestPolicy;
+            this.ReplyMode = replyMode;
         }
 
         /// <summary>

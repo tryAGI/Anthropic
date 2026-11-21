@@ -11,6 +11,14 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ExternalKeyFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalKeyRecovered,
+        /// <summary>
+        ///
+        /// </summary>
         UserProfileEnforcementActionOpened,
         /// <summary>
         ///
@@ -34,6 +42,8 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.ExternalKeyFailed => "external_key.failed",
+                BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.ExternalKeyRecovered => "external_key.recovered",
                 BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
                 BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
                 BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.UserProfileProgramStatusUpdated => "user_profile.program_status_updated",
@@ -47,6 +57,8 @@ namespace Anthropic
         {
             return value switch
             {
+                "external_key.failed" => BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.ExternalKeyFailed,
+                "external_key.recovered" => BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.ExternalKeyRecovered,
                 "user_profile.enforcement_action_opened" => BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.UserProfileEnforcementActionOpened,
                 "user_profile.enforcement_action_resolved" => BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.UserProfileEnforcementActionResolved,
                 "user_profile.program_status_updated" => BetaUpdateOrganizationWebhookEndpointV1OrganizationsWebhooksWebhookEndpointIdPostRequestEnabledEvent.UserProfileProgramStatusUpdated,

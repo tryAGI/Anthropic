@@ -18,12 +18,12 @@ namespace Anthropic
         /// Where `value` comes from. `organization` values are listed only when `include_inherited` is `true`, and then `value` equals `org_limit`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source10JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source7JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source10 Source { get; set; }
+        public required global::Anthropic.Source7 Source { get; set; }
 
         /// <summary>
-        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
+        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute_cache_aware`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -49,7 +49,7 @@ namespace Anthropic
         /// Where `value` comes from. `organization` values are listed only when `include_inherited` is `true`, and then `value` equals `org_limit`.
         /// </param>
         /// <param name="type">
-        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
+        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute_cache_aware`).
         /// </param>
         /// <param name="value">
         /// The workspace's value for this limiter type: the workspace-level override when `source.type` is `workspace`, otherwise the organization's value.
@@ -61,7 +61,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WorkspaceRateLimitValue(
-            global::Anthropic.Source10 source,
+            global::Anthropic.Source7 source,
             string type,
             int value,
             int? orgLimit)

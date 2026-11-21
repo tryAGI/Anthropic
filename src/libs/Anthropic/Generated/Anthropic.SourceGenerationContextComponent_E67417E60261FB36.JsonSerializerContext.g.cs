@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaToolChangeMCPToolsetReference))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0150.Create_BetaToolChangeMCPToolsetReference(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0157.Create_BetaToolChangeMCPToolsetReference(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

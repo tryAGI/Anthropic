@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnalyticsConnectorChatMetrics))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0001.Create_AnalyticsConnectorChatMetrics(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0002.Create_AnalyticsConnectorChatMetrics(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

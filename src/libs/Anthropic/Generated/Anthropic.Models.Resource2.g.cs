@@ -14,15 +14,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RbacRolePermissionResourceDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.OrganizationPermissionResource? Organization { get; init; }
+        public global::Anthropic.BetaOrganizationPermissionResource? Organization { get; init; }
 #else
-        public global::Anthropic.OrganizationPermissionResource? Organization { get; }
+        public global::Anthropic.BetaOrganizationPermissionResource? Organization { get; }
 #endif
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.OrganizationPermissionResource? value)
+            out global::Anthropic.BetaOrganizationPermissionResource? value)
         {
             value = Organization;
             return IsOrganization;
@@ -49,7 +49,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.OrganizationPermissionResource PickOrganization() => Organization is { } value
+        public global::Anthropic.BetaOrganizationPermissionResource PickOrganization() => Organization is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
 
@@ -57,9 +57,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.ConnectorToolPermissionResource? ConnectorTool { get; init; }
+        public global::Anthropic.BetaConnectorToolPermissionResource? ConnectorTool { get; init; }
 #else
-        public global::Anthropic.ConnectorToolPermissionResource? ConnectorTool { get; }
+        public global::Anthropic.BetaConnectorToolPermissionResource? ConnectorTool { get; }
 #endif
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.ConnectorToolPermissionResource? value)
+            out global::Anthropic.BetaConnectorToolPermissionResource? value)
         {
             value = ConnectorTool;
             return IsConnectorTool;
@@ -86,7 +86,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ConnectorToolPermissionResource PickConnectorTool() => ConnectorTool is { } value
+        public global::Anthropic.BetaConnectorToolPermissionResource PickConnectorTool() => ConnectorTool is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConnectorTool' but the value was {ToString()}.");
 
@@ -94,9 +94,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.ConnectorScopePermissionResource? ConnectorScope { get; init; }
+        public global::Anthropic.BetaConnectorScopePermissionResource? ConnectorScope { get; init; }
 #else
-        public global::Anthropic.ConnectorScopePermissionResource? ConnectorScope { get; }
+        public global::Anthropic.BetaConnectorScopePermissionResource? ConnectorScope { get; }
 #endif
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.ConnectorScopePermissionResource? value)
+            out global::Anthropic.BetaConnectorScopePermissionResource? value)
         {
             value = ConnectorScope;
             return IsConnectorScope;
@@ -123,7 +123,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ConnectorScopePermissionResource PickConnectorScope() => ConnectorScope is { } value
+        public global::Anthropic.BetaConnectorScopePermissionResource PickConnectorScope() => ConnectorScope is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConnectorScope' but the value was {ToString()}.");
 
@@ -131,9 +131,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.ConnectorPermissionResource? Connector { get; init; }
+        public global::Anthropic.BetaConnectorPermissionResource? Connector { get; init; }
 #else
-        public global::Anthropic.ConnectorPermissionResource? Connector { get; }
+        public global::Anthropic.BetaConnectorPermissionResource? Connector { get; }
 #endif
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.ConnectorPermissionResource? value)
+            out global::Anthropic.BetaConnectorPermissionResource? value)
         {
             value = Connector;
             return IsConnector;
@@ -160,7 +160,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ConnectorPermissionResource PickConnector() => Connector is { } value
+        public global::Anthropic.BetaConnectorPermissionResource PickConnector() => Connector is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Connector' but the value was {ToString()}.");
 
@@ -168,9 +168,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.AllConnectorsPermissionResource? AllConnectors { get; init; }
+        public global::Anthropic.BetaAllConnectorsPermissionResource? AllConnectors { get; init; }
 #else
-        public global::Anthropic.AllConnectorsPermissionResource? AllConnectors { get; }
+        public global::Anthropic.BetaAllConnectorsPermissionResource? AllConnectors { get; }
 #endif
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.AllConnectorsPermissionResource? value)
+            out global::Anthropic.BetaAllConnectorsPermissionResource? value)
         {
             value = AllConnectors;
             return IsAllConnectors;
@@ -197,23 +197,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.AllConnectorsPermissionResource PickAllConnectors() => AllConnectors is { } value
+        public global::Anthropic.BetaAllConnectorsPermissionResource PickAllConnectors() => AllConnectors is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AllConnectors' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Resource2(global::Anthropic.OrganizationPermissionResource value) => new Resource2((global::Anthropic.OrganizationPermissionResource?)value);
+        public static implicit operator Resource2(global::Anthropic.BetaOrganizationPermissionResource value) => new Resource2((global::Anthropic.BetaOrganizationPermissionResource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.OrganizationPermissionResource?(Resource2 @this) => @this.Organization;
+        public static implicit operator global::Anthropic.BetaOrganizationPermissionResource?(Resource2 @this) => @this.Organization;
 
         /// <summary>
         ///
         /// </summary>
-        public Resource2(global::Anthropic.OrganizationPermissionResource? value)
+        public Resource2(global::Anthropic.BetaOrganizationPermissionResource? value)
         {
             Organization = value;
         }
@@ -221,22 +221,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Resource2 FromOrganization(global::Anthropic.OrganizationPermissionResource? value) => new Resource2(value);
+        public static Resource2 FromOrganization(global::Anthropic.BetaOrganizationPermissionResource? value) => new Resource2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Resource2(global::Anthropic.ConnectorToolPermissionResource value) => new Resource2((global::Anthropic.ConnectorToolPermissionResource?)value);
+        public static implicit operator Resource2(global::Anthropic.BetaConnectorToolPermissionResource value) => new Resource2((global::Anthropic.BetaConnectorToolPermissionResource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.ConnectorToolPermissionResource?(Resource2 @this) => @this.ConnectorTool;
+        public static implicit operator global::Anthropic.BetaConnectorToolPermissionResource?(Resource2 @this) => @this.ConnectorTool;
 
         /// <summary>
         ///
         /// </summary>
-        public Resource2(global::Anthropic.ConnectorToolPermissionResource? value)
+        public Resource2(global::Anthropic.BetaConnectorToolPermissionResource? value)
         {
             ConnectorTool = value;
         }
@@ -244,22 +244,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Resource2 FromConnectorTool(global::Anthropic.ConnectorToolPermissionResource? value) => new Resource2(value);
+        public static Resource2 FromConnectorTool(global::Anthropic.BetaConnectorToolPermissionResource? value) => new Resource2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Resource2(global::Anthropic.ConnectorScopePermissionResource value) => new Resource2((global::Anthropic.ConnectorScopePermissionResource?)value);
+        public static implicit operator Resource2(global::Anthropic.BetaConnectorScopePermissionResource value) => new Resource2((global::Anthropic.BetaConnectorScopePermissionResource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.ConnectorScopePermissionResource?(Resource2 @this) => @this.ConnectorScope;
+        public static implicit operator global::Anthropic.BetaConnectorScopePermissionResource?(Resource2 @this) => @this.ConnectorScope;
 
         /// <summary>
         ///
         /// </summary>
-        public Resource2(global::Anthropic.ConnectorScopePermissionResource? value)
+        public Resource2(global::Anthropic.BetaConnectorScopePermissionResource? value)
         {
             ConnectorScope = value;
         }
@@ -267,22 +267,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Resource2 FromConnectorScope(global::Anthropic.ConnectorScopePermissionResource? value) => new Resource2(value);
+        public static Resource2 FromConnectorScope(global::Anthropic.BetaConnectorScopePermissionResource? value) => new Resource2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Resource2(global::Anthropic.ConnectorPermissionResource value) => new Resource2((global::Anthropic.ConnectorPermissionResource?)value);
+        public static implicit operator Resource2(global::Anthropic.BetaConnectorPermissionResource value) => new Resource2((global::Anthropic.BetaConnectorPermissionResource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.ConnectorPermissionResource?(Resource2 @this) => @this.Connector;
+        public static implicit operator global::Anthropic.BetaConnectorPermissionResource?(Resource2 @this) => @this.Connector;
 
         /// <summary>
         ///
         /// </summary>
-        public Resource2(global::Anthropic.ConnectorPermissionResource? value)
+        public Resource2(global::Anthropic.BetaConnectorPermissionResource? value)
         {
             Connector = value;
         }
@@ -290,22 +290,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Resource2 FromConnector(global::Anthropic.ConnectorPermissionResource? value) => new Resource2(value);
+        public static Resource2 FromConnector(global::Anthropic.BetaConnectorPermissionResource? value) => new Resource2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Resource2(global::Anthropic.AllConnectorsPermissionResource value) => new Resource2((global::Anthropic.AllConnectorsPermissionResource?)value);
+        public static implicit operator Resource2(global::Anthropic.BetaAllConnectorsPermissionResource value) => new Resource2((global::Anthropic.BetaAllConnectorsPermissionResource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.AllConnectorsPermissionResource?(Resource2 @this) => @this.AllConnectors;
+        public static implicit operator global::Anthropic.BetaAllConnectorsPermissionResource?(Resource2 @this) => @this.AllConnectors;
 
         /// <summary>
         ///
         /// </summary>
-        public Resource2(global::Anthropic.AllConnectorsPermissionResource? value)
+        public Resource2(global::Anthropic.BetaAllConnectorsPermissionResource? value)
         {
             AllConnectors = value;
         }
@@ -313,18 +313,18 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Resource2 FromAllConnectors(global::Anthropic.AllConnectorsPermissionResource? value) => new Resource2(value);
+        public static Resource2 FromAllConnectors(global::Anthropic.BetaAllConnectorsPermissionResource? value) => new Resource2(value);
 
         /// <summary>
         ///
         /// </summary>
         public Resource2(
-            global::Anthropic.RbacRolePermissionResourceDiscriminatorType? type,
-            global::Anthropic.OrganizationPermissionResource? organization,
-            global::Anthropic.ConnectorToolPermissionResource? connectorTool,
-            global::Anthropic.ConnectorScopePermissionResource? connectorScope,
-            global::Anthropic.ConnectorPermissionResource? connector,
-            global::Anthropic.AllConnectorsPermissionResource? allConnectors
+            global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType? type,
+            global::Anthropic.BetaOrganizationPermissionResource? organization,
+            global::Anthropic.BetaConnectorToolPermissionResource? connectorTool,
+            global::Anthropic.BetaConnectorScopePermissionResource? connectorScope,
+            global::Anthropic.BetaConnectorPermissionResource? connector,
+            global::Anthropic.BetaAllConnectorsPermissionResource? allConnectors
             )
         {
             Type = type;
@@ -370,11 +370,11 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.OrganizationPermissionResource, TResult>? organization = null,
-            global::System.Func<global::Anthropic.ConnectorToolPermissionResource, TResult>? connectorTool = null,
-            global::System.Func<global::Anthropic.ConnectorScopePermissionResource, TResult>? connectorScope = null,
-            global::System.Func<global::Anthropic.ConnectorPermissionResource, TResult>? connector = null,
-            global::System.Func<global::Anthropic.AllConnectorsPermissionResource, TResult>? allConnectors = null,
+            global::System.Func<global::Anthropic.BetaOrganizationPermissionResource, TResult>? organization = null,
+            global::System.Func<global::Anthropic.BetaConnectorToolPermissionResource, TResult>? connectorTool = null,
+            global::System.Func<global::Anthropic.BetaConnectorScopePermissionResource, TResult>? connectorScope = null,
+            global::System.Func<global::Anthropic.BetaConnectorPermissionResource, TResult>? connector = null,
+            global::System.Func<global::Anthropic.BetaAllConnectorsPermissionResource, TResult>? allConnectors = null,
             bool validate = true)
         {
             if (validate)
@@ -410,15 +410,15 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.OrganizationPermissionResource>? organization = null,
+            global::System.Action<global::Anthropic.BetaOrganizationPermissionResource>? organization = null,
 
-            global::System.Action<global::Anthropic.ConnectorToolPermissionResource>? connectorTool = null,
+            global::System.Action<global::Anthropic.BetaConnectorToolPermissionResource>? connectorTool = null,
 
-            global::System.Action<global::Anthropic.ConnectorScopePermissionResource>? connectorScope = null,
+            global::System.Action<global::Anthropic.BetaConnectorScopePermissionResource>? connectorScope = null,
 
-            global::System.Action<global::Anthropic.ConnectorPermissionResource>? connector = null,
+            global::System.Action<global::Anthropic.BetaConnectorPermissionResource>? connector = null,
 
-            global::System.Action<global::Anthropic.AllConnectorsPermissionResource>? allConnectors = null,
+            global::System.Action<global::Anthropic.BetaAllConnectorsPermissionResource>? allConnectors = null,
             bool validate = true)
         {
             if (validate)
@@ -452,11 +452,11 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.OrganizationPermissionResource>? organization = null,
-            global::System.Action<global::Anthropic.ConnectorToolPermissionResource>? connectorTool = null,
-            global::System.Action<global::Anthropic.ConnectorScopePermissionResource>? connectorScope = null,
-            global::System.Action<global::Anthropic.ConnectorPermissionResource>? connector = null,
-            global::System.Action<global::Anthropic.AllConnectorsPermissionResource>? allConnectors = null,
+            global::System.Action<global::Anthropic.BetaOrganizationPermissionResource>? organization = null,
+            global::System.Action<global::Anthropic.BetaConnectorToolPermissionResource>? connectorTool = null,
+            global::System.Action<global::Anthropic.BetaConnectorScopePermissionResource>? connectorScope = null,
+            global::System.Action<global::Anthropic.BetaConnectorPermissionResource>? connector = null,
+            global::System.Action<global::Anthropic.BetaAllConnectorsPermissionResource>? allConnectors = null,
             bool validate = true)
         {
             if (validate)
@@ -494,15 +494,15 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Organization,
-                typeof(global::Anthropic.OrganizationPermissionResource),
+                typeof(global::Anthropic.BetaOrganizationPermissionResource),
                 ConnectorTool,
-                typeof(global::Anthropic.ConnectorToolPermissionResource),
+                typeof(global::Anthropic.BetaConnectorToolPermissionResource),
                 ConnectorScope,
-                typeof(global::Anthropic.ConnectorScopePermissionResource),
+                typeof(global::Anthropic.BetaConnectorScopePermissionResource),
                 Connector,
-                typeof(global::Anthropic.ConnectorPermissionResource),
+                typeof(global::Anthropic.BetaConnectorPermissionResource),
                 AllConnectors,
-                typeof(global::Anthropic.AllConnectorsPermissionResource),
+                typeof(global::Anthropic.BetaAllConnectorsPermissionResource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -519,11 +519,11 @@ namespace Anthropic
         public bool Equals(Resource2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.OrganizationPermissionResource?>.Default.Equals(Organization, other.Organization) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ConnectorToolPermissionResource?>.Default.Equals(ConnectorTool, other.ConnectorTool) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ConnectorScopePermissionResource?>.Default.Equals(ConnectorScope, other.ConnectorScope) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ConnectorPermissionResource?>.Default.Equals(Connector, other.Connector) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllConnectorsPermissionResource?>.Default.Equals(AllConnectors, other.AllConnectors)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaOrganizationPermissionResource?>.Default.Equals(Organization, other.Organization) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaConnectorToolPermissionResource?>.Default.Equals(ConnectorTool, other.ConnectorTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaConnectorScopePermissionResource?>.Default.Equals(ConnectorScope, other.ConnectorScope) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaConnectorPermissionResource?>.Default.Equals(Connector, other.Connector) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAllConnectorsPermissionResource?>.Default.Equals(AllConnectors, other.AllConnectors)
                 ;
         }
 

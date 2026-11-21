@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestToolAdditionBlockCacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -77,7 +77,7 @@ namespace Anthropic
         ///
         /// </summary>
         public CacheControlVariant132(
-            global::Anthropic.BetaRequestToolAdditionBlockCacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorType? type,
             global::Anthropic.BetaCacheControlEphemeral? ephemeral
             )
         {

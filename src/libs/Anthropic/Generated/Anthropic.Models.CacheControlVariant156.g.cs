@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.CodeExecutionTool20250825CacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.RequestContainerUploadBlockCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -77,7 +77,7 @@ namespace Anthropic
         ///
         /// </summary>
         public CacheControlVariant156(
-            global::Anthropic.CodeExecutionTool20250825CacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.RequestContainerUploadBlockCacheControlVariant1DiscriminatorType? type,
             global::Anthropic.CacheControlEphemeral? ephemeral
             )
         {

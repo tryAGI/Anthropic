@@ -14,9 +14,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.Tool5? Tool { get; init; }
+        public global::Anthropic.Tool? Tool { get; init; }
 #else
-        public global::Anthropic.Tool5? Tool { get; }
+        public global::Anthropic.Tool? Tool { get; }
 #endif
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.Tool5? value)
+            out global::Anthropic.Tool? value)
         {
             value = Tool;
             return IsTool;
@@ -43,7 +43,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.Tool5 PickTool() => Tool is { } value
+        public global::Anthropic.Tool PickTool() => Tool is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
@@ -318,17 +318,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ClientToolUnion(global::Anthropic.Tool5 value) => new ClientToolUnion((global::Anthropic.Tool5?)value);
+        public static implicit operator ClientToolUnion(global::Anthropic.Tool value) => new ClientToolUnion((global::Anthropic.Tool?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.Tool5?(ClientToolUnion @this) => @this.Tool;
+        public static implicit operator global::Anthropic.Tool?(ClientToolUnion @this) => @this.Tool;
 
         /// <summary>
         ///
         /// </summary>
-        public ClientToolUnion(global::Anthropic.Tool5? value)
+        public ClientToolUnion(global::Anthropic.Tool? value)
         {
             Tool = value;
         }
@@ -336,7 +336,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static ClientToolUnion FromTool(global::Anthropic.Tool5? value) => new ClientToolUnion(value);
+        public static ClientToolUnion FromTool(global::Anthropic.Tool? value) => new ClientToolUnion(value);
 
         /// <summary>
         ///
@@ -503,7 +503,7 @@ namespace Anthropic
         ///
         /// </summary>
         public ClientToolUnion(
-            global::Anthropic.Tool5? tool,
+            global::Anthropic.Tool? tool,
             global::Anthropic.BashTool20250124? bashTool20250124,
             global::Anthropic.BrowserToolset20260801? browserToolset20260801,
             global::Anthropic.MemoryTool20250818? memoryTool20250818,
@@ -563,7 +563,7 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.Tool5, TResult>? tool = null,
+            global::System.Func<global::Anthropic.Tool, TResult>? tool = null,
             global::System.Func<global::Anthropic.BashTool20250124, TResult>? bashTool20250124 = null,
             global::System.Func<global::Anthropic.BrowserToolset20260801, TResult>? browserToolset20260801 = null,
             global::System.Func<global::Anthropic.MemoryTool20250818, TResult>? memoryTool20250818 = null,
@@ -618,7 +618,7 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.Tool5>? tool = null,
+            global::System.Action<global::Anthropic.Tool>? tool = null,
 
             global::System.Action<global::Anthropic.BashTool20250124>? bashTool20250124 = null,
 
@@ -678,7 +678,7 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.Tool5>? tool = null,
+            global::System.Action<global::Anthropic.Tool>? tool = null,
             global::System.Action<global::Anthropic.BashTool20250124>? bashTool20250124 = null,
             global::System.Action<global::Anthropic.BrowserToolset20260801>? browserToolset20260801 = null,
             global::System.Action<global::Anthropic.MemoryTool20250818>? memoryTool20250818 = null,
@@ -735,7 +735,7 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Tool,
-                typeof(global::Anthropic.Tool5),
+                typeof(global::Anthropic.Tool),
                 BashTool20250124,
                 typeof(global::Anthropic.BashTool20250124),
                 BrowserToolset20260801,
@@ -766,7 +766,7 @@ namespace Anthropic
         public bool Equals(ClientToolUnion other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.Tool5?>.Default.Equals(Tool, other.Tool) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.Tool?>.Default.Equals(Tool, other.Tool) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BashTool20250124?>.Default.Equals(BashTool20250124, other.BashTool20250124) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BrowserToolset20260801?>.Default.Equals(BrowserToolset20260801, other.BrowserToolset20260801) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.MemoryTool20250818?>.Default.Equals(MemoryTool20250818, other.MemoryTool20250818) &&

@@ -25,7 +25,7 @@ namespace Anthropic
         /// Replaces the entire JWKS configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks")]
-        public global::Anthropic.JwksVariant1? Jwks { get; set; }
+        public global::Anthropic.JwksVariant12? Jwks { get; set; }
 
         /// <summary>
         /// Only `false` is accepted, to re-enable polling after the system pauses it. Polling is paused automatically; sending `true` is rejected.
@@ -78,7 +78,7 @@ namespace Anthropic
         public BetaFederationIssuerUpdateParams(
             bool? checkJti,
             string? issuerUrl,
-            global::Anthropic.JwksVariant1? jwks,
+            global::Anthropic.JwksVariant12? jwks,
             bool? jwksPollingDisabled,
             int? maxJwtLifetimeSeconds,
             string? name)

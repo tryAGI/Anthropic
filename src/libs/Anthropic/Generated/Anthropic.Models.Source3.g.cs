@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseDocumentBlockSourceDiscriminatorType? Type { get; }
+        public global::Anthropic.RequestImageBlockSourceDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaBase64PDFSource? Base64 { get; init; }
+        public global::Anthropic.Base64ImageSource? Base64 { get; init; }
 #else
-        public global::Anthropic.BetaBase64PDFSource? Base64 { get; }
+        public global::Anthropic.Base64ImageSource? Base64 { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaBase64PDFSource? value)
+            out global::Anthropic.Base64ImageSource? value)
         {
             value = Base64;
             return IsBase64;
@@ -47,7 +47,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBase64PDFSource PickBase64() => Base64 is { } value
+        public global::Anthropic.Base64ImageSource PickBase64() => Base64 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
@@ -55,52 +55,89 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaPlainTextSource? Text { get; init; }
+        public global::Anthropic.URLImageSource? Url { get; init; }
 #else
-        public global::Anthropic.BetaPlainTextSource? Text { get; }
+        public global::Anthropic.URLImageSource? Url { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsUrl => Url != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickText(
+        public bool TryPickUrl(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaPlainTextSource? value)
+            out global::Anthropic.URLImageSource? value)
         {
-            value = Text;
-            return IsText;
+            value = Url;
+            return IsUrl;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaPlainTextSource PickText() => Text is { } value
+        public global::Anthropic.URLImageSource PickUrl() => Url is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator Source3(global::Anthropic.BetaBase64PDFSource value) => new Source3((global::Anthropic.BetaBase64PDFSource?)value);
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaBase64PDFSource?(Source3 @this) => @this.Base64;
+#if NET6_0_OR_GREATER
+        public global::Anthropic.FileImageSource? File { get; init; }
+#else
+        public global::Anthropic.FileImageSource? File { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public Source3(global::Anthropic.BetaBase64PDFSource? value)
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.FileImageSource? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.FileImageSource PickFile() => File is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source3(global::Anthropic.Base64ImageSource value) => new Source3((global::Anthropic.Base64ImageSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.Base64ImageSource?(Source3 @this) => @this.Base64;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source3(global::Anthropic.Base64ImageSource? value)
         {
             Base64 = value;
         }
@@ -108,51 +145,77 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Source3 FromBase64(global::Anthropic.BetaBase64PDFSource? value) => new Source3(value);
+        public static Source3 FromBase64(global::Anthropic.Base64ImageSource? value) => new Source3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source3(global::Anthropic.BetaPlainTextSource value) => new Source3((global::Anthropic.BetaPlainTextSource?)value);
+        public static implicit operator Source3(global::Anthropic.URLImageSource value) => new Source3((global::Anthropic.URLImageSource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaPlainTextSource?(Source3 @this) => @this.Text;
+        public static implicit operator global::Anthropic.URLImageSource?(Source3 @this) => @this.Url;
 
         /// <summary>
         ///
         /// </summary>
-        public Source3(global::Anthropic.BetaPlainTextSource? value)
+        public Source3(global::Anthropic.URLImageSource? value)
         {
-            Text = value;
+            Url = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source3 FromText(global::Anthropic.BetaPlainTextSource? value) => new Source3(value);
+        public static Source3 FromUrl(global::Anthropic.URLImageSource? value) => new Source3(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source3(global::Anthropic.FileImageSource value) => new Source3((global::Anthropic.FileImageSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.FileImageSource?(Source3 @this) => @this.File;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source3(global::Anthropic.FileImageSource? value)
+        {
+            File = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source3 FromFile(global::Anthropic.FileImageSource? value) => new Source3(value);
 
         /// <summary>
         ///
         /// </summary>
         public Source3(
-            global::Anthropic.BetaResponseDocumentBlockSourceDiscriminatorType? type,
-            global::Anthropic.BetaBase64PDFSource? base64,
-            global::Anthropic.BetaPlainTextSource? text
+            global::Anthropic.RequestImageBlockSourceDiscriminatorType? type,
+            global::Anthropic.Base64ImageSource? base64,
+            global::Anthropic.URLImageSource? url,
+            global::Anthropic.FileImageSource? file
             )
         {
             Type = type;
 
             Base64 = base64;
-            Text = text;
+            Url = url;
+            File = file;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Text as object ??
+            File as object ??
+            Url as object ??
             Base64 as object
             ;
 
@@ -161,7 +224,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Base64?.ToString() ??
-            Text?.ToString()
+            Url?.ToString() ??
+            File?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +233,16 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsBase64 && !IsText || !IsBase64 && IsText;
+            return IsBase64 && !IsUrl && !IsFile || !IsBase64 && IsUrl && !IsFile || !IsBase64 && !IsUrl && IsFile;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaBase64PDFSource, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.BetaPlainTextSource, TResult>? text = null,
+            global::System.Func<global::Anthropic.Base64ImageSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.URLImageSource, TResult>? url = null,
+            global::System.Func<global::Anthropic.FileImageSource, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -189,9 +254,13 @@ namespace Anthropic
             {
                 return base64(__value0);
             }
-            else if (Text is { } __value1 && text != null)
+            else if (Url is { } __value1 && url != null)
             {
-                return text(__value1);
+                return url(__value1);
+            }
+            else if (File is { } __value2 && file != null)
+            {
+                return file(__value2);
             }
 
             return default(TResult);
@@ -201,9 +270,11 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
+            global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
 
-            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+            global::System.Action<global::Anthropic.URLImageSource>? url = null,
+
+            global::System.Action<global::Anthropic.FileImageSource>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -215,9 +286,13 @@ namespace Anthropic
             {
                 base64?.Invoke(__value0);
             }
-            else if (Text is { } __value1)
+            else if (Url is { } __value1)
             {
-                text?.Invoke(__value1);
+                url?.Invoke(__value1);
+            }
+            else if (File is { } __value2)
+            {
+                file?.Invoke(__value2);
             }
         }
 
@@ -225,8 +300,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
-            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+            global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
+            global::System.Action<global::Anthropic.URLImageSource>? url = null,
+            global::System.Action<global::Anthropic.FileImageSource>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -238,9 +314,13 @@ namespace Anthropic
             {
                 base64?.Invoke(__value0);
             }
-            else if (Text is { } __value1)
+            else if (Url is { } __value1)
             {
-                text?.Invoke(__value1);
+                url?.Invoke(__value1);
+            }
+            else if (File is { } __value2)
+            {
+                file?.Invoke(__value2);
             }
         }
 
@@ -252,9 +332,11 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Base64,
-                typeof(global::Anthropic.BetaBase64PDFSource),
-                Text,
-                typeof(global::Anthropic.BetaPlainTextSource),
+                typeof(global::Anthropic.Base64ImageSource),
+                Url,
+                typeof(global::Anthropic.URLImageSource),
+                File,
+                typeof(global::Anthropic.FileImageSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +353,9 @@ namespace Anthropic
         public bool Equals(Source3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBase64PDFSource?>.Default.Equals(Base64, other.Base64) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaPlainTextSource?>.Default.Equals(Text, other.Text)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.Base64ImageSource?>.Default.Equals(Base64, other.Base64) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.URLImageSource?>.Default.Equals(Url, other.Url) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.FileImageSource?>.Default.Equals(File, other.File)
                 ;
         }
 

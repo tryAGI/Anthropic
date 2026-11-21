@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.TextEditor20250124CacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -77,7 +77,7 @@ namespace Anthropic
         ///
         /// </summary>
         public CacheControlVariant179(
-            global::Anthropic.TextEditor20250124CacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorType? type,
             global::Anthropic.CacheControlEphemeral? ephemeral
             )
         {

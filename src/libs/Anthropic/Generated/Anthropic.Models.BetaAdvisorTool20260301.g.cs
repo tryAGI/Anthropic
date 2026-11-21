@@ -20,7 +20,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant12? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant132? CacheControl { get; set; }
 
         /// <summary>
         /// Caching for the advisor's own prompt. When set, each advisor call writes a cache entry at the given TTL so subsequent calls in the same conversation read the stable prefix. When omitted, the advisor prompt is not cached.
@@ -119,7 +119,7 @@ namespace Anthropic
         public BetaAdvisorTool20260301(
             global::Anthropic.Model model,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant12? cacheControl,
+            global::Anthropic.CacheControlVariant132? cacheControl,
             global::Anthropic.CachingVariant1? caching,
             bool? deferLoading,
             int? maxTokens,

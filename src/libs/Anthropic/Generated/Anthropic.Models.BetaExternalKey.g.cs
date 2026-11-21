@@ -15,9 +15,9 @@ namespace Anthropic
         /// Whether any workspace uses this config to encrypt its data — counting live and archived workspaces (an archived workspace's data remains encrypted under the config), excluding deleted ones. Only an attached config is used by the encryption path; an `unattached` config is inert and can be deleted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachment")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AttachmentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Attachment2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Attachment Attachment { get; set; }
+        public required global::Anthropic.Attachment2 Attachment { get; set; }
 
         /// <summary>
         ///
@@ -50,9 +50,9 @@ namespace Anthropic
         /// KMS provider identity and auth coordinates.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ProviderConfigJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ProviderConfig2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ProviderConfig ProviderConfig { get; set; }
+        public required global::Anthropic.ProviderConfig2 ProviderConfig { get; set; }
 
         /// <summary>
         /// Default Value: external_key
@@ -69,7 +69,7 @@ namespace Anthropic
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can be attached to a Workspace whatever its user profile.
+        /// ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can only be attached to a Workspace that has no user profile.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_profile_id")]
         public string? UserProfileId { get; set; }
@@ -101,7 +101,7 @@ namespace Anthropic
         /// Human-friendly display name. Null if none was set.
         /// </param>
         /// <param name="userProfileId">
-        /// ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can be attached to a Workspace whatever its user profile.
+        /// ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can only be attached to a Workspace that has no user profile.
         /// </param>
         /// <param name="type">
         /// Default Value: external_key
@@ -110,11 +110,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaExternalKey(
-            global::Anthropic.Attachment attachment,
+            global::Anthropic.Attachment2 attachment,
             global::System.DateTime createdAt,
             string geo,
             string id,
-            global::Anthropic.ProviderConfig providerConfig,
+            global::Anthropic.ProviderConfig2 providerConfig,
             global::System.DateTime updatedAt,
             string? displayName,
             string? userProfileId,

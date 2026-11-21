@@ -12,7 +12,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant124? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant133? CacheControl { get; set; }
 
         /// <summary>
         ///
@@ -30,9 +30,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.SourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source8JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source Source { get; set; }
+        public required global::Anthropic.Source8 Source { get; set; }
 
         /// <summary>
         ///
@@ -68,8 +68,8 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestDocumentBlock(
-            global::Anthropic.Source source,
-            global::Anthropic.CacheControlVariant124? cacheControl,
+            global::Anthropic.Source8 source,
+            global::Anthropic.CacheControlVariant133? cacheControl,
             global::Anthropic.BetaRequestCitationsConfig? citations,
             string? context,
             string? title,

@@ -89,7 +89,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ask' but the value was {ToString()}.");
 
         /// <summary>
-        /// The server judged the invocation high-risk; it does not execute and a synthetic error tool result is appended.
+        /// The server judged the invocation high-risk, or reached no judgement and did not hold it for client approval (for example, because the organization is out of credits or has reached a spend limit); it does not execute and a synthetic error tool result is appended.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionDeny? Deny { get; init; }

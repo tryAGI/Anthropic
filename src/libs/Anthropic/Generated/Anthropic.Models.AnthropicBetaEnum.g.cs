@@ -31,6 +31,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        CeClaudeCodeManagedSettings20261006,
+        /// <summary>
+        ///
+        /// </summary>
         CePlugins20260901,
         /// <summary>
         ///
@@ -231,6 +235,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        UserProfilesBilling20261001,
+        /// <summary>
+        ///
+        /// </summary>
         Webhooks20261007,
     }
 
@@ -251,6 +259,7 @@ namespace Anthropic
                 AnthropicBetaEnum.AgentMemory20260722 => "agent-memory-2026-07-22",
                 AnthropicBetaEnum.AnalyticsUsageCost20260824 => "analytics-usage-cost-2026-08-24",
                 AnthropicBetaEnum.CacheDiagnosis20260407 => "cache-diagnosis-2026-04-07",
+                AnthropicBetaEnum.CeClaudeCodeManagedSettings20261006 => "ce-claude-code-managed-settings-2026-10-06",
                 AnthropicBetaEnum.CePlugins20260901 => "ce-plugins-2026-09-01",
                 AnthropicBetaEnum.CeUserManagement20260713 => "ce-user-management-2026-07-13",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
@@ -301,6 +310,7 @@ namespace Anthropic
                 AnthropicBetaEnum.UserProfiles20260324 => "user-profiles-2026-03-24",
                 AnthropicBetaEnum.UserProfiles20260818 => "user-profiles-2026-08-18",
                 AnthropicBetaEnum.UserProfiles20260904 => "user-profiles-2026-09-04",
+                AnthropicBetaEnum.UserProfilesBilling20261001 => "user-profiles-billing-2026-10-01",
                 AnthropicBetaEnum.Webhooks20261007 => "webhooks-2026-10-07",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -317,6 +327,7 @@ namespace Anthropic
                 "agent-memory-2026-07-22" => AnthropicBetaEnum.AgentMemory20260722,
                 "analytics-usage-cost-2026-08-24" => AnthropicBetaEnum.AnalyticsUsageCost20260824,
                 "cache-diagnosis-2026-04-07" => AnthropicBetaEnum.CacheDiagnosis20260407,
+                "ce-claude-code-managed-settings-2026-10-06" => AnthropicBetaEnum.CeClaudeCodeManagedSettings20261006,
                 "ce-plugins-2026-09-01" => AnthropicBetaEnum.CePlugins20260901,
                 "ce-user-management-2026-07-13" => AnthropicBetaEnum.CeUserManagement20260713,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
@@ -367,6 +378,7 @@ namespace Anthropic
                 "user-profiles-2026-03-24" => AnthropicBetaEnum.UserProfiles20260324,
                 "user-profiles-2026-08-18" => AnthropicBetaEnum.UserProfiles20260818,
                 "user-profiles-2026-09-04" => AnthropicBetaEnum.UserProfiles20260904,
+                "user-profiles-billing-2026-10-01" => AnthropicBetaEnum.UserProfilesBilling20261001,
                 "webhooks-2026-10-07" => AnthropicBetaEnum.Webhooks20261007,
                 _ => null,
             };

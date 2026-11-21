@@ -29,6 +29,12 @@ namespace Anthropic
         public required global::Anthropic.AnalyticsClaudeCodeMetrics ClaudeCodeMetrics { get; set; }
 
         /// <summary>
+        /// Claude Tag activity in Slack by a user who has linked a Claude account. Activity by Slack users who have not linked an account appears only in the `/summaries` Claude Tag counts, so these rows do not add up to those counts. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("claude_tag_metrics")]
+        public global::Anthropic.AnalyticsClaudeTagMetrics? ClaudeTagMetrics { get; set; }
+
+        /// <summary>
         /// Cowork activity metrics for a single user on a given day.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cowork_metrics")]
@@ -126,6 +132,9 @@ namespace Anthropic
         /// <param name="chatCoworkUnifiedMetrics">
         /// Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response where Chat and Cowork unified is not available.
         /// </param>
+        /// <param name="claudeTagMetrics">
+        /// Claude Tag activity in Slack by a user who has linked a Claude account. Activity by Slack users who have not linked an account appears only in the `/summaries` Claude Tag counts, so these rows do not add up to those counts. Omitted from the response on deployments that do not offer Claude Tag reporting.
+        /// </param>
         /// <param name="distinctUserCount">
         /// Number of distinct active users represented by this row. Only set for grouped rollups (`group_by[]`); null for per-user rows. In date-range mode, recomputed as an exact distinct count of the group's active members over the requested window, never a sum of per-day values.
         /// </param>
@@ -153,6 +162,7 @@ namespace Anthropic
             global::Anthropic.AnalyticsScienceMetrics scienceMetrics,
             int webSearchCount,
             global::Anthropic.AnalyticsChatCoworkUnifiedMetrics? chatCoworkUnifiedMetrics,
+            global::Anthropic.AnalyticsClaudeTagMetrics? claudeTagMetrics,
             int? distinctUserCount,
             global::System.DateTime? lastActivityDate,
             string? rbacGroupId,
@@ -162,6 +172,7 @@ namespace Anthropic
             this.ChatCoworkUnifiedMetrics = chatCoworkUnifiedMetrics;
             this.ChatMetrics = chatMetrics ?? throw new global::System.ArgumentNullException(nameof(chatMetrics));
             this.ClaudeCodeMetrics = claudeCodeMetrics ?? throw new global::System.ArgumentNullException(nameof(claudeCodeMetrics));
+            this.ClaudeTagMetrics = claudeTagMetrics;
             this.CoworkMetrics = coworkMetrics ?? throw new global::System.ArgumentNullException(nameof(coworkMetrics));
             this.DesignMetrics = designMetrics ?? throw new global::System.ArgumentNullException(nameof(designMetrics));
             this.DistinctUserCount = distinctUserCount;

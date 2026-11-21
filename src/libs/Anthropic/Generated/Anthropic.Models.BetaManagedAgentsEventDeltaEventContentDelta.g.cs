@@ -19,7 +19,7 @@ namespace Anthropic
         /// Which entry in the previewed event's content array this fragment lands in. Insert content as that entry when the index is new; append to the existing entry otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        public int? Index { get; set; }
+        public long? Index { get; set; }
 
         /// <summary>
         /// A partial element of the content array at index, typed like the element itself — the same shape the buffered agent.message carries in content.
@@ -49,7 +49,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsEventDeltaEventContentDelta(
             global::Anthropic.BetaManagedAgentsTextBlock content,
-            int? index,
+            long? index,
             string type = "content_delta")
         {
             this.Type = type;

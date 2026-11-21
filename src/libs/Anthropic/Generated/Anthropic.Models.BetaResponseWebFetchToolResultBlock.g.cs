@@ -12,8 +12,8 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller7JsonConverter))]
-        public global::Anthropic.Caller7? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller15JsonConverter))]
+        public global::Anthropic.Caller15? Caller { get; set; }
 
         /// <summary>
         ///
@@ -58,7 +58,7 @@ namespace Anthropic
         public BetaResponseWebFetchToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaResponseWebFetchToolResultError, global::Anthropic.BetaResponseWebFetchResultBlock> content,
             string toolUseId,
-            global::Anthropic.Caller7? caller,
+            global::Anthropic.Caller15? caller,
             string type = "web_fetch_tool_result")
         {
             this.Caller = caller;

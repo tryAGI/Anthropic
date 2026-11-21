@@ -18,30 +18,57 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestDocumentBlockSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestDocumentBlockSourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestDocumentBlockSourceDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? workspace = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType.Workspace)
+            global::Anthropic.BetaBase64PDFSource? base64 = default;
+            if (discriminator?.Type == global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType.Base64)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource)}");
-                workspace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBase64PDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBase64PDFSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaBase64PDFSource)}");
+                base64 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? organization = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType.Organization)
+            global::Anthropic.BetaPlainTextSource? text = default;
+            if (discriminator?.Type == global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource)}");
-                organization = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPlainTextSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPlainTextSource)}");
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaContentBlockSource? content = default;
+            if (discriminator?.Type == global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType.Content)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaContentBlockSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaContentBlockSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaContentBlockSource)}");
+                content = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaURLPDFSource? url = default;
+            if (discriminator?.Type == global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType.Url)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaURLPDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaURLPDFSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaURLPDFSource)}");
+                url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaFileDocumentSource? file = default;
+            if (discriminator?.Type == global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType.File)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFileDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFileDocumentSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaFileDocumentSource)}");
+                file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.Source8(
                 discriminator?.Type,
-                workspace,
+                base64,
 
-                organization
+                text,
+
+                content,
+
+                url,
+
+                file
                 );
 
             return __value;
@@ -57,17 +84,35 @@ namespace Anthropic.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
             typeInfoResolver = global::Anthropic.AutoSDKJsonMetadataCachedResolver.Instance;
 
-            if (value.IsWorkspace)
+            if (value.IsBase64)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkspace(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBase64PDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBase64PDFSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaBase64PDFSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBase64(), typeInfo);
             }
-            else if (value.IsOrganization)
+            else if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrganization(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPlainTextSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaPlainTextSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
+            }
+            else if (value.IsContent)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaContentBlockSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaContentBlockSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaContentBlockSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContent(), typeInfo);
+            }
+            else if (value.IsUrl)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaURLPDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaURLPDFSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaURLPDFSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUrl(), typeInfo);
+            }
+            else if (value.IsFile)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFileDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFileDocumentSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaFileDocumentSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFile(), typeInfo);
             }
         }
     }

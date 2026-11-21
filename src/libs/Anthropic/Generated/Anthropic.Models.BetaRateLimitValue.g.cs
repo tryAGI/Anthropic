@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaRateLimitValue
     {
         /// <summary>
-        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
+        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute_cache_aware`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaRateLimitValue" /> class.
         /// </summary>
         /// <param name="type">
-        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
+        /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute_cache_aware`).
         /// </param>
         /// <param name="value">
         /// The configured limit value for this limiter type.

@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_154622AFA43FE788.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_202DB40C0AC80A38.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_422AB8D07D6682BA.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_D16FFBC19CC6F3E6.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_154622AFA43FE788.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_202DB40C0AC80A38.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_422AB8D07D6682BA.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_689AF0D0458C6B74.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Caller12))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0178.Create_Caller122(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0187.Create_Caller122(options);
                 }
                 if (type == typeof(global::Anthropic.Caller12?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0244.Create_NullableCaller122(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0256.Create_NullableCaller122(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -8,8 +8,8 @@ namespace Anthropic
         /// Update External Key<br/>
         /// Partially update an external key config. Omitted fields are left unchanged.<br/>
         /// `display_name` is always editable. `geo` and `provider_config` cannot<br/>
-        /// be changed once any workspace references this config, because previously<br/>
-        /// encrypted data requires the original key identity to decrypt.
+        /// be changed once any workspace references this config, and a Google Cloud<br/>
+        /// key's provider and `key_name` cannot be changed at all.
         /// </summary>
         /// <param name="externalKeyId">
         /// ID of the External Key.
@@ -33,8 +33,8 @@ namespace Anthropic
         /// Update External Key<br/>
         /// Partially update an external key config. Omitted fields are left unchanged.<br/>
         /// `display_name` is always editable. `geo` and `provider_config` cannot<br/>
-        /// be changed once any workspace references this config, because previously<br/>
-        /// encrypted data requires the original key identity to decrypt.
+        /// be changed once any workspace references this config, and a Google Cloud<br/>
+        /// key's provider and `key_name` cannot be changed at all.
         /// </summary>
         /// <param name="externalKeyId">
         /// ID of the External Key.
@@ -58,8 +58,8 @@ namespace Anthropic
         /// Update External Key<br/>
         /// Partially update an external key config. Omitted fields are left unchanged.<br/>
         /// `display_name` is always editable. `geo` and `provider_config` cannot<br/>
-        /// be changed once any workspace references this config, because previously<br/>
-        /// encrypted data requires the original key identity to decrypt.
+        /// be changed once any workspace references this config, and a Google Cloud<br/>
+        /// key's provider and `key_name` cannot be changed at all.
         /// </summary>
         /// <param name="externalKeyId">
         /// ID of the External Key.
@@ -85,7 +85,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? displayName = default,
             string? geo = default,
-            global::Anthropic.ProviderConfigVariant12? providerConfig = default,
+            global::Anthropic.ProviderConfigVariant1? providerConfig = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
