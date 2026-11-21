@@ -58,13 +58,13 @@ namespace Anthropic
         /// KMS provider identity and auth coordinates.
         /// </param>
         /// <param name="userProfileId">
-        /// ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+        /// ID of a user profile to bind the key to. A user profile represents one of your customers: bind a customer's key to that customer's user profile. A key bound to a user profile can only be attached to a Workspace that has the same user profile, and the binding cannot be changed later. Omit this field only for your organization's own key, never a customer's. A key created without a user profile ID can't be attached to a Workspace that has a user profile, and you can't add one to the key later.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.ExternalKey> CreateExternalKeyV1OrganizationsExternalKeysPostAsync(
-            global::Anthropic.ProviderConfig4 providerConfig,
+            global::Anthropic.ProviderConfig3 providerConfig,
             string? anthropicVersion = default,
             string? displayName = default,
             string? geo = default,

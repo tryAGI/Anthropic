@@ -19,7 +19,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant159? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant134? CacheControl { get; set; }
 
         /// <summary>
         /// Sparse per-member overrides, keyed by member name. Absent, null, and {} are equivalent; a member's defaults apply wherever its key is absent.
@@ -54,7 +54,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerToolset20260801(
-            global::Anthropic.CacheControlVariant159? cacheControl,
+            global::Anthropic.CacheControlVariant134? cacheControl,
             global::Anthropic.ComputerToolsetConfigs? configs,
             string type = "computer_toolset_20260801")
         {

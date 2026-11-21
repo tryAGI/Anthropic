@@ -12,348 +12,480 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType? Type { get; }
+        public global::Anthropic.SpendSummarySourceDiscriminatorType? Type { get; }
 
         /// <summary>
-        ///
+        /// Scope selecting a single member of the organization.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaBase64PDFSource? Base64 { get; init; }
+        public global::Anthropic.UserScope? User { get; init; }
 #else
-        public global::Anthropic.BetaBase64PDFSource? Base64 { get; }
+        public global::Anthropic.UserScope? User { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base64))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
 #endif
-        public bool IsBase64 => Base64 != null;
+        public bool IsUser => User != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickBase64(
+        public bool TryPickUser(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaBase64PDFSource? value)
+            out global::Anthropic.UserScope? value)
         {
-            value = Base64;
-            return IsBase64;
+            value = User;
+            return IsUser;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBase64PDFSource PickBase64() => Base64 is { } value
+        public global::Anthropic.UserScope PickUser() => User is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaPlainTextSource? Text { get; init; }
+        public global::Anthropic.SeatTierScope? SeatTier { get; init; }
 #else
-        public global::Anthropic.BetaPlainTextSource? Text { get; }
+        public global::Anthropic.SeatTierScope? SeatTier { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SeatTier))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsSeatTier => SeatTier != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickText(
+        public bool TryPickSeatTier(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaPlainTextSource? value)
+            out global::Anthropic.SeatTierScope? value)
         {
-            value = Text;
-            return IsText;
+            value = SeatTier;
+            return IsSeatTier;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaPlainTextSource PickText() => Text is { } value
+        public global::Anthropic.SeatTierScope PickSeatTier() => SeatTier is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SeatTier' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaContentBlockSource? Content { get; init; }
+        public global::Anthropic.RbacGroupScope? RbacGroup { get; init; }
 #else
-        public global::Anthropic.BetaContentBlockSource? Content { get; }
+        public global::Anthropic.RbacGroupScope? RbacGroup { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RbacGroup))]
 #endif
-        public bool IsContent => Content != null;
+        public bool IsRbacGroup => RbacGroup != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickContent(
+        public bool TryPickRbacGroup(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaContentBlockSource? value)
+            out global::Anthropic.RbacGroupScope? value)
         {
-            value = Content;
-            return IsContent;
+            value = RbacGroup;
+            return IsRbacGroup;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaContentBlockSource PickContent() => Content is { } value
+        public global::Anthropic.RbacGroupScope PickRbacGroup() => RbacGroup is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Content' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RbacGroup' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaURLPDFSource? Url { get; init; }
+        public global::Anthropic.OrgServiceScope? OrganizationService { get; init; }
 #else
-        public global::Anthropic.BetaURLPDFSource? Url { get; }
+        public global::Anthropic.OrgServiceScope? OrganizationService { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationService))]
 #endif
-        public bool IsUrl => Url != null;
+        public bool IsOrganizationService => OrganizationService != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickUrl(
+        public bool TryPickOrganizationService(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaURLPDFSource? value)
+            out global::Anthropic.OrgServiceScope? value)
         {
-            value = Url;
-            return IsUrl;
+            value = OrganizationService;
+            return IsOrganizationService;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaURLPDFSource PickUrl() => Url is { } value
+        public global::Anthropic.OrgServiceScope PickOrganizationService() => OrganizationService is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationService' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaFileDocumentSource? File { get; init; }
+        public global::Anthropic.OrganizationScope? Organization { get; init; }
 #else
-        public global::Anthropic.BetaFileDocumentSource? File { get; }
+        public global::Anthropic.OrganizationScope? Organization { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Organization))]
 #endif
-        public bool IsFile => File != null;
+        public bool IsOrganization => Organization != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickFile(
+        public bool TryPickOrganization(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaFileDocumentSource? value)
+            out global::Anthropic.OrganizationScope? value)
         {
-            value = File;
-            return IsFile;
+            value = Organization;
+            return IsOrganization;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFileDocumentSource PickFile() => File is { } value
+        public global::Anthropic.OrganizationScope PickOrganization() => Organization is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// Scope selecting one workspace of a Claude Console organization.
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaBase64PDFSource value) => new Source((global::Anthropic.BetaBase64PDFSource?)value);
+#if NET6_0_OR_GREATER
+        public global::Anthropic.WorkspaceScope? Workspace { get; init; }
+#else
+        public global::Anthropic.WorkspaceScope? Workspace { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaBase64PDFSource?(Source @this) => @this.Base64;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Workspace))]
+#endif
+        public bool IsWorkspace => Workspace != null;
 
         /// <summary>
         ///
         /// </summary>
-        public Source(global::Anthropic.BetaBase64PDFSource? value)
+        public bool TryPickWorkspace(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.WorkspaceScope? value)
         {
-            Base64 = value;
+            value = Workspace;
+            return IsWorkspace;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source FromBase64(global::Anthropic.BetaBase64PDFSource? value) => new Source(value);
+        public global::Anthropic.WorkspaceScope PickWorkspace() => Workspace is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Scope of the monthly spend cap Anthropic sets for a Claude Console<br/>
+        /// organization from its usage tier, or a higher cap Anthropic granted the<br/>
+        /// organization. Read-only; its `created_at` and `updated_at` are the<br/>
+        /// organization's creation time, so `amount` can change while `updated_at` stays<br/>
+        /// the same.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.UsageTierScope? UsageTier { get; init; }
+#else
+        public global::Anthropic.UsageTierScope? UsageTier { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaPlainTextSource value) => new Source((global::Anthropic.BetaPlainTextSource?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UsageTier))]
+#endif
+        public bool IsUsageTier => UsageTier != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaPlainTextSource?(Source @this) => @this.Text;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Source(global::Anthropic.BetaPlainTextSource? value)
+        public bool TryPickUsageTier(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.UsageTierScope? value)
         {
-            Text = value;
+            value = UsageTier;
+            return IsUsageTier;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source FromText(global::Anthropic.BetaPlainTextSource? value) => new Source(value);
+        public global::Anthropic.UsageTierScope PickUsageTier() => UsageTier is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UsageTier' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source(global::Anthropic.UserScope value) => new Source((global::Anthropic.UserScope?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaContentBlockSource value) => new Source((global::Anthropic.BetaContentBlockSource?)value);
+        public static implicit operator global::Anthropic.UserScope?(Source @this) => @this.User;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaContentBlockSource?(Source @this) => @this.Content;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Source(global::Anthropic.BetaContentBlockSource? value)
+        public Source(global::Anthropic.UserScope? value)
         {
-            Content = value;
+            User = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source FromContent(global::Anthropic.BetaContentBlockSource? value) => new Source(value);
+        public static Source FromUser(global::Anthropic.UserScope? value) => new Source(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaURLPDFSource value) => new Source((global::Anthropic.BetaURLPDFSource?)value);
+        public static implicit operator Source(global::Anthropic.SeatTierScope value) => new Source((global::Anthropic.SeatTierScope?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaURLPDFSource?(Source @this) => @this.Url;
+        public static implicit operator global::Anthropic.SeatTierScope?(Source @this) => @this.SeatTier;
 
         /// <summary>
         ///
         /// </summary>
-        public Source(global::Anthropic.BetaURLPDFSource? value)
+        public Source(global::Anthropic.SeatTierScope? value)
         {
-            Url = value;
+            SeatTier = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source FromUrl(global::Anthropic.BetaURLPDFSource? value) => new Source(value);
+        public static Source FromSeatTier(global::Anthropic.SeatTierScope? value) => new Source(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaFileDocumentSource value) => new Source((global::Anthropic.BetaFileDocumentSource?)value);
+        public static implicit operator Source(global::Anthropic.RbacGroupScope value) => new Source((global::Anthropic.RbacGroupScope?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaFileDocumentSource?(Source @this) => @this.File;
+        public static implicit operator global::Anthropic.RbacGroupScope?(Source @this) => @this.RbacGroup;
 
         /// <summary>
         ///
         /// </summary>
-        public Source(global::Anthropic.BetaFileDocumentSource? value)
+        public Source(global::Anthropic.RbacGroupScope? value)
         {
-            File = value;
+            RbacGroup = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Source FromFile(global::Anthropic.BetaFileDocumentSource? value) => new Source(value);
+        public static Source FromRbacGroup(global::Anthropic.RbacGroupScope? value) => new Source(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source(global::Anthropic.OrgServiceScope value) => new Source((global::Anthropic.OrgServiceScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.OrgServiceScope?(Source @this) => @this.OrganizationService;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source(global::Anthropic.OrgServiceScope? value)
+        {
+            OrganizationService = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source FromOrganizationService(global::Anthropic.OrgServiceScope? value) => new Source(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source(global::Anthropic.OrganizationScope value) => new Source((global::Anthropic.OrganizationScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.OrganizationScope?(Source @this) => @this.Organization;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source(global::Anthropic.OrganizationScope? value)
+        {
+            Organization = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source FromOrganization(global::Anthropic.OrganizationScope? value) => new Source(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source(global::Anthropic.WorkspaceScope value) => new Source((global::Anthropic.WorkspaceScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.WorkspaceScope?(Source @this) => @this.Workspace;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source(global::Anthropic.WorkspaceScope? value)
+        {
+            Workspace = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source FromWorkspace(global::Anthropic.WorkspaceScope? value) => new Source(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Source(global::Anthropic.UsageTierScope value) => new Source((global::Anthropic.UsageTierScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.UsageTierScope?(Source @this) => @this.UsageTier;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source(global::Anthropic.UsageTierScope? value)
+        {
+            UsageTier = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source FromUsageTier(global::Anthropic.UsageTierScope? value) => new Source(value);
 
         /// <summary>
         ///
         /// </summary>
         public Source(
-            global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType? type,
-            global::Anthropic.BetaBase64PDFSource? base64,
-            global::Anthropic.BetaPlainTextSource? text,
-            global::Anthropic.BetaContentBlockSource? content,
-            global::Anthropic.BetaURLPDFSource? url,
-            global::Anthropic.BetaFileDocumentSource? file
+            global::Anthropic.SpendSummarySourceDiscriminatorType? type,
+            global::Anthropic.UserScope? user,
+            global::Anthropic.SeatTierScope? seatTier,
+            global::Anthropic.RbacGroupScope? rbacGroup,
+            global::Anthropic.OrgServiceScope? organizationService,
+            global::Anthropic.OrganizationScope? organization,
+            global::Anthropic.WorkspaceScope? workspace,
+            global::Anthropic.UsageTierScope? usageTier
             )
         {
             Type = type;
 
-            Base64 = base64;
-            Text = text;
-            Content = content;
-            Url = url;
-            File = file;
+            User = user;
+            SeatTier = seatTier;
+            RbacGroup = rbacGroup;
+            OrganizationService = organizationService;
+            Organization = organization;
+            Workspace = workspace;
+            UsageTier = usageTier;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            File as object ??
-            Url as object ??
-            Content as object ??
-            Text as object ??
-            Base64 as object
+            UsageTier as object ??
+            Workspace as object ??
+            Organization as object ??
+            OrganizationService as object ??
+            RbacGroup as object ??
+            SeatTier as object ??
+            User as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Base64?.ToString() ??
-            Text?.ToString() ??
-            Content?.ToString() ??
-            Url?.ToString() ??
-            File?.ToString()
+            User?.ToString() ??
+            SeatTier?.ToString() ??
+            RbacGroup?.ToString() ??
+            OrganizationService?.ToString() ??
+            Organization?.ToString() ??
+            Workspace?.ToString() ??
+            UsageTier?.ToString()
             ;
 
         /// <summary>
@@ -361,18 +493,20 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsBase64 && !IsText && !IsContent && !IsUrl && !IsFile || !IsBase64 && IsText && !IsContent && !IsUrl && !IsFile || !IsBase64 && !IsText && IsContent && !IsUrl && !IsFile || !IsBase64 && !IsText && !IsContent && IsUrl && !IsFile || !IsBase64 && !IsText && !IsContent && !IsUrl && IsFile;
+            return IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && IsUsageTier;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaBase64PDFSource, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.BetaPlainTextSource, TResult>? text = null,
-            global::System.Func<global::Anthropic.BetaContentBlockSource, TResult>? content = null,
-            global::System.Func<global::Anthropic.BetaURLPDFSource, TResult>? url = null,
-            global::System.Func<global::Anthropic.BetaFileDocumentSource, TResult>? file = null,
+            global::System.Func<global::Anthropic.UserScope, TResult>? user = null,
+            global::System.Func<global::Anthropic.SeatTierScope, TResult>? seatTier = null,
+            global::System.Func<global::Anthropic.RbacGroupScope, TResult>? rbacGroup = null,
+            global::System.Func<global::Anthropic.OrgServiceScope, TResult>? organizationService = null,
+            global::System.Func<global::Anthropic.OrganizationScope, TResult>? organization = null,
+            global::System.Func<global::Anthropic.WorkspaceScope, TResult>? workspace = null,
+            global::System.Func<global::Anthropic.UsageTierScope, TResult>? usageTier = null,
             bool validate = true)
         {
             if (validate)
@@ -380,25 +514,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Base64 is { } __value0 && base64 != null)
+            if (User is { } __value0 && user != null)
             {
-                return base64(__value0);
+                return user(__value0);
             }
-            else if (Text is { } __value1 && text != null)
+            else if (SeatTier is { } __value1 && seatTier != null)
             {
-                return text(__value1);
+                return seatTier(__value1);
             }
-            else if (Content is { } __value2 && content != null)
+            else if (RbacGroup is { } __value2 && rbacGroup != null)
             {
-                return content(__value2);
+                return rbacGroup(__value2);
             }
-            else if (Url is { } __value3 && url != null)
+            else if (OrganizationService is { } __value3 && organizationService != null)
             {
-                return url(__value3);
+                return organizationService(__value3);
             }
-            else if (File is { } __value4 && file != null)
+            else if (Organization is { } __value4 && organization != null)
             {
-                return file(__value4);
+                return organization(__value4);
+            }
+            else if (Workspace is { } __value5 && workspace != null)
+            {
+                return workspace(__value5);
+            }
+            else if (UsageTier is { } __value6 && usageTier != null)
+            {
+                return usageTier(__value6);
             }
 
             return default(TResult);
@@ -408,15 +550,19 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
+            global::System.Action<global::Anthropic.UserScope>? user = null,
 
-            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+            global::System.Action<global::Anthropic.SeatTierScope>? seatTier = null,
 
-            global::System.Action<global::Anthropic.BetaContentBlockSource>? content = null,
+            global::System.Action<global::Anthropic.RbacGroupScope>? rbacGroup = null,
 
-            global::System.Action<global::Anthropic.BetaURLPDFSource>? url = null,
+            global::System.Action<global::Anthropic.OrgServiceScope>? organizationService = null,
 
-            global::System.Action<global::Anthropic.BetaFileDocumentSource>? file = null,
+            global::System.Action<global::Anthropic.OrganizationScope>? organization = null,
+
+            global::System.Action<global::Anthropic.WorkspaceScope>? workspace = null,
+
+            global::System.Action<global::Anthropic.UsageTierScope>? usageTier = null,
             bool validate = true)
         {
             if (validate)
@@ -424,25 +570,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Base64 is { } __value0)
+            if (User is { } __value0)
             {
-                base64?.Invoke(__value0);
+                user?.Invoke(__value0);
             }
-            else if (Text is { } __value1)
+            else if (SeatTier is { } __value1)
             {
-                text?.Invoke(__value1);
+                seatTier?.Invoke(__value1);
             }
-            else if (Content is { } __value2)
+            else if (RbacGroup is { } __value2)
             {
-                content?.Invoke(__value2);
+                rbacGroup?.Invoke(__value2);
             }
-            else if (Url is { } __value3)
+            else if (OrganizationService is { } __value3)
             {
-                url?.Invoke(__value3);
+                organizationService?.Invoke(__value3);
             }
-            else if (File is { } __value4)
+            else if (Organization is { } __value4)
             {
-                file?.Invoke(__value4);
+                organization?.Invoke(__value4);
+            }
+            else if (Workspace is { } __value5)
+            {
+                workspace?.Invoke(__value5);
+            }
+            else if (UsageTier is { } __value6)
+            {
+                usageTier?.Invoke(__value6);
             }
         }
 
@@ -450,11 +604,13 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
-            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
-            global::System.Action<global::Anthropic.BetaContentBlockSource>? content = null,
-            global::System.Action<global::Anthropic.BetaURLPDFSource>? url = null,
-            global::System.Action<global::Anthropic.BetaFileDocumentSource>? file = null,
+            global::System.Action<global::Anthropic.UserScope>? user = null,
+            global::System.Action<global::Anthropic.SeatTierScope>? seatTier = null,
+            global::System.Action<global::Anthropic.RbacGroupScope>? rbacGroup = null,
+            global::System.Action<global::Anthropic.OrgServiceScope>? organizationService = null,
+            global::System.Action<global::Anthropic.OrganizationScope>? organization = null,
+            global::System.Action<global::Anthropic.WorkspaceScope>? workspace = null,
+            global::System.Action<global::Anthropic.UsageTierScope>? usageTier = null,
             bool validate = true)
         {
             if (validate)
@@ -462,25 +618,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Base64 is { } __value0)
+            if (User is { } __value0)
             {
-                base64?.Invoke(__value0);
+                user?.Invoke(__value0);
             }
-            else if (Text is { } __value1)
+            else if (SeatTier is { } __value1)
             {
-                text?.Invoke(__value1);
+                seatTier?.Invoke(__value1);
             }
-            else if (Content is { } __value2)
+            else if (RbacGroup is { } __value2)
             {
-                content?.Invoke(__value2);
+                rbacGroup?.Invoke(__value2);
             }
-            else if (Url is { } __value3)
+            else if (OrganizationService is { } __value3)
             {
-                url?.Invoke(__value3);
+                organizationService?.Invoke(__value3);
             }
-            else if (File is { } __value4)
+            else if (Organization is { } __value4)
             {
-                file?.Invoke(__value4);
+                organization?.Invoke(__value4);
+            }
+            else if (Workspace is { } __value5)
+            {
+                workspace?.Invoke(__value5);
+            }
+            else if (UsageTier is { } __value6)
+            {
+                usageTier?.Invoke(__value6);
             }
         }
 
@@ -491,16 +655,20 @@ namespace Anthropic
         {
             var fields = new object?[]
             {
-                Base64,
-                typeof(global::Anthropic.BetaBase64PDFSource),
-                Text,
-                typeof(global::Anthropic.BetaPlainTextSource),
-                Content,
-                typeof(global::Anthropic.BetaContentBlockSource),
-                Url,
-                typeof(global::Anthropic.BetaURLPDFSource),
-                File,
-                typeof(global::Anthropic.BetaFileDocumentSource),
+                User,
+                typeof(global::Anthropic.UserScope),
+                SeatTier,
+                typeof(global::Anthropic.SeatTierScope),
+                RbacGroup,
+                typeof(global::Anthropic.RbacGroupScope),
+                OrganizationService,
+                typeof(global::Anthropic.OrgServiceScope),
+                Organization,
+                typeof(global::Anthropic.OrganizationScope),
+                Workspace,
+                typeof(global::Anthropic.WorkspaceScope),
+                UsageTier,
+                typeof(global::Anthropic.UsageTierScope),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -517,11 +685,13 @@ namespace Anthropic
         public bool Equals(Source other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBase64PDFSource?>.Default.Equals(Base64, other.Base64) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaPlainTextSource?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockSource?>.Default.Equals(Content, other.Content) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaURLPDFSource?>.Default.Equals(Url, other.Url) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFileDocumentSource?>.Default.Equals(File, other.File)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.UserScope?>.Default.Equals(User, other.User) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.SeatTierScope?>.Default.Equals(SeatTier, other.SeatTier) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RbacGroupScope?>.Default.Equals(RbacGroup, other.RbacGroup) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.OrgServiceScope?>.Default.Equals(OrganizationService, other.OrganizationService) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.OrganizationScope?>.Default.Equals(Organization, other.Organization) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.WorkspaceScope?>.Default.Equals(Workspace, other.Workspace) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.UsageTierScope?>.Default.Equals(UsageTier, other.UsageTier)
                 ;
         }
 

@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct Model : global::System.IEquatable<Model>
     {
         /// <summary>
-        /// Frontier intelligence for ambitious work in coding, enterprise workflows, and the sciences
+        /// Built for the most ambitious work in coding, enterprise workflows, and the sciences
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant1 { get; init; }
@@ -48,7 +48,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// Frontier intelligence for cybersecurity and life sciences research, available through verification programs
+        /// Built for the most demanding cybersecurity and life sciences research, available through verification programs
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant2 { get; init; }

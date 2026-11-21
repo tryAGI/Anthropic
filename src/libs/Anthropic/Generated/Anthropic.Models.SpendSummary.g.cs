@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ActorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Actor3 Actor { get; set; }
+        public required global::Anthropic.Actor Actor { get; set; }
 
         /// <summary>
         /// Effective limit amount as a non-negative integer decimal string in the minor unit of `currency` (cents for USD). `null` means no limit applies for this row's `period` — each period resolves independently, so another period may still cap this member.
@@ -48,17 +48,17 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope7JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Scope7 Scope { get; set; }
+        public required global::Anthropic.Scope3 Scope { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source9JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.SourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source9 Source { get; set; }
+        public required global::Anthropic.Source Source { get; set; }
 
         /// <summary>
         ///
@@ -96,12 +96,12 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SpendSummary(
-            global::Anthropic.Actor3 actor,
+            global::Anthropic.Actor actor,
             string currency,
             global::Anthropic.SpendLimitPeriod period,
             string periodToDateSpend,
-            global::Anthropic.Scope7 scope,
-            global::Anthropic.Source9 source,
+            global::Anthropic.Scope3 scope,
+            global::Anthropic.Source source,
             string spendLimitId,
             string? amount)
         {

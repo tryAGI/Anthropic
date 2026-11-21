@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsModel : global::System.IEquatable<BetaManagedAgentsModel>
     {
         /// <summary>
-        /// Frontier intelligence for ambitious work in coding, enterprise workflows, and the sciences
+        /// Built for the most ambitious work in coding, enterprise workflows, and the sciences
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaManagedAgentsModelVariant1 { get; init; }

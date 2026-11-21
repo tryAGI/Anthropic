@@ -12,16 +12,16 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebFetchUrlSourcesUserInputDiscriminatorType? Type { get; }
+        public global::Anthropic.WebFetchUrlSourcesUserInputDiscriminatorType? Type { get; }
 
         /// <summary>
         /// The ``url_sources`` variant under which a source contributes in<br/>
         /// full: every result of the tool filter's source, or all user input.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaWebFetchUrlSourceAll? All { get; init; }
+        public global::Anthropic.WebFetchUrlSourceAll? All { get; init; }
 #else
-        public global::Anthropic.BetaWebFetchUrlSourceAll? All { get; }
+        public global::Anthropic.WebFetchUrlSourceAll? All { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaWebFetchUrlSourceAll? value)
+            out global::Anthropic.WebFetchUrlSourceAll? value)
         {
             value = All;
             return IsAll;
@@ -48,7 +48,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebFetchUrlSourceAll PickAll() => All is { } value
+        public global::Anthropic.WebFetchUrlSourceAll PickAll() => All is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
 
@@ -57,9 +57,9 @@ namespace Anthropic
         /// no result of the tool filter's source, or no user input.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaWebFetchUrlSourceNone? None { get; init; }
+        public global::Anthropic.WebFetchUrlSourceNone? None { get; init; }
 #else
-        public global::Anthropic.BetaWebFetchUrlSourceNone? None { get; }
+        public global::Anthropic.WebFetchUrlSourceNone? None { get; }
 #endif
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaWebFetchUrlSourceNone? value)
+            out global::Anthropic.WebFetchUrlSourceNone? value)
         {
             value = None;
             return IsNone;
@@ -86,23 +86,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebFetchUrlSourceNone PickNone() => None is { } value
+        public global::Anthropic.WebFetchUrlSourceNone PickNone() => None is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator UserInput(global::Anthropic.BetaWebFetchUrlSourceAll value) => new UserInput((global::Anthropic.BetaWebFetchUrlSourceAll?)value);
+        public static implicit operator UserInput(global::Anthropic.WebFetchUrlSourceAll value) => new UserInput((global::Anthropic.WebFetchUrlSourceAll?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaWebFetchUrlSourceAll?(UserInput @this) => @this.All;
+        public static implicit operator global::Anthropic.WebFetchUrlSourceAll?(UserInput @this) => @this.All;
 
         /// <summary>
         ///
         /// </summary>
-        public UserInput(global::Anthropic.BetaWebFetchUrlSourceAll? value)
+        public UserInput(global::Anthropic.WebFetchUrlSourceAll? value)
         {
             All = value;
         }
@@ -110,22 +110,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static UserInput FromAll(global::Anthropic.BetaWebFetchUrlSourceAll? value) => new UserInput(value);
+        public static UserInput FromAll(global::Anthropic.WebFetchUrlSourceAll? value) => new UserInput(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator UserInput(global::Anthropic.BetaWebFetchUrlSourceNone value) => new UserInput((global::Anthropic.BetaWebFetchUrlSourceNone?)value);
+        public static implicit operator UserInput(global::Anthropic.WebFetchUrlSourceNone value) => new UserInput((global::Anthropic.WebFetchUrlSourceNone?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaWebFetchUrlSourceNone?(UserInput @this) => @this.None;
+        public static implicit operator global::Anthropic.WebFetchUrlSourceNone?(UserInput @this) => @this.None;
 
         /// <summary>
         ///
         /// </summary>
-        public UserInput(global::Anthropic.BetaWebFetchUrlSourceNone? value)
+        public UserInput(global::Anthropic.WebFetchUrlSourceNone? value)
         {
             None = value;
         }
@@ -133,15 +133,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static UserInput FromNone(global::Anthropic.BetaWebFetchUrlSourceNone? value) => new UserInput(value);
+        public static UserInput FromNone(global::Anthropic.WebFetchUrlSourceNone? value) => new UserInput(value);
 
         /// <summary>
         ///
         /// </summary>
         public UserInput(
-            global::Anthropic.BetaWebFetchUrlSourcesUserInputDiscriminatorType? type,
-            global::Anthropic.BetaWebFetchUrlSourceAll? all,
-            global::Anthropic.BetaWebFetchUrlSourceNone? none
+            global::Anthropic.WebFetchUrlSourcesUserInputDiscriminatorType? type,
+            global::Anthropic.WebFetchUrlSourceAll? all,
+            global::Anthropic.WebFetchUrlSourceNone? none
             )
         {
             Type = type;
@@ -178,8 +178,8 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaWebFetchUrlSourceAll, TResult>? all = null,
-            global::System.Func<global::Anthropic.BetaWebFetchUrlSourceNone, TResult>? none = null,
+            global::System.Func<global::Anthropic.WebFetchUrlSourceAll, TResult>? all = null,
+            global::System.Func<global::Anthropic.WebFetchUrlSourceNone, TResult>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -203,9 +203,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaWebFetchUrlSourceAll>? all = null,
+            global::System.Action<global::Anthropic.WebFetchUrlSourceAll>? all = null,
 
-            global::System.Action<global::Anthropic.BetaWebFetchUrlSourceNone>? none = null,
+            global::System.Action<global::Anthropic.WebFetchUrlSourceNone>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -227,8 +227,8 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaWebFetchUrlSourceAll>? all = null,
-            global::System.Action<global::Anthropic.BetaWebFetchUrlSourceNone>? none = null,
+            global::System.Action<global::Anthropic.WebFetchUrlSourceAll>? all = null,
+            global::System.Action<global::Anthropic.WebFetchUrlSourceNone>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -254,9 +254,9 @@ namespace Anthropic
             var fields = new object?[]
             {
                 All,
-                typeof(global::Anthropic.BetaWebFetchUrlSourceAll),
+                typeof(global::Anthropic.WebFetchUrlSourceAll),
                 None,
-                typeof(global::Anthropic.BetaWebFetchUrlSourceNone),
+                typeof(global::Anthropic.WebFetchUrlSourceNone),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -273,8 +273,8 @@ namespace Anthropic
         public bool Equals(UserInput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebFetchUrlSourceAll?>.Default.Equals(All, other.All) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebFetchUrlSourceNone?>.Default.Equals(None, other.None)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.WebFetchUrlSourceAll?>.Default.Equals(All, other.All) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.WebFetchUrlSourceNone?>.Default.Equals(None, other.None)
                 ;
         }
 

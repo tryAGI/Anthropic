@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_1DCCDDE108056A30.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_1FA9A72D15D92290.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_3A7E52BE70BEDD21.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_C7DBC687044CB09D.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_E87AF5A9E3CFC3EE.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_F77AACC8931F20E9.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_02164B0D8F0C94D6.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_21A4EDFEE4C15EC5.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_795006E488DFCB09.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_867B3F02C2919AAD.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_A1B9F6B860F5B0D8.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_C7CEA0292069C409.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Resource))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0272.Create_Resource2_3(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0284.Create_Resource2_3(options);
                 }
                 if (type == typeof(global::Anthropic.Resource?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0253.Create_NullableResource2_3(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0265.Create_NullableResource2_3(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public readonly partial struct Tool
+    public sealed partial class Tool
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -52,7 +52,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool))) as global::Anthropic.Tool?;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool))) as global::Anthropic.Tool;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Anthropic
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool))).ConfigureAwait(false)) as global::Anthropic.Tool?;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool))).ConfigureAwait(false)) as global::Anthropic.Tool;
         }
 
         /// <summary>

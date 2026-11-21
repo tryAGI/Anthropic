@@ -18,26 +18,26 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPluginInstallationSettingTargetDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPluginInstallationSettingTargetDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPluginInstallationSettingTargetDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.BetaPluginTargetOrganization? organization = default;
-            if (discriminator?.Type == global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminatorType.Organization)
+            if (discriminator?.Type == global::Anthropic.BetaPluginInstallationSettingTargetDiscriminatorType.Organization)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPluginTargetOrganization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPluginTargetOrganization> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPluginTargetOrganization)}");
                 organization = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaPluginTargetRbacGroup? rbacGroup = default;
-            if (discriminator?.Type == global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminatorType.RbacGroup)
+            if (discriminator?.Type == global::Anthropic.BetaPluginInstallationSettingTargetDiscriminatorType.RbacGroup)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPluginTargetRbacGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPluginTargetRbacGroup> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPluginTargetRbacGroup)}");
                 rbacGroup = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaPluginTargetOrganizationMember? organizationMember = default;
-            if (discriminator?.Type == global::Anthropic.BetaPluginInstallationSettingDeletedTargetDiscriminatorType.OrganizationMember)
+            if (discriminator?.Type == global::Anthropic.BetaPluginInstallationSettingTargetDiscriminatorType.OrganizationMember)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPluginTargetOrganizationMember), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPluginTargetOrganizationMember> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPluginTargetOrganizationMember)}");

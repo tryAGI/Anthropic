@@ -12,14 +12,14 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant138? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant181? CacheControl { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller3JsonConverter))]
-        public global::Anthropic.Caller3? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller13JsonConverter))]
+        public global::Anthropic.Caller13? Caller { get; set; }
 
         /// <summary>
         ///
@@ -65,8 +65,8 @@ namespace Anthropic
         public BetaRequestWebFetchToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaRequestWebFetchToolResultError, global::Anthropic.BetaRequestWebFetchResultBlock> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant138? cacheControl,
-            global::Anthropic.Caller3? caller,
+            global::Anthropic.CacheControlVariant181? cacheControl,
+            global::Anthropic.Caller13? caller,
             string type = "web_fetch_tool_result")
         {
             this.CacheControl = cacheControl;

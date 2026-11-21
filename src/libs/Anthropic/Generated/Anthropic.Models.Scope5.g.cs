@@ -5,22 +5,170 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Where the API key belongs: its Workspace (`{"type": "workspace", "workspace_id": "wrkspc_..."}`, with the Workspace's real ID even when it is the organization's default Workspace), or the organization (`{"type": "organization"}`) for a principal-bound API key that has no Workspace.
+    ///
     /// </summary>
     public readonly partial struct Scope5 : global::System.IEquatable<Scope5>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ApiKeyScopeDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaSpendSummaryScopeDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// Scope selecting a single member of the organization.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaUserScope? User { get; init; }
+#else
+        public global::Anthropic.BetaUserScope? User { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.ApiKeyOrganizationScope? Organization { get; init; }
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
+#endif
+        public bool IsUser => User != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaUserScope? value)
+        {
+            value = User;
+            return IsUser;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaUserScope PickUser() => User is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaSeatTierScope? SeatTier { get; init; }
 #else
-        public global::Anthropic.ApiKeyOrganizationScope? Organization { get; }
+        public global::Anthropic.BetaSeatTierScope? SeatTier { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SeatTier))]
+#endif
+        public bool IsSeatTier => SeatTier != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSeatTier(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaSeatTierScope? value)
+        {
+            value = SeatTier;
+            return IsSeatTier;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaSeatTierScope PickSeatTier() => SeatTier is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SeatTier' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRbacGroupScope? RbacGroup { get; init; }
+#else
+        public global::Anthropic.BetaRbacGroupScope? RbacGroup { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RbacGroup))]
+#endif
+        public bool IsRbacGroup => RbacGroup != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRbacGroup(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRbacGroupScope? value)
+        {
+            value = RbacGroup;
+            return IsRbacGroup;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaRbacGroupScope PickRbacGroup() => RbacGroup is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RbacGroup' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaOrgServiceScope? OrganizationService { get; init; }
+#else
+        public global::Anthropic.BetaOrgServiceScope? OrganizationService { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationService))]
+#endif
+        public bool IsOrganizationService => OrganizationService != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickOrganizationService(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaOrgServiceScope? value)
+        {
+            value = OrganizationService;
+            return IsOrganizationService;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaOrgServiceScope PickOrganizationService() => OrganizationService is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationService' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaOrganizationScope? Organization { get; init; }
+#else
+        public global::Anthropic.BetaOrganizationScope? Organization { get; }
 #endif
 
         /// <summary>
@@ -38,7 +186,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.ApiKeyOrganizationScope? value)
+            out global::Anthropic.BetaOrganizationScope? value)
         {
             value = Organization;
             return IsOrganization;
@@ -47,17 +195,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ApiKeyOrganizationScope PickOrganization() => Organization is { } value
+        public global::Anthropic.BetaOrganizationScope PickOrganization() => Organization is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Scope selecting one workspace of a Claude Console organization.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.ApiKeyWorkspaceScope? Workspace { get; init; }
+        public global::Anthropic.BetaWorkspaceScope? Workspace { get; init; }
 #else
-        public global::Anthropic.ApiKeyWorkspaceScope? Workspace { get; }
+        public global::Anthropic.BetaWorkspaceScope? Workspace { get; }
 #endif
 
         /// <summary>
@@ -75,7 +223,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.ApiKeyWorkspaceScope? value)
+            out global::Anthropic.BetaWorkspaceScope? value)
         {
             value = Workspace;
             return IsWorkspace;
@@ -84,23 +232,156 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ApiKeyWorkspaceScope PickWorkspace() => Workspace is { } value
+        public global::Anthropic.BetaWorkspaceScope PickWorkspace() => Workspace is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// Scope of the monthly spend cap Anthropic sets for a Claude Console<br/>
+        /// organization from its usage tier, or a higher cap Anthropic granted the<br/>
+        /// organization. Read-only; its `created_at` and `updated_at` are the<br/>
+        /// organization's creation time, so `amount` can change while `updated_at` stays<br/>
+        /// the same.
         /// </summary>
-        public static implicit operator Scope5(global::Anthropic.ApiKeyOrganizationScope value) => new Scope5((global::Anthropic.ApiKeyOrganizationScope?)value);
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaUsageTierScope? UsageTier { get; init; }
+#else
+        public global::Anthropic.BetaUsageTierScope? UsageTier { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.ApiKeyOrganizationScope?(Scope5 @this) => @this.Organization;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UsageTier))]
+#endif
+        public bool IsUsageTier => UsageTier != null;
 
         /// <summary>
         ///
         /// </summary>
-        public Scope5(global::Anthropic.ApiKeyOrganizationScope? value)
+        public bool TryPickUsageTier(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaUsageTierScope? value)
+        {
+            value = UsageTier;
+            return IsUsageTier;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaUsageTierScope PickUsageTier() => UsageTier is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UsageTier' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Scope5(global::Anthropic.BetaUserScope value) => new Scope5((global::Anthropic.BetaUserScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaUserScope?(Scope5 @this) => @this.User;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Scope5(global::Anthropic.BetaUserScope? value)
+        {
+            User = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Scope5 FromUser(global::Anthropic.BetaUserScope? value) => new Scope5(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Scope5(global::Anthropic.BetaSeatTierScope value) => new Scope5((global::Anthropic.BetaSeatTierScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaSeatTierScope?(Scope5 @this) => @this.SeatTier;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Scope5(global::Anthropic.BetaSeatTierScope? value)
+        {
+            SeatTier = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Scope5 FromSeatTier(global::Anthropic.BetaSeatTierScope? value) => new Scope5(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Scope5(global::Anthropic.BetaRbacGroupScope value) => new Scope5((global::Anthropic.BetaRbacGroupScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRbacGroupScope?(Scope5 @this) => @this.RbacGroup;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Scope5(global::Anthropic.BetaRbacGroupScope? value)
+        {
+            RbacGroup = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Scope5 FromRbacGroup(global::Anthropic.BetaRbacGroupScope? value) => new Scope5(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Scope5(global::Anthropic.BetaOrgServiceScope value) => new Scope5((global::Anthropic.BetaOrgServiceScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaOrgServiceScope?(Scope5 @this) => @this.OrganizationService;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Scope5(global::Anthropic.BetaOrgServiceScope? value)
+        {
+            OrganizationService = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Scope5 FromOrganizationService(global::Anthropic.BetaOrgServiceScope? value) => new Scope5(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Scope5(global::Anthropic.BetaOrganizationScope value) => new Scope5((global::Anthropic.BetaOrganizationScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaOrganizationScope?(Scope5 @this) => @this.Organization;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Scope5(global::Anthropic.BetaOrganizationScope? value)
         {
             Organization = value;
         }
@@ -108,22 +389,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Scope5 FromOrganization(global::Anthropic.ApiKeyOrganizationScope? value) => new Scope5(value);
+        public static Scope5 FromOrganization(global::Anthropic.BetaOrganizationScope? value) => new Scope5(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Scope5(global::Anthropic.ApiKeyWorkspaceScope value) => new Scope5((global::Anthropic.ApiKeyWorkspaceScope?)value);
+        public static implicit operator Scope5(global::Anthropic.BetaWorkspaceScope value) => new Scope5((global::Anthropic.BetaWorkspaceScope?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.ApiKeyWorkspaceScope?(Scope5 @this) => @this.Workspace;
+        public static implicit operator global::Anthropic.BetaWorkspaceScope?(Scope5 @this) => @this.Workspace;
 
         /// <summary>
         ///
         /// </summary>
-        public Scope5(global::Anthropic.ApiKeyWorkspaceScope? value)
+        public Scope5(global::Anthropic.BetaWorkspaceScope? value)
         {
             Workspace = value;
         }
@@ -131,37 +412,80 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Scope5 FromWorkspace(global::Anthropic.ApiKeyWorkspaceScope? value) => new Scope5(value);
+        public static Scope5 FromWorkspace(global::Anthropic.BetaWorkspaceScope? value) => new Scope5(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Scope5(global::Anthropic.BetaUsageTierScope value) => new Scope5((global::Anthropic.BetaUsageTierScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaUsageTierScope?(Scope5 @this) => @this.UsageTier;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Scope5(global::Anthropic.BetaUsageTierScope? value)
+        {
+            UsageTier = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Scope5 FromUsageTier(global::Anthropic.BetaUsageTierScope? value) => new Scope5(value);
 
         /// <summary>
         ///
         /// </summary>
         public Scope5(
-            global::Anthropic.ApiKeyScopeDiscriminatorType? type,
-            global::Anthropic.ApiKeyOrganizationScope? organization,
-            global::Anthropic.ApiKeyWorkspaceScope? workspace
+            global::Anthropic.BetaSpendSummaryScopeDiscriminatorType? type,
+            global::Anthropic.BetaUserScope? user,
+            global::Anthropic.BetaSeatTierScope? seatTier,
+            global::Anthropic.BetaRbacGroupScope? rbacGroup,
+            global::Anthropic.BetaOrgServiceScope? organizationService,
+            global::Anthropic.BetaOrganizationScope? organization,
+            global::Anthropic.BetaWorkspaceScope? workspace,
+            global::Anthropic.BetaUsageTierScope? usageTier
             )
         {
             Type = type;
 
+            User = user;
+            SeatTier = seatTier;
+            RbacGroup = rbacGroup;
+            OrganizationService = organizationService;
             Organization = organization;
             Workspace = workspace;
+            UsageTier = usageTier;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            UsageTier as object ??
             Workspace as object ??
-            Organization as object
+            Organization as object ??
+            OrganizationService as object ??
+            RbacGroup as object ??
+            SeatTier as object ??
+            User as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
+            User?.ToString() ??
+            SeatTier?.ToString() ??
+            RbacGroup?.ToString() ??
+            OrganizationService?.ToString() ??
             Organization?.ToString() ??
-            Workspace?.ToString()
+            Workspace?.ToString() ??
+            UsageTier?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +493,20 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsOrganization && !IsWorkspace || !IsOrganization && IsWorkspace;
+            return IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && IsOrganizationService && !IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && IsOrganization && !IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && IsWorkspace && !IsUsageTier || !IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization && !IsWorkspace && IsUsageTier;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.ApiKeyOrganizationScope, TResult>? organization = null,
-            global::System.Func<global::Anthropic.ApiKeyWorkspaceScope, TResult>? workspace = null,
+            global::System.Func<global::Anthropic.BetaUserScope, TResult>? user = null,
+            global::System.Func<global::Anthropic.BetaSeatTierScope, TResult>? seatTier = null,
+            global::System.Func<global::Anthropic.BetaRbacGroupScope, TResult>? rbacGroup = null,
+            global::System.Func<global::Anthropic.BetaOrgServiceScope, TResult>? organizationService = null,
+            global::System.Func<global::Anthropic.BetaOrganizationScope, TResult>? organization = null,
+            global::System.Func<global::Anthropic.BetaWorkspaceScope, TResult>? workspace = null,
+            global::System.Func<global::Anthropic.BetaUsageTierScope, TResult>? usageTier = null,
             bool validate = true)
         {
             if (validate)
@@ -185,13 +514,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Organization is { } __value0 && organization != null)
+            if (User is { } __value0 && user != null)
             {
-                return organization(__value0);
+                return user(__value0);
             }
-            else if (Workspace is { } __value1 && workspace != null)
+            else if (SeatTier is { } __value1 && seatTier != null)
             {
-                return workspace(__value1);
+                return seatTier(__value1);
+            }
+            else if (RbacGroup is { } __value2 && rbacGroup != null)
+            {
+                return rbacGroup(__value2);
+            }
+            else if (OrganizationService is { } __value3 && organizationService != null)
+            {
+                return organizationService(__value3);
+            }
+            else if (Organization is { } __value4 && organization != null)
+            {
+                return organization(__value4);
+            }
+            else if (Workspace is { } __value5 && workspace != null)
+            {
+                return workspace(__value5);
+            }
+            else if (UsageTier is { } __value6 && usageTier != null)
+            {
+                return usageTier(__value6);
             }
 
             return default(TResult);
@@ -201,9 +550,19 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.ApiKeyOrganizationScope>? organization = null,
+            global::System.Action<global::Anthropic.BetaUserScope>? user = null,
 
-            global::System.Action<global::Anthropic.ApiKeyWorkspaceScope>? workspace = null,
+            global::System.Action<global::Anthropic.BetaSeatTierScope>? seatTier = null,
+
+            global::System.Action<global::Anthropic.BetaRbacGroupScope>? rbacGroup = null,
+
+            global::System.Action<global::Anthropic.BetaOrgServiceScope>? organizationService = null,
+
+            global::System.Action<global::Anthropic.BetaOrganizationScope>? organization = null,
+
+            global::System.Action<global::Anthropic.BetaWorkspaceScope>? workspace = null,
+
+            global::System.Action<global::Anthropic.BetaUsageTierScope>? usageTier = null,
             bool validate = true)
         {
             if (validate)
@@ -211,13 +570,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Organization is { } __value0)
+            if (User is { } __value0)
             {
-                organization?.Invoke(__value0);
+                user?.Invoke(__value0);
             }
-            else if (Workspace is { } __value1)
+            else if (SeatTier is { } __value1)
             {
-                workspace?.Invoke(__value1);
+                seatTier?.Invoke(__value1);
+            }
+            else if (RbacGroup is { } __value2)
+            {
+                rbacGroup?.Invoke(__value2);
+            }
+            else if (OrganizationService is { } __value3)
+            {
+                organizationService?.Invoke(__value3);
+            }
+            else if (Organization is { } __value4)
+            {
+                organization?.Invoke(__value4);
+            }
+            else if (Workspace is { } __value5)
+            {
+                workspace?.Invoke(__value5);
+            }
+            else if (UsageTier is { } __value6)
+            {
+                usageTier?.Invoke(__value6);
             }
         }
 
@@ -225,8 +604,13 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.ApiKeyOrganizationScope>? organization = null,
-            global::System.Action<global::Anthropic.ApiKeyWorkspaceScope>? workspace = null,
+            global::System.Action<global::Anthropic.BetaUserScope>? user = null,
+            global::System.Action<global::Anthropic.BetaSeatTierScope>? seatTier = null,
+            global::System.Action<global::Anthropic.BetaRbacGroupScope>? rbacGroup = null,
+            global::System.Action<global::Anthropic.BetaOrgServiceScope>? organizationService = null,
+            global::System.Action<global::Anthropic.BetaOrganizationScope>? organization = null,
+            global::System.Action<global::Anthropic.BetaWorkspaceScope>? workspace = null,
+            global::System.Action<global::Anthropic.BetaUsageTierScope>? usageTier = null,
             bool validate = true)
         {
             if (validate)
@@ -234,13 +618,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Organization is { } __value0)
+            if (User is { } __value0)
             {
-                organization?.Invoke(__value0);
+                user?.Invoke(__value0);
             }
-            else if (Workspace is { } __value1)
+            else if (SeatTier is { } __value1)
             {
-                workspace?.Invoke(__value1);
+                seatTier?.Invoke(__value1);
+            }
+            else if (RbacGroup is { } __value2)
+            {
+                rbacGroup?.Invoke(__value2);
+            }
+            else if (OrganizationService is { } __value3)
+            {
+                organizationService?.Invoke(__value3);
+            }
+            else if (Organization is { } __value4)
+            {
+                organization?.Invoke(__value4);
+            }
+            else if (Workspace is { } __value5)
+            {
+                workspace?.Invoke(__value5);
+            }
+            else if (UsageTier is { } __value6)
+            {
+                usageTier?.Invoke(__value6);
             }
         }
 
@@ -251,10 +655,20 @@ namespace Anthropic
         {
             var fields = new object?[]
             {
+                User,
+                typeof(global::Anthropic.BetaUserScope),
+                SeatTier,
+                typeof(global::Anthropic.BetaSeatTierScope),
+                RbacGroup,
+                typeof(global::Anthropic.BetaRbacGroupScope),
+                OrganizationService,
+                typeof(global::Anthropic.BetaOrgServiceScope),
                 Organization,
-                typeof(global::Anthropic.ApiKeyOrganizationScope),
+                typeof(global::Anthropic.BetaOrganizationScope),
                 Workspace,
-                typeof(global::Anthropic.ApiKeyWorkspaceScope),
+                typeof(global::Anthropic.BetaWorkspaceScope),
+                UsageTier,
+                typeof(global::Anthropic.BetaUsageTierScope),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +685,13 @@ namespace Anthropic
         public bool Equals(Scope5 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ApiKeyOrganizationScope?>.Default.Equals(Organization, other.Organization) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ApiKeyWorkspaceScope?>.Default.Equals(Workspace, other.Workspace)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaUserScope?>.Default.Equals(User, other.User) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaSeatTierScope?>.Default.Equals(SeatTier, other.SeatTier) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRbacGroupScope?>.Default.Equals(RbacGroup, other.RbacGroup) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaOrgServiceScope?>.Default.Equals(OrganizationService, other.OrganizationService) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaOrganizationScope?>.Default.Equals(Organization, other.Organization) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWorkspaceScope?>.Default.Equals(Workspace, other.Workspace) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaUsageTierScope?>.Default.Equals(UsageTier, other.UsageTier)
                 ;
         }
 

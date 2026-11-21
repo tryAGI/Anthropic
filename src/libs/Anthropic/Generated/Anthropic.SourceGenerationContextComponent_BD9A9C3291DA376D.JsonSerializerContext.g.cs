@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaAnalyticsClaudeTagCategory?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0209.Create_NullableBetaAnalyticsClaudeTagCategory2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0220.Create_NullableBetaAnalyticsClaudeTagCategory2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

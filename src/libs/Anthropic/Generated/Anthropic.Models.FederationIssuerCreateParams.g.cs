@@ -25,8 +25,8 @@ namespace Anthropic
         /// How signing keys are obtained. Defaults to OIDC discovery.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Jwks4JsonConverter))]
-        public global::Anthropic.Jwks4? Jwks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Jwks3JsonConverter))]
+        public global::Anthropic.Jwks3? Jwks { get; set; }
 
         /// <summary>
         /// Maximum allowed iat→exp spread for assertions from this issuer (1-176400 seconds, i.e. up to 49h). Defaults to 3600 (1h). Assertions must carry both `iat` and `exp`; a missing `iat` is rejected.
@@ -72,7 +72,7 @@ namespace Anthropic
             string issuerUrl,
             string name,
             bool? checkJti,
-            global::Anthropic.Jwks4? jwks,
+            global::Anthropic.Jwks3? jwks,
             int? maxJwtLifetimeSeconds)
         {
             this.CheckJti = checkJti;

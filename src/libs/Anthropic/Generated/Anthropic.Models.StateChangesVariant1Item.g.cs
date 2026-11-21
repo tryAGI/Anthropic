@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType? Type { get; }
+        public global::Anthropic.RequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A tab this call's execution opened that remains open at its end —<br/>
@@ -23,9 +23,9 @@ namespace Anthropic
         /// in the next result's `tabs` inventory.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaBrowserStateChangeTabOpened? TabOpened { get; init; }
+        public global::Anthropic.BrowserStateChangeTabOpened? TabOpened { get; init; }
 #else
-        public global::Anthropic.BetaBrowserStateChangeTabOpened? TabOpened { get; }
+        public global::Anthropic.BrowserStateChangeTabOpened? TabOpened { get; }
 #endif
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaBrowserStateChangeTabOpened? value)
+            out global::Anthropic.BrowserStateChangeTabOpened? value)
         {
             value = TabOpened;
             return IsTabOpened;
@@ -52,7 +52,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeTabOpened PickTabOpened() => TabOpened is { } value
+        public global::Anthropic.BrowserStateChangeTabOpened PickTabOpened() => TabOpened is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TabOpened' but the value was {ToString()}.");
 
@@ -60,9 +60,9 @@ namespace Anthropic
         /// A file download that started during this call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaBrowserStateChangeDownloadStarted? DownloadStarted { get; init; }
+        public global::Anthropic.BrowserStateChangeDownloadStarted? DownloadStarted { get; init; }
 #else
-        public global::Anthropic.BetaBrowserStateChangeDownloadStarted? DownloadStarted { get; }
+        public global::Anthropic.BrowserStateChangeDownloadStarted? DownloadStarted { get; }
 #endif
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaBrowserStateChangeDownloadStarted? value)
+            out global::Anthropic.BrowserStateChangeDownloadStarted? value)
         {
             value = DownloadStarted;
             return IsDownloadStarted;
@@ -89,7 +89,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeDownloadStarted PickDownloadStarted() => DownloadStarted is { } value
+        public global::Anthropic.BrowserStateChangeDownloadStarted PickDownloadStarted() => DownloadStarted is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DownloadStarted' but the value was {ToString()}.");
 
@@ -100,9 +100,9 @@ namespace Anthropic
         /// started it (at most one state change per `download_id` per result).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaBrowserStateChangeDownloadCompleted? DownloadCompleted { get; init; }
+        public global::Anthropic.BrowserStateChangeDownloadCompleted? DownloadCompleted { get; init; }
 #else
-        public global::Anthropic.BetaBrowserStateChangeDownloadCompleted? DownloadCompleted { get; }
+        public global::Anthropic.BrowserStateChangeDownloadCompleted? DownloadCompleted { get; }
 #endif
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaBrowserStateChangeDownloadCompleted? value)
+            out global::Anthropic.BrowserStateChangeDownloadCompleted? value)
         {
             value = DownloadCompleted;
             return IsDownloadCompleted;
@@ -129,7 +129,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeDownloadCompleted PickDownloadCompleted() => DownloadCompleted is { } value
+        public global::Anthropic.BrowserStateChangeDownloadCompleted PickDownloadCompleted() => DownloadCompleted is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DownloadCompleted' but the value was {ToString()}.");
 
@@ -137,9 +137,9 @@ namespace Anthropic
         /// A file download that failed — or was cancelled — during this call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaBrowserStateChangeDownloadFailed? DownloadFailed { get; init; }
+        public global::Anthropic.BrowserStateChangeDownloadFailed? DownloadFailed { get; init; }
 #else
-        public global::Anthropic.BetaBrowserStateChangeDownloadFailed? DownloadFailed { get; }
+        public global::Anthropic.BrowserStateChangeDownloadFailed? DownloadFailed { get; }
 #endif
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaBrowserStateChangeDownloadFailed? value)
+            out global::Anthropic.BrowserStateChangeDownloadFailed? value)
         {
             value = DownloadFailed;
             return IsDownloadFailed;
@@ -166,23 +166,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeDownloadFailed PickDownloadFailed() => DownloadFailed is { } value
+        public global::Anthropic.BrowserStateChangeDownloadFailed PickDownloadFailed() => DownloadFailed is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DownloadFailed' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeTabOpened value) => new StateChangesVariant1Item((global::Anthropic.BetaBrowserStateChangeTabOpened?)value);
+        public static implicit operator StateChangesVariant1Item(global::Anthropic.BrowserStateChangeTabOpened value) => new StateChangesVariant1Item((global::Anthropic.BrowserStateChangeTabOpened?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaBrowserStateChangeTabOpened?(StateChangesVariant1Item @this) => @this.TabOpened;
+        public static implicit operator global::Anthropic.BrowserStateChangeTabOpened?(StateChangesVariant1Item @this) => @this.TabOpened;
 
         /// <summary>
         ///
         /// </summary>
-        public StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeTabOpened? value)
+        public StateChangesVariant1Item(global::Anthropic.BrowserStateChangeTabOpened? value)
         {
             TabOpened = value;
         }
@@ -190,22 +190,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static StateChangesVariant1Item FromTabOpened(global::Anthropic.BetaBrowserStateChangeTabOpened? value) => new StateChangesVariant1Item(value);
+        public static StateChangesVariant1Item FromTabOpened(global::Anthropic.BrowserStateChangeTabOpened? value) => new StateChangesVariant1Item(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeDownloadStarted value) => new StateChangesVariant1Item((global::Anthropic.BetaBrowserStateChangeDownloadStarted?)value);
+        public static implicit operator StateChangesVariant1Item(global::Anthropic.BrowserStateChangeDownloadStarted value) => new StateChangesVariant1Item((global::Anthropic.BrowserStateChangeDownloadStarted?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaBrowserStateChangeDownloadStarted?(StateChangesVariant1Item @this) => @this.DownloadStarted;
+        public static implicit operator global::Anthropic.BrowserStateChangeDownloadStarted?(StateChangesVariant1Item @this) => @this.DownloadStarted;
 
         /// <summary>
         ///
         /// </summary>
-        public StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeDownloadStarted? value)
+        public StateChangesVariant1Item(global::Anthropic.BrowserStateChangeDownloadStarted? value)
         {
             DownloadStarted = value;
         }
@@ -213,22 +213,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static StateChangesVariant1Item FromDownloadStarted(global::Anthropic.BetaBrowserStateChangeDownloadStarted? value) => new StateChangesVariant1Item(value);
+        public static StateChangesVariant1Item FromDownloadStarted(global::Anthropic.BrowserStateChangeDownloadStarted? value) => new StateChangesVariant1Item(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeDownloadCompleted value) => new StateChangesVariant1Item((global::Anthropic.BetaBrowserStateChangeDownloadCompleted?)value);
+        public static implicit operator StateChangesVariant1Item(global::Anthropic.BrowserStateChangeDownloadCompleted value) => new StateChangesVariant1Item((global::Anthropic.BrowserStateChangeDownloadCompleted?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaBrowserStateChangeDownloadCompleted?(StateChangesVariant1Item @this) => @this.DownloadCompleted;
+        public static implicit operator global::Anthropic.BrowserStateChangeDownloadCompleted?(StateChangesVariant1Item @this) => @this.DownloadCompleted;
 
         /// <summary>
         ///
         /// </summary>
-        public StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeDownloadCompleted? value)
+        public StateChangesVariant1Item(global::Anthropic.BrowserStateChangeDownloadCompleted? value)
         {
             DownloadCompleted = value;
         }
@@ -236,22 +236,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static StateChangesVariant1Item FromDownloadCompleted(global::Anthropic.BetaBrowserStateChangeDownloadCompleted? value) => new StateChangesVariant1Item(value);
+        public static StateChangesVariant1Item FromDownloadCompleted(global::Anthropic.BrowserStateChangeDownloadCompleted? value) => new StateChangesVariant1Item(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeDownloadFailed value) => new StateChangesVariant1Item((global::Anthropic.BetaBrowserStateChangeDownloadFailed?)value);
+        public static implicit operator StateChangesVariant1Item(global::Anthropic.BrowserStateChangeDownloadFailed value) => new StateChangesVariant1Item((global::Anthropic.BrowserStateChangeDownloadFailed?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaBrowserStateChangeDownloadFailed?(StateChangesVariant1Item @this) => @this.DownloadFailed;
+        public static implicit operator global::Anthropic.BrowserStateChangeDownloadFailed?(StateChangesVariant1Item @this) => @this.DownloadFailed;
 
         /// <summary>
         ///
         /// </summary>
-        public StateChangesVariant1Item(global::Anthropic.BetaBrowserStateChangeDownloadFailed? value)
+        public StateChangesVariant1Item(global::Anthropic.BrowserStateChangeDownloadFailed? value)
         {
             DownloadFailed = value;
         }
@@ -259,17 +259,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static StateChangesVariant1Item FromDownloadFailed(global::Anthropic.BetaBrowserStateChangeDownloadFailed? value) => new StateChangesVariant1Item(value);
+        public static StateChangesVariant1Item FromDownloadFailed(global::Anthropic.BrowserStateChangeDownloadFailed? value) => new StateChangesVariant1Item(value);
 
         /// <summary>
         ///
         /// </summary>
         public StateChangesVariant1Item(
-            global::Anthropic.BetaRequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType? type,
-            global::Anthropic.BetaBrowserStateChangeTabOpened? tabOpened,
-            global::Anthropic.BetaBrowserStateChangeDownloadStarted? downloadStarted,
-            global::Anthropic.BetaBrowserStateChangeDownloadCompleted? downloadCompleted,
-            global::Anthropic.BetaBrowserStateChangeDownloadFailed? downloadFailed
+            global::Anthropic.RequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType? type,
+            global::Anthropic.BrowserStateChangeTabOpened? tabOpened,
+            global::Anthropic.BrowserStateChangeDownloadStarted? downloadStarted,
+            global::Anthropic.BrowserStateChangeDownloadCompleted? downloadCompleted,
+            global::Anthropic.BrowserStateChangeDownloadFailed? downloadFailed
             )
         {
             Type = type;
@@ -312,10 +312,10 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaBrowserStateChangeTabOpened, TResult>? tabOpened = null,
-            global::System.Func<global::Anthropic.BetaBrowserStateChangeDownloadStarted, TResult>? downloadStarted = null,
-            global::System.Func<global::Anthropic.BetaBrowserStateChangeDownloadCompleted, TResult>? downloadCompleted = null,
-            global::System.Func<global::Anthropic.BetaBrowserStateChangeDownloadFailed, TResult>? downloadFailed = null,
+            global::System.Func<global::Anthropic.BrowserStateChangeTabOpened, TResult>? tabOpened = null,
+            global::System.Func<global::Anthropic.BrowserStateChangeDownloadStarted, TResult>? downloadStarted = null,
+            global::System.Func<global::Anthropic.BrowserStateChangeDownloadCompleted, TResult>? downloadCompleted = null,
+            global::System.Func<global::Anthropic.BrowserStateChangeDownloadFailed, TResult>? downloadFailed = null,
             bool validate = true)
         {
             if (validate)
@@ -347,13 +347,13 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeTabOpened>? tabOpened = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeTabOpened>? tabOpened = null,
 
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeDownloadStarted>? downloadStarted = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeDownloadStarted>? downloadStarted = null,
 
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeDownloadCompleted>? downloadCompleted = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeDownloadCompleted>? downloadCompleted = null,
 
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeDownloadFailed>? downloadFailed = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeDownloadFailed>? downloadFailed = null,
             bool validate = true)
         {
             if (validate)
@@ -383,10 +383,10 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeTabOpened>? tabOpened = null,
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeDownloadStarted>? downloadStarted = null,
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeDownloadCompleted>? downloadCompleted = null,
-            global::System.Action<global::Anthropic.BetaBrowserStateChangeDownloadFailed>? downloadFailed = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeTabOpened>? tabOpened = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeDownloadStarted>? downloadStarted = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeDownloadCompleted>? downloadCompleted = null,
+            global::System.Action<global::Anthropic.BrowserStateChangeDownloadFailed>? downloadFailed = null,
             bool validate = true)
         {
             if (validate)
@@ -420,13 +420,13 @@ namespace Anthropic
             var fields = new object?[]
             {
                 TabOpened,
-                typeof(global::Anthropic.BetaBrowserStateChangeTabOpened),
+                typeof(global::Anthropic.BrowserStateChangeTabOpened),
                 DownloadStarted,
-                typeof(global::Anthropic.BetaBrowserStateChangeDownloadStarted),
+                typeof(global::Anthropic.BrowserStateChangeDownloadStarted),
                 DownloadCompleted,
-                typeof(global::Anthropic.BetaBrowserStateChangeDownloadCompleted),
+                typeof(global::Anthropic.BrowserStateChangeDownloadCompleted),
                 DownloadFailed,
-                typeof(global::Anthropic.BetaBrowserStateChangeDownloadFailed),
+                typeof(global::Anthropic.BrowserStateChangeDownloadFailed),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -443,10 +443,10 @@ namespace Anthropic
         public bool Equals(StateChangesVariant1Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBrowserStateChangeTabOpened?>.Default.Equals(TabOpened, other.TabOpened) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBrowserStateChangeDownloadStarted?>.Default.Equals(DownloadStarted, other.DownloadStarted) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBrowserStateChangeDownloadCompleted?>.Default.Equals(DownloadCompleted, other.DownloadCompleted) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBrowserStateChangeDownloadFailed?>.Default.Equals(DownloadFailed, other.DownloadFailed)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BrowserStateChangeTabOpened?>.Default.Equals(TabOpened, other.TabOpened) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BrowserStateChangeDownloadStarted?>.Default.Equals(DownloadStarted, other.DownloadStarted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BrowserStateChangeDownloadCompleted?>.Default.Equals(DownloadCompleted, other.DownloadCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BrowserStateChangeDownloadFailed?>.Default.Equals(DownloadFailed, other.DownloadFailed)
                 ;
         }
 

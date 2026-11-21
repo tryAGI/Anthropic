@@ -18,22 +18,22 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceRateLimitValueSourceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.WorkspaceRateLimitWorkspaceSource? workspace = default;
-            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType.Workspace)
+            global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? workspace = default;
+            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType.Workspace)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceRateLimitWorkspaceSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceRateLimitWorkspaceSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WorkspaceRateLimitWorkspaceSource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource)}");
                 workspace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.WorkspaceRateLimitOrganizationSource? organization = default;
-            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType.Organization)
+            global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? organization = default;
+            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType.Organization)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceRateLimitOrganizationSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceRateLimitOrganizationSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WorkspaceRateLimitOrganizationSource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource)}");
                 organization = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -59,14 +59,14 @@ namespace Anthropic.JsonConverters
 
             if (value.IsWorkspace)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceRateLimitWorkspaceSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceRateLimitWorkspaceSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.WorkspaceRateLimitWorkspaceSource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkspace(), typeInfo);
             }
             else if (value.IsOrganization)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceRateLimitOrganizationSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceRateLimitOrganizationSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.WorkspaceRateLimitOrganizationSource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrganization(), typeInfo);
             }
         }

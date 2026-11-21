@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_3535E5E8C6A44C02.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_7EE9559922709273.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_AEE6DFC0B0927A0F.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_C5233AE8212BD69C.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_236F2713FEE1B3B5.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_2760D91E6DE3DA46.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_6B7EF480E1B32BE4.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_EBFA9A4FA0BFD4F7.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ProviderConfig4))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0263.Create_ProviderConfig42(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0274.Create_ProviderConfig42(options);
                 }
                 if (type == typeof(global::Anthropic.ProviderConfig4?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0251.Create_NullableProviderConfig42(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0263.Create_NullableProviderConfig42(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

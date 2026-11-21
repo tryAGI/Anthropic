@@ -5,14 +5,14 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// Default Value: {"type":"direct"}
     /// </summary>
     public readonly partial struct Caller12 : global::System.IEquatable<Caller12>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminatorType? Type { get; }
+        public global::Anthropic.ResponseWebSearchToolResultBlockCallerDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Tool invocation directly from the model.
@@ -197,7 +197,7 @@ namespace Anthropic
         ///
         /// </summary>
         public Caller12(
-            global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminatorType? type,
+            global::Anthropic.ResponseWebSearchToolResultBlockCallerDiscriminatorType? type,
             global::Anthropic.DirectCaller? direct,
             global::Anthropic.ServerToolCaller? codeExecution20250825,
             global::Anthropic.ServerToolCaller20260120? codeExecution20260120

@@ -48,17 +48,17 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope5JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Scope4 Scope { get; set; }
+        public required global::Anthropic.Scope5 Scope { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source7JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source7 Source { get; set; }
+        public required global::Anthropic.Source2 Source { get; set; }
 
         /// <summary>
         ///
@@ -100,8 +100,8 @@ namespace Anthropic
             string currency,
             global::Anthropic.BetaSpendLimitPeriod period,
             string periodToDateSpend,
-            global::Anthropic.Scope4 scope,
-            global::Anthropic.Source7 source,
+            global::Anthropic.Scope5 scope,
+            global::Anthropic.Source2 source,
             string spendLimitId,
             string? amount)
         {

@@ -351,6 +351,20 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData)}");
                 userProfileProgramStatusUpdated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaWebhookExternalKeyFailedEventData? externalKeyFailed = default;
+            if (discriminator?.Type == global::Anthropic.BetaWebhookEventDataDiscriminatorType.ExternalKeyFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookExternalKeyFailedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookExternalKeyFailedEventData> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebhookExternalKeyFailedEventData)}");
+                externalKeyFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaWebhookExternalKeyRecoveredEventData? externalKeyRecovered = default;
+            if (discriminator?.Type == global::Anthropic.BetaWebhookEventDataDiscriminatorType.ExternalKeyRecovered)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookExternalKeyRecoveredEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookExternalKeyRecoveredEventData> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebhookExternalKeyRecoveredEventData)}");
+                externalKeyRecovered = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaWebhookEventData(
                 discriminator?.Type,
@@ -446,7 +460,11 @@ namespace Anthropic.JsonConverters
 
                 userProfileEnforcementActionResolved,
 
-                userProfileProgramStatusUpdated
+                userProfileProgramStatusUpdated,
+
+                externalKeyFailed,
+
+                externalKeyRecovered
                 );
 
             return __value;
@@ -743,6 +761,18 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookUserProfileProgramStatusUpdatedEventData).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserProfileProgramStatusUpdated(), typeInfo);
+            }
+            else if (value.IsExternalKeyFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookExternalKeyFailedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookExternalKeyFailedEventData?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookExternalKeyFailedEventData).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExternalKeyFailed(), typeInfo);
+            }
+            else if (value.IsExternalKeyRecovered)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookExternalKeyRecoveredEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookExternalKeyRecoveredEventData?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookExternalKeyRecoveredEventData).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExternalKeyRecovered(), typeInfo);
             }
         }
     }

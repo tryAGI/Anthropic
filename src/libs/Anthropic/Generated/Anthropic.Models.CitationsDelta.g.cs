@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Citation2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CitationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Citation2 Citation { get; set; }
+        public required global::Anthropic.Citation Citation { get; set; }
 
         /// <summary>
         /// Default Value: citations_delta
@@ -40,7 +40,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CitationsDelta(
-            global::Anthropic.Citation2 citation,
+            global::Anthropic.Citation citation,
             string type = "citations_delta")
         {
             this.Citation = citation;

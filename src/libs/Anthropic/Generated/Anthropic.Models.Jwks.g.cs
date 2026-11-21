@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFederationIssuerJwksDiscriminatorType? Type { get; }
+        public global::Anthropic.FederationIssuerJwksDiscriminatorType? Type { get; }
 
         /// <summary>
         /// JWKS via the issuer's OIDC discovery document.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaJwksDiscovery? Discovery { get; init; }
+        public global::Anthropic.JwksDiscovery? Discovery { get; init; }
 #else
-        public global::Anthropic.BetaJwksDiscovery? Discovery { get; }
+        public global::Anthropic.JwksDiscovery? Discovery { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaJwksDiscovery? value)
+            out global::Anthropic.JwksDiscovery? value)
         {
             value = Discovery;
             return IsDiscovery;
@@ -47,7 +47,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaJwksDiscovery PickDiscovery() => Discovery is { } value
+        public global::Anthropic.JwksDiscovery PickDiscovery() => Discovery is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Discovery' but the value was {ToString()}.");
 
@@ -55,9 +55,9 @@ namespace Anthropic
         /// JWKS fetched from a fixed endpoint.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaJwksExplicitUrl? ExplicitUrl { get; init; }
+        public global::Anthropic.JwksExplicitUrl? ExplicitUrl { get; init; }
 #else
-        public global::Anthropic.BetaJwksExplicitUrl? ExplicitUrl { get; }
+        public global::Anthropic.JwksExplicitUrl? ExplicitUrl { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaJwksExplicitUrl? value)
+            out global::Anthropic.JwksExplicitUrl? value)
         {
             value = ExplicitUrl;
             return IsExplicitUrl;
@@ -84,7 +84,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaJwksExplicitUrl PickExplicitUrl() => ExplicitUrl is { } value
+        public global::Anthropic.JwksExplicitUrl PickExplicitUrl() => ExplicitUrl is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExplicitUrl' but the value was {ToString()}.");
 
@@ -92,9 +92,9 @@ namespace Anthropic
         /// JWKS supplied directly; no network fetch.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaJwksInline? Inline { get; init; }
+        public global::Anthropic.JwksInline? Inline { get; init; }
 #else
-        public global::Anthropic.BetaJwksInline? Inline { get; }
+        public global::Anthropic.JwksInline? Inline { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaJwksInline? value)
+            out global::Anthropic.JwksInline? value)
         {
             value = Inline;
             return IsInline;
@@ -121,23 +121,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaJwksInline PickInline() => Inline is { } value
+        public global::Anthropic.JwksInline PickInline() => Inline is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Jwks(global::Anthropic.BetaJwksDiscovery value) => new Jwks((global::Anthropic.BetaJwksDiscovery?)value);
+        public static implicit operator Jwks(global::Anthropic.JwksDiscovery value) => new Jwks((global::Anthropic.JwksDiscovery?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaJwksDiscovery?(Jwks @this) => @this.Discovery;
+        public static implicit operator global::Anthropic.JwksDiscovery?(Jwks @this) => @this.Discovery;
 
         /// <summary>
         ///
         /// </summary>
-        public Jwks(global::Anthropic.BetaJwksDiscovery? value)
+        public Jwks(global::Anthropic.JwksDiscovery? value)
         {
             Discovery = value;
         }
@@ -145,22 +145,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Jwks FromDiscovery(global::Anthropic.BetaJwksDiscovery? value) => new Jwks(value);
+        public static Jwks FromDiscovery(global::Anthropic.JwksDiscovery? value) => new Jwks(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Jwks(global::Anthropic.BetaJwksExplicitUrl value) => new Jwks((global::Anthropic.BetaJwksExplicitUrl?)value);
+        public static implicit operator Jwks(global::Anthropic.JwksExplicitUrl value) => new Jwks((global::Anthropic.JwksExplicitUrl?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaJwksExplicitUrl?(Jwks @this) => @this.ExplicitUrl;
+        public static implicit operator global::Anthropic.JwksExplicitUrl?(Jwks @this) => @this.ExplicitUrl;
 
         /// <summary>
         ///
         /// </summary>
-        public Jwks(global::Anthropic.BetaJwksExplicitUrl? value)
+        public Jwks(global::Anthropic.JwksExplicitUrl? value)
         {
             ExplicitUrl = value;
         }
@@ -168,22 +168,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Jwks FromExplicitUrl(global::Anthropic.BetaJwksExplicitUrl? value) => new Jwks(value);
+        public static Jwks FromExplicitUrl(global::Anthropic.JwksExplicitUrl? value) => new Jwks(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Jwks(global::Anthropic.BetaJwksInline value) => new Jwks((global::Anthropic.BetaJwksInline?)value);
+        public static implicit operator Jwks(global::Anthropic.JwksInline value) => new Jwks((global::Anthropic.JwksInline?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaJwksInline?(Jwks @this) => @this.Inline;
+        public static implicit operator global::Anthropic.JwksInline?(Jwks @this) => @this.Inline;
 
         /// <summary>
         ///
         /// </summary>
-        public Jwks(global::Anthropic.BetaJwksInline? value)
+        public Jwks(global::Anthropic.JwksInline? value)
         {
             Inline = value;
         }
@@ -191,16 +191,16 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Jwks FromInline(global::Anthropic.BetaJwksInline? value) => new Jwks(value);
+        public static Jwks FromInline(global::Anthropic.JwksInline? value) => new Jwks(value);
 
         /// <summary>
         ///
         /// </summary>
         public Jwks(
-            global::Anthropic.BetaFederationIssuerJwksDiscriminatorType? type,
-            global::Anthropic.BetaJwksDiscovery? discovery,
-            global::Anthropic.BetaJwksExplicitUrl? explicitUrl,
-            global::Anthropic.BetaJwksInline? inline
+            global::Anthropic.FederationIssuerJwksDiscriminatorType? type,
+            global::Anthropic.JwksDiscovery? discovery,
+            global::Anthropic.JwksExplicitUrl? explicitUrl,
+            global::Anthropic.JwksInline? inline
             )
         {
             Type = type;
@@ -240,9 +240,9 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaJwksDiscovery, TResult>? discovery = null,
-            global::System.Func<global::Anthropic.BetaJwksExplicitUrl, TResult>? explicitUrl = null,
-            global::System.Func<global::Anthropic.BetaJwksInline, TResult>? inline = null,
+            global::System.Func<global::Anthropic.JwksDiscovery, TResult>? discovery = null,
+            global::System.Func<global::Anthropic.JwksExplicitUrl, TResult>? explicitUrl = null,
+            global::System.Func<global::Anthropic.JwksInline, TResult>? inline = null,
             bool validate = true)
         {
             if (validate)
@@ -270,11 +270,11 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaJwksDiscovery>? discovery = null,
+            global::System.Action<global::Anthropic.JwksDiscovery>? discovery = null,
 
-            global::System.Action<global::Anthropic.BetaJwksExplicitUrl>? explicitUrl = null,
+            global::System.Action<global::Anthropic.JwksExplicitUrl>? explicitUrl = null,
 
-            global::System.Action<global::Anthropic.BetaJwksInline>? inline = null,
+            global::System.Action<global::Anthropic.JwksInline>? inline = null,
             bool validate = true)
         {
             if (validate)
@@ -300,9 +300,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaJwksDiscovery>? discovery = null,
-            global::System.Action<global::Anthropic.BetaJwksExplicitUrl>? explicitUrl = null,
-            global::System.Action<global::Anthropic.BetaJwksInline>? inline = null,
+            global::System.Action<global::Anthropic.JwksDiscovery>? discovery = null,
+            global::System.Action<global::Anthropic.JwksExplicitUrl>? explicitUrl = null,
+            global::System.Action<global::Anthropic.JwksInline>? inline = null,
             bool validate = true)
         {
             if (validate)
@@ -332,11 +332,11 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Discovery,
-                typeof(global::Anthropic.BetaJwksDiscovery),
+                typeof(global::Anthropic.JwksDiscovery),
                 ExplicitUrl,
-                typeof(global::Anthropic.BetaJwksExplicitUrl),
+                typeof(global::Anthropic.JwksExplicitUrl),
                 Inline,
-                typeof(global::Anthropic.BetaJwksInline),
+                typeof(global::Anthropic.JwksInline),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +353,9 @@ namespace Anthropic
         public bool Equals(Jwks other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaJwksDiscovery?>.Default.Equals(Discovery, other.Discovery) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaJwksExplicitUrl?>.Default.Equals(ExplicitUrl, other.ExplicitUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaJwksInline?>.Default.Equals(Inline, other.Inline)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.JwksDiscovery?>.Default.Equals(Discovery, other.Discovery) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.JwksExplicitUrl?>.Default.Equals(ExplicitUrl, other.ExplicitUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.JwksInline?>.Default.Equals(Inline, other.Inline)
                 ;
         }
 

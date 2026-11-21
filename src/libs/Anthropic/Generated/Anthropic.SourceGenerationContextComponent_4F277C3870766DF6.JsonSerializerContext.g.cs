@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_9A22194C7C42228C.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_B760F44FA5965C24.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_E566952F99B6B3ED.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_ECBB9089B4DE86CB.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_70FBE1D6EAFBDC86.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_B760F44FA5965C24.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_E566952F99B6B3ED.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_ECBB9089B4DE86CB.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ToolSearchToolBM2520251119))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0335.Create_ToolSearchToolBM2520251119(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0348.Create_ToolSearchToolBM2520251119(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

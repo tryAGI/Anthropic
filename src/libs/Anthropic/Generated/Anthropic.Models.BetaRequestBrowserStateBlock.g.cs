@@ -17,13 +17,13 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant120? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant163? CacheControl { get; set; }
 
         /// <summary>
         /// Tabs opened and download state changes during this call. "Nothing to report" is expressed by omitting the field, never by an empty list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_changes")]
-        public global::System.Collections.Generic.IList<global::Anthropic.StateChangesVariant1Item>? StateChanges { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.StateChangesVariant1Item2>? StateChanges { get; set; }
 
         /// <summary>
         /// All tabs open in the browser after this call — the full inventory, not a delta. May be empty. Whenever non-empty, exactly one entry carries `active: true`.
@@ -63,8 +63,8 @@ namespace Anthropic
 #endif
         public BetaRequestBrowserStateBlock(
             global::System.Collections.Generic.IList<global::Anthropic.BetaBrowserStateTabEntry> tabs,
-            global::Anthropic.CacheControlVariant120? cacheControl,
-            global::System.Collections.Generic.IList<global::Anthropic.StateChangesVariant1Item>? stateChanges,
+            global::Anthropic.CacheControlVariant163? cacheControl,
+            global::System.Collections.Generic.IList<global::Anthropic.StateChangesVariant1Item2>? stateChanges,
             string type = "browser_state")
         {
             this.CacheControl = cacheControl;

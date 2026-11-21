@@ -22,7 +22,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
-        public global::Anthropic.BetaRefusalStopDetails? StopDetails { get; set; }
+        public global::Anthropic.BetaStopDetails? StopDetails { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -66,7 +66,7 @@ namespace Anthropic
 #endif
         public BetaMessageDelta(
             global::Anthropic.BetaContainer? container,
-            global::Anthropic.BetaRefusalStopDetails? stopDetails,
+            global::Anthropic.BetaStopDetails? stopDetails,
             global::Anthropic.BetaStopReason? stopReason,
             string? stopSequence)
         {

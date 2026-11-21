@@ -80,7 +80,8 @@ namespace Anthropic
         public global::Anthropic.BetaUsageReportServiceTier? ServiceTier { get; set; }
 
         /// <summary>
-        /// Context window used. `null` if not grouping by context window.
+        /// Context window used. `null` if not grouping by context window.<br/>
+        /// A request is classified by comparing its prompt size with its model's own long-context boundary, the same boundary that billing uses. The two values are labels for the two classes, not literal ranges: where a model's boundary is below 200k, a request whose prompt exceeds that boundary is reported under `200k-1M`, and a `0-200k` filter does not return it. Where the report cannot determine a model's boundary, it uses 200k instead. Usage stored before this classification took effect may still be reported under its earlier value, at any `bucket_width`, until it expires. Billed amounts are not affected.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_window")]
         public global::Anthropic.BetaMessagesUsageReportContextWindow? ContextWindow { get; set; }
@@ -141,7 +142,8 @@ namespace Anthropic
         /// Service tier used. `null` if not grouping by service tier.
         /// </param>
         /// <param name="contextWindow">
-        /// Context window used. `null` if not grouping by context window.
+        /// Context window used. `null` if not grouping by context window.<br/>
+        /// A request is classified by comparing its prompt size with its model's own long-context boundary, the same boundary that billing uses. The two values are labels for the two classes, not literal ranges: where a model's boundary is below 200k, a request whose prompt exceeds that boundary is reported under `200k-1M`, and a `0-200k` filter does not return it. Where the report cannot determine a model's boundary, it uses 200k instead. Usage stored before this classification took effect may still be reported under its earlier value, at any `bucket_width`, until it expires. Billed amounts are not affected.
         /// </param>
         /// <param name="inferenceGeo">
         /// Inference geo used matching requests' `inference_geo` parameter if set, otherwise the workspace's `default_inference_geo`.<br/>

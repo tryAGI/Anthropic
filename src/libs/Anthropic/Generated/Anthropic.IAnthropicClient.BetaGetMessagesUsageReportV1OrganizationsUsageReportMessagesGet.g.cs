@@ -45,7 +45,7 @@ namespace Anthropic
         /// Restrict usage returned to the specified service tier(s).
         /// </param>
         /// <param name="contextWindow">
-        /// Restrict usage returned to the specified context window(s).
+        /// Restrict usage returned to the specified context window(s). See the `context_window` response field for how a request is classified.
         /// </param>
         /// <param name="inferenceGeos">
         /// Restrict usage returned to the specified inference geo(s). Use `not_available` for models that do not support specifying `inference_geo`.
@@ -131,7 +131,7 @@ namespace Anthropic
         /// Restrict usage returned to the specified service tier(s).
         /// </param>
         /// <param name="contextWindow">
-        /// Restrict usage returned to the specified context window(s).
+        /// Restrict usage returned to the specified context window(s). See the `context_window` response field for how a request is classified.
         /// </param>
         /// <param name="inferenceGeos">
         /// Restrict usage returned to the specified inference geo(s). Use `not_available` for models that do not support specifying `inference_geo`.
@@ -213,7 +213,7 @@ namespace Anthropic
         /// Restrict usage returned to the specified service tier(s).
         /// </param>
         /// <param name="contextWindow">
-        /// Restrict usage returned to the specified context window(s).
+        /// Restrict usage returned to the specified context window(s). See the `context_window` response field for how a request is classified.
         /// </param>
         /// <param name="inferenceGeos">
         /// Restrict usage returned to the specified inference geo(s). Use `not_available` for models that do not support specifying `inference_geo`.

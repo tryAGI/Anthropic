@@ -41,7 +41,7 @@ namespace Anthropic.JsonConverters
             }
             var __score1 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -56,7 +56,7 @@ namespace Anthropic.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             string? betaManagedAgentsCreateSessionAgentUnionParamsVariant1 = default;
-            global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = default;
+            global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -85,8 +85,8 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2).Name}");
                         betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -128,8 +128,8 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2).Name}");
                     betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -171,8 +171,8 @@ namespace Anthropic.JsonConverters
             }
             else if (value.IsBetaManagedAgentsCreateSessionAgentUnionParamsVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsCreateSessionAgentUnionParamsVariant2(), typeInfo);
             }
         }

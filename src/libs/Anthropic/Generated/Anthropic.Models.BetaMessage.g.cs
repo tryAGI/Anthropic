@@ -98,7 +98,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
-        public global::Anthropic.BetaRefusalStopDetails? StopDetails { get; set; }
+        public global::Anthropic.BetaStopDetails? StopDetails { get; set; }
 
         /// <summary>
         /// Billing and rate-limit usage.<br/>
@@ -281,7 +281,7 @@ namespace Anthropic
             global::Anthropic.BetaUsage usage,
             global::Anthropic.BetaStopReason? stopReason,
             string? stopSequence,
-            global::Anthropic.BetaRefusalStopDetails? stopDetails,
+            global::Anthropic.BetaStopDetails? stopDetails,
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputTransformation>? inputTransformations,
             global::Anthropic.BetaDiagnostics? diagnostics,
             global::Anthropic.BetaResponseContextManagement? contextManagement,

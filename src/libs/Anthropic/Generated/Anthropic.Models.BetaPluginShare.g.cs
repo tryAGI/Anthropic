@@ -28,9 +28,9 @@ namespace Anthropic
         /// Who the Plugin is shared with: `organization` (every member), `rbac_group` (one RBAC Group), or `organization_member` (one member).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Target3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.TargetJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Target3 Target { get; set; }
+        public required global::Anthropic.Target Target { get; set; }
 
         /// <summary>
         /// Always `plugin_share`.<br/>
@@ -68,7 +68,7 @@ namespace Anthropic
         public BetaPluginShare(
             global::System.DateTime grantedAt,
             string pluginId,
-            global::Anthropic.Target3 target,
+            global::Anthropic.Target target,
             string type = "plugin_share")
         {
             this.GrantedAt = grantedAt;

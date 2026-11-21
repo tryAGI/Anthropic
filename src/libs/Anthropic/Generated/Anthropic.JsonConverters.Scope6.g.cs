@@ -18,75 +18,39 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.SpendLimitScopeDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.SpendLimitScopeDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.SpendLimitScopeDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.UserScope? user = default;
-            if (discriminator?.Type == global::Anthropic.SpendLimitScopeDiscriminatorType.User)
+            global::Anthropic.BetaUserScope? user = default;
+            if (discriminator?.Type == global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminatorType.User)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.UserScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.UserScope> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.UserScope)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUserScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUserScope> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaUserScope)}");
                 user = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.SeatTierScope? seatTier = default;
-            if (discriminator?.Type == global::Anthropic.SpendLimitScopeDiscriminatorType.SeatTier)
+            global::Anthropic.BetaOrganizationScope? organization = default;
+            if (discriminator?.Type == global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminatorType.Organization)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.SeatTierScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.SeatTierScope> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.SeatTierScope)}");
-                seatTier = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::Anthropic.RbacGroupScope? rbacGroup = default;
-            if (discriminator?.Type == global::Anthropic.SpendLimitScopeDiscriminatorType.RbacGroup)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RbacGroupScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RbacGroupScope> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RbacGroupScope)}");
-                rbacGroup = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::Anthropic.OrgServiceScope? organizationService = default;
-            if (discriminator?.Type == global::Anthropic.SpendLimitScopeDiscriminatorType.OrganizationService)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OrgServiceScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OrgServiceScope> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.OrgServiceScope)}");
-                organizationService = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::Anthropic.OrganizationScope? organization = default;
-            if (discriminator?.Type == global::Anthropic.SpendLimitScopeDiscriminatorType.Organization)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OrganizationScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OrganizationScope> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.OrganizationScope)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaOrganizationScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaOrganizationScope> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaOrganizationScope)}");
                 organization = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.WorkspaceScope? workspace = default;
-            if (discriminator?.Type == global::Anthropic.SpendLimitScopeDiscriminatorType.Workspace)
+            global::Anthropic.BetaWorkspaceScope? workspace = default;
+            if (discriminator?.Type == global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminatorType.Workspace)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceScope> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WorkspaceScope)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceScope> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceScope)}");
                 workspace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::Anthropic.UsageTierScope? usageTier = default;
-            if (discriminator?.Type == global::Anthropic.SpendLimitScopeDiscriminatorType.UsageTier)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.UsageTierScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.UsageTierScope> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.UsageTierScope)}");
-                usageTier = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.Scope6(
                 discriminator?.Type,
                 user,
 
-                seatTier,
-
-                rbacGroup,
-
-                organizationService,
-
                 organization,
 
-                workspace,
-
-                usageTier
+                workspace
                 );
 
             return __value;
@@ -104,45 +68,21 @@ namespace Anthropic.JsonConverters
 
             if (value.IsUser)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.UserScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.UserScope?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.UserScope).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUserScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUserScope?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaUserScope).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUser(), typeInfo);
-            }
-            else if (value.IsSeatTier)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.SeatTierScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.SeatTierScope?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.SeatTierScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSeatTier(), typeInfo);
-            }
-            else if (value.IsRbacGroup)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RbacGroupScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RbacGroupScope?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RbacGroupScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRbacGroup(), typeInfo);
-            }
-            else if (value.IsOrganizationService)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OrgServiceScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OrgServiceScope?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OrgServiceScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrganizationService(), typeInfo);
             }
             else if (value.IsOrganization)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OrganizationScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OrganizationScope?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OrganizationScope).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaOrganizationScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaOrganizationScope?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaOrganizationScope).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrganization(), typeInfo);
             }
             else if (value.IsWorkspace)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceScope?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.WorkspaceScope).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceScope?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWorkspaceScope).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkspace(), typeInfo);
-            }
-            else if (value.IsUsageTier)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.UsageTierScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.UsageTierScope?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.UsageTierScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUsageTier(), typeInfo);
             }
         }
     }

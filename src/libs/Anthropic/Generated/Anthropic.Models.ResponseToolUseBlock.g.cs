@@ -12,8 +12,8 @@ namespace Anthropic
         /// Default Value: {"type":"direct"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller14JsonConverter))]
-        public global::Anthropic.Caller14? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller2JsonConverter))]
+        public global::Anthropic.Caller2? Caller { get; set; }
 
         /// <summary>
         ///
@@ -79,7 +79,7 @@ namespace Anthropic
             string id,
             object input,
             string name,
-            global::Anthropic.Caller14? caller,
+            global::Anthropic.Caller2? caller,
             string? toolsetName,
             string type = "tool_use")
         {

@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type { get; }
+        public global::Anthropic.ResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseCharLocationCitation? CharLocation { get; init; }
+        public global::Anthropic.ResponseCharLocationCitation? CharLocation { get; init; }
 #else
-        public global::Anthropic.BetaResponseCharLocationCitation? CharLocation { get; }
+        public global::Anthropic.ResponseCharLocationCitation? CharLocation { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaResponseCharLocationCitation? value)
+            out global::Anthropic.ResponseCharLocationCitation? value)
         {
             value = CharLocation;
             return IsCharLocation;
@@ -47,7 +47,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseCharLocationCitation PickCharLocation() => CharLocation is { } value
+        public global::Anthropic.ResponseCharLocationCitation PickCharLocation() => CharLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CharLocation' but the value was {ToString()}.");
 
@@ -55,9 +55,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponsePageLocationCitation? PageLocation { get; init; }
+        public global::Anthropic.ResponsePageLocationCitation? PageLocation { get; init; }
 #else
-        public global::Anthropic.BetaResponsePageLocationCitation? PageLocation { get; }
+        public global::Anthropic.ResponsePageLocationCitation? PageLocation { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaResponsePageLocationCitation? value)
+            out global::Anthropic.ResponsePageLocationCitation? value)
         {
             value = PageLocation;
             return IsPageLocation;
@@ -84,7 +84,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponsePageLocationCitation PickPageLocation() => PageLocation is { } value
+        public global::Anthropic.ResponsePageLocationCitation PickPageLocation() => PageLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PageLocation' but the value was {ToString()}.");
 
@@ -92,9 +92,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
+        public global::Anthropic.ResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
 #else
-        public global::Anthropic.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; }
+        public global::Anthropic.ResponseContentBlockLocationCitation? ContentBlockLocation { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaResponseContentBlockLocationCitation? value)
+            out global::Anthropic.ResponseContentBlockLocationCitation? value)
         {
             value = ContentBlockLocation;
             return IsContentBlockLocation;
@@ -121,7 +121,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseContentBlockLocationCitation PickContentBlockLocation() => ContentBlockLocation is { } value
+        public global::Anthropic.ResponseContentBlockLocationCitation PickContentBlockLocation() => ContentBlockLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockLocation' but the value was {ToString()}.");
 
@@ -129,9 +129,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; init; }
+        public global::Anthropic.ResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; init; }
 #else
-        public global::Anthropic.BetaResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; }
+        public global::Anthropic.ResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; }
 #endif
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaResponseWebSearchResultLocationCitation? value)
+            out global::Anthropic.ResponseWebSearchResultLocationCitation? value)
         {
             value = WebSearchResultLocation;
             return IsWebSearchResultLocation;
@@ -158,7 +158,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseWebSearchResultLocationCitation PickWebSearchResultLocation() => WebSearchResultLocation is { } value
+        public global::Anthropic.ResponseWebSearchResultLocationCitation PickWebSearchResultLocation() => WebSearchResultLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchResultLocation' but the value was {ToString()}.");
 
@@ -166,9 +166,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; init; }
+        public global::Anthropic.ResponseSearchResultLocationCitation? SearchResultLocation { get; init; }
 #else
-        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; }
+        public global::Anthropic.ResponseSearchResultLocationCitation? SearchResultLocation { get; }
 #endif
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaResponseSearchResultLocationCitation? value)
+            out global::Anthropic.ResponseSearchResultLocationCitation? value)
         {
             value = SearchResultLocation;
             return IsSearchResultLocation;
@@ -195,23 +195,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseSearchResultLocationCitation PickSearchResultLocation() => SearchResultLocation is { } value
+        public global::Anthropic.ResponseSearchResultLocationCitation PickSearchResultLocation() => SearchResultLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResultLocation' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponseCharLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponseCharLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item2(global::Anthropic.ResponseCharLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.ResponseCharLocationCitation?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaResponseCharLocationCitation?(CitationsVariant1Item2 @this) => @this.CharLocation;
+        public static implicit operator global::Anthropic.ResponseCharLocationCitation?(CitationsVariant1Item2 @this) => @this.CharLocation;
 
         /// <summary>
         ///
         /// </summary>
-        public CitationsVariant1Item2(global::Anthropic.BetaResponseCharLocationCitation? value)
+        public CitationsVariant1Item2(global::Anthropic.ResponseCharLocationCitation? value)
         {
             CharLocation = value;
         }
@@ -219,22 +219,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static CitationsVariant1Item2 FromCharLocation(global::Anthropic.BetaResponseCharLocationCitation? value) => new CitationsVariant1Item2(value);
+        public static CitationsVariant1Item2 FromCharLocation(global::Anthropic.ResponseCharLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponsePageLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponsePageLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item2(global::Anthropic.ResponsePageLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.ResponsePageLocationCitation?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaResponsePageLocationCitation?(CitationsVariant1Item2 @this) => @this.PageLocation;
+        public static implicit operator global::Anthropic.ResponsePageLocationCitation?(CitationsVariant1Item2 @this) => @this.PageLocation;
 
         /// <summary>
         ///
         /// </summary>
-        public CitationsVariant1Item2(global::Anthropic.BetaResponsePageLocationCitation? value)
+        public CitationsVariant1Item2(global::Anthropic.ResponsePageLocationCitation? value)
         {
             PageLocation = value;
         }
@@ -242,22 +242,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static CitationsVariant1Item2 FromPageLocation(global::Anthropic.BetaResponsePageLocationCitation? value) => new CitationsVariant1Item2(value);
+        public static CitationsVariant1Item2 FromPageLocation(global::Anthropic.ResponsePageLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponseContentBlockLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponseContentBlockLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item2(global::Anthropic.ResponseContentBlockLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.ResponseContentBlockLocationCitation?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaResponseContentBlockLocationCitation?(CitationsVariant1Item2 @this) => @this.ContentBlockLocation;
+        public static implicit operator global::Anthropic.ResponseContentBlockLocationCitation?(CitationsVariant1Item2 @this) => @this.ContentBlockLocation;
 
         /// <summary>
         ///
         /// </summary>
-        public CitationsVariant1Item2(global::Anthropic.BetaResponseContentBlockLocationCitation? value)
+        public CitationsVariant1Item2(global::Anthropic.ResponseContentBlockLocationCitation? value)
         {
             ContentBlockLocation = value;
         }
@@ -265,22 +265,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static CitationsVariant1Item2 FromContentBlockLocation(global::Anthropic.BetaResponseContentBlockLocationCitation? value) => new CitationsVariant1Item2(value);
+        public static CitationsVariant1Item2 FromContentBlockLocation(global::Anthropic.ResponseContentBlockLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponseWebSearchResultLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponseWebSearchResultLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item2(global::Anthropic.ResponseWebSearchResultLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.ResponseWebSearchResultLocationCitation?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaResponseWebSearchResultLocationCitation?(CitationsVariant1Item2 @this) => @this.WebSearchResultLocation;
+        public static implicit operator global::Anthropic.ResponseWebSearchResultLocationCitation?(CitationsVariant1Item2 @this) => @this.WebSearchResultLocation;
 
         /// <summary>
         ///
         /// </summary>
-        public CitationsVariant1Item2(global::Anthropic.BetaResponseWebSearchResultLocationCitation? value)
+        public CitationsVariant1Item2(global::Anthropic.ResponseWebSearchResultLocationCitation? value)
         {
             WebSearchResultLocation = value;
         }
@@ -288,22 +288,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static CitationsVariant1Item2 FromWebSearchResultLocation(global::Anthropic.BetaResponseWebSearchResultLocationCitation? value) => new CitationsVariant1Item2(value);
+        public static CitationsVariant1Item2 FromWebSearchResultLocation(global::Anthropic.ResponseWebSearchResultLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponseSearchResultLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponseSearchResultLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item2(global::Anthropic.ResponseSearchResultLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.ResponseSearchResultLocationCitation?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaResponseSearchResultLocationCitation?(CitationsVariant1Item2 @this) => @this.SearchResultLocation;
+        public static implicit operator global::Anthropic.ResponseSearchResultLocationCitation?(CitationsVariant1Item2 @this) => @this.SearchResultLocation;
 
         /// <summary>
         ///
         /// </summary>
-        public CitationsVariant1Item2(global::Anthropic.BetaResponseSearchResultLocationCitation? value)
+        public CitationsVariant1Item2(global::Anthropic.ResponseSearchResultLocationCitation? value)
         {
             SearchResultLocation = value;
         }
@@ -311,18 +311,18 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static CitationsVariant1Item2 FromSearchResultLocation(global::Anthropic.BetaResponseSearchResultLocationCitation? value) => new CitationsVariant1Item2(value);
+        public static CitationsVariant1Item2 FromSearchResultLocation(global::Anthropic.ResponseSearchResultLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         ///
         /// </summary>
         public CitationsVariant1Item2(
-            global::Anthropic.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType? type,
-            global::Anthropic.BetaResponseCharLocationCitation? charLocation,
-            global::Anthropic.BetaResponsePageLocationCitation? pageLocation,
-            global::Anthropic.BetaResponseContentBlockLocationCitation? contentBlockLocation,
-            global::Anthropic.BetaResponseWebSearchResultLocationCitation? webSearchResultLocation,
-            global::Anthropic.BetaResponseSearchResultLocationCitation? searchResultLocation
+            global::Anthropic.ResponseTextBlockCitationsVariant1ItemDiscriminatorType? type,
+            global::Anthropic.ResponseCharLocationCitation? charLocation,
+            global::Anthropic.ResponsePageLocationCitation? pageLocation,
+            global::Anthropic.ResponseContentBlockLocationCitation? contentBlockLocation,
+            global::Anthropic.ResponseWebSearchResultLocationCitation? webSearchResultLocation,
+            global::Anthropic.ResponseSearchResultLocationCitation? searchResultLocation
             )
         {
             Type = type;
@@ -368,11 +368,11 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaResponseCharLocationCitation, TResult>? charLocation = null,
-            global::System.Func<global::Anthropic.BetaResponsePageLocationCitation, TResult>? pageLocation = null,
-            global::System.Func<global::Anthropic.BetaResponseContentBlockLocationCitation, TResult>? contentBlockLocation = null,
-            global::System.Func<global::Anthropic.BetaResponseWebSearchResultLocationCitation, TResult>? webSearchResultLocation = null,
-            global::System.Func<global::Anthropic.BetaResponseSearchResultLocationCitation, TResult>? searchResultLocation = null,
+            global::System.Func<global::Anthropic.ResponseCharLocationCitation, TResult>? charLocation = null,
+            global::System.Func<global::Anthropic.ResponsePageLocationCitation, TResult>? pageLocation = null,
+            global::System.Func<global::Anthropic.ResponseContentBlockLocationCitation, TResult>? contentBlockLocation = null,
+            global::System.Func<global::Anthropic.ResponseWebSearchResultLocationCitation, TResult>? webSearchResultLocation = null,
+            global::System.Func<global::Anthropic.ResponseSearchResultLocationCitation, TResult>? searchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -408,15 +408,15 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaResponseCharLocationCitation>? charLocation = null,
+            global::System.Action<global::Anthropic.ResponseCharLocationCitation>? charLocation = null,
 
-            global::System.Action<global::Anthropic.BetaResponsePageLocationCitation>? pageLocation = null,
+            global::System.Action<global::Anthropic.ResponsePageLocationCitation>? pageLocation = null,
 
-            global::System.Action<global::Anthropic.BetaResponseContentBlockLocationCitation>? contentBlockLocation = null,
+            global::System.Action<global::Anthropic.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
 
-            global::System.Action<global::Anthropic.BetaResponseWebSearchResultLocationCitation>? webSearchResultLocation = null,
+            global::System.Action<global::Anthropic.ResponseWebSearchResultLocationCitation>? webSearchResultLocation = null,
 
-            global::System.Action<global::Anthropic.BetaResponseSearchResultLocationCitation>? searchResultLocation = null,
+            global::System.Action<global::Anthropic.ResponseSearchResultLocationCitation>? searchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -450,11 +450,11 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaResponseCharLocationCitation>? charLocation = null,
-            global::System.Action<global::Anthropic.BetaResponsePageLocationCitation>? pageLocation = null,
-            global::System.Action<global::Anthropic.BetaResponseContentBlockLocationCitation>? contentBlockLocation = null,
-            global::System.Action<global::Anthropic.BetaResponseWebSearchResultLocationCitation>? webSearchResultLocation = null,
-            global::System.Action<global::Anthropic.BetaResponseSearchResultLocationCitation>? searchResultLocation = null,
+            global::System.Action<global::Anthropic.ResponseCharLocationCitation>? charLocation = null,
+            global::System.Action<global::Anthropic.ResponsePageLocationCitation>? pageLocation = null,
+            global::System.Action<global::Anthropic.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
+            global::System.Action<global::Anthropic.ResponseWebSearchResultLocationCitation>? webSearchResultLocation = null,
+            global::System.Action<global::Anthropic.ResponseSearchResultLocationCitation>? searchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -492,15 +492,15 @@ namespace Anthropic
             var fields = new object?[]
             {
                 CharLocation,
-                typeof(global::Anthropic.BetaResponseCharLocationCitation),
+                typeof(global::Anthropic.ResponseCharLocationCitation),
                 PageLocation,
-                typeof(global::Anthropic.BetaResponsePageLocationCitation),
+                typeof(global::Anthropic.ResponsePageLocationCitation),
                 ContentBlockLocation,
-                typeof(global::Anthropic.BetaResponseContentBlockLocationCitation),
+                typeof(global::Anthropic.ResponseContentBlockLocationCitation),
                 WebSearchResultLocation,
-                typeof(global::Anthropic.BetaResponseWebSearchResultLocationCitation),
+                typeof(global::Anthropic.ResponseWebSearchResultLocationCitation),
                 SearchResultLocation,
-                typeof(global::Anthropic.BetaResponseSearchResultLocationCitation),
+                typeof(global::Anthropic.ResponseSearchResultLocationCitation),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -517,11 +517,11 @@ namespace Anthropic
         public bool Equals(CitationsVariant1Item2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseCharLocationCitation?>.Default.Equals(CharLocation, other.CharLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponsePageLocationCitation?>.Default.Equals(PageLocation, other.PageLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseContentBlockLocationCitation?>.Default.Equals(ContentBlockLocation, other.ContentBlockLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseWebSearchResultLocationCitation?>.Default.Equals(WebSearchResultLocation, other.WebSearchResultLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseSearchResultLocationCitation?>.Default.Equals(SearchResultLocation, other.SearchResultLocation)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseCharLocationCitation?>.Default.Equals(CharLocation, other.CharLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponsePageLocationCitation?>.Default.Equals(PageLocation, other.PageLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseContentBlockLocationCitation?>.Default.Equals(ContentBlockLocation, other.ContentBlockLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseWebSearchResultLocationCitation?>.Default.Equals(WebSearchResultLocation, other.WebSearchResultLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseSearchResultLocationCitation?>.Default.Equals(SearchResultLocation, other.SearchResultLocation)
                 ;
         }
 

@@ -18,43 +18,43 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RbacRolePermissionResourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RbacRolePermissionResourceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RbacRolePermissionResourceDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRbacRolePermissionResourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRbacRolePermissionResourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRbacRolePermissionResourceDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.OrganizationPermissionResource? organization = default;
-            if (discriminator?.Type == global::Anthropic.RbacRolePermissionResourceDiscriminatorType.Organization)
+            global::Anthropic.BetaOrganizationPermissionResource? organization = default;
+            if (discriminator?.Type == global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType.Organization)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OrganizationPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OrganizationPermissionResource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.OrganizationPermissionResource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaOrganizationPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaOrganizationPermissionResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaOrganizationPermissionResource)}");
                 organization = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.ConnectorToolPermissionResource? connectorTool = default;
-            if (discriminator?.Type == global::Anthropic.RbacRolePermissionResourceDiscriminatorType.ConnectorTool)
+            global::Anthropic.BetaConnectorToolPermissionResource? connectorTool = default;
+            if (discriminator?.Type == global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType.ConnectorTool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ConnectorToolPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ConnectorToolPermissionResource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ConnectorToolPermissionResource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaConnectorToolPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaConnectorToolPermissionResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaConnectorToolPermissionResource)}");
                 connectorTool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.ConnectorScopePermissionResource? connectorScope = default;
-            if (discriminator?.Type == global::Anthropic.RbacRolePermissionResourceDiscriminatorType.ConnectorScope)
+            global::Anthropic.BetaConnectorScopePermissionResource? connectorScope = default;
+            if (discriminator?.Type == global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType.ConnectorScope)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ConnectorScopePermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ConnectorScopePermissionResource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ConnectorScopePermissionResource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaConnectorScopePermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaConnectorScopePermissionResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaConnectorScopePermissionResource)}");
                 connectorScope = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.ConnectorPermissionResource? connector = default;
-            if (discriminator?.Type == global::Anthropic.RbacRolePermissionResourceDiscriminatorType.Connector)
+            global::Anthropic.BetaConnectorPermissionResource? connector = default;
+            if (discriminator?.Type == global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType.Connector)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ConnectorPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ConnectorPermissionResource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ConnectorPermissionResource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaConnectorPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaConnectorPermissionResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaConnectorPermissionResource)}");
                 connector = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.AllConnectorsPermissionResource? allConnectors = default;
-            if (discriminator?.Type == global::Anthropic.RbacRolePermissionResourceDiscriminatorType.AllConnectors)
+            global::Anthropic.BetaAllConnectorsPermissionResource? allConnectors = default;
+            if (discriminator?.Type == global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType.AllConnectors)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AllConnectorsPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AllConnectorsPermissionResource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.AllConnectorsPermissionResource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAllConnectorsPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAllConnectorsPermissionResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAllConnectorsPermissionResource)}");
                 allConnectors = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -86,32 +86,32 @@ namespace Anthropic.JsonConverters
 
             if (value.IsOrganization)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OrganizationPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OrganizationPermissionResource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OrganizationPermissionResource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaOrganizationPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaOrganizationPermissionResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaOrganizationPermissionResource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrganization(), typeInfo);
             }
             else if (value.IsConnectorTool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ConnectorToolPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ConnectorToolPermissionResource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ConnectorToolPermissionResource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaConnectorToolPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaConnectorToolPermissionResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaConnectorToolPermissionResource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConnectorTool(), typeInfo);
             }
             else if (value.IsConnectorScope)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ConnectorScopePermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ConnectorScopePermissionResource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ConnectorScopePermissionResource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaConnectorScopePermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaConnectorScopePermissionResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaConnectorScopePermissionResource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConnectorScope(), typeInfo);
             }
             else if (value.IsConnector)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ConnectorPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ConnectorPermissionResource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ConnectorPermissionResource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaConnectorPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaConnectorPermissionResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaConnectorPermissionResource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConnector(), typeInfo);
             }
             else if (value.IsAllConnectors)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AllConnectorsPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AllConnectorsPermissionResource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.AllConnectorsPermissionResource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAllConnectorsPermissionResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAllConnectorsPermissionResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAllConnectorsPermissionResource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAllConnectors(), typeInfo);
             }
         }

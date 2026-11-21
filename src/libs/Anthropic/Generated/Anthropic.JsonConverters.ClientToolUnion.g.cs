@@ -99,7 +99,7 @@ namespace Anthropic.JsonConverters
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
 
-            global::Anthropic.Tool5? tool = default;
+            global::Anthropic.Tool? tool = default;
             global::Anthropic.BashTool20250124? bashTool20250124 = default;
             global::Anthropic.BrowserToolset20260801? browserToolset20260801 = default;
             global::Anthropic.MemoryTool20250818? memoryTool20250818 = default;
@@ -113,8 +113,8 @@ namespace Anthropic.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Tool5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Tool5> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.Tool5).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Tool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Tool> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.Tool).Name}");
                         tool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -268,8 +268,8 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Tool5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Tool5> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.Tool5).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Tool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Tool> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.Tool).Name}");
                     tool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -464,8 +464,8 @@ namespace Anthropic.JsonConverters
 
             if (value.IsTool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Tool5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Tool5?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.Tool5).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Tool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Tool?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.Tool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
             else if (value.IsBashTool20250124)

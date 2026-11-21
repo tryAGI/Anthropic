@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 null,
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_934327081EFBC602.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_92B2E78E4FC09433.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_6DA88C34BA124C41.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_934327081EFBC602.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_EF35E6C21AC6ABE6.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_92B2E78E4FC09433.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_DFE7EA939902F4D0.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_6DA88C34BA124C41.MetadataScope,
                 }, null);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
