@@ -311,7 +311,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'CredentialHostUnreachableError' but the value was {ToString()}.");
 
         /// <summary>
-        /// The turn stopped because the agent loop reached its limit on tool-use rounds (one model response that calls tools, plus running those tools, is one round), not because a request failed. The thread goes idle with `stop_reason: retries_exhausted` (a child thread then terminates); the next `user.message` starts a new turn.<br/>
+        /// The turn stopped at one of two limits on tool use, not because a request failed. One limit is on tool-use rounds (one model response that calls tools, plus running those tools, is one round). The other is on model responses in a row that each request a single tool call and are cut off by the model's output or context limit before the call is complete. None of those calls runs. `message` states the limit that applied. The thread goes idle with `stop_reason: retries_exhausted` (a child thread then terminates); the next `user.message` starts a new turn.<br/>
         /// Example: {"type":"tool_use_limit_reached_error","message":"This turn stopped because the agent loop reached its limit of 500 tool-use rounds since the turn started or last resumed. A round is one model response that calls tools, plus running those tools. Nothing failed. Send the session a new message to continue; nothing from the stopped turn is discarded.","retry_status":{"type":"exhausted"}}
         /// </summary>
 #if NET6_0_OR_GREATER

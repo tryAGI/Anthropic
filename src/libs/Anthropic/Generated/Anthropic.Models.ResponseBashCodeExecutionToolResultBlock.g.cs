@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseBashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.AnyOf<global::Anthropic.ResponseBashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock> Content { get; set; }
+        public required global::Anthropic.AnyOf<global::Anthropic.BashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock> Content { get; set; }
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseBashCodeExecutionToolResultBlock(
-            global::Anthropic.AnyOf<global::Anthropic.ResponseBashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock> content,
+            global::Anthropic.AnyOf<global::Anthropic.BashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock> content,
             string toolUseId,
             string type = "bash_code_execution_tool_result")
         {

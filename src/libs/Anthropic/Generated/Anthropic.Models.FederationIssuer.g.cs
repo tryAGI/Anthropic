@@ -60,9 +60,9 @@ namespace Anthropic
         /// How signing keys are obtained for signature verification.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jwks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Jwks3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.JwksJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Jwks3 Jwks { get; set; }
+        public required global::Anthropic.Jwks Jwks { get; set; }
 
         /// <summary>
         /// If set, Anthropic's JWKS poller has paused polling for this issuer after repeated fetch failures. Re-enable by sending `jwks_polling_disabled: false` via the issuer update endpoint (POST) once the upstream JWKS endpoint is fixed. An OAuth caller cannot send this when the issuer backs a rule with any scope other than `workspace:developer` or `workspace:inference`; use a Console session.
@@ -172,7 +172,7 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string id,
             string issuerUrl,
-            global::Anthropic.Jwks3 jwks,
+            global::Anthropic.Jwks jwks,
             int maxJwtLifetimeSeconds,
             string name,
             global::System.DateTime updatedAt,

@@ -18,50 +18,50 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WorkspaceRateLimitGroupDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WorkspaceRateLimitGroupDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WorkspaceRateLimitGroupDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.BetaRateLimitModelGroup? modelGroup = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType.ModelGroup)
+            global::Anthropic.RateLimitModelGroup? modelGroup = default;
+            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType.ModelGroup)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitModelGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitModelGroup> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRateLimitModelGroup)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitModelGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitModelGroup> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitModelGroup)}");
                 modelGroup = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaRateLimitBatchGroup? batch = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType.Batch)
+            global::Anthropic.RateLimitBatchGroup? batch = default;
+            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType.Batch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitBatchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitBatchGroup> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRateLimitBatchGroup)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitBatchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitBatchGroup> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitBatchGroup)}");
                 batch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaRateLimitTokenCountGroup? tokenCount = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType.TokenCount)
+            global::Anthropic.RateLimitTokenCountGroup? tokenCount = default;
+            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType.TokenCount)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitTokenCountGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitTokenCountGroup> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRateLimitTokenCountGroup)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitTokenCountGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitTokenCountGroup> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitTokenCountGroup)}");
                 tokenCount = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaRateLimitFilesGroup? files = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType.Files)
+            global::Anthropic.RateLimitFilesGroup? files = default;
+            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType.Files)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitFilesGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitFilesGroup> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRateLimitFilesGroup)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitFilesGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitFilesGroup> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitFilesGroup)}");
                 files = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaRateLimitSkillsGroup? skills = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType.Skills)
+            global::Anthropic.RateLimitSkillsGroup? skills = default;
+            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType.Skills)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitSkillsGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitSkillsGroup> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRateLimitSkillsGroup)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitSkillsGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitSkillsGroup> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitSkillsGroup)}");
                 skills = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaRateLimitWebSearchGroup? webSearch = default;
-            if (discriminator?.Type == global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType.WebSearch)
+            global::Anthropic.RateLimitWebSearchGroup? webSearch = default;
+            if (discriminator?.Type == global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType.WebSearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitWebSearchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitWebSearchGroup> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRateLimitWebSearchGroup)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitWebSearchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitWebSearchGroup> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitWebSearchGroup)}");
                 webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -95,38 +95,38 @@ namespace Anthropic.JsonConverters
 
             if (value.IsModelGroup)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitModelGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitModelGroup?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitModelGroup).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitModelGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitModelGroup?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitModelGroup).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModelGroup(), typeInfo);
             }
             else if (value.IsBatch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitBatchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitBatchGroup?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitBatchGroup).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitBatchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitBatchGroup?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitBatchGroup).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBatch(), typeInfo);
             }
             else if (value.IsTokenCount)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitTokenCountGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitTokenCountGroup?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitTokenCountGroup).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitTokenCountGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitTokenCountGroup?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitTokenCountGroup).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTokenCount(), typeInfo);
             }
             else if (value.IsFiles)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitFilesGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitFilesGroup?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitFilesGroup).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitFilesGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitFilesGroup?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitFilesGroup).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFiles(), typeInfo);
             }
             else if (value.IsSkills)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitSkillsGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitSkillsGroup?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitSkillsGroup).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitSkillsGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitSkillsGroup?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitSkillsGroup).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSkills(), typeInfo);
             }
             else if (value.IsWebSearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitWebSearchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitWebSearchGroup?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitWebSearchGroup).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitWebSearchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitWebSearchGroup?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitWebSearchGroup).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearch(), typeInfo);
             }
         }

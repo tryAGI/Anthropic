@@ -6,9 +6,9 @@ namespace Anthropic
     {
         /// <summary>
         /// Download Plugin Version Archive<br/>
-        /// Download one version's `.zip` archive, exactly as stored. Each download of a<br/>
-        /// Plugin from a member's personal plugin marketplace is recorded on the Compliance API<br/>
-        /// activity feed.<br/>
+        /// Download one version's `.zip` archive, exactly as stored. Downloads of Plugins from<br/>
+        /// members' personal plugin marketplaces can be recorded on the Compliance API activity<br/>
+        /// feed.<br/>
         /// The response body is the archive (`Content-Type: application/zip`), sent as an<br/>
         /// attachment whose filename is derived from the Plugin's name; name saved files from<br/>
         /// the IDs in the request path, since that filename is not unique.<br/>
@@ -18,9 +18,11 @@ namespace Anthropic
         /// marketplaces, including files that claude.ai's admin settings do not show, and a<br/>
         /// `read:org_audit` or `read:compliance_org_data` key created for all of your parent<br/>
         /// organization's linked organizations can do this in any organization under it that has<br/>
-        /// access to this API, by passing `organization_id`. Each such download records a<br/>
-        /// `claude_plugin_archive_accessed` event on the Compliance API activity feed,<br/>
-        /// identifying the key, the plugin, the version, and the member. Downloads of<br/>
+        /// access to this API, by passing `organization_id`. The Compliance API activity feed can<br/>
+        /// record such a download as a `claude_plugin_archive_accessed` event, which identifies<br/>
+        /// the key, the plugin, the version, and the member. It does so only while activity<br/>
+        /// events are captured for the plugin's organization, and a record is not guaranteed even<br/>
+        /// then. The files are served whether or not the download is recorded. Downloads of<br/>
         /// organization-owned plugins are not recorded.<br/>
         /// Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.
         /// </summary>
@@ -31,7 +33,7 @@ namespace Anthropic
         /// ID of the Plugin Version (prefixed `pluginver_`). `latest` is not accepted here.
         /// </param>
         /// <param name="organizationId">
-        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
         /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
@@ -48,9 +50,9 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Download Plugin Version Archive<br/>
-        /// Download one version's `.zip` archive, exactly as stored. Each download of a<br/>
-        /// Plugin from a member's personal plugin marketplace is recorded on the Compliance API<br/>
-        /// activity feed.<br/>
+        /// Download one version's `.zip` archive, exactly as stored. Downloads of Plugins from<br/>
+        /// members' personal plugin marketplaces can be recorded on the Compliance API activity<br/>
+        /// feed.<br/>
         /// The response body is the archive (`Content-Type: application/zip`), sent as an<br/>
         /// attachment whose filename is derived from the Plugin's name; name saved files from<br/>
         /// the IDs in the request path, since that filename is not unique.<br/>
@@ -60,9 +62,11 @@ namespace Anthropic
         /// marketplaces, including files that claude.ai's admin settings do not show, and a<br/>
         /// `read:org_audit` or `read:compliance_org_data` key created for all of your parent<br/>
         /// organization's linked organizations can do this in any organization under it that has<br/>
-        /// access to this API, by passing `organization_id`. Each such download records a<br/>
-        /// `claude_plugin_archive_accessed` event on the Compliance API activity feed,<br/>
-        /// identifying the key, the plugin, the version, and the member. Downloads of<br/>
+        /// access to this API, by passing `organization_id`. The Compliance API activity feed can<br/>
+        /// record such a download as a `claude_plugin_archive_accessed` event, which identifies<br/>
+        /// the key, the plugin, the version, and the member. It does so only while activity<br/>
+        /// events are captured for the plugin's organization, and a record is not guaranteed even<br/>
+        /// then. The files are served whether or not the download is recorded. Downloads of<br/>
         /// organization-owned plugins are not recorded.<br/>
         /// Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.
         /// </summary>
@@ -73,7 +77,7 @@ namespace Anthropic
         /// ID of the Plugin Version (prefixed `pluginver_`). `latest` is not accepted here.
         /// </param>
         /// <param name="organizationId">
-        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
         /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
@@ -90,9 +94,9 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Download Plugin Version Archive<br/>
-        /// Download one version's `.zip` archive, exactly as stored. Each download of a<br/>
-        /// Plugin from a member's personal plugin marketplace is recorded on the Compliance API<br/>
-        /// activity feed.<br/>
+        /// Download one version's `.zip` archive, exactly as stored. Downloads of Plugins from<br/>
+        /// members' personal plugin marketplaces can be recorded on the Compliance API activity<br/>
+        /// feed.<br/>
         /// The response body is the archive (`Content-Type: application/zip`), sent as an<br/>
         /// attachment whose filename is derived from the Plugin's name; name saved files from<br/>
         /// the IDs in the request path, since that filename is not unique.<br/>
@@ -102,9 +106,11 @@ namespace Anthropic
         /// marketplaces, including files that claude.ai's admin settings do not show, and a<br/>
         /// `read:org_audit` or `read:compliance_org_data` key created for all of your parent<br/>
         /// organization's linked organizations can do this in any organization under it that has<br/>
-        /// access to this API, by passing `organization_id`. Each such download records a<br/>
-        /// `claude_plugin_archive_accessed` event on the Compliance API activity feed,<br/>
-        /// identifying the key, the plugin, the version, and the member. Downloads of<br/>
+        /// access to this API, by passing `organization_id`. The Compliance API activity feed can<br/>
+        /// record such a download as a `claude_plugin_archive_accessed` event, which identifies<br/>
+        /// the key, the plugin, the version, and the member. It does so only while activity<br/>
+        /// events are captured for the plugin's organization, and a record is not guaranteed even<br/>
+        /// then. The files are served whether or not the download is recorded. Downloads of<br/>
         /// organization-owned plugins are not recorded.<br/>
         /// Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.
         /// </summary>
@@ -115,7 +121,7 @@ namespace Anthropic
         /// ID of the Plugin Version (prefixed `pluginver_`). `latest` is not accepted here.
         /// </param>
         /// <param name="organizationId">
-        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
         /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
@@ -133,9 +139,9 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Download Plugin Version Archive<br/>
-        /// Download one version's `.zip` archive, exactly as stored. Each download of a<br/>
-        /// Plugin from a member's personal plugin marketplace is recorded on the Compliance API<br/>
-        /// activity feed.<br/>
+        /// Download one version's `.zip` archive, exactly as stored. Downloads of Plugins from<br/>
+        /// members' personal plugin marketplaces can be recorded on the Compliance API activity<br/>
+        /// feed.<br/>
         /// The response body is the archive (`Content-Type: application/zip`), sent as an<br/>
         /// attachment whose filename is derived from the Plugin's name; name saved files from<br/>
         /// the IDs in the request path, since that filename is not unique.<br/>
@@ -145,9 +151,11 @@ namespace Anthropic
         /// marketplaces, including files that claude.ai's admin settings do not show, and a<br/>
         /// `read:org_audit` or `read:compliance_org_data` key created for all of your parent<br/>
         /// organization's linked organizations can do this in any organization under it that has<br/>
-        /// access to this API, by passing `organization_id`. Each such download records a<br/>
-        /// `claude_plugin_archive_accessed` event on the Compliance API activity feed,<br/>
-        /// identifying the key, the plugin, the version, and the member. Downloads of<br/>
+        /// access to this API, by passing `organization_id`. The Compliance API activity feed can<br/>
+        /// record such a download as a `claude_plugin_archive_accessed` event, which identifies<br/>
+        /// the key, the plugin, the version, and the member. It does so only while activity<br/>
+        /// events are captured for the plugin's organization, and a record is not guaranteed even<br/>
+        /// then. The files are served whether or not the download is recorded. Downloads of<br/>
         /// organization-owned plugins are not recorded.<br/>
         /// Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.
         /// </summary>
@@ -158,7 +166,7 @@ namespace Anthropic
         /// ID of the Plugin Version (prefixed `pluginver_`). `latest` is not accepted here.
         /// </param>
         /// <param name="organizationId">
-        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
         /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.

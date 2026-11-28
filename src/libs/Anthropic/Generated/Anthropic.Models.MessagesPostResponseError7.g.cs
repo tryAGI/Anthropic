@@ -12,24 +12,25 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.CompactionUnavailableErrorDetails? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ContractSpendLimitReachedErrorDetails, global::Anthropic.EnforcedSpendLimitReachedErrorDetails, global::Anthropic.RampLimitExceededErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.ContractSpendLimitReachedErrorDetails, global::Anthropic.EnforcedSpendLimitReachedErrorDetails, global::Anthropic.RampLimitExceededErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
-        /// Default Value: Overloaded
+        /// Default Value: Rate limited
         /// </summary>
-        /// <default>"Overloaded"</default>
+        /// <default>"Rate limited"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; } = "Overloaded";
+        public required string Message { get; set; } = "Rate limited";
 
         /// <summary>
         /// The broad category of the error.<br/>
-        /// Default Value: overloaded_error
+        /// Default Value: rate_limit_error
         /// </summary>
-        /// <default>"overloaded_error"</default>
+        /// <default>"rate_limit_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = "overloaded_error";
+        public string Type { get; set; } = "rate_limit_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,22 +43,22 @@ namespace Anthropic
         /// </summary>
         /// <param name="message">
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
-        /// Default Value: Overloaded
+        /// Default Value: Rate limited
         /// </param>
         /// <param name="details">
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </param>
         /// <param name="type">
         /// The broad category of the error.<br/>
-        /// Default Value: overloaded_error
+        /// Default Value: rate_limit_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessagesPostResponseError7(
             string message,
-            global::Anthropic.CompactionUnavailableErrorDetails? details,
-            string type = "overloaded_error")
+            global::Anthropic.AnyOf<global::Anthropic.ContractSpendLimitReachedErrorDetails, global::Anthropic.EnforcedSpendLimitReachedErrorDetails, global::Anthropic.RampLimitExceededErrorDetails>? details,
+            string type = "rate_limit_error")
         {
             this.Details = details;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

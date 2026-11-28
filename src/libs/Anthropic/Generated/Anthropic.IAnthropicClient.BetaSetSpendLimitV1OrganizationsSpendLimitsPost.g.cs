@@ -91,7 +91,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaSpendLimit> BetaSetSpendLimitV1OrganizationsSpendLimitsPostAsync(
-            global::Anthropic.Scope2 scope,
+            global::Anthropic.Scope6 scope,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? amount = default,

@@ -14,7 +14,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item4>? Citations { get; set; }
 
         /// <summary>
         ///
@@ -53,7 +53,7 @@ namespace Anthropic
 #endif
         public BetaResponseTextBlock(
             string text,
-            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? citations,
+            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item4>? citations,
             string type = "text")
         {
             this.Citations = citations;

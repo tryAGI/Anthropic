@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Attach the Bundle to a Slack channel.
+    /// Attach the Bundle to a Slack channel.<br/>
+    /// Example: {"type":"slack_channel","slack_channel_id":"slch_01SvpyRQK3nN6eH9uhRA7n1q"}
     /// </summary>
     public sealed partial class BetaClaudeTagSlackChannelBundleTargetCreate
     {

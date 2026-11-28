@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock> Content { get; set; }
+        public required global::Anthropic.AnyOf<global::Anthropic.BetaCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock> Content { get; set; }
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseCodeExecutionToolResultBlock(
-            global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock> content,
+            global::Anthropic.AnyOf<global::Anthropic.BetaCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock> content,
             string toolUseId,
             string type = "code_execution_tool_result")
         {

@@ -11,7 +11,8 @@ namespace Anthropic
         /// marketplaces.<br/>
         /// Plugins in members' personal marketplaces are listed with the same detail as the<br/>
         /// organization's own, and their files can be downloaded through the version archive<br/>
-        /// endpoint, which records each such download on the Compliance API activity feed.<br/>
+        /// endpoint. Those downloads can be recorded on the Compliance API activity feed; the<br/>
+        /// version archive endpoint says when.<br/>
         /// **Accepted credentials:** an Admin API key with the `read:plugins` or `read:org_audit` scope, or a Compliance Access Key with the `read:compliance_org_data` scope.<br/>
         /// Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.
         /// </summary>
@@ -45,7 +46,7 @@ namespace Anthropic
         /// RFC 3339 timestamp bound; combine [gte], [gt], [lte], [lt].
         /// </param>
         /// <param name="organizationId">
-        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
         /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
@@ -74,7 +75,8 @@ namespace Anthropic
         /// marketplaces.<br/>
         /// Plugins in members' personal marketplaces are listed with the same detail as the<br/>
         /// organization's own, and their files can be downloaded through the version archive<br/>
-        /// endpoint, which records each such download on the Compliance API activity feed.<br/>
+        /// endpoint. Those downloads can be recorded on the Compliance API activity feed; the<br/>
+        /// version archive endpoint says when.<br/>
         /// **Accepted credentials:** an Admin API key with the `read:plugins` or `read:org_audit` scope, or a Compliance Access Key with the `read:compliance_org_data` scope.<br/>
         /// Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.
         /// </summary>
@@ -108,7 +110,7 @@ namespace Anthropic
         /// RFC 3339 timestamp bound; combine [gte], [gt], [lte], [lt].
         /// </param>
         /// <param name="organizationId">
-        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
         /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
@@ -161,7 +163,7 @@ namespace Anthropic
         /// RFC 3339 timestamp bound; combine [gte], [gt], [lte], [lt].
         /// </param>
         /// <param name="organizationId">
-        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+        /// For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
         /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.

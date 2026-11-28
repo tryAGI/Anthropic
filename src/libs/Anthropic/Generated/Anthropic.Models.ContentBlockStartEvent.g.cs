@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlock3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlockJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ContentBlock3 ContentBlock { get; set; }
+        public required global::Anthropic.ContentBlock ContentBlock { get; set; }
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContentBlockStartEvent(
-            global::Anthropic.ContentBlock3 contentBlock,
+            global::Anthropic.ContentBlock contentBlock,
             int index,
             string type = "content_block_start")
         {

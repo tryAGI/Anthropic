@@ -79,6 +79,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ExternalKeyFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalKeyRecovered,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageRecovered,
+        /// <summary>
+        ///
+        /// </summary>
         MemoryStoreArchived,
         /// <summary>
         ///
@@ -227,6 +243,10 @@ namespace Anthropic
                 BetaWebhookEventDataDiscriminatorType.EnvironmentCreated => "environment.created",
                 BetaWebhookEventDataDiscriminatorType.EnvironmentDeleted => "environment.deleted",
                 BetaWebhookEventDataDiscriminatorType.EnvironmentUpdated => "environment.updated",
+                BetaWebhookEventDataDiscriminatorType.ExternalKeyFailed => "external_key.failed",
+                BetaWebhookEventDataDiscriminatorType.ExternalKeyRecovered => "external_key.recovered",
+                BetaWebhookEventDataDiscriminatorType.ExternalStorageFailed => "external_storage.failed",
+                BetaWebhookEventDataDiscriminatorType.ExternalStorageRecovered => "external_storage.recovered",
                 BetaWebhookEventDataDiscriminatorType.MemoryStoreArchived => "memory_store.archived",
                 BetaWebhookEventDataDiscriminatorType.MemoryStoreCreated => "memory_store.created",
                 BetaWebhookEventDataDiscriminatorType.MemoryStoreDeleted => "memory_store.deleted",
@@ -284,6 +304,10 @@ namespace Anthropic
                 "environment.created" => BetaWebhookEventDataDiscriminatorType.EnvironmentCreated,
                 "environment.deleted" => BetaWebhookEventDataDiscriminatorType.EnvironmentDeleted,
                 "environment.updated" => BetaWebhookEventDataDiscriminatorType.EnvironmentUpdated,
+                "external_key.failed" => BetaWebhookEventDataDiscriminatorType.ExternalKeyFailed,
+                "external_key.recovered" => BetaWebhookEventDataDiscriminatorType.ExternalKeyRecovered,
+                "external_storage.failed" => BetaWebhookEventDataDiscriminatorType.ExternalStorageFailed,
+                "external_storage.recovered" => BetaWebhookEventDataDiscriminatorType.ExternalStorageRecovered,
                 "memory_store.archived" => BetaWebhookEventDataDiscriminatorType.MemoryStoreArchived,
                 "memory_store.created" => BetaWebhookEventDataDiscriminatorType.MemoryStoreCreated,
                 "memory_store.deleted" => BetaWebhookEventDataDiscriminatorType.MemoryStoreDeleted,

@@ -15,7 +15,8 @@ namespace Anthropic
         public global::Anthropic.BetaClaudeTagCreateBundleTargetRequestBodyDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Attach the Bundle to a Slack channel.
+        /// Attach the Bundle to a Slack channel.<br/>
+        /// Example: {"type":"slack_channel","slack_channel_id":"slch_01SvpyRQK3nN6eH9uhRA7n1q"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaClaudeTagSlackChannelBundleTargetCreate? SlackChannel { get; init; }

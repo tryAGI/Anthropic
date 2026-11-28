@@ -5,7 +5,9 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// List User Profiles
+        /// List User Profiles<br/>
+        /// List the user profiles in your organization, newest first by default.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles) for how to set up and manage profiles.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -35,7 +37,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List User Profiles
+        /// List User Profiles<br/>
+        /// List the user profiles in your organization, newest first by default.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles) for how to set up and manage profiles.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

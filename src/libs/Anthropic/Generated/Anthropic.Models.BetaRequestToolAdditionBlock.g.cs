@@ -19,15 +19,15 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant132? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant165? CacheControl { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Tool3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Tool Tool { get; set; }
+        public required global::Anthropic.Tool3 Tool { get; set; }
 
         /// <summary>
         ///
@@ -54,8 +54,8 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestToolAdditionBlock(
-            global::Anthropic.Tool tool,
-            global::Anthropic.CacheControlVariant132? cacheControl,
+            global::Anthropic.Tool3 tool,
+            global::Anthropic.CacheControlVariant165? cacheControl,
             string type = "tool_addition")
         {
             this.CacheControl = cacheControl;

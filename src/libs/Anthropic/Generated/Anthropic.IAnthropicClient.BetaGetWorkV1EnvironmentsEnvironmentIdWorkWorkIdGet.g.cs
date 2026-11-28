@@ -6,8 +6,8 @@ namespace Anthropic
     {
         /// <summary>
         /// Get Work Item<br/>
-        /// Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.<br/>
-        /// Retrieve detailed information about a specific work item.
+        /// Retrieve detailed information about a specific work item.<br/>
+        /// This endpoint accepts a Claude API key. It rejects the environment key and the work item's `secret`. On [Claude Platform on AWS](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws) or [Claude Models on Google Cloud (Anthropic managed)](https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed), use that platform's credentials instead.
         /// </summary>
         /// <param name="environmentId"></param>
         /// <param name="workId"></param>
@@ -32,8 +32,8 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Work Item<br/>
-        /// Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.<br/>
-        /// Retrieve detailed information about a specific work item.
+        /// Retrieve detailed information about a specific work item.<br/>
+        /// This endpoint accepts a Claude API key. It rejects the environment key and the work item's `secret`. On [Claude Platform on AWS](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws) or [Claude Models on Google Cloud (Anthropic managed)](https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed), use that platform's credentials instead.
         /// </summary>
         /// <param name="environmentId"></param>
         /// <param name="workId"></param>

@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaExternalKeyAttachmentDiscriminatorType? Type { get; }
+        public global::Anthropic.ExternalKeyAttachmentDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaAttachedAttachment? Attached { get; init; }
+        public global::Anthropic.AttachedAttachment? Attached { get; init; }
 #else
-        public global::Anthropic.BetaAttachedAttachment? Attached { get; }
+        public global::Anthropic.AttachedAttachment? Attached { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaAttachedAttachment? value)
+            out global::Anthropic.AttachedAttachment? value)
         {
             value = Attached;
             return IsAttached;
@@ -47,7 +47,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaAttachedAttachment PickAttached() => Attached is { } value
+        public global::Anthropic.AttachedAttachment PickAttached() => Attached is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Attached' but the value was {ToString()}.");
 
@@ -55,9 +55,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaUnattachedAttachment? Unattached { get; init; }
+        public global::Anthropic.UnattachedAttachment? Unattached { get; init; }
 #else
-        public global::Anthropic.BetaUnattachedAttachment? Unattached { get; }
+        public global::Anthropic.UnattachedAttachment? Unattached { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaUnattachedAttachment? value)
+            out global::Anthropic.UnattachedAttachment? value)
         {
             value = Unattached;
             return IsUnattached;
@@ -84,23 +84,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaUnattachedAttachment PickUnattached() => Unattached is { } value
+        public global::Anthropic.UnattachedAttachment PickUnattached() => Unattached is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unattached' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Attachment(global::Anthropic.BetaAttachedAttachment value) => new Attachment((global::Anthropic.BetaAttachedAttachment?)value);
+        public static implicit operator Attachment(global::Anthropic.AttachedAttachment value) => new Attachment((global::Anthropic.AttachedAttachment?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaAttachedAttachment?(Attachment @this) => @this.Attached;
+        public static implicit operator global::Anthropic.AttachedAttachment?(Attachment @this) => @this.Attached;
 
         /// <summary>
         ///
         /// </summary>
-        public Attachment(global::Anthropic.BetaAttachedAttachment? value)
+        public Attachment(global::Anthropic.AttachedAttachment? value)
         {
             Attached = value;
         }
@@ -108,22 +108,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Attachment FromAttached(global::Anthropic.BetaAttachedAttachment? value) => new Attachment(value);
+        public static Attachment FromAttached(global::Anthropic.AttachedAttachment? value) => new Attachment(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Attachment(global::Anthropic.BetaUnattachedAttachment value) => new Attachment((global::Anthropic.BetaUnattachedAttachment?)value);
+        public static implicit operator Attachment(global::Anthropic.UnattachedAttachment value) => new Attachment((global::Anthropic.UnattachedAttachment?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaUnattachedAttachment?(Attachment @this) => @this.Unattached;
+        public static implicit operator global::Anthropic.UnattachedAttachment?(Attachment @this) => @this.Unattached;
 
         /// <summary>
         ///
         /// </summary>
-        public Attachment(global::Anthropic.BetaUnattachedAttachment? value)
+        public Attachment(global::Anthropic.UnattachedAttachment? value)
         {
             Unattached = value;
         }
@@ -131,15 +131,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Attachment FromUnattached(global::Anthropic.BetaUnattachedAttachment? value) => new Attachment(value);
+        public static Attachment FromUnattached(global::Anthropic.UnattachedAttachment? value) => new Attachment(value);
 
         /// <summary>
         ///
         /// </summary>
         public Attachment(
-            global::Anthropic.BetaExternalKeyAttachmentDiscriminatorType? type,
-            global::Anthropic.BetaAttachedAttachment? attached,
-            global::Anthropic.BetaUnattachedAttachment? unattached
+            global::Anthropic.ExternalKeyAttachmentDiscriminatorType? type,
+            global::Anthropic.AttachedAttachment? attached,
+            global::Anthropic.UnattachedAttachment? unattached
             )
         {
             Type = type;
@@ -176,8 +176,8 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaAttachedAttachment, TResult>? attached = null,
-            global::System.Func<global::Anthropic.BetaUnattachedAttachment, TResult>? unattached = null,
+            global::System.Func<global::Anthropic.AttachedAttachment, TResult>? attached = null,
+            global::System.Func<global::Anthropic.UnattachedAttachment, TResult>? unattached = null,
             bool validate = true)
         {
             if (validate)
@@ -201,9 +201,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaAttachedAttachment>? attached = null,
+            global::System.Action<global::Anthropic.AttachedAttachment>? attached = null,
 
-            global::System.Action<global::Anthropic.BetaUnattachedAttachment>? unattached = null,
+            global::System.Action<global::Anthropic.UnattachedAttachment>? unattached = null,
             bool validate = true)
         {
             if (validate)
@@ -225,8 +225,8 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaAttachedAttachment>? attached = null,
-            global::System.Action<global::Anthropic.BetaUnattachedAttachment>? unattached = null,
+            global::System.Action<global::Anthropic.AttachedAttachment>? attached = null,
+            global::System.Action<global::Anthropic.UnattachedAttachment>? unattached = null,
             bool validate = true)
         {
             if (validate)
@@ -252,9 +252,9 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Attached,
-                typeof(global::Anthropic.BetaAttachedAttachment),
+                typeof(global::Anthropic.AttachedAttachment),
                 Unattached,
-                typeof(global::Anthropic.BetaUnattachedAttachment),
+                typeof(global::Anthropic.UnattachedAttachment),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace Anthropic
         public bool Equals(Attachment other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAttachedAttachment?>.Default.Equals(Attached, other.Attached) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaUnattachedAttachment?>.Default.Equals(Unattached, other.Unattached)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AttachedAttachment?>.Default.Equals(Attached, other.Attached) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.UnattachedAttachment?>.Default.Equals(Unattached, other.Unattached)
                 ;
         }
 

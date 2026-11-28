@@ -5,8 +5,8 @@ namespace Anthropic
 {
     /// <summary>
     /// One share the owner of a member-owned Plugin has given. Shares are<br/>
-    /// read-only in this API and have no ID of their own; who gave a share is<br/>
-    /// recorded on the Compliance API activity feed, not here.
+    /// read-only in this API and have no ID of their own. The Plugin's `owner` is<br/>
+    /// the member who gave the share.
     /// </summary>
     public sealed partial class BetaPluginShare
     {
@@ -28,9 +28,9 @@ namespace Anthropic
         /// Who the Plugin is shared with: `organization` (every member), `rbac_group` (one RBAC Group), or `organization_member` (one member).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Target3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.TargetJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Target3 Target { get; set; }
+        public required global::Anthropic.Target Target { get; set; }
 
         /// <summary>
         /// Always `plugin_share`.<br/>
@@ -68,7 +68,7 @@ namespace Anthropic
         public BetaPluginShare(
             global::System.DateTime grantedAt,
             string pluginId,
-            global::Anthropic.Target3 target,
+            global::Anthropic.Target target,
             string type = "plugin_share")
         {
             this.GrantedAt = grantedAt;

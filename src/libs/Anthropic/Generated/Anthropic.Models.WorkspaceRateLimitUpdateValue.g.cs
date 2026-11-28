@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class WorkspaceRateLimitUpdateValue
     {
         /// <summary>
-        /// Rate limiter type.
+        /// Rate limiter type. `input_tokens_per_minute` counts every input token, cache reads included. `input_tokens_per_minute_cache_aware` does not count cache reads, and on current models the organization's input-token limit usually has this type. A workspace limit of either type applies alongside the organization's limit, not in place of it. Because cache reads count toward an `input_tokens_per_minute` limit, it can reject requests that read mostly from the cache while the organization's limit still has room.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.WorkspaceRateLimitUpdateValueTypeJsonConverter))]
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="WorkspaceRateLimitUpdateValue" /> class.
         /// </summary>
         /// <param name="type">
-        /// Rate limiter type.
+        /// Rate limiter type. `input_tokens_per_minute` counts every input token, cache reads included. `input_tokens_per_minute_cache_aware` does not count cache reads, and on current models the organization's input-token limit usually has this type. A workspace limit of either type applies alongside the organization's limit, not in place of it. Because cache reads count toward an `input_tokens_per_minute` limit, it can reject requests that read mostly from the cache while the organization's limit still has room.
         /// </param>
         /// <param name="value">
         /// New limit value. Set to null to clear the workspace override and fall back to the organization limit.

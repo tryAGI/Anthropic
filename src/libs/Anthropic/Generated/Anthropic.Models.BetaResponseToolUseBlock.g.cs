@@ -12,8 +12,8 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller6JsonConverter))]
-        public global::Anthropic.Caller6? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller4JsonConverter))]
+        public global::Anthropic.Caller4? Caller { get; set; }
 
         /// <summary>
         ///
@@ -75,7 +75,7 @@ namespace Anthropic
             string id,
             object input,
             string name,
-            global::Anthropic.Caller6? caller,
+            global::Anthropic.Caller4? caller,
             string? toolsetName,
             string type = "tool_use")
         {

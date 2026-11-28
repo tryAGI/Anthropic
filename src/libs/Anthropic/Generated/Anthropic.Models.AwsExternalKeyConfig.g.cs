@@ -11,7 +11,7 @@ namespace Anthropic
     public sealed partial class AwsExternalKeyConfig
     {
         /// <summary>
-        /// Full ARN of the AWS KMS key. On Claude Platform on AWS, alias ARNs are rejected, and your organization's own key must be a single-Region key in your organization's AWS account.
+        /// Full ARN of the AWS KMS key. On Claude Platform on AWS, alias ARNs are rejected, and your organization's own key must be a single-Region key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("kms_arn")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -47,7 +47,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="AwsExternalKeyConfig" /> class.
         /// </summary>
         /// <param name="kmsArn">
-        /// Full ARN of the AWS KMS key. On Claude Platform on AWS, alias ARNs are rejected, and your organization's own key must be a single-Region key in your organization's AWS account.
+        /// Full ARN of the AWS KMS key. On Claude Platform on AWS, alias ARNs are rejected, and your organization's own key must be a single-Region key.
         /// </param>
         /// <param name="region">
         /// AWS region. Derived from `kms_arn` if omitted.

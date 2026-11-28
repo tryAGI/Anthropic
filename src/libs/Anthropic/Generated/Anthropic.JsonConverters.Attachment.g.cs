@@ -18,22 +18,22 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaExternalKeyAttachmentDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaExternalKeyAttachmentDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaExternalKeyAttachmentDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ExternalKeyAttachmentDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ExternalKeyAttachmentDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ExternalKeyAttachmentDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.BetaAttachedAttachment? attached = default;
-            if (discriminator?.Type == global::Anthropic.BetaExternalKeyAttachmentDiscriminatorType.Attached)
+            global::Anthropic.AttachedAttachment? attached = default;
+            if (discriminator?.Type == global::Anthropic.ExternalKeyAttachmentDiscriminatorType.Attached)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAttachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAttachedAttachment> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAttachedAttachment)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AttachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AttachedAttachment> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.AttachedAttachment)}");
                 attached = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaUnattachedAttachment? unattached = default;
-            if (discriminator?.Type == global::Anthropic.BetaExternalKeyAttachmentDiscriminatorType.Unattached)
+            global::Anthropic.UnattachedAttachment? unattached = default;
+            if (discriminator?.Type == global::Anthropic.ExternalKeyAttachmentDiscriminatorType.Unattached)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUnattachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUnattachedAttachment> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaUnattachedAttachment)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.UnattachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.UnattachedAttachment> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.UnattachedAttachment)}");
                 unattached = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -59,14 +59,14 @@ namespace Anthropic.JsonConverters
 
             if (value.IsAttached)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAttachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAttachedAttachment?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAttachedAttachment).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AttachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AttachedAttachment?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.AttachedAttachment).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAttached(), typeInfo);
             }
             else if (value.IsUnattached)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUnattachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUnattachedAttachment?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaUnattachedAttachment).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.UnattachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.UnattachedAttachment?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.UnattachedAttachment).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnattached(), typeInfo);
             }
         }

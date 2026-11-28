@@ -83,6 +83,9 @@ namespace Anthropic
         /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
+        /// <param name="billingPolicy">
+        /// Declares which organization is billed when this body is sent to `/v1/messages`. Accepted here so that you can count the tokens of the exact body you will send, and otherwise ignored: counting tokens bills nobody, so no user profile is required.
+        /// </param>
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
@@ -218,7 +221,8 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
-            global::Anthropic.CacheControlVariant114? cacheControl = default,
+            global::Anthropic.BetaBillingPolicy? billingPolicy = default,
+            global::Anthropic.CacheControlVariant162? cacheControl = default,
             global::Anthropic.BetaCompactionConfig? compaction = default,
             global::Anthropic.BetaContextManagementConfig? contextManagement = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,

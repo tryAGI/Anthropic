@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.SystemInputMessageContentBlockDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaSystemInputMessageContentBlockDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.RequestTextBlock? Text { get; init; }
+        public global::Anthropic.BetaRequestTextBlock? Text { get; init; }
 #else
-        public global::Anthropic.RequestTextBlock? Text { get; }
+        public global::Anthropic.BetaRequestTextBlock? Text { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.RequestTextBlock? value)
+            out global::Anthropic.BetaRequestTextBlock? value)
         {
             value = Text;
             return IsText;
@@ -47,23 +47,107 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestTextBlock PickText() => Text is { } value
+        public global::Anthropic.BetaRequestTextBlock PickText() => Text is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// Mid-conversation directive to make a tool available.<br/>
+        /// ``tool`` is a reference to a tool (or MCP toolset) declared in the<br/>
+        /// request's ``tools``. Under the ``inline-tools-2026-09-15`` beta it may<br/>
+        /// instead be a reference to a tool defined earlier in ``messages``, or a<br/>
+        /// ``tool_definition`` object that carries an inline tool definition in<br/>
+        /// ``definition`` (the same object a ``tools`` entry holds). An ``mcp_toolset``<br/>
+        /// definition also requires the ``mcp-client-2026-09-15`` beta. The tool is<br/>
+        /// offered to the model from this point in the conversation onward.
         /// </summary>
-        public static implicit operator ContentBlocksItem2(global::Anthropic.RequestTextBlock value) => new ContentBlocksItem2((global::Anthropic.RequestTextBlock?)value);
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestToolAdditionBlock? ToolAddition { get; init; }
+#else
+        public global::Anthropic.BetaRequestToolAdditionBlock? ToolAddition { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.RequestTextBlock?(ContentBlocksItem2 @this) => @this.Text;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolAddition))]
+#endif
+        public bool IsToolAddition => ToolAddition != null;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentBlocksItem2(global::Anthropic.RequestTextBlock? value)
+        public bool TryPickToolAddition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestToolAdditionBlock? value)
+        {
+            value = ToolAddition;
+            return IsToolAddition;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaRequestToolAdditionBlock PickToolAddition() => ToolAddition is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolAddition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Mid-conversation directive to withdraw a tool.<br/>
+        /// ``tool`` references a tool (or MCP toolset) by name: one declared in the<br/>
+        /// request's ``tools`` or defined earlier in ``messages``. It is no longer<br/>
+        /// offered to the model from this point in the conversation onward.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestToolRemovalBlock? ToolRemoval { get; init; }
+#else
+        public global::Anthropic.BetaRequestToolRemovalBlock? ToolRemoval { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolRemoval))]
+#endif
+        public bool IsToolRemoval => ToolRemoval != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickToolRemoval(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestToolRemovalBlock? value)
+        {
+            value = ToolRemoval;
+            return IsToolRemoval;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaRequestToolRemovalBlock PickToolRemoval() => ToolRemoval is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolRemoval' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ContentBlocksItem2(global::Anthropic.BetaRequestTextBlock value) => new ContentBlocksItem2((global::Anthropic.BetaRequestTextBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestTextBlock?(ContentBlocksItem2 @this) => @this.Text;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ContentBlocksItem2(global::Anthropic.BetaRequestTextBlock? value)
         {
             Text = value;
         }
@@ -71,25 +155,77 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static ContentBlocksItem2 FromText(global::Anthropic.RequestTextBlock? value) => new ContentBlocksItem2(value);
+        public static ContentBlocksItem2 FromText(global::Anthropic.BetaRequestTextBlock? value) => new ContentBlocksItem2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ContentBlocksItem2(global::Anthropic.BetaRequestToolAdditionBlock value) => new ContentBlocksItem2((global::Anthropic.BetaRequestToolAdditionBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestToolAdditionBlock?(ContentBlocksItem2 @this) => @this.ToolAddition;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ContentBlocksItem2(global::Anthropic.BetaRequestToolAdditionBlock? value)
+        {
+            ToolAddition = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentBlocksItem2 FromToolAddition(global::Anthropic.BetaRequestToolAdditionBlock? value) => new ContentBlocksItem2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ContentBlocksItem2(global::Anthropic.BetaRequestToolRemovalBlock value) => new ContentBlocksItem2((global::Anthropic.BetaRequestToolRemovalBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestToolRemovalBlock?(ContentBlocksItem2 @this) => @this.ToolRemoval;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ContentBlocksItem2(global::Anthropic.BetaRequestToolRemovalBlock? value)
+        {
+            ToolRemoval = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentBlocksItem2 FromToolRemoval(global::Anthropic.BetaRequestToolRemovalBlock? value) => new ContentBlocksItem2(value);
 
         /// <summary>
         ///
         /// </summary>
         public ContentBlocksItem2(
-            global::Anthropic.SystemInputMessageContentBlockDiscriminatorType? type,
-            global::Anthropic.RequestTextBlock? text
+            global::Anthropic.BetaSystemInputMessageContentBlockDiscriminatorType? type,
+            global::Anthropic.BetaRequestTextBlock? text,
+            global::Anthropic.BetaRequestToolAdditionBlock? toolAddition,
+            global::Anthropic.BetaRequestToolRemovalBlock? toolRemoval
             )
         {
             Type = type;
 
             Text = text;
+            ToolAddition = toolAddition;
+            ToolRemoval = toolRemoval;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            ToolRemoval as object ??
+            ToolAddition as object ??
             Text as object
             ;
 
@@ -97,7 +233,9 @@ namespace Anthropic
         ///
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString()
+            Text?.ToString() ??
+            ToolAddition?.ToString() ??
+            ToolRemoval?.ToString()
             ;
 
         /// <summary>
@@ -105,14 +243,16 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText;
+            return IsText && !IsToolAddition && !IsToolRemoval || !IsText && IsToolAddition && !IsToolRemoval || !IsText && !IsToolAddition && IsToolRemoval;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.RequestTextBlock, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaRequestTextBlock, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaRequestToolAdditionBlock, TResult>? toolAddition = null,
+            global::System.Func<global::Anthropic.BetaRequestToolRemovalBlock, TResult>? toolRemoval = null,
             bool validate = true)
         {
             if (validate)
@@ -124,6 +264,14 @@ namespace Anthropic
             {
                 return text(__value0);
             }
+            else if (ToolAddition is { } __value1 && toolAddition != null)
+            {
+                return toolAddition(__value1);
+            }
+            else if (ToolRemoval is { } __value2 && toolRemoval != null)
+            {
+                return toolRemoval(__value2);
+            }
 
             return default(TResult);
         }
@@ -132,7 +280,11 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.RequestTextBlock>? text = null,
+            global::System.Action<global::Anthropic.BetaRequestTextBlock>? text = null,
+
+            global::System.Action<global::Anthropic.BetaRequestToolAdditionBlock>? toolAddition = null,
+
+            global::System.Action<global::Anthropic.BetaRequestToolRemovalBlock>? toolRemoval = null,
             bool validate = true)
         {
             if (validate)
@@ -143,6 +295,14 @@ namespace Anthropic
             if (Text is { } __value0)
             {
                 text?.Invoke(__value0);
+            }
+            else if (ToolAddition is { } __value1)
+            {
+                toolAddition?.Invoke(__value1);
+            }
+            else if (ToolRemoval is { } __value2)
+            {
+                toolRemoval?.Invoke(__value2);
             }
         }
 
@@ -150,7 +310,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.RequestTextBlock>? text = null,
+            global::System.Action<global::Anthropic.BetaRequestTextBlock>? text = null,
+            global::System.Action<global::Anthropic.BetaRequestToolAdditionBlock>? toolAddition = null,
+            global::System.Action<global::Anthropic.BetaRequestToolRemovalBlock>? toolRemoval = null,
             bool validate = true)
         {
             if (validate)
@@ -161,6 +323,14 @@ namespace Anthropic
             if (Text is { } __value0)
             {
                 text?.Invoke(__value0);
+            }
+            else if (ToolAddition is { } __value1)
+            {
+                toolAddition?.Invoke(__value1);
+            }
+            else if (ToolRemoval is { } __value2)
+            {
+                toolRemoval?.Invoke(__value2);
             }
         }
 
@@ -172,7 +342,11 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Text,
-                typeof(global::Anthropic.RequestTextBlock),
+                typeof(global::Anthropic.BetaRequestTextBlock),
+                ToolAddition,
+                typeof(global::Anthropic.BetaRequestToolAdditionBlock),
+                ToolRemoval,
+                typeof(global::Anthropic.BetaRequestToolRemovalBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -189,7 +363,9 @@ namespace Anthropic
         public bool Equals(ContentBlocksItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestTextBlock?>.Default.Equals(Text, other.Text)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolAdditionBlock?>.Default.Equals(ToolAddition, other.ToolAddition) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolRemovalBlock?>.Default.Equals(ToolRemoval, other.ToolRemoval)
                 ;
         }
 

@@ -113,7 +113,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             bool? checkJti = default,
-            global::Anthropic.Jwks2? jwks = default,
+            global::Anthropic.Jwks4? jwks = default,
             int? maxJwtLifetimeSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

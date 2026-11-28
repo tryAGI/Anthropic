@@ -16,7 +16,7 @@ namespace Anthropic
         public string ErrorCode { get; set; } = "workspace_policy_violation";
 
         /// <summary>
-        /// The request field the broken rule applies to.
+        /// The request field the broken rule applies to. Other values may be returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.WorkspacePolicyFieldJsonConverter))]
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="WorkspacePolicyViolationErrorDetails" /> class.
         /// </summary>
         /// <param name="field">
-        /// The request field the broken rule applies to.
+        /// The request field the broken rule applies to. Other values may be returned.
         /// </param>
         /// <param name="errorCode"></param>
 #if NET7_0_OR_GREATER

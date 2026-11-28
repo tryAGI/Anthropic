@@ -12,8 +12,8 @@ namespace Anthropic
         /// Default Value: {"type":"direct"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller13JsonConverter))]
-        public global::Anthropic.Caller13? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller6JsonConverter))]
+        public global::Anthropic.Caller6? Caller { get; set; }
 
         /// <summary>
         ///
@@ -69,7 +69,7 @@ namespace Anthropic
             string id,
             object input,
             global::Anthropic.ResponseServerToolUseBlockName name,
-            global::Anthropic.Caller13? caller,
+            global::Anthropic.Caller6? caller,
             string type = "server_tool_use")
         {
             this.Caller = caller;

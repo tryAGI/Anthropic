@@ -12,8 +12,8 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>))]
-        public global::Anthropic.AnyOf<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.StorageProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.StorageProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
@@ -57,7 +57,7 @@ namespace Anthropic
 #endif
         public UpdateWorkspaceV1OrganizationsWorkspacesWorkspaceIdPostResponseError(
             string message,
-            global::Anthropic.AnyOf<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>? details,
+            global::Anthropic.AnyOf<global::Anthropic.ExternalKeyValidationFailedErrorDetails, global::Anthropic.ExternalKeyValidationTimedOutErrorDetails, global::Anthropic.KeyProfileMismatchErrorDetails, global::Anthropic.StorageProfileMismatchErrorDetails, global::Anthropic.UserProfileNotFoundErrorDetails, global::Anthropic.WorkspacePolicyViolationErrorDetails>? details,
             string type = "invalid_request_error")
         {
             this.Details = details;

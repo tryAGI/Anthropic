@@ -14,7 +14,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant116? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant1? CacheControl { get; set; }
 
         /// <summary>
         /// Configuration overrides for specific tools, keyed by tool name
@@ -78,7 +78,7 @@ namespace Anthropic
 #endif
         public BetaMCPToolset(
             string mcpServerName,
-            global::Anthropic.CacheControlVariant116? cacheControl,
+            global::Anthropic.CacheControlVariant1? cacheControl,
             global::System.Collections.Generic.Dictionary<string, global::Anthropic.BetaMCPToolConfig>? configs,
             global::Anthropic.BetaMCPToolDefaultConfig? defaultConfig,
             global::System.Collections.Generic.IList<global::Anthropic.BetaMCPTool>? tools,

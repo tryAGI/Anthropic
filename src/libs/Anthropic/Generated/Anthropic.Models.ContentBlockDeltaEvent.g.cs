@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Delta2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.DeltaJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Delta2 Delta { get; set; }
+        public required global::Anthropic.Delta Delta { get; set; }
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContentBlockDeltaEvent(
-            global::Anthropic.Delta2 delta,
+            global::Anthropic.Delta delta,
             int index,
             string type = "content_block_delta")
         {

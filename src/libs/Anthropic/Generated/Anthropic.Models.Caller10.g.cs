@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestToolUseBlockCallerDiscriminatorType? Type { get; }
+        public global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Tool invocation directly from the model.
@@ -197,7 +197,7 @@ namespace Anthropic
         ///
         /// </summary>
         public Caller10(
-            global::Anthropic.RequestToolUseBlockCallerDiscriminatorType? type,
+            global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminatorType? type,
             global::Anthropic.DirectCaller? direct,
             global::Anthropic.ServerToolCaller? codeExecution20250825,
             global::Anthropic.ServerToolCaller20260120? codeExecution20260120

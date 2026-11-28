@@ -5,7 +5,9 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Create Action URL
+        /// Create Action URL<br/>
+        /// Create a link that sends the profile's end customer to the Verification Portal.<br/>
+        /// See [Send an end customer a link to the Verification Portal](https://platform.claude.com/docs/en/manage-claude/user-profiles-verification-portal) for when to create the link and what the end customer sees.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -26,7 +28,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Action URL
+        /// Create Action URL<br/>
+        /// Create a link that sends the profile's end customer to the Verification Portal.<br/>
+        /// See [Send an end customer a link to the Verification Portal](https://platform.claude.com/docs/en/manage-claude/user-profiles-verification-portal) for when to create the link and what the end customer sees.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -47,7 +51,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Action URL
+        /// Create Action URL<br/>
+        /// Create a link that sends the profile's end customer to the Verification Portal.<br/>
+        /// See [Send an end customer a link to the Verification Portal](https://platform.claude.com/docs/en/manage-claude/user-profiles-verification-portal) for when to create the link and what the end customer sees.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The settings of a new telemetry destination for the organization.
+    /// The settings of a new telemetry destination for the organization.<br/>
+    /// Example: {"endpoint_url":"https://gateway.example.com","workspaces":{"type":"all"}}
     /// </summary>
     public sealed partial class BetaCreateTelemetryDestinationRequest
     {

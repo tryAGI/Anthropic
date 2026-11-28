@@ -6,6 +6,7 @@ namespace Anthropic
     /// <summary>
     /// Powerful intelligence for long-running agents and coding
     /// </summary>
+    [global::System.Obsolete("Will reach end-of-life on January 22, 2027. Please migrate to claude-opus-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.")]
     public sealed partial class BetaManagedAgentsModelVariant15
     {
 

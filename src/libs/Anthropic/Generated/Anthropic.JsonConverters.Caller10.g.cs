@@ -18,26 +18,26 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestToolUseBlockCallerDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestToolUseBlockCallerDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestToolUseBlockCallerDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.DirectCaller? direct = default;
-            if (discriminator?.Type == global::Anthropic.RequestToolUseBlockCallerDiscriminatorType.Direct)
+            if (discriminator?.Type == global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminatorType.Direct)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.DirectCaller), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.DirectCaller> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.DirectCaller)}");
                 direct = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ServerToolCaller? codeExecution20250825 = default;
-            if (discriminator?.Type == global::Anthropic.RequestToolUseBlockCallerDiscriminatorType.CodeExecution20250825)
+            if (discriminator?.Type == global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminatorType.CodeExecution20250825)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ServerToolCaller), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ServerToolCaller> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ServerToolCaller)}");
                 codeExecution20250825 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ServerToolCaller20260120? codeExecution20260120 = default;
-            if (discriminator?.Type == global::Anthropic.RequestToolUseBlockCallerDiscriminatorType.CodeExecution20260120)
+            if (discriminator?.Type == global::Anthropic.RequestWebSearchToolResultBlockCallerDiscriminatorType.CodeExecution20260120)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ServerToolCaller20260120), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ServerToolCaller20260120> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ServerToolCaller20260120)}");

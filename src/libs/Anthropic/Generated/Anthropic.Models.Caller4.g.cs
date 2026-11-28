@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestWebSearchToolResultBlockCallerDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaResponseToolUseBlockCallerDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Tool invocation directly from the model.
@@ -197,7 +197,7 @@ namespace Anthropic
         ///
         /// </summary>
         public Caller4(
-            global::Anthropic.BetaRequestWebSearchToolResultBlockCallerDiscriminatorType? type,
+            global::Anthropic.BetaResponseToolUseBlockCallerDiscriminatorType? type,
             global::Anthropic.BetaDirectCaller? direct,
             global::Anthropic.BetaServerToolCaller? codeExecution20250825,
             global::Anthropic.BetaServerToolCaller20260120? codeExecution20260120

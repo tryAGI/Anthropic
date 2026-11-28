@@ -16,9 +16,9 @@ namespace Anthropic
         /// no reprice was applied; the arm's `reason` says why.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.StatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Status3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Status Status { get; set; }
+        public required global::Anthropic.Status3 Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaFallbackCreditUsage(
-            global::Anthropic.Status status)
+            global::Anthropic.Status3 status)
         {
             this.Status = status;
         }

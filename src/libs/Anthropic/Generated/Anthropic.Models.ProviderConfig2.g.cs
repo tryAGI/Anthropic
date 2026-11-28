@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaExternalKeyProviderConfigDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -89,12 +89,12 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gcp' but the value was {ToString()}.");
 
         /// <summary>
-        /// Azure Key Vault provider configuration.
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaAzureExternalKeyConfigParams? Azure { get; init; }
+        public global::Anthropic.BetaAzureExternalKeyConfig? Azure { get; init; }
 #else
-        public global::Anthropic.BetaAzureExternalKeyConfigParams? Azure { get; }
+        public global::Anthropic.BetaAzureExternalKeyConfig? Azure { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaAzureExternalKeyConfigParams? value)
+            out global::Anthropic.BetaAzureExternalKeyConfig? value)
         {
             value = Azure;
             return IsAzure;
@@ -121,7 +121,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaAzureExternalKeyConfigParams PickAzure() => Azure is { } value
+        public global::Anthropic.BetaAzureExternalKeyConfig PickAzure() => Azure is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Azure' but the value was {ToString()}.");
         /// <summary>
@@ -173,17 +173,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ProviderConfig2(global::Anthropic.BetaAzureExternalKeyConfigParams value) => new ProviderConfig2((global::Anthropic.BetaAzureExternalKeyConfigParams?)value);
+        public static implicit operator ProviderConfig2(global::Anthropic.BetaAzureExternalKeyConfig value) => new ProviderConfig2((global::Anthropic.BetaAzureExternalKeyConfig?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaAzureExternalKeyConfigParams?(ProviderConfig2 @this) => @this.Azure;
+        public static implicit operator global::Anthropic.BetaAzureExternalKeyConfig?(ProviderConfig2 @this) => @this.Azure;
 
         /// <summary>
         ///
         /// </summary>
-        public ProviderConfig2(global::Anthropic.BetaAzureExternalKeyConfigParams? value)
+        public ProviderConfig2(global::Anthropic.BetaAzureExternalKeyConfig? value)
         {
             Azure = value;
         }
@@ -191,16 +191,16 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static ProviderConfig2 FromAzure(global::Anthropic.BetaAzureExternalKeyConfigParams? value) => new ProviderConfig2(value);
+        public static ProviderConfig2 FromAzure(global::Anthropic.BetaAzureExternalKeyConfig? value) => new ProviderConfig2(value);
 
         /// <summary>
         ///
         /// </summary>
         public ProviderConfig2(
-            global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminatorType? type,
+            global::Anthropic.BetaExternalKeyProviderConfigDiscriminatorType? type,
             global::Anthropic.BetaAwsExternalKeyConfig? aws,
             global::Anthropic.BetaGcpExternalKeyConfig? gcp,
-            global::Anthropic.BetaAzureExternalKeyConfigParams? azure
+            global::Anthropic.BetaAzureExternalKeyConfig? azure
             )
         {
             Type = type;
@@ -242,7 +242,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaAwsExternalKeyConfig, TResult>? aws = null,
             global::System.Func<global::Anthropic.BetaGcpExternalKeyConfig, TResult>? gcp = null,
-            global::System.Func<global::Anthropic.BetaAzureExternalKeyConfigParams, TResult>? azure = null,
+            global::System.Func<global::Anthropic.BetaAzureExternalKeyConfig, TResult>? azure = null,
             bool validate = true)
         {
             if (validate)
@@ -274,7 +274,7 @@ namespace Anthropic
 
             global::System.Action<global::Anthropic.BetaGcpExternalKeyConfig>? gcp = null,
 
-            global::System.Action<global::Anthropic.BetaAzureExternalKeyConfigParams>? azure = null,
+            global::System.Action<global::Anthropic.BetaAzureExternalKeyConfig>? azure = null,
             bool validate = true)
         {
             if (validate)
@@ -302,7 +302,7 @@ namespace Anthropic
         public void Switch(
             global::System.Action<global::Anthropic.BetaAwsExternalKeyConfig>? aws = null,
             global::System.Action<global::Anthropic.BetaGcpExternalKeyConfig>? gcp = null,
-            global::System.Action<global::Anthropic.BetaAzureExternalKeyConfigParams>? azure = null,
+            global::System.Action<global::Anthropic.BetaAzureExternalKeyConfig>? azure = null,
             bool validate = true)
         {
             if (validate)
@@ -336,7 +336,7 @@ namespace Anthropic
                 Gcp,
                 typeof(global::Anthropic.BetaGcpExternalKeyConfig),
                 Azure,
-                typeof(global::Anthropic.BetaAzureExternalKeyConfigParams),
+                typeof(global::Anthropic.BetaAzureExternalKeyConfig),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -355,7 +355,7 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAwsExternalKeyConfig?>.Default.Equals(Aws, other.Aws) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaGcpExternalKeyConfig?>.Default.Equals(Gcp, other.Gcp) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAzureExternalKeyConfigParams?>.Default.Equals(Azure, other.Azure)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAzureExternalKeyConfig?>.Default.Equals(Azure, other.Azure)
                 ;
         }
 

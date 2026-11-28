@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_2098BC7A4C291432.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_AC433DC064E7A357.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_E43A762DE5C6BA0E.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_2098BC7A4C291432.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_6B1BCDF60153A55C.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_E43A762DE5C6BA0E.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaMessageDelta))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0108.Create_BetaMessageDelta(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0126.Create_BetaMessageDelta(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

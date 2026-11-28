@@ -11,6 +11,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ExternalKeyFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalKeyRecovered,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageRecovered,
+        /// <summary>
+        ///
+        /// </summary>
         UserProfileEnforcementActionOpened,
         /// <summary>
         ///
@@ -34,6 +50,10 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalKeyFailed => "external_key.failed",
+                BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalKeyRecovered => "external_key.recovered",
+                BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalStorageFailed => "external_storage.failed",
+                BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalStorageRecovered => "external_storage.recovered",
                 BetaNewOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
                 BetaNewOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
                 BetaNewOrganizationWebhookEndpointEnabledEvent.UserProfileProgramStatusUpdated => "user_profile.program_status_updated",
@@ -47,6 +67,10 @@ namespace Anthropic
         {
             return value switch
             {
+                "external_key.failed" => BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalKeyFailed,
+                "external_key.recovered" => BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalKeyRecovered,
+                "external_storage.failed" => BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalStorageFailed,
+                "external_storage.recovered" => BetaNewOrganizationWebhookEndpointEnabledEvent.ExternalStorageRecovered,
                 "user_profile.enforcement_action_opened" => BetaNewOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionOpened,
                 "user_profile.enforcement_action_resolved" => BetaNewOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionResolved,
                 "user_profile.program_status_updated" => BetaNewOrganizationWebhookEndpointEnabledEvent.UserProfileProgramStatusUpdated,

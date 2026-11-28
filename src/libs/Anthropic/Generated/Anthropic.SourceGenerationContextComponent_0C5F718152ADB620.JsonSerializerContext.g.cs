@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_CE4D26233C9EFBC0.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_2500537C5A288BC7.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0086.Create_BetaManagedAgentsMultiagentRosterEntryParams2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0104.Create_BetaManagedAgentsMultiagentRosterEntryParams2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0226.Create_NullableBetaManagedAgentsMultiagentRosterEntryParams2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0257.Create_NullableBetaManagedAgentsMultiagentRosterEntryParams2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

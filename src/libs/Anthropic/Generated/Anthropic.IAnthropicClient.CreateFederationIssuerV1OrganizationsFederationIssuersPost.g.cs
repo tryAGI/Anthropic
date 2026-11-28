@@ -101,7 +101,7 @@ namespace Anthropic
             string name,
             string? anthropicVersion = default,
             bool? checkJti = default,
-            global::Anthropic.Jwks4? jwks = default,
+            global::Anthropic.Jwks3? jwks = default,
             int? maxJwtLifetimeSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

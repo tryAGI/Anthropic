@@ -12,24 +12,25 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.BetaThreadNotFoundErrorDetails? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaLinkedOrganizationBillingUnavailableErrorDetails, global::Anthropic.BetaLinkedOrganizationSpendLimitReachedErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.BetaLinkedOrganizationBillingUnavailableErrorDetails, global::Anthropic.BetaLinkedOrganizationSpendLimitReachedErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
-        /// Default Value: Not found
+        /// Default Value: Billing error
         /// </summary>
-        /// <default>"Not found"</default>
+        /// <default>"Billing error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; } = "Not found";
+        public required string Message { get; set; } = "Billing error";
 
         /// <summary>
         /// The broad category of the error.<br/>
-        /// Default Value: not_found_error
+        /// Default Value: billing_error
         /// </summary>
-        /// <default>"not_found_error"</default>
+        /// <default>"billing_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = "not_found_error";
+        public string Type { get; set; } = "billing_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,22 +43,22 @@ namespace Anthropic
         /// </summary>
         /// <param name="message">
         /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
-        /// Default Value: Not found
+        /// Default Value: Billing error
         /// </param>
         /// <param name="details">
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </param>
         /// <param name="type">
         /// The broad category of the error.<br/>
-        /// Default Value: not_found_error
+        /// Default Value: billing_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMessagesPostResponseError2(
             string message,
-            global::Anthropic.BetaThreadNotFoundErrorDetails? details,
-            string type = "not_found_error")
+            global::Anthropic.AnyOf<global::Anthropic.BetaLinkedOrganizationBillingUnavailableErrorDetails, global::Anthropic.BetaLinkedOrganizationSpendLimitReachedErrorDetails>? details,
+            string type = "billing_error")
         {
             this.Details = details;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

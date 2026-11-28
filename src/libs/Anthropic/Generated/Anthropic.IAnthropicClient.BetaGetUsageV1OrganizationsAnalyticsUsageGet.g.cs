@@ -13,7 +13,13 @@ namespace Anthropic
         /// bucket; every combination is returned across pages. With no `group_by[]`<br/>
         /// and no `time_bucket_width`, a single row aggregates the whole range.<br/>
         /// Includes all usage, whether or not it is attributable to a seat user.<br/>
-        /// Requires an API key with the `read:analytics` scope, or an Admin API key.
+        /// Requires an API key with the `read:analytics` scope, or an Admin API key.<br/>
+        /// This endpoint is in beta and is not available to organizations with HIPAA<br/>
+        /// readiness enabled: their API requests return a 400 error. A parent<br/>
+        /// organization's report across its child organizations leaves out the child<br/>
+        /// organizations that have HIPAA readiness enabled. If the parent has child<br/>
+        /// organizations and all of them have HIPAA readiness enabled, the request<br/>
+        /// returns a 400 error.
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -46,28 +52,28 @@ namespace Anthropic
         /// Filter to Claude Tag (Claude in Slack) usage attributed to specific Slack users, by Slack user ID (for example `U0123ABCDEF`), not claude.ai user ID. Usage that is not Claude Tag, and Claude Tag usage not attributed to a single user, never matches. Use `group_by[]=claude_tag_user_id` to break out per-user values.
         /// </param>
         /// <param name="workspaceIds">
-        /// Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
+        /// Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values.
         /// </param>
         /// <param name="serviceTiers">
-        /// Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
+        /// Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values.
         /// </param>
         /// <param name="rbacGroupIds">
         /// Filter to usage attributed to specific RBAC groups. Accepts tagged RBAC group IDs (`rbac_group_...`) or bare group UUIDs. A row matches when the user belonged to any of the listed groups on the (UTC) day the usage occurred; usage with no group attribution never matches.
         /// </param>
         /// <param name="userProfileIds">
-        /// Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values. Claude Platform organizations only.
+        /// Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values.
         /// </param>
         /// <param name="agentIds">
-        /// Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values. Claude Platform organizations only.
+        /// Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values.
         /// </param>
         /// <param name="environmentIds">
-        /// Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values. Claude Platform organizations only.
+        /// Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values.
         /// </param>
         /// <param name="deploymentIds">
-        /// Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values. Claude Platform organizations only.
+        /// Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values.
         /// </param>
         /// <param name="sessionIds">
-        /// Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values. Claude Platform organizations only.
+        /// Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values.
         /// </param>
         /// <param name="actorIds">
         /// Filter to usage attributed to specific identities, by tagged ID: a `user_...`, `svac_...` (service account), or `apikey_...` ID. An `apikey_` entry matches only usage attributed to the key itself, not usage on that key attributed to a user or service account (use `api_key_ids[]` for every request a key authenticated). Federated identities have no tagged ID; select them with `actor_types[]`. Use `group_by[]=actor` to break out per-identity values.
@@ -76,10 +82,10 @@ namespace Anthropic
         /// Filter to usage attributed to specific kinds of identity. Use `group_by[]=actor_type` to break out per-kind values.
         /// </param>
         /// <param name="apiKeyIds">
-        /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
+        /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`.
         /// </param>
         /// <param name="organizationIds">
-        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. The report leaves out child organizations with HIPAA readiness enabled, and naming one returns a 400 error. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
         /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
@@ -159,7 +165,13 @@ namespace Anthropic
         /// bucket; every combination is returned across pages. With no `group_by[]`<br/>
         /// and no `time_bucket_width`, a single row aggregates the whole range.<br/>
         /// Includes all usage, whether or not it is attributable to a seat user.<br/>
-        /// Requires an API key with the `read:analytics` scope, or an Admin API key.
+        /// Requires an API key with the `read:analytics` scope, or an Admin API key.<br/>
+        /// This endpoint is in beta and is not available to organizations with HIPAA<br/>
+        /// readiness enabled: their API requests return a 400 error. A parent<br/>
+        /// organization's report across its child organizations leaves out the child<br/>
+        /// organizations that have HIPAA readiness enabled. If the parent has child<br/>
+        /// organizations and all of them have HIPAA readiness enabled, the request<br/>
+        /// returns a 400 error.
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -192,28 +204,28 @@ namespace Anthropic
         /// Filter to Claude Tag (Claude in Slack) usage attributed to specific Slack users, by Slack user ID (for example `U0123ABCDEF`), not claude.ai user ID. Usage that is not Claude Tag, and Claude Tag usage not attributed to a single user, never matches. Use `group_by[]=claude_tag_user_id` to break out per-user values.
         /// </param>
         /// <param name="workspaceIds">
-        /// Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
+        /// Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values.
         /// </param>
         /// <param name="serviceTiers">
-        /// Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
+        /// Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values.
         /// </param>
         /// <param name="rbacGroupIds">
         /// Filter to usage attributed to specific RBAC groups. Accepts tagged RBAC group IDs (`rbac_group_...`) or bare group UUIDs. A row matches when the user belonged to any of the listed groups on the (UTC) day the usage occurred; usage with no group attribution never matches.
         /// </param>
         /// <param name="userProfileIds">
-        /// Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values. Claude Platform organizations only.
+        /// Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values.
         /// </param>
         /// <param name="agentIds">
-        /// Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values. Claude Platform organizations only.
+        /// Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values.
         /// </param>
         /// <param name="environmentIds">
-        /// Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values. Claude Platform organizations only.
+        /// Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values.
         /// </param>
         /// <param name="deploymentIds">
-        /// Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values. Claude Platform organizations only.
+        /// Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values.
         /// </param>
         /// <param name="sessionIds">
-        /// Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values. Claude Platform organizations only.
+        /// Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values.
         /// </param>
         /// <param name="actorIds">
         /// Filter to usage attributed to specific identities, by tagged ID: a `user_...`, `svac_...` (service account), or `apikey_...` ID. An `apikey_` entry matches only usage attributed to the key itself, not usage on that key attributed to a user or service account (use `api_key_ids[]` for every request a key authenticated). Federated identities have no tagged ID; select them with `actor_types[]`. Use `group_by[]=actor` to break out per-identity values.
@@ -222,10 +234,10 @@ namespace Anthropic
         /// Filter to usage attributed to specific kinds of identity. Use `group_by[]=actor_type` to break out per-kind values.
         /// </param>
         /// <param name="apiKeyIds">
-        /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
+        /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`.
         /// </param>
         /// <param name="organizationIds">
-        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. The report leaves out child organizations with HIPAA readiness enabled, and naming one returns a 400 error. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
         /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.
@@ -331,28 +343,28 @@ namespace Anthropic
         /// Filter to Claude Tag (Claude in Slack) usage attributed to specific Slack users, by Slack user ID (for example `U0123ABCDEF`), not claude.ai user ID. Usage that is not Claude Tag, and Claude Tag usage not attributed to a single user, never matches. Use `group_by[]=claude_tag_user_id` to break out per-user values.
         /// </param>
         /// <param name="workspaceIds">
-        /// Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
+        /// Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values.
         /// </param>
         /// <param name="serviceTiers">
-        /// Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
+        /// Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values.
         /// </param>
         /// <param name="rbacGroupIds">
         /// Filter to usage attributed to specific RBAC groups. Accepts tagged RBAC group IDs (`rbac_group_...`) or bare group UUIDs. A row matches when the user belonged to any of the listed groups on the (UTC) day the usage occurred; usage with no group attribution never matches.
         /// </param>
         /// <param name="userProfileIds">
-        /// Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values. Claude Platform organizations only.
+        /// Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values.
         /// </param>
         /// <param name="agentIds">
-        /// Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values. Claude Platform organizations only.
+        /// Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values.
         /// </param>
         /// <param name="environmentIds">
-        /// Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values. Claude Platform organizations only.
+        /// Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values.
         /// </param>
         /// <param name="deploymentIds">
-        /// Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values. Claude Platform organizations only.
+        /// Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values.
         /// </param>
         /// <param name="sessionIds">
-        /// Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values. Claude Platform organizations only.
+        /// Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values.
         /// </param>
         /// <param name="actorIds">
         /// Filter to usage attributed to specific identities, by tagged ID: a `user_...`, `svac_...` (service account), or `apikey_...` ID. An `apikey_` entry matches only usage attributed to the key itself, not usage on that key attributed to a user or service account (use `api_key_ids[]` for every request a key authenticated). Federated identities have no tagged ID; select them with `actor_types[]`. Use `group_by[]=actor` to break out per-identity values.
@@ -361,10 +373,10 @@ namespace Anthropic
         /// Filter to usage attributed to specific kinds of identity. Use `group_by[]=actor_type` to break out per-kind values.
         /// </param>
         /// <param name="apiKeyIds">
-        /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
+        /// Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`.
         /// </param>
         /// <param name="organizationIds">
-        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+        /// Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. The report leaves out child organizations with HIPAA readiness enabled, and naming one returns a 400 error. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
         /// </param>
         /// <param name="timeBucketWidth">
         /// Time-bucket granularity. When set, rows are returned per time bucket (one per bucket and dimension combination with usage) and each row's `starting_at` and `ending_at` are that bucket's bounds; the time bucket counts toward `limit`. `ending_at` is required when `time_bucket_width` is set, and with `time_bucket_width="1m"` the range may span at most 24 hours. When omitted, each row aggregates the requested range with `starting_at` and `ending_at` each rounded down to the hour.

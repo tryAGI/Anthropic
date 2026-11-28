@@ -26,6 +26,9 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional. Send `efs-2026-10-01` in this header to use this endpoint's beta features: additional parameters, accepted values and response fields.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -34,6 +37,7 @@ namespace Anthropic
 
             global::Anthropic.BetaComplianceSettingsUpdateParams request,
             string? anthropicVersion = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -58,6 +62,9 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional. Send `efs-2026-10-01` in this header to use this endpoint's beta features: additional parameters, accepted values and response fields.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -66,6 +73,7 @@ namespace Anthropic
 
             global::Anthropic.BetaComplianceSettingsUpdateParams request,
             string? anthropicVersion = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -89,6 +97,9 @@ namespace Anthropic
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional. Send `efs-2026-10-01` in this header to use this endpoint's beta features: additional parameters, accepted values and response fields.
         /// </param>
         /// <param name="state">
         /// Desired state. Accepts the string shorthand "enabled" or "disabled" in place of the object form; the response always returns the canonical object form.
@@ -99,6 +110,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaComplianceSettings> BetaUpdateComplianceSettingsV1OrganizationsComplianceSettingsPostAsync(
             global::Anthropic.BetaComplianceSettingsStateParams state,
             string? anthropicVersion = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

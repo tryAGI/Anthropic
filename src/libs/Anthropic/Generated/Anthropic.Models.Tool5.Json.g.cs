@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class Tool5
+    public readonly partial struct Tool5
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -52,7 +52,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool5))) as global::Anthropic.Tool5;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool5))) as global::Anthropic.Tool5?;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Anthropic
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool5))).ConfigureAwait(false)) as global::Anthropic.Tool5;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.Tool5))).ConfigureAwait(false)) as global::Anthropic.Tool5?;
         }
 
         /// <summary>

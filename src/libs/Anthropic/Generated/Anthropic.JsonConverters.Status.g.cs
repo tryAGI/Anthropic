@@ -18,30 +18,48 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFallbackCreditUsageStatusDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFallbackCreditUsageStatusDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaFallbackCreditUsageStatusDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaExternalStorageStatusDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaExternalStorageStatusDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaExternalStorageStatusDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.BetaFallbackCreditRedeemed? redeemed = default;
-            if (discriminator?.Type == global::Anthropic.BetaFallbackCreditUsageStatusDiscriminatorType.Redeemed)
+            global::Anthropic.BetaPendingConfigurationExternalStorageStatus? pendingConfiguration = default;
+            if (discriminator?.Type == global::Anthropic.BetaExternalStorageStatusDiscriminatorType.PendingConfiguration)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFallbackCreditRedeemed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFallbackCreditRedeemed> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaFallbackCreditRedeemed)}");
-                redeemed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPendingConfigurationExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPendingConfigurationExternalStorageStatus> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPendingConfigurationExternalStorageStatus)}");
+                pendingConfiguration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaFallbackCreditNotApplied? notApplied = default;
-            if (discriminator?.Type == global::Anthropic.BetaFallbackCreditUsageStatusDiscriminatorType.NotApplied)
+            global::Anthropic.BetaAvailableExternalStorageStatus? available = default;
+            if (discriminator?.Type == global::Anthropic.BetaExternalStorageStatusDiscriminatorType.Available)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFallbackCreditNotApplied), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFallbackCreditNotApplied> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaFallbackCreditNotApplied)}");
-                notApplied = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAvailableExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAvailableExternalStorageStatus> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAvailableExternalStorageStatus)}");
+                available = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaActiveExternalStorageStatus? active = default;
+            if (discriminator?.Type == global::Anthropic.BetaExternalStorageStatusDiscriminatorType.Active)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaActiveExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaActiveExternalStorageStatus> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaActiveExternalStorageStatus)}");
+                active = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaDrainingExternalStorageStatus? draining = default;
+            if (discriminator?.Type == global::Anthropic.BetaExternalStorageStatusDiscriminatorType.Draining)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaDrainingExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaDrainingExternalStorageStatus> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaDrainingExternalStorageStatus)}");
+                draining = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.Status(
                 discriminator?.Type,
-                redeemed,
+                pendingConfiguration,
 
-                notApplied
+                available,
+
+                active,
+
+                draining
                 );
 
             return __value;
@@ -57,17 +75,29 @@ namespace Anthropic.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
             typeInfoResolver = global::Anthropic.AutoSDKJsonMetadataCachedResolver.Instance;
 
-            if (value.IsRedeemed)
+            if (value.IsPendingConfiguration)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFallbackCreditRedeemed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFallbackCreditRedeemed?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaFallbackCreditRedeemed).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRedeemed(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPendingConfigurationExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPendingConfigurationExternalStorageStatus?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaPendingConfigurationExternalStorageStatus).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPendingConfiguration(), typeInfo);
             }
-            else if (value.IsNotApplied)
+            else if (value.IsAvailable)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFallbackCreditNotApplied), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFallbackCreditNotApplied?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaFallbackCreditNotApplied).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNotApplied(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAvailableExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAvailableExternalStorageStatus?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAvailableExternalStorageStatus).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAvailable(), typeInfo);
+            }
+            else if (value.IsActive)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaActiveExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaActiveExternalStorageStatus?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaActiveExternalStorageStatus).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickActive(), typeInfo);
+            }
+            else if (value.IsDraining)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaDrainingExternalStorageStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaDrainingExternalStorageStatus?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaDrainingExternalStorageStatus).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDraining(), typeInfo);
             }
         }
     }

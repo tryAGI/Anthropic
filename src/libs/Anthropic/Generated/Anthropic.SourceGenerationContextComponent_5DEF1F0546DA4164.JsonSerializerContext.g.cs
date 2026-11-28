@@ -28,10 +28,12 @@ namespace Anthropic
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type, global::System.Text.Json.JsonSerializerOptions options)
             {
+                #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::Anthropic.BetaManagedAgentsModelVariant15))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0083.Create_BetaManagedAgentsModelVariant15(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0101.Create_BetaManagedAgentsModelVariant15(options);
                 }
+                #pragma warning restore CS0618
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);
                 return additional;

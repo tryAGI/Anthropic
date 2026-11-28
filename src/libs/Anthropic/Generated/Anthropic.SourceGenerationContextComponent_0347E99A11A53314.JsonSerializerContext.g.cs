@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaApproveSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestIdApprovePostResponseError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0017.Create_BetaApproveSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestI_d025e71f42537d2c(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0018.Create_BetaApproveSpendLimitIncreaseRequestV1OrganizationsSpendLimitIncreaseRequestsSpendLimitIncreaseRequestI_d025e71f42537d2c(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

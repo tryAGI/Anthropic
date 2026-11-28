@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_44879038580645D7.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_4B44EDC9381A0A4B.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_AC6F4A431764A437.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_091DE1CCC2886E58.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_263A5AA350400852.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_D3148FF2E45D0CCF.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Source10))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0282.Create_Source102(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0315.Create_Source102(options);
                 }
                 if (type == typeof(global::Anthropic.Source10?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0255.Create_NullableSource102(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0288.Create_NullableSource102(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

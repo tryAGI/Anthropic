@@ -11,6 +11,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ExternalKeyFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalKeyRecovered,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageRecovered,
+        /// <summary>
+        ///
+        /// </summary>
         UserProfileEnforcementActionOpened,
         /// <summary>
         ///
@@ -34,6 +50,10 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyFailed => "external_key.failed",
+                BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyRecovered => "external_key.recovered",
+                BetaOrganizationWebhookEndpointEnabledEvent.ExternalStorageFailed => "external_storage.failed",
+                BetaOrganizationWebhookEndpointEnabledEvent.ExternalStorageRecovered => "external_storage.recovered",
                 BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
                 BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
                 BetaOrganizationWebhookEndpointEnabledEvent.UserProfileProgramStatusUpdated => "user_profile.program_status_updated",
@@ -47,6 +67,10 @@ namespace Anthropic
         {
             return value switch
             {
+                "external_key.failed" => BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyFailed,
+                "external_key.recovered" => BetaOrganizationWebhookEndpointEnabledEvent.ExternalKeyRecovered,
+                "external_storage.failed" => BetaOrganizationWebhookEndpointEnabledEvent.ExternalStorageFailed,
+                "external_storage.recovered" => BetaOrganizationWebhookEndpointEnabledEvent.ExternalStorageRecovered,
                 "user_profile.enforcement_action_opened" => BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionOpened,
                 "user_profile.enforcement_action_resolved" => BetaOrganizationWebhookEndpointEnabledEvent.UserProfileEnforcementActionResolved,
                 "user_profile.program_status_updated" => BetaOrganizationWebhookEndpointEnabledEvent.UserProfileProgramStatusUpdated,

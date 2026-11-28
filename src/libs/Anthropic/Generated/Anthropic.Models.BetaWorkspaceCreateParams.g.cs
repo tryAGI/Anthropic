@@ -26,15 +26,22 @@ namespace Anthropic
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
         /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
-        /// organization's own key must be a single-Region key in the same AWS account and<br/>
-        /// Region as the Workspace. On that platform the key is validated against this<br/>
-        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
-        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
-        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
-        /// key on your cloud KMS; the `external_key_id` stays the same.
+        /// organization's own key must be a single-Region key in the same Region as the<br/>
+        /// Workspace. If that key is outside the Workspace's AWS account, it can be attached<br/>
+        /// only by updating an active Workspace. On that platform the key is validated<br/>
+        /// against this Workspace when it is attached, so a key-policy problem is reported<br/>
+        /// as an error on this request. This field is write-once: once a key is attached to<br/>
+        /// a Workspace it cannot be detached or replaced. To rotate key material, rotate<br/>
+        /// the underlying key on your cloud KMS; the `external_key_id` stays the same.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_key_id")]
         public string? ExternalKeyId { get; set; }
+
+        /// <summary>
+        /// Where the Workspace's retained inference data and transcript copies go, and whether Anthropic's human review applies. Requires the `efs-2026-10-01` `anthropic-beta` value. When omitted, `safeguards_storage` and `transcripts_storage` are `internal` and `human_review` is `enabled`. Cannot be null. An Admin API key can't set this field, because it doesn't belong to a user or a service account. Use an API key that belongs to one, or an OAuth token.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inference_data_privacy")]
+        public global::Anthropic.BetaInferenceDataPrivacyCreateParams? InferenceDataPrivacy { get; set; }
 
         /// <summary>
         /// Name of the Workspace.
@@ -79,12 +86,16 @@ namespace Anthropic
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
         /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
-        /// organization's own key must be a single-Region key in the same AWS account and<br/>
-        /// Region as the Workspace. On that platform the key is validated against this<br/>
-        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
-        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
-        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
-        /// key on your cloud KMS; the `external_key_id` stays the same.
+        /// organization's own key must be a single-Region key in the same Region as the<br/>
+        /// Workspace. If that key is outside the Workspace's AWS account, it can be attached<br/>
+        /// only by updating an active Workspace. On that platform the key is validated<br/>
+        /// against this Workspace when it is attached, so a key-policy problem is reported<br/>
+        /// as an error on this request. This field is write-once: once a key is attached to<br/>
+        /// a Workspace it cannot be detached or replaced. To rotate key material, rotate<br/>
+        /// the underlying key on your cloud KMS; the `external_key_id` stays the same.
+        /// </param>
+        /// <param name="inferenceDataPrivacy">
+        /// Where the Workspace's retained inference data and transcript copies go, and whether Anthropic's human review applies. Requires the `efs-2026-10-01` `anthropic-beta` value. When omitted, `safeguards_storage` and `transcripts_storage` are `internal` and `human_review` is `enabled`. Cannot be null. An Admin API key can't set this field, because it doesn't belong to a user or a service account. Use an API key that belongs to one, or an OAuth token.
         /// </param>
         /// <param name="tags">
         /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
@@ -100,12 +111,14 @@ namespace Anthropic
             global::Anthropic.BetaDataResidencyCreateParams? dataResidency,
             string? displayColor,
             string? externalKeyId,
+            global::Anthropic.BetaInferenceDataPrivacyCreateParams? inferenceDataPrivacy,
             global::System.Collections.Generic.Dictionary<string, string>? tags,
             string? userProfileId)
         {
             this.DataResidency = dataResidency;
             this.DisplayColor = displayColor;
             this.ExternalKeyId = externalKeyId;
+            this.InferenceDataPrivacy = inferenceDataPrivacy;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Tags = tags;
             this.UserProfileId = userProfileId;

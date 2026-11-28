@@ -18,29 +18,29 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaExternalKeyProviderConfigDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaExternalKeyProviderConfigDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaExternalKeyProviderConfigDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.BetaAwsExternalKeyConfig? aws = default;
-            if (discriminator?.Type == global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminatorType.Aws)
+            if (discriminator?.Type == global::Anthropic.BetaExternalKeyProviderConfigDiscriminatorType.Aws)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAwsExternalKeyConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAwsExternalKeyConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAwsExternalKeyConfig)}");
                 aws = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaGcpExternalKeyConfig? gcp = default;
-            if (discriminator?.Type == global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminatorType.Gcp)
+            if (discriminator?.Type == global::Anthropic.BetaExternalKeyProviderConfigDiscriminatorType.Gcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaGcpExternalKeyConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaGcpExternalKeyConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaGcpExternalKeyConfig)}");
                 gcp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaAzureExternalKeyConfigParams? azure = default;
-            if (discriminator?.Type == global::Anthropic.BetaExternalKeyCreateParamsProviderConfigDiscriminatorType.Azure)
+            global::Anthropic.BetaAzureExternalKeyConfig? azure = default;
+            if (discriminator?.Type == global::Anthropic.BetaExternalKeyProviderConfigDiscriminatorType.Azure)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAzureExternalKeyConfigParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAzureExternalKeyConfigParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAzureExternalKeyConfigParams)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAzureExternalKeyConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAzureExternalKeyConfig> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAzureExternalKeyConfig)}");
                 azure = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -80,8 +80,8 @@ namespace Anthropic.JsonConverters
             }
             else if (value.IsAzure)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAzureExternalKeyConfigParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAzureExternalKeyConfigParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAzureExternalKeyConfigParams).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAzureExternalKeyConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAzureExternalKeyConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAzureExternalKeyConfig).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAzure(), typeInfo);
             }
         }

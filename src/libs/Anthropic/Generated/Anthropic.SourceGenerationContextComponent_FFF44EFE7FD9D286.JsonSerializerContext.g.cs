@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_1323A0A62F1355DA.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_182BC907F0F60CF5.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_2296B2FE8812971A.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_5FDB1F854563E0C7.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_A6829D9EA33BA666.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_1057D950D9B111D1.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_8E51092ED4B0F265.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_925248C1722DBB39.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_CD40105CD7043890.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_F6D7AB6563A72540.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ClientToolResults2))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0180.Create_ClientToolResults22(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0206.Create_ClientToolResults22(options);
                 }
                 if (type == typeof(global::Anthropic.ClientToolResults2?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0246.Create_NullableClientToolResults22(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0278.Create_NullableClientToolResults22(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

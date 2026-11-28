@@ -5,14 +5,14 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// What the limit applies to. A tagged union on `type`; each variant carries the identifier for its scope.
     /// </summary>
     public readonly partial struct Scope4 : global::System.IEquatable<Scope4>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaSpendSummaryScopeDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaSpendLimitScopeDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Scope selecting a single member of the organization.
@@ -441,7 +441,7 @@ namespace Anthropic
         ///
         /// </summary>
         public Scope4(
-            global::Anthropic.BetaSpendSummaryScopeDiscriminatorType? type,
+            global::Anthropic.BetaSpendLimitScopeDiscriminatorType? type,
             global::Anthropic.BetaUserScope? user,
             global::Anthropic.BetaSeatTierScope? seatTier,
             global::Anthropic.BetaRbacGroupScope? rbacGroup,

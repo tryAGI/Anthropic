@@ -12,8 +12,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsModelConfigParams
     {
         /// <summary>
-        /// The model that will power your agent.<br/>
-        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelJsonConverter))]
@@ -47,10 +46,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsModelConfigParams" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The model that will power your agent.<br/>
-        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-        /// </param>
+        /// <param name="id"></param>
         /// <param name="speed">
         /// Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Defaults to `standard`. Not all models support `fast`; invalid combinations are rejected at create time.
         /// </param>

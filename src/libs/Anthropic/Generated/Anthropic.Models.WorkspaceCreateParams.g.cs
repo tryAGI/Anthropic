@@ -26,12 +26,13 @@ namespace Anthropic
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
         /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
-        /// organization's own key must be a single-Region key in the same AWS account and<br/>
-        /// Region as the Workspace. On that platform the key is validated against this<br/>
-        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
-        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
-        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
-        /// key on your cloud KMS; the `external_key_id` stays the same.
+        /// organization's own key must be a single-Region key in the same Region as the<br/>
+        /// Workspace. If that key is outside the Workspace's AWS account, it can be attached<br/>
+        /// only by updating an active Workspace. On that platform the key is validated<br/>
+        /// against this Workspace when it is attached, so a key-policy problem is reported<br/>
+        /// as an error on this request. This field is write-once: once a key is attached to<br/>
+        /// a Workspace it cannot be detached or replaced. To rotate key material, rotate<br/>
+        /// the underlying key on your cloud KMS; the `external_key_id` stays the same.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_key_id")]
         public string? ExternalKeyId { get; set; }
@@ -79,12 +80,13 @@ namespace Anthropic
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
         /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
-        /// organization's own key must be a single-Region key in the same AWS account and<br/>
-        /// Region as the Workspace. On that platform the key is validated against this<br/>
-        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
-        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
-        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
-        /// key on your cloud KMS; the `external_key_id` stays the same.
+        /// organization's own key must be a single-Region key in the same Region as the<br/>
+        /// Workspace. If that key is outside the Workspace's AWS account, it can be attached<br/>
+        /// only by updating an active Workspace. On that platform the key is validated<br/>
+        /// against this Workspace when it is attached, so a key-policy problem is reported<br/>
+        /// as an error on this request. This field is write-once: once a key is attached to<br/>
+        /// a Workspace it cannot be detached or replaced. To rotate key material, rotate<br/>
+        /// the underlying key on your cloud KMS; the `external_key_id` stays the same.
         /// </param>
         /// <param name="tags">
         /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.

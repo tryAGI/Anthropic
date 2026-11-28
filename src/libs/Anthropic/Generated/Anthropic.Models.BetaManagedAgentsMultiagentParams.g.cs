@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsMultiagentParamsDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// A coordinator topology: the session's primary thread orchestrates work by spawning session threads, each running an agent drawn from the `agents` roster.<br/>
+        /// Recommendation: use `multiagent_20261001` instead of `coordinator`. A coordinator topology: the session's primary thread orchestrates work by spawning session threads, each running an agent drawn from the `agents` roster.<br/>
         /// Example: {"type":"coordinator","agents":["agent_011CZkYqphY8vELVzwCUpqiQ",{"type":"self"}]}
         /// </summary>
 #if NET6_0_OR_GREATER
