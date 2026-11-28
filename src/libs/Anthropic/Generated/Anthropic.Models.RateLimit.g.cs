@@ -12,9 +12,9 @@ namespace Anthropic
         /// The rate-limit group this entry's limits apply to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Group3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Group4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Group3 Group { get; set; }
+        public required global::Anthropic.Group4 Group { get; set; }
 
         /// <summary>
         /// Identifier of this rate-limit entry. It is stable within the organization and differs between organizations; the group's own identifier is `group.id`. Pass it as `rate_limit_id` to set a workspace's overrides for this group.
@@ -73,7 +73,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RateLimit(
-            global::Anthropic.Group3 group,
+            global::Anthropic.Group4 group,
             string id,
             global::System.Collections.Generic.IList<global::Anthropic.RateLimitValue> limits,
             global::System.Collections.Generic.IList<string>? models,

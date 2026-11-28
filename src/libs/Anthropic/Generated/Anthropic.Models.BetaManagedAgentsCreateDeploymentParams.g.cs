@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Request parameters for creating a `deployment`.
+    /// Request parameters for creating a `deployment`.<br/>
+    /// Example: {"name":"Daily order report","agent":{"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP"},"environment_id":"env_011CZkZ9X2dpNyB7HsEFoRfW","initial_events":[{"type":"user.message","content":[{"type":"text","text":"Compile yesterday\u0027s orders into report.md."}]}]}
     /// </summary>
     public sealed partial class BetaManagedAgentsCreateDeploymentParams
     {

@@ -12,19 +12,19 @@ namespace Anthropic
         /// Total input tokens consumed across all turns.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
-        public int? InputTokens { get; set; }
+        public long? InputTokens { get; set; }
 
         /// <summary>
         /// Total output tokens generated across all turns.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
-        public int? OutputTokens { get; set; }
+        public long? OutputTokens { get; set; }
 
         /// <summary>
         /// Total tokens read from prompt cache.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        public int? CacheReadInputTokens { get; set; }
+        public long? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// Tokens used to create prompt cache entries, broken down by cache TTL.
@@ -84,9 +84,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSessionThreadUsage(
-            int? inputTokens,
-            int? outputTokens,
-            int? cacheReadInputTokens,
+            long? inputTokens,
+            long? outputTokens,
+            long? cacheReadInputTokens,
             global::Anthropic.BetaManagedAgentsCacheCreationUsage? cacheCreation,
             global::Anthropic.BetaMonetaryAmount? listCost,
             double? activeSeconds,

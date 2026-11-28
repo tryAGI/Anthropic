@@ -18,26 +18,26 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFederationIssuerJwksDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFederationIssuerJwksDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaFederationIssuerJwksDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.BetaJwksDiscovery? discovery = default;
-            if (discriminator?.Type == global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminatorType.Discovery)
+            if (discriminator?.Type == global::Anthropic.BetaFederationIssuerJwksDiscriminatorType.Discovery)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaJwksDiscovery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaJwksDiscovery> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaJwksDiscovery)}");
                 discovery = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaJwksExplicitUrl? explicitUrl = default;
-            if (discriminator?.Type == global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminatorType.ExplicitUrl)
+            if (discriminator?.Type == global::Anthropic.BetaFederationIssuerJwksDiscriminatorType.ExplicitUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaJwksExplicitUrl), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaJwksExplicitUrl> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaJwksExplicitUrl)}");
                 explicitUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaJwksInline? inline = default;
-            if (discriminator?.Type == global::Anthropic.BetaFederationIssuerCreateParamsJwksDiscriminatorType.Inline)
+            if (discriminator?.Type == global::Anthropic.BetaFederationIssuerJwksDiscriminatorType.Inline)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaJwksInline), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaJwksInline> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaJwksInline)}");

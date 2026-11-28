@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaComplianceSettings
     {
         /// <summary>
+        /// Read-only. Whether Access Transparency is on for the organization. Returned only when the request sends the `anthropic-beta: efs-2026-10-01` header and Access Transparency is available to the organization; otherwise omitted. If the status can't be read, getting Compliance Settings returns an error; an update still saves, but then reports `disabled` whatever the real status, so get the settings again to check it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_transparency")]
+        public global::Anthropic.BetaAccessTransparency? AccessTransparency { get; set; }
+
+        /// <summary>
         /// Whether the Compliance API is enabled for this organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
@@ -35,6 +41,9 @@ namespace Anthropic
         /// <param name="state">
         /// Whether the Compliance API is enabled for this organization.
         /// </param>
+        /// <param name="accessTransparency">
+        /// Read-only. Whether Access Transparency is on for the organization. Returned only when the request sends the `anthropic-beta: efs-2026-10-01` header and Access Transparency is available to the organization; otherwise omitted. If the status can't be read, getting Compliance Settings returns an error; an update still saves, but then reports `disabled` whatever the real status, so get the settings again to check it.
+        /// </param>
         /// <param name="type">
         /// Default Value: compliance_settings
         /// </param>
@@ -43,8 +52,10 @@ namespace Anthropic
 #endif
         public BetaComplianceSettings(
             global::Anthropic.BetaComplianceSettingsState state,
+            global::Anthropic.BetaAccessTransparency? accessTransparency,
             string type = "compliance_settings")
         {
+            this.AccessTransparency = accessTransparency;
             this.State = state;
             this.Type = type;
         }

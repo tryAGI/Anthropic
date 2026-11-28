@@ -36,9 +36,9 @@ namespace Anthropic
         /// Whose setting this is: `organization` (the Plugin's own organization-wide setting) or `rbac_group` (one RBAC Group's own setting); `organization_member` does not occur here.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.TargetJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Target2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Target Target { get; set; }
+        public required global::Anthropic.Target2 Target { get; set; }
 
         /// <summary>
         /// Always `plugin_installation_setting`.<br/>
@@ -90,7 +90,7 @@ namespace Anthropic
             global::System.DateTime createdAt,
             global::Anthropic.BetaPluginInstallationSettingInstallationPreference installationPreference,
             string pluginId,
-            global::Anthropic.Target target,
+            global::Anthropic.Target2 target,
             global::System.DateTime updatedAt,
             string type = "plugin_installation_setting")
         {

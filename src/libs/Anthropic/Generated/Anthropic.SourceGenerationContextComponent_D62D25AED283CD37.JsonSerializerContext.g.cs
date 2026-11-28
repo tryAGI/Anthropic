@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_2958D416D08AA5A4.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_3C7D8BEF5867F4EF.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_B760F44FA5965C24.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_DBF27C16BAB1629D.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_E566952F99B6B3ED.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_658A5494B85B325D.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_8F4EBFC5DDEBCBC5.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_B58CDF66E79734A5.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_D324A664D664CA0F.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_D674FAA4D9570709.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -20,6 +20,7 @@ namespace Anthropic
         #pragma warning disable CS0612, CS0618 // Generated converters may target deprecated API models.
         private static void ContributeConverters(global::Anthropic.SourceGenerationContextMetadataScope.ConverterCollector collector)
         {
+            collector.AddEager<global::Anthropic.JsonConverters.Tool5JsonConverter>(static () => new global::Anthropic.JsonConverters.Tool5JsonConverter());
             collector.AddEager<global::Anthropic.JsonConverters.UnixTimestampJsonConverter>(static () => new global::Anthropic.JsonConverters.UnixTimestampJsonConverter());
         }
         #pragma warning restore CS0612, CS0618
@@ -31,7 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Tool5))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0334.Create_Tool5(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0372.Create_Tool52(options);
+                }
+                if (type == typeof(global::Anthropic.Tool5?))
+                {
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0291.Create_NullableTool52(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

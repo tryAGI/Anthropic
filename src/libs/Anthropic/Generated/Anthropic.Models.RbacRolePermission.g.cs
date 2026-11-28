@@ -36,9 +36,9 @@ namespace Anthropic
         /// identifier fields are present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Resource2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Resource2 Resource { get; set; }
+        public required global::Anthropic.Resource Resource { get; set; }
 
         /// <summary>
         /// Object type.<br/>
@@ -91,7 +91,7 @@ namespace Anthropic
 #endif
         public RbacRolePermission(
             string action,
-            global::Anthropic.Resource2 resource,
+            global::Anthropic.Resource resource,
             string type = "rbac_role_permission")
         {
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));

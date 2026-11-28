@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType? Type { get; }
+        public global::Anthropic.RateLimitGroupDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -377,7 +377,7 @@ namespace Anthropic
         ///
         /// </summary>
         public Group4(
-            global::Anthropic.WorkspaceRateLimitGroupDiscriminatorType? type,
+            global::Anthropic.RateLimitGroupDiscriminatorType? type,
             global::Anthropic.RateLimitModelGroup? modelGroup,
             global::Anthropic.RateLimitBatchGroup? batch,
             global::Anthropic.RateLimitTokenCountGroup? tokenCount,

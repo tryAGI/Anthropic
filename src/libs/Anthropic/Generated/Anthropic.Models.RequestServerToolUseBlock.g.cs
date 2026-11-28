@@ -12,14 +12,14 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant170? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant142? CacheControl { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller9JsonConverter))]
-        public global::Anthropic.Caller9? Caller { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller5JsonConverter))]
+        public global::Anthropic.Caller5? Caller { get; set; }
 
         /// <summary>
         ///
@@ -74,8 +74,8 @@ namespace Anthropic
             string id,
             object input,
             global::Anthropic.RequestServerToolUseBlockName name,
-            global::Anthropic.CacheControlVariant170? cacheControl,
-            global::Anthropic.Caller9? caller,
+            global::Anthropic.CacheControlVariant142? cacheControl,
+            global::Anthropic.Caller5? caller,
             string type = "server_tool_use")
         {
             this.CacheControl = cacheControl;

@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.AnyOf<global::Anthropic.BetaResponseToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock> Content { get; set; }
+        public required global::Anthropic.AnyOf<global::Anthropic.BetaToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock> Content { get; set; }
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseToolSearchToolResultBlock(
-            global::Anthropic.AnyOf<global::Anthropic.BetaResponseToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock> content,
+            global::Anthropic.AnyOf<global::Anthropic.BetaToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock> content,
             string toolUseId,
             string type = "tool_search_tool_result")
         {

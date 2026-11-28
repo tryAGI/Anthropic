@@ -8,7 +8,9 @@ namespace Anthropic
         /// Delete Plugin<br/>
         /// Permanently delete a Plugin and every version it holds, exactly as when an<br/>
         /// administrator deletes it in claude.ai. The Plugin may belong to the organization or<br/>
-        /// to a member, including a member who has since left the organization.<br/>
+        /// to a member, including a member who has since left the organization. Do not delete a<br/>
+        /// Plugin only because your pipeline did not create it: a member or an administrator<br/>
+        /// might have added it in claude.ai.<br/>
         /// An organization-owned Plugin's installation settings go with it; a member-owned<br/>
         /// Plugin's shares are withdrawn and its owner no longer has it.<br/>
         /// To take an organization-owned Plugin out of use reversibly, set its<br/>
@@ -37,7 +39,9 @@ namespace Anthropic
         /// Delete Plugin<br/>
         /// Permanently delete a Plugin and every version it holds, exactly as when an<br/>
         /// administrator deletes it in claude.ai. The Plugin may belong to the organization or<br/>
-        /// to a member, including a member who has since left the organization.<br/>
+        /// to a member, including a member who has since left the organization. Do not delete a<br/>
+        /// Plugin only because your pipeline did not create it: a member or an administrator<br/>
+        /// might have added it in claude.ai.<br/>
         /// An organization-owned Plugin's installation settings go with it; a member-owned<br/>
         /// Plugin's shares are withdrawn and its owner no longer has it.<br/>
         /// To take an organization-owned Plugin out of use reversibly, set its<br/>

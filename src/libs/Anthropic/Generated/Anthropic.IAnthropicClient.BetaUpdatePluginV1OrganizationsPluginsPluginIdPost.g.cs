@@ -8,8 +8,10 @@ namespace Anthropic
         /// Update Plugin<br/>
         /// Change which stored version of an organization-owned Plugin is served to members,<br/>
         /// for example to roll back to an earlier one. This pins the served version: later<br/>
-        /// uploads are stored but no longer change what is served, and pinning cannot currently<br/>
-        /// be undone, here or in claude.ai.<br/>
+        /// uploads through this API are stored but no longer change what is served, and pinning<br/>
+        /// cannot currently be undone, here or in claude.ai.<br/>
+        /// A version from claude.ai might still change what is served: see [Versions and the served version](/docs/en/manage-claude/plugins-api#versions-and-the-served-version)<br/>
+        /// in the Plugins API guide.<br/>
         /// Pass the version as `served_version_id`: an earlier one to roll back, a later one to<br/>
         /// start serving a version that was stored without being served, or the one already<br/>
         /// served to pin it without changing what is served. No new version is created.<br/>
@@ -21,10 +23,9 @@ namespace Anthropic
         /// cannot be read at that moment, the request fails with a retryable 503 instead.<br/>
         /// When the Plugin is in the organization's<br/>
         /// library marketplace, a version other than the one served is also refused with a 409<br/>
-        /// when one of its skills has a name that an organization skill (one an administrator<br/>
-        /// uploaded for the whole organization in claude.ai) has since taken: `error_code`<br/>
-        /// `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin<br/>
-        /// cannot be updated here (403).<br/>
+        /// when an organization skill that this API does not list has since taken the name of<br/>
+        /// one of its skills: `error_code` `skill_name_taken`, with that name in<br/>
+        /// `details.skill_name`. A member-owned Plugin cannot be updated here (403).<br/>
         /// This endpoint does not write installation settings; they are written at<br/>
         /// `/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.<br/>
         /// **Accepted credentials:** an Admin API key with the `write:plugins` scope.<br/>
@@ -51,8 +52,10 @@ namespace Anthropic
         /// Update Plugin<br/>
         /// Change which stored version of an organization-owned Plugin is served to members,<br/>
         /// for example to roll back to an earlier one. This pins the served version: later<br/>
-        /// uploads are stored but no longer change what is served, and pinning cannot currently<br/>
-        /// be undone, here or in claude.ai.<br/>
+        /// uploads through this API are stored but no longer change what is served, and pinning<br/>
+        /// cannot currently be undone, here or in claude.ai.<br/>
+        /// A version from claude.ai might still change what is served: see [Versions and the served version](/docs/en/manage-claude/plugins-api#versions-and-the-served-version)<br/>
+        /// in the Plugins API guide.<br/>
         /// Pass the version as `served_version_id`: an earlier one to roll back, a later one to<br/>
         /// start serving a version that was stored without being served, or the one already<br/>
         /// served to pin it without changing what is served. No new version is created.<br/>
@@ -64,10 +67,9 @@ namespace Anthropic
         /// cannot be read at that moment, the request fails with a retryable 503 instead.<br/>
         /// When the Plugin is in the organization's<br/>
         /// library marketplace, a version other than the one served is also refused with a 409<br/>
-        /// when one of its skills has a name that an organization skill (one an administrator<br/>
-        /// uploaded for the whole organization in claude.ai) has since taken: `error_code`<br/>
-        /// `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin<br/>
-        /// cannot be updated here (403).<br/>
+        /// when an organization skill that this API does not list has since taken the name of<br/>
+        /// one of its skills: `error_code` `skill_name_taken`, with that name in<br/>
+        /// `details.skill_name`. A member-owned Plugin cannot be updated here (403).<br/>
         /// This endpoint does not write installation settings; they are written at<br/>
         /// `/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.<br/>
         /// **Accepted credentials:** an Admin API key with the `write:plugins` scope.<br/>
@@ -94,8 +96,10 @@ namespace Anthropic
         /// Update Plugin<br/>
         /// Change which stored version of an organization-owned Plugin is served to members,<br/>
         /// for example to roll back to an earlier one. This pins the served version: later<br/>
-        /// uploads are stored but no longer change what is served, and pinning cannot currently<br/>
-        /// be undone, here or in claude.ai.<br/>
+        /// uploads through this API are stored but no longer change what is served, and pinning<br/>
+        /// cannot currently be undone, here or in claude.ai.<br/>
+        /// A version from claude.ai might still change what is served: see [Versions and the served version](/docs/en/manage-claude/plugins-api#versions-and-the-served-version)<br/>
+        /// in the Plugins API guide.<br/>
         /// Pass the version as `served_version_id`: an earlier one to roll back, a later one to<br/>
         /// start serving a version that was stored without being served, or the one already<br/>
         /// served to pin it without changing what is served. No new version is created.<br/>
@@ -107,10 +111,9 @@ namespace Anthropic
         /// cannot be read at that moment, the request fails with a retryable 503 instead.<br/>
         /// When the Plugin is in the organization's<br/>
         /// library marketplace, a version other than the one served is also refused with a 409<br/>
-        /// when one of its skills has a name that an organization skill (one an administrator<br/>
-        /// uploaded for the whole organization in claude.ai) has since taken: `error_code`<br/>
-        /// `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin<br/>
-        /// cannot be updated here (403).<br/>
+        /// when an organization skill that this API does not list has since taken the name of<br/>
+        /// one of its skills: `error_code` `skill_name_taken`, with that name in<br/>
+        /// `details.skill_name`. A member-owned Plugin cannot be updated here (403).<br/>
         /// This endpoint does not write installation settings; they are written at<br/>
         /// `/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.<br/>
         /// **Accepted credentials:** an Admin API key with the `write:plugins` scope.<br/>

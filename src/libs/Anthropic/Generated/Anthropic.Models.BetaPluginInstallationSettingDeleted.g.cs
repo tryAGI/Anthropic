@@ -20,9 +20,9 @@ namespace Anthropic
         /// Whose setting was removed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Target2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Target3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Target2 Target { get; set; }
+        public required global::Anthropic.Target3 Target { get; set; }
 
         /// <summary>
         /// Always `plugin_installation_setting_deleted`.<br/>
@@ -56,7 +56,7 @@ namespace Anthropic
 #endif
         public BetaPluginInstallationSettingDeleted(
             string pluginId,
-            global::Anthropic.Target2 target,
+            global::Anthropic.Target3 target,
             string type = "plugin_installation_setting_deleted")
         {
             this.PluginId = pluginId ?? throw new global::System.ArgumentNullException(nameof(pluginId));

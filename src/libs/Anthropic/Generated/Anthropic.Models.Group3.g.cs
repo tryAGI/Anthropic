@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RateLimitGroupDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.RateLimitModelGroup? ModelGroup { get; init; }
+        public global::Anthropic.BetaRateLimitModelGroup? ModelGroup { get; init; }
 #else
-        public global::Anthropic.RateLimitModelGroup? ModelGroup { get; }
+        public global::Anthropic.BetaRateLimitModelGroup? ModelGroup { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.RateLimitModelGroup? value)
+            out global::Anthropic.BetaRateLimitModelGroup? value)
         {
             value = ModelGroup;
             return IsModelGroup;
@@ -47,7 +47,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RateLimitModelGroup PickModelGroup() => ModelGroup is { } value
+        public global::Anthropic.BetaRateLimitModelGroup PickModelGroup() => ModelGroup is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelGroup' but the value was {ToString()}.");
 
@@ -55,9 +55,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.RateLimitBatchGroup? Batch { get; init; }
+        public global::Anthropic.BetaRateLimitBatchGroup? Batch { get; init; }
 #else
-        public global::Anthropic.RateLimitBatchGroup? Batch { get; }
+        public global::Anthropic.BetaRateLimitBatchGroup? Batch { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.RateLimitBatchGroup? value)
+            out global::Anthropic.BetaRateLimitBatchGroup? value)
         {
             value = Batch;
             return IsBatch;
@@ -84,7 +84,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RateLimitBatchGroup PickBatch() => Batch is { } value
+        public global::Anthropic.BetaRateLimitBatchGroup PickBatch() => Batch is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Batch' but the value was {ToString()}.");
 
@@ -92,9 +92,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.RateLimitTokenCountGroup? TokenCount { get; init; }
+        public global::Anthropic.BetaRateLimitTokenCountGroup? TokenCount { get; init; }
 #else
-        public global::Anthropic.RateLimitTokenCountGroup? TokenCount { get; }
+        public global::Anthropic.BetaRateLimitTokenCountGroup? TokenCount { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.RateLimitTokenCountGroup? value)
+            out global::Anthropic.BetaRateLimitTokenCountGroup? value)
         {
             value = TokenCount;
             return IsTokenCount;
@@ -121,7 +121,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RateLimitTokenCountGroup PickTokenCount() => TokenCount is { } value
+        public global::Anthropic.BetaRateLimitTokenCountGroup PickTokenCount() => TokenCount is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenCount' but the value was {ToString()}.");
 
@@ -129,9 +129,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.RateLimitFilesGroup? Files { get; init; }
+        public global::Anthropic.BetaRateLimitFilesGroup? Files { get; init; }
 #else
-        public global::Anthropic.RateLimitFilesGroup? Files { get; }
+        public global::Anthropic.BetaRateLimitFilesGroup? Files { get; }
 #endif
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.RateLimitFilesGroup? value)
+            out global::Anthropic.BetaRateLimitFilesGroup? value)
         {
             value = Files;
             return IsFiles;
@@ -158,7 +158,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RateLimitFilesGroup PickFiles() => Files is { } value
+        public global::Anthropic.BetaRateLimitFilesGroup PickFiles() => Files is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Files' but the value was {ToString()}.");
 
@@ -166,9 +166,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.RateLimitSkillsGroup? Skills { get; init; }
+        public global::Anthropic.BetaRateLimitSkillsGroup? Skills { get; init; }
 #else
-        public global::Anthropic.RateLimitSkillsGroup? Skills { get; }
+        public global::Anthropic.BetaRateLimitSkillsGroup? Skills { get; }
 #endif
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.RateLimitSkillsGroup? value)
+            out global::Anthropic.BetaRateLimitSkillsGroup? value)
         {
             value = Skills;
             return IsSkills;
@@ -195,7 +195,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RateLimitSkillsGroup PickSkills() => Skills is { } value
+        public global::Anthropic.BetaRateLimitSkillsGroup PickSkills() => Skills is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Skills' but the value was {ToString()}.");
 
@@ -203,9 +203,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.RateLimitWebSearchGroup? WebSearch { get; init; }
+        public global::Anthropic.BetaRateLimitWebSearchGroup? WebSearch { get; init; }
 #else
-        public global::Anthropic.RateLimitWebSearchGroup? WebSearch { get; }
+        public global::Anthropic.BetaRateLimitWebSearchGroup? WebSearch { get; }
 #endif
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.RateLimitWebSearchGroup? value)
+            out global::Anthropic.BetaRateLimitWebSearchGroup? value)
         {
             value = WebSearch;
             return IsWebSearch;
@@ -232,23 +232,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RateLimitWebSearchGroup PickWebSearch() => WebSearch is { } value
+        public global::Anthropic.BetaRateLimitWebSearchGroup PickWebSearch() => WebSearch is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Group3(global::Anthropic.RateLimitModelGroup value) => new Group3((global::Anthropic.RateLimitModelGroup?)value);
+        public static implicit operator Group3(global::Anthropic.BetaRateLimitModelGroup value) => new Group3((global::Anthropic.BetaRateLimitModelGroup?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.RateLimitModelGroup?(Group3 @this) => @this.ModelGroup;
+        public static implicit operator global::Anthropic.BetaRateLimitModelGroup?(Group3 @this) => @this.ModelGroup;
 
         /// <summary>
         ///
         /// </summary>
-        public Group3(global::Anthropic.RateLimitModelGroup? value)
+        public Group3(global::Anthropic.BetaRateLimitModelGroup? value)
         {
             ModelGroup = value;
         }
@@ -256,22 +256,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Group3 FromModelGroup(global::Anthropic.RateLimitModelGroup? value) => new Group3(value);
+        public static Group3 FromModelGroup(global::Anthropic.BetaRateLimitModelGroup? value) => new Group3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Group3(global::Anthropic.RateLimitBatchGroup value) => new Group3((global::Anthropic.RateLimitBatchGroup?)value);
+        public static implicit operator Group3(global::Anthropic.BetaRateLimitBatchGroup value) => new Group3((global::Anthropic.BetaRateLimitBatchGroup?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.RateLimitBatchGroup?(Group3 @this) => @this.Batch;
+        public static implicit operator global::Anthropic.BetaRateLimitBatchGroup?(Group3 @this) => @this.Batch;
 
         /// <summary>
         ///
         /// </summary>
-        public Group3(global::Anthropic.RateLimitBatchGroup? value)
+        public Group3(global::Anthropic.BetaRateLimitBatchGroup? value)
         {
             Batch = value;
         }
@@ -279,22 +279,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Group3 FromBatch(global::Anthropic.RateLimitBatchGroup? value) => new Group3(value);
+        public static Group3 FromBatch(global::Anthropic.BetaRateLimitBatchGroup? value) => new Group3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Group3(global::Anthropic.RateLimitTokenCountGroup value) => new Group3((global::Anthropic.RateLimitTokenCountGroup?)value);
+        public static implicit operator Group3(global::Anthropic.BetaRateLimitTokenCountGroup value) => new Group3((global::Anthropic.BetaRateLimitTokenCountGroup?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.RateLimitTokenCountGroup?(Group3 @this) => @this.TokenCount;
+        public static implicit operator global::Anthropic.BetaRateLimitTokenCountGroup?(Group3 @this) => @this.TokenCount;
 
         /// <summary>
         ///
         /// </summary>
-        public Group3(global::Anthropic.RateLimitTokenCountGroup? value)
+        public Group3(global::Anthropic.BetaRateLimitTokenCountGroup? value)
         {
             TokenCount = value;
         }
@@ -302,22 +302,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Group3 FromTokenCount(global::Anthropic.RateLimitTokenCountGroup? value) => new Group3(value);
+        public static Group3 FromTokenCount(global::Anthropic.BetaRateLimitTokenCountGroup? value) => new Group3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Group3(global::Anthropic.RateLimitFilesGroup value) => new Group3((global::Anthropic.RateLimitFilesGroup?)value);
+        public static implicit operator Group3(global::Anthropic.BetaRateLimitFilesGroup value) => new Group3((global::Anthropic.BetaRateLimitFilesGroup?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.RateLimitFilesGroup?(Group3 @this) => @this.Files;
+        public static implicit operator global::Anthropic.BetaRateLimitFilesGroup?(Group3 @this) => @this.Files;
 
         /// <summary>
         ///
         /// </summary>
-        public Group3(global::Anthropic.RateLimitFilesGroup? value)
+        public Group3(global::Anthropic.BetaRateLimitFilesGroup? value)
         {
             Files = value;
         }
@@ -325,22 +325,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Group3 FromFiles(global::Anthropic.RateLimitFilesGroup? value) => new Group3(value);
+        public static Group3 FromFiles(global::Anthropic.BetaRateLimitFilesGroup? value) => new Group3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Group3(global::Anthropic.RateLimitSkillsGroup value) => new Group3((global::Anthropic.RateLimitSkillsGroup?)value);
+        public static implicit operator Group3(global::Anthropic.BetaRateLimitSkillsGroup value) => new Group3((global::Anthropic.BetaRateLimitSkillsGroup?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.RateLimitSkillsGroup?(Group3 @this) => @this.Skills;
+        public static implicit operator global::Anthropic.BetaRateLimitSkillsGroup?(Group3 @this) => @this.Skills;
 
         /// <summary>
         ///
         /// </summary>
-        public Group3(global::Anthropic.RateLimitSkillsGroup? value)
+        public Group3(global::Anthropic.BetaRateLimitSkillsGroup? value)
         {
             Skills = value;
         }
@@ -348,22 +348,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Group3 FromSkills(global::Anthropic.RateLimitSkillsGroup? value) => new Group3(value);
+        public static Group3 FromSkills(global::Anthropic.BetaRateLimitSkillsGroup? value) => new Group3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Group3(global::Anthropic.RateLimitWebSearchGroup value) => new Group3((global::Anthropic.RateLimitWebSearchGroup?)value);
+        public static implicit operator Group3(global::Anthropic.BetaRateLimitWebSearchGroup value) => new Group3((global::Anthropic.BetaRateLimitWebSearchGroup?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.RateLimitWebSearchGroup?(Group3 @this) => @this.WebSearch;
+        public static implicit operator global::Anthropic.BetaRateLimitWebSearchGroup?(Group3 @this) => @this.WebSearch;
 
         /// <summary>
         ///
         /// </summary>
-        public Group3(global::Anthropic.RateLimitWebSearchGroup? value)
+        public Group3(global::Anthropic.BetaRateLimitWebSearchGroup? value)
         {
             WebSearch = value;
         }
@@ -371,19 +371,19 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Group3 FromWebSearch(global::Anthropic.RateLimitWebSearchGroup? value) => new Group3(value);
+        public static Group3 FromWebSearch(global::Anthropic.BetaRateLimitWebSearchGroup? value) => new Group3(value);
 
         /// <summary>
         ///
         /// </summary>
         public Group3(
-            global::Anthropic.RateLimitGroupDiscriminatorType? type,
-            global::Anthropic.RateLimitModelGroup? modelGroup,
-            global::Anthropic.RateLimitBatchGroup? batch,
-            global::Anthropic.RateLimitTokenCountGroup? tokenCount,
-            global::Anthropic.RateLimitFilesGroup? files,
-            global::Anthropic.RateLimitSkillsGroup? skills,
-            global::Anthropic.RateLimitWebSearchGroup? webSearch
+            global::Anthropic.BetaWorkspaceRateLimitGroupDiscriminatorType? type,
+            global::Anthropic.BetaRateLimitModelGroup? modelGroup,
+            global::Anthropic.BetaRateLimitBatchGroup? batch,
+            global::Anthropic.BetaRateLimitTokenCountGroup? tokenCount,
+            global::Anthropic.BetaRateLimitFilesGroup? files,
+            global::Anthropic.BetaRateLimitSkillsGroup? skills,
+            global::Anthropic.BetaRateLimitWebSearchGroup? webSearch
             )
         {
             Type = type;
@@ -432,12 +432,12 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.RateLimitModelGroup, TResult>? modelGroup = null,
-            global::System.Func<global::Anthropic.RateLimitBatchGroup, TResult>? batch = null,
-            global::System.Func<global::Anthropic.RateLimitTokenCountGroup, TResult>? tokenCount = null,
-            global::System.Func<global::Anthropic.RateLimitFilesGroup, TResult>? files = null,
-            global::System.Func<global::Anthropic.RateLimitSkillsGroup, TResult>? skills = null,
-            global::System.Func<global::Anthropic.RateLimitWebSearchGroup, TResult>? webSearch = null,
+            global::System.Func<global::Anthropic.BetaRateLimitModelGroup, TResult>? modelGroup = null,
+            global::System.Func<global::Anthropic.BetaRateLimitBatchGroup, TResult>? batch = null,
+            global::System.Func<global::Anthropic.BetaRateLimitTokenCountGroup, TResult>? tokenCount = null,
+            global::System.Func<global::Anthropic.BetaRateLimitFilesGroup, TResult>? files = null,
+            global::System.Func<global::Anthropic.BetaRateLimitSkillsGroup, TResult>? skills = null,
+            global::System.Func<global::Anthropic.BetaRateLimitWebSearchGroup, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -477,17 +477,17 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.RateLimitModelGroup>? modelGroup = null,
+            global::System.Action<global::Anthropic.BetaRateLimitModelGroup>? modelGroup = null,
 
-            global::System.Action<global::Anthropic.RateLimitBatchGroup>? batch = null,
+            global::System.Action<global::Anthropic.BetaRateLimitBatchGroup>? batch = null,
 
-            global::System.Action<global::Anthropic.RateLimitTokenCountGroup>? tokenCount = null,
+            global::System.Action<global::Anthropic.BetaRateLimitTokenCountGroup>? tokenCount = null,
 
-            global::System.Action<global::Anthropic.RateLimitFilesGroup>? files = null,
+            global::System.Action<global::Anthropic.BetaRateLimitFilesGroup>? files = null,
 
-            global::System.Action<global::Anthropic.RateLimitSkillsGroup>? skills = null,
+            global::System.Action<global::Anthropic.BetaRateLimitSkillsGroup>? skills = null,
 
-            global::System.Action<global::Anthropic.RateLimitWebSearchGroup>? webSearch = null,
+            global::System.Action<global::Anthropic.BetaRateLimitWebSearchGroup>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -525,12 +525,12 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.RateLimitModelGroup>? modelGroup = null,
-            global::System.Action<global::Anthropic.RateLimitBatchGroup>? batch = null,
-            global::System.Action<global::Anthropic.RateLimitTokenCountGroup>? tokenCount = null,
-            global::System.Action<global::Anthropic.RateLimitFilesGroup>? files = null,
-            global::System.Action<global::Anthropic.RateLimitSkillsGroup>? skills = null,
-            global::System.Action<global::Anthropic.RateLimitWebSearchGroup>? webSearch = null,
+            global::System.Action<global::Anthropic.BetaRateLimitModelGroup>? modelGroup = null,
+            global::System.Action<global::Anthropic.BetaRateLimitBatchGroup>? batch = null,
+            global::System.Action<global::Anthropic.BetaRateLimitTokenCountGroup>? tokenCount = null,
+            global::System.Action<global::Anthropic.BetaRateLimitFilesGroup>? files = null,
+            global::System.Action<global::Anthropic.BetaRateLimitSkillsGroup>? skills = null,
+            global::System.Action<global::Anthropic.BetaRateLimitWebSearchGroup>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -572,17 +572,17 @@ namespace Anthropic
             var fields = new object?[]
             {
                 ModelGroup,
-                typeof(global::Anthropic.RateLimitModelGroup),
+                typeof(global::Anthropic.BetaRateLimitModelGroup),
                 Batch,
-                typeof(global::Anthropic.RateLimitBatchGroup),
+                typeof(global::Anthropic.BetaRateLimitBatchGroup),
                 TokenCount,
-                typeof(global::Anthropic.RateLimitTokenCountGroup),
+                typeof(global::Anthropic.BetaRateLimitTokenCountGroup),
                 Files,
-                typeof(global::Anthropic.RateLimitFilesGroup),
+                typeof(global::Anthropic.BetaRateLimitFilesGroup),
                 Skills,
-                typeof(global::Anthropic.RateLimitSkillsGroup),
+                typeof(global::Anthropic.BetaRateLimitSkillsGroup),
                 WebSearch,
-                typeof(global::Anthropic.RateLimitWebSearchGroup),
+                typeof(global::Anthropic.BetaRateLimitWebSearchGroup),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -599,12 +599,12 @@ namespace Anthropic
         public bool Equals(Group3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RateLimitModelGroup?>.Default.Equals(ModelGroup, other.ModelGroup) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RateLimitBatchGroup?>.Default.Equals(Batch, other.Batch) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RateLimitTokenCountGroup?>.Default.Equals(TokenCount, other.TokenCount) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RateLimitFilesGroup?>.Default.Equals(Files, other.Files) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RateLimitSkillsGroup?>.Default.Equals(Skills, other.Skills) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RateLimitWebSearchGroup?>.Default.Equals(WebSearch, other.WebSearch)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRateLimitModelGroup?>.Default.Equals(ModelGroup, other.ModelGroup) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRateLimitBatchGroup?>.Default.Equals(Batch, other.Batch) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRateLimitTokenCountGroup?>.Default.Equals(TokenCount, other.TokenCount) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRateLimitFilesGroup?>.Default.Equals(Files, other.Files) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRateLimitSkillsGroup?>.Default.Equals(Skills, other.Skills) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRateLimitWebSearchGroup?>.Default.Equals(WebSearch, other.WebSearch)
                 ;
         }
 

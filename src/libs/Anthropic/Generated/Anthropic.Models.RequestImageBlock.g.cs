@@ -12,15 +12,15 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant168? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant14? CacheControl { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source5JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source5 Source { get; set; }
+        public required global::Anthropic.Source3 Source { get; set; }
 
         /// <summary>
         /// Configures the transformations the server applies to this image before the model observes it. Each key names a condition the server transforms images for; its value selects the transformation applied. Omitted keys keep their default behavior, and an empty object is equivalent to omitting the field.
@@ -56,8 +56,8 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestImageBlock(
-            global::Anthropic.Source5 source,
-            global::Anthropic.CacheControlVariant168? cacheControl,
+            global::Anthropic.Source3 source,
+            global::Anthropic.CacheControlVariant14? cacheControl,
             global::Anthropic.RequestImageTransformations? transformations,
             string type = "image")
         {

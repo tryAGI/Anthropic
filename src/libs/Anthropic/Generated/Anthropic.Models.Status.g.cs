@@ -5,168 +5,293 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Whether the fallback-credit reprice was applied to this response's billing.<br/>
-    /// A union discriminated on `type`. `redeemed`: the retry is billed as if<br/>
-    /// the conversation had been on the retry model all along — including when the<br/>
-    /// resulting shift is zero because there was nothing to move. `not_applied`:<br/>
-    /// no reprice was applied; the arm's `reason` says why.
+    ///
     /// </summary>
     public readonly partial struct Status : global::System.IEquatable<Status>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFallbackCreditUsageStatusDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaExternalStorageStatusDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// The reprice was applied: the retry is billed as if the conversation<br/>
-        /// had been on the retry model all along.
+        /// The storage isn't verified yet.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaFallbackCreditRedeemed? Redeemed { get; init; }
+        public global::Anthropic.BetaPendingConfigurationExternalStorageStatus? PendingConfiguration { get; init; }
 #else
-        public global::Anthropic.BetaFallbackCreditRedeemed? Redeemed { get; }
+        public global::Anthropic.BetaPendingConfigurationExternalStorageStatus? PendingConfiguration { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Redeemed))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PendingConfiguration))]
 #endif
-        public bool IsRedeemed => Redeemed != null;
+        public bool IsPendingConfiguration => PendingConfiguration != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickRedeemed(
+        public bool TryPickPendingConfiguration(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaFallbackCreditRedeemed? value)
+            out global::Anthropic.BetaPendingConfigurationExternalStorageStatus? value)
         {
-            value = Redeemed;
-            return IsRedeemed;
+            value = PendingConfiguration;
+            return IsPendingConfiguration;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFallbackCreditRedeemed PickRedeemed() => Redeemed is { } value
+        public global::Anthropic.BetaPendingConfigurationExternalStorageStatus PickPendingConfiguration() => PendingConfiguration is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Redeemed' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PendingConfiguration' but the value was {ToString()}.");
 
         /// <summary>
-        /// No reprice was applied; ``reason`` says why.
+        /// The storage is verified, no Workspace has it attached, and Anthropic doesn't use<br/>
+        /// the bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaFallbackCreditNotApplied? NotApplied { get; init; }
+        public global::Anthropic.BetaAvailableExternalStorageStatus? Available { get; init; }
 #else
-        public global::Anthropic.BetaFallbackCreditNotApplied? NotApplied { get; }
+        public global::Anthropic.BetaAvailableExternalStorageStatus? Available { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NotApplied))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Available))]
 #endif
-        public bool IsNotApplied => NotApplied != null;
+        public bool IsAvailable => Available != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickNotApplied(
+        public bool TryPickAvailable(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaFallbackCreditNotApplied? value)
+            out global::Anthropic.BetaAvailableExternalStorageStatus? value)
         {
-            value = NotApplied;
-            return IsNotApplied;
+            value = Available;
+            return IsAvailable;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFallbackCreditNotApplied PickNotApplied() => NotApplied is { } value
+        public global::Anthropic.BetaAvailableExternalStorageStatus PickAvailable() => Available is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'NotApplied' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Available' but the value was {ToString()}.");
+
         /// <summary>
-        ///
+        /// At least one Workspace has the storage attached.
         /// </summary>
-        public static implicit operator Status(global::Anthropic.BetaFallbackCreditRedeemed value) => new Status((global::Anthropic.BetaFallbackCreditRedeemed?)value);
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaActiveExternalStorageStatus? Active { get; init; }
+#else
+        public global::Anthropic.BetaActiveExternalStorageStatus? Active { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaFallbackCreditRedeemed?(Status @this) => @this.Redeemed;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Active))]
+#endif
+        public bool IsActive => Active != null;
 
         /// <summary>
         ///
         /// </summary>
-        public Status(global::Anthropic.BetaFallbackCreditRedeemed? value)
+        public bool TryPickActive(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaActiveExternalStorageStatus? value)
         {
-            Redeemed = value;
+            value = Active;
+            return IsActive;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Status FromRedeemed(global::Anthropic.BetaFallbackCreditRedeemed? value) => new Status(value);
+        public global::Anthropic.BetaActiveExternalStorageStatus PickActive() => Active is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Active' but the value was {ToString()}.");
+
+        /// <summary>
+        /// No Workspace has the storage attached. A Workspace can attach it again, unless<br/>
+        /// `removal_started` is true.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaDrainingExternalStorageStatus? Draining { get; init; }
+#else
+        public global::Anthropic.BetaDrainingExternalStorageStatus? Draining { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Status(global::Anthropic.BetaFallbackCreditNotApplied value) => new Status((global::Anthropic.BetaFallbackCreditNotApplied?)value);
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Draining))]
+#endif
+        public bool IsDraining => Draining != null;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaFallbackCreditNotApplied?(Status @this) => @this.NotApplied;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Status(global::Anthropic.BetaFallbackCreditNotApplied? value)
+        public bool TryPickDraining(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaDrainingExternalStorageStatus? value)
         {
-            NotApplied = value;
+            value = Draining;
+            return IsDraining;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Status FromNotApplied(global::Anthropic.BetaFallbackCreditNotApplied? value) => new Status(value);
+        public global::Anthropic.BetaDrainingExternalStorageStatus PickDraining() => Draining is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Draining' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Status(global::Anthropic.BetaPendingConfigurationExternalStorageStatus value) => new Status((global::Anthropic.BetaPendingConfigurationExternalStorageStatus?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaPendingConfigurationExternalStorageStatus?(Status @this) => @this.PendingConfiguration;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Status(global::Anthropic.BetaPendingConfigurationExternalStorageStatus? value)
+        {
+            PendingConfiguration = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Status FromPendingConfiguration(global::Anthropic.BetaPendingConfigurationExternalStorageStatus? value) => new Status(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Status(global::Anthropic.BetaAvailableExternalStorageStatus value) => new Status((global::Anthropic.BetaAvailableExternalStorageStatus?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaAvailableExternalStorageStatus?(Status @this) => @this.Available;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Status(global::Anthropic.BetaAvailableExternalStorageStatus? value)
+        {
+            Available = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Status FromAvailable(global::Anthropic.BetaAvailableExternalStorageStatus? value) => new Status(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Status(global::Anthropic.BetaActiveExternalStorageStatus value) => new Status((global::Anthropic.BetaActiveExternalStorageStatus?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaActiveExternalStorageStatus?(Status @this) => @this.Active;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Status(global::Anthropic.BetaActiveExternalStorageStatus? value)
+        {
+            Active = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Status FromActive(global::Anthropic.BetaActiveExternalStorageStatus? value) => new Status(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Status(global::Anthropic.BetaDrainingExternalStorageStatus value) => new Status((global::Anthropic.BetaDrainingExternalStorageStatus?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaDrainingExternalStorageStatus?(Status @this) => @this.Draining;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Status(global::Anthropic.BetaDrainingExternalStorageStatus? value)
+        {
+            Draining = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Status FromDraining(global::Anthropic.BetaDrainingExternalStorageStatus? value) => new Status(value);
 
         /// <summary>
         ///
         /// </summary>
         public Status(
-            global::Anthropic.BetaFallbackCreditUsageStatusDiscriminatorType? type,
-            global::Anthropic.BetaFallbackCreditRedeemed? redeemed,
-            global::Anthropic.BetaFallbackCreditNotApplied? notApplied
+            global::Anthropic.BetaExternalStorageStatusDiscriminatorType? type,
+            global::Anthropic.BetaPendingConfigurationExternalStorageStatus? pendingConfiguration,
+            global::Anthropic.BetaAvailableExternalStorageStatus? available,
+            global::Anthropic.BetaActiveExternalStorageStatus? active,
+            global::Anthropic.BetaDrainingExternalStorageStatus? draining
             )
         {
             Type = type;
 
-            Redeemed = redeemed;
-            NotApplied = notApplied;
+            PendingConfiguration = pendingConfiguration;
+            Available = available;
+            Active = active;
+            Draining = draining;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            NotApplied as object ??
-            Redeemed as object
+            Draining as object ??
+            Active as object ??
+            Available as object ??
+            PendingConfiguration as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Redeemed?.ToString() ??
-            NotApplied?.ToString()
+            PendingConfiguration?.ToString() ??
+            Available?.ToString() ??
+            Active?.ToString() ??
+            Draining?.ToString()
             ;
 
         /// <summary>
@@ -174,15 +299,17 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsRedeemed && !IsNotApplied || !IsRedeemed && IsNotApplied;
+            return IsPendingConfiguration && !IsAvailable && !IsActive && !IsDraining || !IsPendingConfiguration && IsAvailable && !IsActive && !IsDraining || !IsPendingConfiguration && !IsAvailable && IsActive && !IsDraining || !IsPendingConfiguration && !IsAvailable && !IsActive && IsDraining;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaFallbackCreditRedeemed, TResult>? redeemed = null,
-            global::System.Func<global::Anthropic.BetaFallbackCreditNotApplied, TResult>? notApplied = null,
+            global::System.Func<global::Anthropic.BetaPendingConfigurationExternalStorageStatus, TResult>? pendingConfiguration = null,
+            global::System.Func<global::Anthropic.BetaAvailableExternalStorageStatus, TResult>? available = null,
+            global::System.Func<global::Anthropic.BetaActiveExternalStorageStatus, TResult>? active = null,
+            global::System.Func<global::Anthropic.BetaDrainingExternalStorageStatus, TResult>? draining = null,
             bool validate = true)
         {
             if (validate)
@@ -190,13 +317,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Redeemed is { } __value0 && redeemed != null)
+            if (PendingConfiguration is { } __value0 && pendingConfiguration != null)
             {
-                return redeemed(__value0);
+                return pendingConfiguration(__value0);
             }
-            else if (NotApplied is { } __value1 && notApplied != null)
+            else if (Available is { } __value1 && available != null)
             {
-                return notApplied(__value1);
+                return available(__value1);
+            }
+            else if (Active is { } __value2 && active != null)
+            {
+                return active(__value2);
+            }
+            else if (Draining is { } __value3 && draining != null)
+            {
+                return draining(__value3);
             }
 
             return default(TResult);
@@ -206,9 +341,13 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaFallbackCreditRedeemed>? redeemed = null,
+            global::System.Action<global::Anthropic.BetaPendingConfigurationExternalStorageStatus>? pendingConfiguration = null,
 
-            global::System.Action<global::Anthropic.BetaFallbackCreditNotApplied>? notApplied = null,
+            global::System.Action<global::Anthropic.BetaAvailableExternalStorageStatus>? available = null,
+
+            global::System.Action<global::Anthropic.BetaActiveExternalStorageStatus>? active = null,
+
+            global::System.Action<global::Anthropic.BetaDrainingExternalStorageStatus>? draining = null,
             bool validate = true)
         {
             if (validate)
@@ -216,13 +355,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Redeemed is { } __value0)
+            if (PendingConfiguration is { } __value0)
             {
-                redeemed?.Invoke(__value0);
+                pendingConfiguration?.Invoke(__value0);
             }
-            else if (NotApplied is { } __value1)
+            else if (Available is { } __value1)
             {
-                notApplied?.Invoke(__value1);
+                available?.Invoke(__value1);
+            }
+            else if (Active is { } __value2)
+            {
+                active?.Invoke(__value2);
+            }
+            else if (Draining is { } __value3)
+            {
+                draining?.Invoke(__value3);
             }
         }
 
@@ -230,8 +377,10 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaFallbackCreditRedeemed>? redeemed = null,
-            global::System.Action<global::Anthropic.BetaFallbackCreditNotApplied>? notApplied = null,
+            global::System.Action<global::Anthropic.BetaPendingConfigurationExternalStorageStatus>? pendingConfiguration = null,
+            global::System.Action<global::Anthropic.BetaAvailableExternalStorageStatus>? available = null,
+            global::System.Action<global::Anthropic.BetaActiveExternalStorageStatus>? active = null,
+            global::System.Action<global::Anthropic.BetaDrainingExternalStorageStatus>? draining = null,
             bool validate = true)
         {
             if (validate)
@@ -239,13 +388,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (Redeemed is { } __value0)
+            if (PendingConfiguration is { } __value0)
             {
-                redeemed?.Invoke(__value0);
+                pendingConfiguration?.Invoke(__value0);
             }
-            else if (NotApplied is { } __value1)
+            else if (Available is { } __value1)
             {
-                notApplied?.Invoke(__value1);
+                available?.Invoke(__value1);
+            }
+            else if (Active is { } __value2)
+            {
+                active?.Invoke(__value2);
+            }
+            else if (Draining is { } __value3)
+            {
+                draining?.Invoke(__value3);
             }
         }
 
@@ -256,10 +413,14 @@ namespace Anthropic
         {
             var fields = new object?[]
             {
-                Redeemed,
-                typeof(global::Anthropic.BetaFallbackCreditRedeemed),
-                NotApplied,
-                typeof(global::Anthropic.BetaFallbackCreditNotApplied),
+                PendingConfiguration,
+                typeof(global::Anthropic.BetaPendingConfigurationExternalStorageStatus),
+                Available,
+                typeof(global::Anthropic.BetaAvailableExternalStorageStatus),
+                Active,
+                typeof(global::Anthropic.BetaActiveExternalStorageStatus),
+                Draining,
+                typeof(global::Anthropic.BetaDrainingExternalStorageStatus),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -276,8 +437,10 @@ namespace Anthropic
         public bool Equals(Status other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFallbackCreditRedeemed?>.Default.Equals(Redeemed, other.Redeemed) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFallbackCreditNotApplied?>.Default.Equals(NotApplied, other.NotApplied)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaPendingConfigurationExternalStorageStatus?>.Default.Equals(PendingConfiguration, other.PendingConfiguration) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAvailableExternalStorageStatus?>.Default.Equals(Available, other.Available) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaActiveExternalStorageStatus?>.Default.Equals(Active, other.Active) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaDrainingExternalStorageStatus?>.Default.Equals(Draining, other.Draining)
                 ;
         }
 

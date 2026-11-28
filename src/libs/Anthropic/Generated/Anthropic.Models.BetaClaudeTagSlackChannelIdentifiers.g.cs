@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The identifiers Slack shows for a channel. They are Slack's own, not identifiers of this API.
+    /// The identifiers Slack shows for a channel. They are Slack's own, not identifiers of this API.<br/>
+    /// Example: {"workspace_id":"T0123ABCD","channel_id":"C0456EFGH"}
     /// </summary>
     public sealed partial class BetaClaudeTagSlackChannelIdentifiers
     {

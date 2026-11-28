@@ -12,13 +12,13 @@ namespace Anthropic
         /// Tokens used to create 1-hour ephemeral cache entries.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_1h_input_tokens")]
-        public int? Ephemeral1hInputTokens { get; set; }
+        public long? Ephemeral1hInputTokens { get; set; }
 
         /// <summary>
         /// Tokens used to create 5-minute ephemeral cache entries.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_5m_input_tokens")]
-        public int? Ephemeral5mInputTokens { get; set; }
+        public long? Ephemeral5mInputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,8 +39,8 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsCacheCreationUsage(
-            int? ephemeral1hInputTokens,
-            int? ephemeral5mInputTokens)
+            long? ephemeral1hInputTokens,
+            long? ephemeral5mInputTokens)
         {
             this.Ephemeral1hInputTokens = ephemeral1hInputTokens;
             this.Ephemeral5mInputTokens = ephemeral5mInputTokens;

@@ -15,9 +15,9 @@ namespace Anthropic
         /// The tool made available: a reference to a `tools` entry or MCP toolset, or a `tool_definition` carrying the definition by value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Tool3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Tool5JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Tool3 Tool { get; set; }
+        public required global::Anthropic.Tool5 Tool { get; set; }
 
         /// <summary>
         /// Default Value: tool_addition
@@ -45,7 +45,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseToolAdditionBlock(
-            global::Anthropic.Tool3 tool,
+            global::Anthropic.Tool5 tool,
             string type = "tool_addition")
         {
             this.Tool = tool;

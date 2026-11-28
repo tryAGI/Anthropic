@@ -18,36 +18,36 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourcesClientToolResultsDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourcesClientToolResultsDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebFetchUrlSourcesClientToolResultsDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourcesClientToolResultsDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourcesClientToolResultsDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WebFetchUrlSourcesClientToolResultsDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.BetaWebFetchUrlSourceAll? all = default;
-            if (discriminator?.Type == global::Anthropic.BetaWebFetchUrlSourcesClientToolResultsDiscriminatorType.All)
+            global::Anthropic.WebFetchUrlSourceAll? all = default;
+            if (discriminator?.Type == global::Anthropic.WebFetchUrlSourcesClientToolResultsDiscriminatorType.All)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceAll), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceAll> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebFetchUrlSourceAll)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceAll), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceAll> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WebFetchUrlSourceAll)}");
                 all = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaWebFetchUrlSourceNone? none = default;
-            if (discriminator?.Type == global::Anthropic.BetaWebFetchUrlSourcesClientToolResultsDiscriminatorType.None)
+            global::Anthropic.WebFetchUrlSourceNone? none = default;
+            if (discriminator?.Type == global::Anthropic.WebFetchUrlSourcesClientToolResultsDiscriminatorType.None)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceNone> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebFetchUrlSourceNone)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceNone> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WebFetchUrlSourceNone)}");
                 none = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaWebFetchUrlSourceOnly? only = default;
-            if (discriminator?.Type == global::Anthropic.BetaWebFetchUrlSourcesClientToolResultsDiscriminatorType.Only)
+            global::Anthropic.WebFetchUrlSourceOnly? only = default;
+            if (discriminator?.Type == global::Anthropic.WebFetchUrlSourcesClientToolResultsDiscriminatorType.Only)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceOnly), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceOnly> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebFetchUrlSourceOnly)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceOnly), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceOnly> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WebFetchUrlSourceOnly)}");
                 only = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaWebFetchUrlSourceExcept? except = default;
-            if (discriminator?.Type == global::Anthropic.BetaWebFetchUrlSourcesClientToolResultsDiscriminatorType.Except)
+            global::Anthropic.WebFetchUrlSourceExcept? except = default;
+            if (discriminator?.Type == global::Anthropic.WebFetchUrlSourcesClientToolResultsDiscriminatorType.Except)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceExcept> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaWebFetchUrlSourceExcept)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceExcept> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.WebFetchUrlSourceExcept)}");
                 except = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -77,26 +77,26 @@ namespace Anthropic.JsonConverters
 
             if (value.IsAll)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceAll), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceAll?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebFetchUrlSourceAll).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceAll), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceAll?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.WebFetchUrlSourceAll).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAll(), typeInfo);
             }
             else if (value.IsNone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceNone?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebFetchUrlSourceNone).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceNone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.WebFetchUrlSourceNone).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNone(), typeInfo);
             }
             else if (value.IsOnly)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceOnly), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceOnly?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebFetchUrlSourceOnly).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceOnly), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceOnly?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.WebFetchUrlSourceOnly).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOnly(), typeInfo);
             }
             else if (value.IsExcept)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebFetchUrlSourceExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebFetchUrlSourceExcept?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebFetchUrlSourceExcept).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.WebFetchUrlSourceExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.WebFetchUrlSourceExcept?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.WebFetchUrlSourceExcept).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExcept(), typeInfo);
             }
         }

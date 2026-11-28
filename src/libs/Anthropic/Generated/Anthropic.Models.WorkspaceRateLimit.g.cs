@@ -12,9 +12,9 @@ namespace Anthropic
         /// The rate-limit group this entry's limits apply to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Group4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Group2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Group4 Group { get; set; }
+        public required global::Anthropic.Group2 Group { get; set; }
 
         /// <summary>
         /// The workspace's limiter values for this group. By default only the limiter types with a workspace-level override are listed. With `include_inherited` set to `true`, the limiter types the workspace inherits from the organization are listed too, each marked by `source`.
@@ -83,7 +83,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WorkspaceRateLimit(
-            global::Anthropic.Group4 group,
+            global::Anthropic.Group2 group,
             global::System.Collections.Generic.IList<global::Anthropic.WorkspaceRateLimitValue> limits,
             string rateLimitId,
             string workspaceId,

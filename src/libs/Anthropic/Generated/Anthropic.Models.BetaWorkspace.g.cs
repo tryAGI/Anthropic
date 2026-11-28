@@ -58,12 +58,13 @@ namespace Anthropic
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
         /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
-        /// organization's own key must be a single-Region key in the same AWS account and<br/>
-        /// Region as the Workspace. On that platform the key is validated against this<br/>
-        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
-        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
-        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
-        /// key on your cloud KMS; the `external_key_id` stays the same.
+        /// organization's own key must be a single-Region key in the same Region as the<br/>
+        /// Workspace. If that key is outside the Workspace's AWS account, it can be attached<br/>
+        /// only by updating an active Workspace. On that platform the key is validated<br/>
+        /// against this Workspace when it is attached, so a key-policy problem is reported<br/>
+        /// as an error on this request. This field is write-once: once a key is attached to<br/>
+        /// a Workspace it cannot be detached or replaced. To rotate key material, rotate<br/>
+        /// the underlying key on your cloud KMS; the `external_key_id` stays the same.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_key_id")]
         public string? ExternalKeyId { get; set; }
@@ -74,6 +75,12 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// Where the Workspace's retained inference data and transcript copies go, and whether Anthropic's human review applies. Returned only to requests that send the `efs-2026-10-01` `anthropic-beta` value, and each member only to organizations enabled for it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inference_data_privacy")]
+        public global::Anthropic.BetaInferenceDataPrivacy? InferenceDataPrivacy { get; set; }
 
         /// <summary>
         /// Name of the Workspace.
@@ -153,12 +160,16 @@ namespace Anthropic
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
         /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
-        /// organization's own key must be a single-Region key in the same AWS account and<br/>
-        /// Region as the Workspace. On that platform the key is validated against this<br/>
-        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
-        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
-        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
-        /// key on your cloud KMS; the `external_key_id` stays the same.
+        /// organization's own key must be a single-Region key in the same Region as the<br/>
+        /// Workspace. If that key is outside the Workspace's AWS account, it can be attached<br/>
+        /// only by updating an active Workspace. On that platform the key is validated<br/>
+        /// against this Workspace when it is attached, so a key-policy problem is reported<br/>
+        /// as an error on this request. This field is write-once: once a key is attached to<br/>
+        /// a Workspace it cannot be detached or replaced. To rotate key material, rotate<br/>
+        /// the underlying key on your cloud KMS; the `external_key_id` stays the same.
+        /// </param>
+        /// <param name="inferenceDataPrivacy">
+        /// Where the Workspace's retained inference data and transcript copies go, and whether Anthropic's human review applies. Returned only to requests that send the `efs-2026-10-01` `anthropic-beta` value, and each member only to organizations enabled for it.
         /// </param>
         /// <param name="userProfileId">
         /// ID of the user profile attached to the Workspace, or null if it has none. Every inference request through a Workspace that has a user profile must name that profile.
@@ -181,6 +192,7 @@ namespace Anthropic
             global::System.Collections.Generic.Dictionary<string, string> tags,
             global::System.DateTime? archivedAt,
             string? externalKeyId,
+            global::Anthropic.BetaInferenceDataPrivacy? inferenceDataPrivacy,
             string? userProfileId,
             string type = "workspace")
         {
@@ -191,6 +203,7 @@ namespace Anthropic
             this.DisplayColor = displayColor ?? throw new global::System.ArgumentNullException(nameof(displayColor));
             this.ExternalKeyId = externalKeyId;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.InferenceDataPrivacy = inferenceDataPrivacy;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
             this.Type = type;

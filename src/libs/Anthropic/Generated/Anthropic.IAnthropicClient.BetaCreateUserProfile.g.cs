@@ -5,7 +5,9 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Create User Profile
+        /// Create User Profile<br/>
+        /// Register one of your end customers and get the ID to send on the requests you make for them.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#create-a-profile-for-each-end-customer) for what to send.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -28,7 +30,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create User Profile
+        /// Create User Profile<br/>
+        /// Register one of your end customers and get the ID to send on the requests you make for them.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#create-a-profile-for-each-end-customer) for what to send.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -51,7 +55,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create User Profile
+        /// Create User Profile<br/>
+        /// Register one of your end customers and get the ID to send on the requests you make for them.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#create-a-profile-for-each-end-customer) for what to send.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

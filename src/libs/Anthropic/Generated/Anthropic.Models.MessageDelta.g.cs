@@ -14,7 +14,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        public global::Anthropic.Container2? Container { get; set; }
+        public global::Anthropic.Container? Container { get; set; }
 
         /// <summary>
         /// Structured information about why model output stopped.<br/>
@@ -22,7 +22,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
-        public global::Anthropic.RefusalStopDetails? StopDetails { get; set; }
+        public global::Anthropic.StopDetails? StopDetails { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -65,8 +65,8 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDelta(
-            global::Anthropic.Container2? container,
-            global::Anthropic.RefusalStopDetails? stopDetails,
+            global::Anthropic.Container? container,
+            global::Anthropic.StopDetails? stopDetails,
             global::Anthropic.StopReason? stopReason,
             string? stopSequence)
         {

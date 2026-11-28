@@ -11,6 +11,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ExternalKeyFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalKeyRecovered,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageRecovered,
+        /// <summary>
+        ///
+        /// </summary>
         UserProfileEnforcementActionOpened,
         /// <summary>
         ///
@@ -34,6 +50,10 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalKeyFailed => "external_key.failed",
+                BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalKeyRecovered => "external_key.recovered",
+                BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalStorageFailed => "external_storage.failed",
+                BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalStorageRecovered => "external_storage.recovered",
                 BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
                 BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
                 BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileProgramStatusUpdated => "user_profile.program_status_updated",
@@ -47,6 +67,10 @@ namespace Anthropic
         {
             return value switch
             {
+                "external_key.failed" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalKeyFailed,
+                "external_key.recovered" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalKeyRecovered,
+                "external_storage.failed" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalStorageFailed,
+                "external_storage.recovered" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.ExternalStorageRecovered,
                 "user_profile.enforcement_action_opened" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionOpened,
                 "user_profile.enforcement_action_resolved" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileEnforcementActionResolved,
                 "user_profile.program_status_updated" => BetaCreateOrganizationWebhookEndpointV1OrganizationsWebhooksPostRequestEnabledEvent.UserProfileProgramStatusUpdated,

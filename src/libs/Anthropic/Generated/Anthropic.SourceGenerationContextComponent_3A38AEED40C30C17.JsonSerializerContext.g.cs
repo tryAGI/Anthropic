@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_2F07AC18C4FAD0E7.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_3939C29701326471.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_5A45A96FE57F8978.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_A5DDB27D89DCE953.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_3C974AB6C319B1DC.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_4A647881A109DABC.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_992E8CB9484EFE8B.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_D5B8D41B9348B0B0.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Jwks))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0199.Create_Jwks2_3(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0226.Create_Jwks2_3(options);
                 }
                 if (type == typeof(global::Anthropic.Jwks?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0250.Create_NullableJwks2_3(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0282.Create_NullableJwks2_3(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

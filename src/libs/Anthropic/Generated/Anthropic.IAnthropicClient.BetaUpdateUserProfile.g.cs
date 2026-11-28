@@ -5,7 +5,9 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Update User Profile
+        /// Update User Profile<br/>
+        /// Change the details of a user profile, leaving the fields that you don't send as they are.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#update-a-profile) for how each field is updated.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -30,7 +32,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update User Profile
+        /// Update User Profile<br/>
+        /// Change the details of a user profile, leaving the fields that you don't send as they are.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#update-a-profile) for how each field is updated.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -55,7 +59,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update User Profile
+        /// Update User Profile<br/>
+        /// Change the details of a user profile, leaving the fields that you don't send as they are.<br/>
+        /// See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#update-a-profile) for how each field is updated.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

@@ -103,7 +103,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             bool? checkJti = default,
             string? issuerUrl = default,
-            global::Anthropic.JwksVariant12? jwks = default,
+            global::Anthropic.JwksVariant1? jwks = default,
             bool? jwksPollingDisabled = default,
             int? maxJwtLifetimeSeconds = default,
             string? name = default,

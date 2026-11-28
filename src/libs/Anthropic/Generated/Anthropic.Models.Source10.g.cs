@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.WorkspaceRateLimitWorkspaceSource? Workspace { get; init; }
+        public global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? Workspace { get; init; }
 #else
-        public global::Anthropic.WorkspaceRateLimitWorkspaceSource? Workspace { get; }
+        public global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? Workspace { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.WorkspaceRateLimitWorkspaceSource? value)
+            out global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? value)
         {
             value = Workspace;
             return IsWorkspace;
@@ -47,7 +47,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WorkspaceRateLimitWorkspaceSource PickWorkspace() => Workspace is { } value
+        public global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource PickWorkspace() => Workspace is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
 
@@ -55,9 +55,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.WorkspaceRateLimitOrganizationSource? Organization { get; init; }
+        public global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? Organization { get; init; }
 #else
-        public global::Anthropic.WorkspaceRateLimitOrganizationSource? Organization { get; }
+        public global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? Organization { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.WorkspaceRateLimitOrganizationSource? value)
+            out global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? value)
         {
             value = Organization;
             return IsOrganization;
@@ -84,23 +84,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WorkspaceRateLimitOrganizationSource PickOrganization() => Organization is { } value
+        public global::Anthropic.BetaWorkspaceRateLimitOrganizationSource PickOrganization() => Organization is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source10(global::Anthropic.WorkspaceRateLimitWorkspaceSource value) => new Source10((global::Anthropic.WorkspaceRateLimitWorkspaceSource?)value);
+        public static implicit operator Source10(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource value) => new Source10((global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.WorkspaceRateLimitWorkspaceSource?(Source10 @this) => @this.Workspace;
+        public static implicit operator global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?(Source10 @this) => @this.Workspace;
 
         /// <summary>
         ///
         /// </summary>
-        public Source10(global::Anthropic.WorkspaceRateLimitWorkspaceSource? value)
+        public Source10(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? value)
         {
             Workspace = value;
         }
@@ -108,22 +108,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Source10 FromWorkspace(global::Anthropic.WorkspaceRateLimitWorkspaceSource? value) => new Source10(value);
+        public static Source10 FromWorkspace(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? value) => new Source10(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Source10(global::Anthropic.WorkspaceRateLimitOrganizationSource value) => new Source10((global::Anthropic.WorkspaceRateLimitOrganizationSource?)value);
+        public static implicit operator Source10(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource value) => new Source10((global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.WorkspaceRateLimitOrganizationSource?(Source10 @this) => @this.Organization;
+        public static implicit operator global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?(Source10 @this) => @this.Organization;
 
         /// <summary>
         ///
         /// </summary>
-        public Source10(global::Anthropic.WorkspaceRateLimitOrganizationSource? value)
+        public Source10(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? value)
         {
             Organization = value;
         }
@@ -131,15 +131,15 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Source10 FromOrganization(global::Anthropic.WorkspaceRateLimitOrganizationSource? value) => new Source10(value);
+        public static Source10 FromOrganization(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? value) => new Source10(value);
 
         /// <summary>
         ///
         /// </summary>
         public Source10(
-            global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType? type,
-            global::Anthropic.WorkspaceRateLimitWorkspaceSource? workspace,
-            global::Anthropic.WorkspaceRateLimitOrganizationSource? organization
+            global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType? type,
+            global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource? workspace,
+            global::Anthropic.BetaWorkspaceRateLimitOrganizationSource? organization
             )
         {
             Type = type;
@@ -176,8 +176,8 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.WorkspaceRateLimitWorkspaceSource, TResult>? workspace = null,
-            global::System.Func<global::Anthropic.WorkspaceRateLimitOrganizationSource, TResult>? organization = null,
+            global::System.Func<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource, TResult>? workspace = null,
+            global::System.Func<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource, TResult>? organization = null,
             bool validate = true)
         {
             if (validate)
@@ -201,9 +201,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.WorkspaceRateLimitWorkspaceSource>? workspace = null,
+            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource>? workspace = null,
 
-            global::System.Action<global::Anthropic.WorkspaceRateLimitOrganizationSource>? organization = null,
+            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource>? organization = null,
             bool validate = true)
         {
             if (validate)
@@ -225,8 +225,8 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.WorkspaceRateLimitWorkspaceSource>? workspace = null,
-            global::System.Action<global::Anthropic.WorkspaceRateLimitOrganizationSource>? organization = null,
+            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource>? workspace = null,
+            global::System.Action<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource>? organization = null,
             bool validate = true)
         {
             if (validate)
@@ -252,9 +252,9 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Workspace,
-                typeof(global::Anthropic.WorkspaceRateLimitWorkspaceSource),
+                typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource),
                 Organization,
-                typeof(global::Anthropic.WorkspaceRateLimitOrganizationSource),
+                typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace Anthropic
         public bool Equals(Source10 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.WorkspaceRateLimitWorkspaceSource?>.Default.Equals(Workspace, other.Workspace) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.WorkspaceRateLimitOrganizationSource?>.Default.Equals(Organization, other.Organization)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource?>.Default.Equals(Workspace, other.Workspace) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWorkspaceRateLimitOrganizationSource?>.Default.Equals(Organization, other.Organization)
                 ;
         }
 

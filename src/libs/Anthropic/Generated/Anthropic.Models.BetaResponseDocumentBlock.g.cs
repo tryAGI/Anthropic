@@ -19,9 +19,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source9JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source3 Source { get; set; }
+        public required global::Anthropic.Source9 Source { get; set; }
 
         /// <summary>
         /// The title of the document<br/>
@@ -62,7 +62,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseDocumentBlock(
-            global::Anthropic.Source3 source,
+            global::Anthropic.Source9 source,
             global::Anthropic.BetaResponseCitationsConfig? citations,
             string? title,
             string type = "document")

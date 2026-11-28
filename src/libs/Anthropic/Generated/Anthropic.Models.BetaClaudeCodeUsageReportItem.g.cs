@@ -12,9 +12,9 @@ namespace Anthropic
         /// The user or API key that performed the Claude Code actions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ActorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Actor Actor { get; set; }
+        public required global::Anthropic.Actor3 Actor { get; set; }
 
         /// <summary>
         /// Core productivity metrics measuring Claude Code usage and impact.
@@ -126,7 +126,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaClaudeCodeUsageReportItem(
-            global::Anthropic.Actor actor,
+            global::Anthropic.Actor3 actor,
             global::Anthropic.BetaCoreMetrics coreMetrics,
             global::Anthropic.BetaCustomerType customerType,
             global::System.DateTime date,

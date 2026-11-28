@@ -54,9 +54,9 @@ namespace Anthropic
         /// What the limit applies to. A tagged union on `type`; each variant carries the identifier for its scope.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope6JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Scope6 Scope { get; set; }
+        public required global::Anthropic.Scope2 Scope { get; set; }
 
         /// <summary>
         /// Object type. Always `spend_limit`.<br/>
@@ -119,7 +119,7 @@ namespace Anthropic
             string id,
             bool isEnabled,
             global::Anthropic.SpendLimitPeriod period,
-            global::Anthropic.Scope6 scope,
+            global::Anthropic.Scope2 scope,
             global::System.DateTime updatedAt,
             string? amount,
             string type = "spend_limit")

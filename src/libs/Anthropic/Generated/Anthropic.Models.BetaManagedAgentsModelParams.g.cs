@@ -10,7 +10,8 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsModelParams : global::System.IEquatable<BetaManagedAgentsModelParams>
     {
         /// <summary>
-        ///
+        /// The model that will power your agent.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsModel? BetaManagedAgentsModel { get; init; }

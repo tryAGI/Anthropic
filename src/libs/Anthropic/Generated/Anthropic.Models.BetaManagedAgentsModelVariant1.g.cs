@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Frontier intelligence for ambitious work in coding, enterprise workflows, and the sciences
+    /// Built for the most ambitious work in coding, enterprise workflows, and the sciences
     /// </summary>
     public sealed partial class BetaManagedAgentsModelVariant1
     {

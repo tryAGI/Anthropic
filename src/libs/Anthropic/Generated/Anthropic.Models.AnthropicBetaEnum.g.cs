@@ -31,6 +31,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        CeClaudeCodeManagedSettings20261006,
+        /// <summary>
+        ///
+        /// </summary>
         CePlugins20260901,
         /// <summary>
         ///
@@ -79,6 +83,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        Efs20261001,
+        /// <summary>
+        ///
+        /// </summary>
         ExperimentalClaudeTag20261021,
         /// <summary>
         ///
@@ -100,6 +108,10 @@ namespace Anthropic
         ///
         /// </summary>
         FilesApi20250414,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleManagedDataControls20260901,
         /// <summary>
         ///
         /// </summary>
@@ -231,6 +243,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        UserProfilesBilling20261001,
+        /// <summary>
+        ///
+        /// </summary>
         Webhooks20261007,
     }
 
@@ -251,6 +267,7 @@ namespace Anthropic
                 AnthropicBetaEnum.AgentMemory20260722 => "agent-memory-2026-07-22",
                 AnthropicBetaEnum.AnalyticsUsageCost20260824 => "analytics-usage-cost-2026-08-24",
                 AnthropicBetaEnum.CacheDiagnosis20260407 => "cache-diagnosis-2026-04-07",
+                AnthropicBetaEnum.CeClaudeCodeManagedSettings20261006 => "ce-claude-code-managed-settings-2026-10-06",
                 AnthropicBetaEnum.CePlugins20260901 => "ce-plugins-2026-09-01",
                 AnthropicBetaEnum.CeUserManagement20260713 => "ce-user-management-2026-07-13",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
@@ -263,12 +280,14 @@ namespace Anthropic
                 AnthropicBetaEnum.ContextManagement20250627 => "context-management-2025-06-27",
                 AnthropicBetaEnum.DevFullThinking20250514 => "dev-full-thinking-2025-05-14",
                 AnthropicBetaEnum.Dreaming20260421 => "dreaming-2026-04-21",
+                AnthropicBetaEnum.Efs20261001 => "efs-2026-10-01",
                 AnthropicBetaEnum.ExperimentalClaudeTag20261021 => "experimental-claude-tag-2026-10-21",
                 AnthropicBetaEnum.ExtendedCacheTtl20250411 => "extended-cache-ttl-2025-04-11",
                 AnthropicBetaEnum.FallbackCredit20260601 => "fallback-credit-2026-06-01",
                 AnthropicBetaEnum.FallbackCredit20260701 => "fallback-credit-2026-07-01",
                 AnthropicBetaEnum.FastMode20260201 => "fast-mode-2026-02-01",
                 AnthropicBetaEnum.FilesApi20250414 => "files-api-2025-04-14",
+                AnthropicBetaEnum.GoogleManagedDataControls20260901 => "google-managed-data-controls-2026-09-01",
                 AnthropicBetaEnum.InlineTools20260915 => "inline-tools-2026-09-15",
                 AnthropicBetaEnum.InterleavedThinking20250514 => "interleaved-thinking-2025-05-14",
                 AnthropicBetaEnum.ManagedAgents20260401 => "managed-agents-2026-04-01",
@@ -301,6 +320,7 @@ namespace Anthropic
                 AnthropicBetaEnum.UserProfiles20260324 => "user-profiles-2026-03-24",
                 AnthropicBetaEnum.UserProfiles20260818 => "user-profiles-2026-08-18",
                 AnthropicBetaEnum.UserProfiles20260904 => "user-profiles-2026-09-04",
+                AnthropicBetaEnum.UserProfilesBilling20261001 => "user-profiles-billing-2026-10-01",
                 AnthropicBetaEnum.Webhooks20261007 => "webhooks-2026-10-07",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -317,6 +337,7 @@ namespace Anthropic
                 "agent-memory-2026-07-22" => AnthropicBetaEnum.AgentMemory20260722,
                 "analytics-usage-cost-2026-08-24" => AnthropicBetaEnum.AnalyticsUsageCost20260824,
                 "cache-diagnosis-2026-04-07" => AnthropicBetaEnum.CacheDiagnosis20260407,
+                "ce-claude-code-managed-settings-2026-10-06" => AnthropicBetaEnum.CeClaudeCodeManagedSettings20261006,
                 "ce-plugins-2026-09-01" => AnthropicBetaEnum.CePlugins20260901,
                 "ce-user-management-2026-07-13" => AnthropicBetaEnum.CeUserManagement20260713,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
@@ -329,12 +350,14 @@ namespace Anthropic
                 "context-management-2025-06-27" => AnthropicBetaEnum.ContextManagement20250627,
                 "dev-full-thinking-2025-05-14" => AnthropicBetaEnum.DevFullThinking20250514,
                 "dreaming-2026-04-21" => AnthropicBetaEnum.Dreaming20260421,
+                "efs-2026-10-01" => AnthropicBetaEnum.Efs20261001,
                 "experimental-claude-tag-2026-10-21" => AnthropicBetaEnum.ExperimentalClaudeTag20261021,
                 "extended-cache-ttl-2025-04-11" => AnthropicBetaEnum.ExtendedCacheTtl20250411,
                 "fallback-credit-2026-06-01" => AnthropicBetaEnum.FallbackCredit20260601,
                 "fallback-credit-2026-07-01" => AnthropicBetaEnum.FallbackCredit20260701,
                 "fast-mode-2026-02-01" => AnthropicBetaEnum.FastMode20260201,
                 "files-api-2025-04-14" => AnthropicBetaEnum.FilesApi20250414,
+                "google-managed-data-controls-2026-09-01" => AnthropicBetaEnum.GoogleManagedDataControls20260901,
                 "inline-tools-2026-09-15" => AnthropicBetaEnum.InlineTools20260915,
                 "interleaved-thinking-2025-05-14" => AnthropicBetaEnum.InterleavedThinking20250514,
                 "managed-agents-2026-04-01" => AnthropicBetaEnum.ManagedAgents20260401,
@@ -367,6 +390,7 @@ namespace Anthropic
                 "user-profiles-2026-03-24" => AnthropicBetaEnum.UserProfiles20260324,
                 "user-profiles-2026-08-18" => AnthropicBetaEnum.UserProfiles20260818,
                 "user-profiles-2026-09-04" => AnthropicBetaEnum.UserProfiles20260904,
+                "user-profiles-billing-2026-10-01" => AnthropicBetaEnum.UserProfilesBilling20261001,
                 "webhooks-2026-10-07" => AnthropicBetaEnum.Webhooks20261007,
                 _ => null,
             };

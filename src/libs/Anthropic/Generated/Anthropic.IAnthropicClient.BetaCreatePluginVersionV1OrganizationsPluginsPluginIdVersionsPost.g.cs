@@ -16,9 +16,8 @@ namespace Anthropic
         /// Only a Plugin in a `manual` marketplace takes uploads; a Plugin synchronized from<br/>
         /// a repository gets its versions from the repository. When the Plugin is in the<br/>
         /// organization's library marketplace, a version that adds a skill with the name of an<br/>
-        /// organization skill (a skill an administrator uploaded for the whole organization in<br/>
-        /// claude.ai) is refused with a 409: `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`. A 503 with `error_code`<br/>
+        /// organization skill that this API does not list is refused with a 409: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`. A 503 with `error_code`<br/>
         /// `registration_pending` means the version was stored but is not yet usable; a later<br/>
         /// version create on the Plugin completes it.<br/>
         /// For a worked example, see [Create a version](/docs/en/manage-claude/plugins-api#create-a-version)<br/>
@@ -55,9 +54,8 @@ namespace Anthropic
         /// Only a Plugin in a `manual` marketplace takes uploads; a Plugin synchronized from<br/>
         /// a repository gets its versions from the repository. When the Plugin is in the<br/>
         /// organization's library marketplace, a version that adds a skill with the name of an<br/>
-        /// organization skill (a skill an administrator uploaded for the whole organization in<br/>
-        /// claude.ai) is refused with a 409: `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`. A 503 with `error_code`<br/>
+        /// organization skill that this API does not list is refused with a 409: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`. A 503 with `error_code`<br/>
         /// `registration_pending` means the version was stored but is not yet usable; a later<br/>
         /// version create on the Plugin completes it.<br/>
         /// For a worked example, see [Create a version](/docs/en/manage-claude/plugins-api#create-a-version)<br/>
@@ -94,9 +92,8 @@ namespace Anthropic
         /// Only a Plugin in a `manual` marketplace takes uploads; a Plugin synchronized from<br/>
         /// a repository gets its versions from the repository. When the Plugin is in the<br/>
         /// organization's library marketplace, a version that adds a skill with the name of an<br/>
-        /// organization skill (a skill an administrator uploaded for the whole organization in<br/>
-        /// claude.ai) is refused with a 409: `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`. A 503 with `error_code`<br/>
+        /// organization skill that this API does not list is refused with a 409: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`. A 503 with `error_code`<br/>
         /// `registration_pending` means the version was stored but is not yet usable; a later<br/>
         /// version create on the Plugin completes it.<br/>
         /// For a worked example, see [Create a version](/docs/en/manage-claude/plugins-api#create-a-version)<br/>
@@ -139,9 +136,8 @@ namespace Anthropic
         /// Only a Plugin in a `manual` marketplace takes uploads; a Plugin synchronized from<br/>
         /// a repository gets its versions from the repository. When the Plugin is in the<br/>
         /// organization's library marketplace, a version that adds a skill with the name of an<br/>
-        /// organization skill (a skill an administrator uploaded for the whole organization in<br/>
-        /// claude.ai) is refused with a 409: `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`. A 503 with `error_code`<br/>
+        /// organization skill that this API does not list is refused with a 409: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`. A 503 with `error_code`<br/>
         /// `registration_pending` means the version was stored but is not yet usable; a later<br/>
         /// version create on the Plugin completes it.<br/>
         /// For a worked example, see [Create a version](/docs/en/manage-claude/plugins-api#create-a-version)<br/>
@@ -187,9 +183,8 @@ namespace Anthropic
         /// Only a Plugin in a `manual` marketplace takes uploads; a Plugin synchronized from<br/>
         /// a repository gets its versions from the repository. When the Plugin is in the<br/>
         /// organization's library marketplace, a version that adds a skill with the name of an<br/>
-        /// organization skill (a skill an administrator uploaded for the whole organization in<br/>
-        /// claude.ai) is refused with a 409: `error_code` `skill_name_taken`, with that name in<br/>
-        /// `details.skill_name`. A 503 with `error_code`<br/>
+        /// organization skill that this API does not list is refused with a 409: `error_code`<br/>
+        /// `skill_name_taken`, with that name in `details.skill_name`. A 503 with `error_code`<br/>
         /// `registration_pending` means the version was stored but is not yet usable; a later<br/>
         /// version create on the Plugin completes it.<br/>
         /// For a worked example, see [Create a version](/docs/en/manage-claude/plugins-api#create-a-version)<br/>

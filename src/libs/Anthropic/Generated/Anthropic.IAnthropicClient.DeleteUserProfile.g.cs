@@ -5,7 +5,9 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Delete User Profile
+        /// Delete User Profile<br/>
+        /// Delete a user profile, for example when the end customer closes their account.<br/>
+        /// Stop sending the profile's ID first. See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#delete-a-profile) for what happens after a delete.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -23,7 +25,9 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete User Profile
+        /// Delete User Profile<br/>
+        /// Delete a user profile, for example when the end customer closes their account.<br/>
+        /// Stop sending the profile's ID first. See the [User profiles guide](https://platform.claude.com/docs/en/manage-claude/user-profiles#delete-a-profile) for what happens after a delete.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

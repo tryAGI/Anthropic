@@ -18,71 +18,71 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ErrorResponseErrorDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ErrorResponseErrorDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ErrorResponseErrorDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaErrorDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaErrorDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaErrorDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.InvalidRequestError? invalidRequestError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.InvalidRequestError)
+            global::Anthropic.BetaInvalidRequestError? invalidRequestError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.InvalidRequestError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.InvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.InvalidRequestError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.InvalidRequestError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaInvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaInvalidRequestError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaInvalidRequestError)}");
                 invalidRequestError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.AuthenticationError? authenticationError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.AuthenticationError)
+            global::Anthropic.BetaAuthenticationError? authenticationError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.AuthenticationError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AuthenticationError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.AuthenticationError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAuthenticationError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAuthenticationError)}");
                 authenticationError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BillingError? billingError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.BillingError)
+            global::Anthropic.BetaBillingError? billingError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.BillingError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BillingError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BillingError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBillingError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaBillingError)}");
                 billingError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.PermissionError? permissionError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.PermissionError)
+            global::Anthropic.BetaPermissionError? permissionError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.PermissionError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.PermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.PermissionError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.PermissionError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPermissionError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaPermissionError)}");
                 permissionError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.NotFoundError? notFoundError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.NotFoundError)
+            global::Anthropic.BetaNotFoundError? notFoundError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.NotFoundError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.NotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.NotFoundError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.NotFoundError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaNotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaNotFoundError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaNotFoundError)}");
                 notFoundError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.RateLimitError? rateLimitError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.RateLimitError)
+            global::Anthropic.BetaRateLimitError? rateLimitError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.RateLimitError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRateLimitError)}");
                 rateLimitError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.GatewayTimeoutError? timeoutError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.TimeoutError)
+            global::Anthropic.BetaGatewayTimeoutError? timeoutError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.TimeoutError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.GatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.GatewayTimeoutError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.GatewayTimeoutError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaGatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaGatewayTimeoutError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaGatewayTimeoutError)}");
                 timeoutError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.APIError? apiError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.ApiError)
+            global::Anthropic.BetaAPIError? apiError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.ApiError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.APIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.APIError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.APIError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAPIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAPIError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAPIError)}");
                 apiError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.OverloadedError? overloadedError = default;
-            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.OverloadedError)
+            global::Anthropic.BetaOverloadedError? overloadedError = default;
+            if (discriminator?.Type == global::Anthropic.BetaErrorDiscriminatorType.OverloadedError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OverloadedError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.OverloadedError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaOverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaOverloadedError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaOverloadedError)}");
                 overloadedError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -122,56 +122,56 @@ namespace Anthropic.JsonConverters
 
             if (value.IsInvalidRequestError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.InvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.InvalidRequestError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.InvalidRequestError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaInvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaInvalidRequestError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaInvalidRequestError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInvalidRequestError(), typeInfo);
             }
             else if (value.IsAuthenticationError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AuthenticationError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.AuthenticationError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAuthenticationError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAuthenticationError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthenticationError(), typeInfo);
             }
             else if (value.IsBillingError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BillingError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BillingError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBillingError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaBillingError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBillingError(), typeInfo);
             }
             else if (value.IsPermissionError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.PermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.PermissionError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.PermissionError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaPermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaPermissionError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaPermissionError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPermissionError(), typeInfo);
             }
             else if (value.IsNotFoundError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.NotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.NotFoundError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.NotFoundError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaNotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaNotFoundError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaNotFoundError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNotFoundError(), typeInfo);
             }
             else if (value.IsRateLimitError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRateLimitError(), typeInfo);
             }
             else if (value.IsTimeoutError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.GatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.GatewayTimeoutError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.GatewayTimeoutError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaGatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaGatewayTimeoutError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaGatewayTimeoutError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTimeoutError(), typeInfo);
             }
             else if (value.IsApiError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.APIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.APIError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.APIError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAPIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAPIError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAPIError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApiError(), typeInfo);
             }
             else if (value.IsOverloadedError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.OverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.OverloadedError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.OverloadedError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaOverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaOverloadedError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaOverloadedError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOverloadedError(), typeInfo);
             }
         }

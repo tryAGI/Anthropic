@@ -58,7 +58,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.ContentBlock2> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.ContentBlock> Content { get; set; }
 
         /// <summary>
         /// The model that will complete your prompt.<br/>
@@ -98,7 +98,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
-        public global::Anthropic.RefusalStopDetails? StopDetails { get; set; }
+        public global::Anthropic.StopDetails? StopDetails { get; set; }
 
         /// <summary>
         /// Billing and rate-limit usage.<br/>
@@ -124,7 +124,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        public global::Anthropic.Container2? Container { get; set; }
+        public global::Anthropic.Container? Container { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -216,14 +216,14 @@ namespace Anthropic
 #endif
         public Message(
             string id,
-            global::System.Collections.Generic.IList<global::Anthropic.ContentBlock2> content,
+            global::System.Collections.Generic.IList<global::Anthropic.ContentBlock> content,
             global::Anthropic.Model model,
             global::Anthropic.Usage usage,
             global::Anthropic.StopReason? stopReason,
             string? stopSequence,
-            global::Anthropic.RefusalStopDetails? stopDetails,
+            global::Anthropic.StopDetails? stopDetails,
             global::Anthropic.Diagnostics? diagnostics,
-            global::Anthropic.Container2? container,
+            global::Anthropic.Container? container,
             string type = "message",
             string role = "assistant")
         {

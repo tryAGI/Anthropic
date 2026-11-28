@@ -50,9 +50,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 { get; init; }
+        public global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2? BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 { get; init; }
 #else
-        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 { get; }
+        public global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2? BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 { get; }
 #endif
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? value)
+            out global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2? value)
         {
             value = BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2;
             return IsBetaManagedAgentsMultiagentPredefinedAgentParamsVariant2;
@@ -79,7 +79,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams> PickBetaManagedAgentsMultiagentPredefinedAgentParamsVariant2() => BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 is { } value
+        public global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 PickBetaManagedAgentsMultiagentPredefinedAgentParamsVariant2() => BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2' but the value was {ToString()}.");
         /// <summary>
@@ -108,17 +108,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator BetaManagedAgentsMultiagentPredefinedAgentParams(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams> value) => new BetaManagedAgentsMultiagentPredefinedAgentParams((global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>?)value);
+        public static implicit operator BetaManagedAgentsMultiagentPredefinedAgentParams(global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 value) => new BetaManagedAgentsMultiagentPredefinedAgentParams((global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>?(BetaManagedAgentsMultiagentPredefinedAgentParams @this) => @this.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2;
+        public static implicit operator global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2?(BetaManagedAgentsMultiagentPredefinedAgentParams @this) => @this.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public BetaManagedAgentsMultiagentPredefinedAgentParams(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? value)
+        public BetaManagedAgentsMultiagentPredefinedAgentParams(global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2? value)
         {
             BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2 = value;
         }
@@ -126,14 +126,14 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static BetaManagedAgentsMultiagentPredefinedAgentParams FromBetaManagedAgentsMultiagentPredefinedAgentParamsVariant2(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? value) => new BetaManagedAgentsMultiagentPredefinedAgentParams(value);
+        public static BetaManagedAgentsMultiagentPredefinedAgentParams FromBetaManagedAgentsMultiagentPredefinedAgentParamsVariant2(global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2? value) => new BetaManagedAgentsMultiagentPredefinedAgentParams(value);
 
         /// <summary>
         ///
         /// </summary>
         public BetaManagedAgentsMultiagentPredefinedAgentParams(
             string? betaManagedAgentsMultiagentPredefinedAgentParamsVariant1,
-            global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2
+            global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2
             )
         {
             BetaManagedAgentsMultiagentPredefinedAgentParamsVariant1 = betaManagedAgentsMultiagentPredefinedAgentParamsVariant1;
@@ -169,7 +169,7 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant1 = null,
-            global::System.Func<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>?, TResult>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2 = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2?, TResult>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -195,7 +195,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<string>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant1 = null,
 
-            global::System.Action<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>?>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2 = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2?>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -218,7 +218,7 @@ namespace Anthropic
         /// </summary>
         public void Switch(
             global::System.Action<string>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant1 = null,
-            global::System.Action<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>?>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2 = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2?>? betaManagedAgentsMultiagentPredefinedAgentParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -246,7 +246,7 @@ namespace Anthropic
                 BetaManagedAgentsMultiagentPredefinedAgentParamsVariant1,
                 typeof(string),
                 BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2,
-                typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>),
+                typeof(global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -264,7 +264,7 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsMultiagentPredefinedAgentParamsVariant1, other.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsMultiagentSelfParams>?>.Default.Equals(BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2, other.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2?>.Default.Equals(BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2, other.BetaManagedAgentsMultiagentPredefinedAgentParamsVariant2)
                 ;
         }
 

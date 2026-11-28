@@ -11,10 +11,16 @@ namespace Anthropic
     public sealed partial class BetaCountMessageTokensParams
     {
         /// <summary>
+        /// Declares which organization is billed when this body is sent to `/v1/messages`. Accepted here so that you can count the tokens of the exact body you will send, and otherwise ignored: counting tokens bills nobody, so no user profile is required.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("billing_policy")]
+        public global::Anthropic.BetaBillingPolicy? BillingPolicy { get; set; }
+
+        /// <summary>
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant114? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant162? CacheControl { get; set; }
 
         /// <summary>
         /// Compaction configuration.<br/>
@@ -231,6 +237,9 @@ namespace Anthropic
         /// The model that will complete your prompt.<br/>
         /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
+        /// <param name="billingPolicy">
+        /// Declares which organization is billed when this body is sent to `/v1/messages`. Accepted here so that you can count the tokens of the exact body you will send, and otherwise ignored: counting tokens bills nobody, so no user profile is required.
+        /// </param>
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
@@ -321,7 +330,8 @@ namespace Anthropic
         public BetaCountMessageTokensParams(
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessageUnion> messages,
             global::Anthropic.Model model,
-            global::Anthropic.CacheControlVariant114? cacheControl,
+            global::Anthropic.BetaBillingPolicy? billingPolicy,
+            global::Anthropic.CacheControlVariant162? cacheControl,
             global::Anthropic.BetaCompactionConfig? compaction,
             global::Anthropic.BetaContextManagementConfig? contextManagement,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
@@ -332,6 +342,7 @@ namespace Anthropic
             global::Anthropic.BetaToolChoice? toolChoice,
             global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools)
         {
+            this.BillingPolicy = billingPolicy;
             this.CacheControl = cacheControl;
             this.Compaction = compaction;
             this.ContextManagement = contextManagement;
